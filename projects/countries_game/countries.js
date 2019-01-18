@@ -13,8 +13,10 @@ while (questions_asked < 6) {
   var country2 = Math.floor((Math.random() * 186) + 1);
   if (country1 == country2) {
     country2 = country1 + 1;
+  }
   if (country2 > 185) {
   country2 = country2 - 2;
+  }
 //the math might be wonky - figure out how many figures are in each array!
 
   var user_input = prompt(`Question ${questions_asked}: Which country has more people: A) ${countries[country1]} or B) ${countries[country2]}?`);
@@ -27,7 +29,7 @@ while (questions_asked < 6) {
   }
 
   if (country1 < country2 && user_input == 'A') {
-    var people = (populations[country1] - populations[country2]) //on previous code i had stuff to add in commas in the right spot - can figure that out later
+    var people = (populations[country1] - populations[country2]); //on previous code i had stuff to add in commas in the right spot - can figure that out later
     alert(`CORRECT! ${countries[country1]} has ${people} more people than ${countries[country2]}.`);
     questions_correct++;
   } else if (country1 < country2 && user_input == 'B') {
@@ -37,10 +39,9 @@ while (questions_asked < 6) {
       var people = (populations[country2] - populations[country1]);
       alert(`WRONG! ${countries[country2]} has ${people} more people than ${countries[country1]}.`);
   } else { //country1 > country2 and user_input == 'B'
-  //change starting here
       var people = (populations[country2] - populations[country1]);
       alert(`CORRECT! ${countries[country2]} has ${people} more people than ${countries[country1]}.`);
       questions_correct++;
   }
   questions_asked += 1
-};
+}
