@@ -34,11 +34,12 @@ while (questions_asked < 6) {
   } else if (country1 > country2 && user_input == 'A') {
       var people = (populations[country2] - populations[country1]);
       alert(`WRONG! ${countries[country2]} has ${people} more people than ${countries[country1]}.`);
-  } else //country1 > country2 and user_input == 'B'
+  } else { //country1 > country2 and user_input == 'B'
   //change starting here
       var people = (populations[country2] - populations[country1]);
       alert(`CORRECT! ${countries[country2]} has ${people} more people than ${countries[country1]}.`);
       questions_correct++;
+  }
   questions_asked += 1
   }
 
