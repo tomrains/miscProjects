@@ -14,18 +14,16 @@ while (questions_asked < 6) {
   if (country2 > 185) {
   country2 = country2 - 2;
 //the math might be wonky - figure out how many figures are in each array!
-}
 
-var user_input = prompt(`Question ${questions_asked}: Which country has more people: A) ${countries[country1]} or B) ${countries[country2]}?`);
-user_input = str.toUpperCase(str.trim(user_input));
-
-while (user_input != 'A' && user_input != 'B') {
-  alert("Please enter A or B for your response.");
   var user_input = prompt(`Question ${questions_asked}: Which country has more people: A) ${countries[country1]} or B) ${countries[country2]}?`);
   user_input = str.toUpperCase(str.trim(user_input));
-}
 
-//change code below
+  while (user_input != 'A' && user_input != 'B') {
+    alert("Please enter A or B for your response.");
+    var user_input = prompt(`Question ${questions_asked}: Which country has more people: A) ${countries[country1]} or B) ${countries[country2]}?`);
+    user_input = str.toUpperCase(str.trim(user_input));
+  }
+
   if (country1 < country2 && user_input == 'A') {
     var people = (populations[country1] - populations[country2]) //on previous code i had stuff to add in commas in the right spot - can figure that out later
     alert(`CORRECT! ${countries[country1]} has ${people} more people than ${countries[country2]}.`);
@@ -36,12 +34,13 @@ while (user_input != 'A' && user_input != 'B') {
   } else if (country1 > country2 && user_input == 'A') {
       var people = (populations[country2] - populations[country1]);
       alert(`WRONG! ${countries[country2]} has ${people} more people than ${countries[country1]}.`);
+  } else //country1 > country2 and user_input == 'B'
   //change starting here
-  else //country1 > country2 and user_input == 'B'
-    var people = (populations[country2] - populations[country1]);
-    puts "CORRECT! #{countries[country2]} has #{people} more people than #{countries[country1]}.";
-    questions_correct++;
-questions_asked += 1
+      var people = (populations[country2] - populations[country1]);
+      alert(`CORRECT! ${countries[country2]} has ${people} more people than ${countries[country1]}.`);
+      questions_correct++;
+  questions_asked += 1
+  }
 
 
 
