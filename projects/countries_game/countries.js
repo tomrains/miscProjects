@@ -20,22 +20,22 @@ while (questions_asked < 6) {
 //the math might be wonky - figure out how many figures are in each array!
 
   var user_input = prompt(`Question ${questions_asked}: Which country has more people: A) ${countries[country1]} or B) ${countries[country2]}?`);
-  user_input = str.toUpperCase(str.trim(user_input));
+  var alteredInput = str.toUpperCase(str.trim(user_input));
 
-  while (user_input != 'A' && user_input != 'B') {
+  while (alteredInput != 'A' && alteredInput != 'B') {
     alert("Please enter A or B for your response.");
     var user_input = prompt(`Question ${questions_asked}: Which country has more people: A) ${countries[country1]} or B) ${countries[country2]}?`);
-    user_input = str.toUpperCase(str.trim(user_input));
+    alteredInput = str.toUpperCase(str.trim(user_input));
   }
 
-  if (country1 < country2 && user_input == 'A') {
+  if (country1 < country2 && alteredInput == 'A') {
     var people = (populations[country1] - populations[country2]); //on previous code i had stuff to add in commas in the right spot - can figure that out later
     alert(`CORRECT! ${countries[country1]} has ${people} more people than ${countries[country2]}.`);
     questions_correct++;
-  } else if (country1 < country2 && user_input == 'B') {
+  } else if (country1 < country2 && alteredInput == 'B') {
       var people = (populations[country1] - populations[country2]);
       alert(`WRONG! ${countries[country1]} has ${people} more people than ${countries[country2]}.`);
-  } else if (country1 > country2 && user_input == 'A') {
+  } else if (country1 > country2 && alteredInput == 'A') {
       var people = (populations[country2] - populations[country1]);
       alert(`WRONG! ${countries[country2]} has ${people} more people than ${countries[country1]}.`);
   } else { //country1 > country2 and user_input == 'B'
