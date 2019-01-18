@@ -41,9 +41,4 @@ while (questions_asked < 6) {
       questions_correct++;
   }
   questions_asked += 1
-  }
-
-
-
-
-
+};
