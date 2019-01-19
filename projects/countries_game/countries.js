@@ -45,3 +45,18 @@ while (questions_asked < 6) {
   }
   questions_asked += 1
 }
+
+if (questions_correct == 0) {
+  alert("Thanks for playing! You didn't get any questions right this time.");
+} else if (questions_correct == 1) {
+  alert(`Thanks for playing! You got ${questions_correct} question right out of 5. You could've done worse!`);
+} else if (questions_correct == 2) {
+  alert(`Thanks for playing! You got ${questions_correct} questions right out of 5. Not great, but not bad either!`);
+} else if (questions_correct == 3) {
+  alert(`Thanks for playing! You got ${questions_correct} questions right out of 5. A respectable score.`);
+} else if (questions_correct == 4) {
+  alert(`Thanks for playing! You got ${questions_correct} questions right out of 5. Fantastic job!`);
+} else { //questions_correct == 5
+  alert(`Thanks for playing! You got ${questions_correct} questions right out of 5. You're a geography genius!`);
+}
+
