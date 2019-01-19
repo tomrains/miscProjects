@@ -7,8 +7,8 @@ var questions_correct = 0;
 var newline = "\n";
 
 while (questions_asked < 6) {
-  var country1 = Math.floor((Math.random() * 186) + 1);
-  var country2 = Math.floor((Math.random() * 186) + 1);
+  var country1 = Math.floor((Math.random() * 186));
+  var country2 = Math.floor((Math.random() * 186));
   if (country1 == country2) {
     country2 = country1 + 1;
   }
