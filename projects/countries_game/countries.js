@@ -20,12 +20,12 @@ while (questions_asked < 6) {
 //the math might be wonky - figure out how many figures are in each array!
 
   var user_input = prompt(`Question ${questions_asked}: Which country has more people: A) ${countries[country1]} or B) ${countries[country2]}?`);
-  var alteredInput = str.toUpperCase(str.trim(user_input));
+  var alteredInput = user_input.toUpperCase(user_input.trim());
 
   while (alteredInput != 'A' && alteredInput != 'B') {
     alert("Please enter A or B for your response.");
     var user_input = prompt(`Question ${questions_asked}: Which country has more people: A) ${countries[country1]} or B) ${countries[country2]}?`);
-    alteredInput = str.toUpperCase(str.trim(user_input));
+    alteredInput = user_input.toUpperCase(user_input.trim());
   }
 
   if (country1 < country2 && alteredInput == 'A') {
