@@ -15,7 +15,6 @@ while (questions_asked < 6) {
   if (country2 > 185) {
   country2 = country2 - 2;
   }
-//the math might be wonky - figure out how many figures are in each array!
 
   var user_input = prompt(`Question ${questions_asked}: Which country has more people: A) ${countries[country1]} or B) ${countries[country2]}?`);
   var alteredInput = user_input.toUpperCase(user_input.trim());
