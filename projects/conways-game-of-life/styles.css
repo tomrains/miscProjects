@@ -1,7 +1,15 @@
-.square {
+.square, .dead-square {
   height: 50px;
   width: 50px;
-  background-color: gray;
-  margin: 10px 0px;
+  background-color: white;
   border: 2px solid red;
+  text-align: center;
+}
+
+.living-square {
+  height: 50px;
+  width: 50px;
+  background-color: green;
+  border: 2px solid red;
+  text-align: center;
 }
