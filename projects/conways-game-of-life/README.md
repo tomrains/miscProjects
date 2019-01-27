@@ -8,7 +8,30 @@ Initialize page with a set of [8] white blocks on screen in a single line.
   This will require some Javascript using events. When user clicks block, block becomes the other color.
     A simple way to use this could be, display alive if true, or display dead if false.
 
-*Allow user to select a block, changing it from white to black, or black to white.
+Allow user to select a block, changing it from white to black, or black to white.
+  So i need to make it so that, when users select a paragraph with class square, the class switches
+  if square class ---> living class
+  if living class --> dead class
+  if dead class --> living class
+  
+  ***Page 277 in the JS book should help me with this***
+  let's experiment a bit to see the best way to do this:
+  here's the basic outline:
+    element.onevent = functionName;
+    
+    the function for now can be called "Alive"
+    if var alive == True, then class is living
+    if var alive == False, then class = dead class
+    
+function reverseLife() {
+  //if square class ---> living class
+  //if living class --> dead class
+  //if dead class --> living class
+}
+
+var selected = document.
+
+
 
 *Allow user to press a play button that begins the Conway's game of life simulation.
   For each cell, you determine how many neighbors it has. 
