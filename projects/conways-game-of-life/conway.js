@@ -5,7 +5,7 @@ function lifeAndDeath(el) {
 }
 
 //the oneTurn function should execute when the user clicks the Go! button (so could probably mimick the current onclick function)
-function oneTurn {
+function oneTurn() {
   var classes = []; 
   var newClasses = [];
   var squares = document.getElementsbyTagName('p');
