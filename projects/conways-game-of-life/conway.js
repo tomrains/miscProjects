@@ -1,5 +1,5 @@
 function lifeAndDeath1() {
-  var element = document.getElementById("square1");
+  var element = onclick.this;
   element.classList.toggle("alive");
 }
 
