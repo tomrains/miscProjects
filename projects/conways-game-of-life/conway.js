@@ -40,5 +40,5 @@ function oneTurn() {
     //now let's change all the styles!
     for (i=0; i<squares.length; i++) {
       squares[i].class = newClasses[i].class;
-  }
+    }
   } //ending bracket for oneTurn function
