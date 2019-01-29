@@ -32,10 +32,36 @@ document.getElementById("square1").className == document.getElementById("square3
 else
   document.getElementById("square1").className = "alive"
   
-  to create an array of the paragraphs ... or to get the classes of the paragraphs...
+  classes = []; (set it to be 8 long?)
+  newClasses = [];
   var squares = document.getElementsbyTagName('p');
   for (i=0; i<squares.length; i++) {
-  [[insert function to store the new class in an array]]
+    classes[i] = squares[i].class
+   }
+  for (z=0; z<classes.length; z++) {
+    if z = 0:
+      if classes[z+1] = "living"
+        #set zclass to living
+      else:
+        #set to dead
+    if z > 1 and z is <7
+      if classes[z - 1] == classes[z+1]
+        #then set zclass to dead
+      else
+        #set z class to living
+     else //if z == 7:
+      if classes[z-1] = "living"
+        #set zclass to living
+      else:
+        #set to dead
+    
+    -or-
+    
+   
+    
+  //going through the array now, full of classes, to see what the new ones SHOULD be?
+  for (
+  
   [[function to loop again through array and set these]
   (and 205 says what to do for a loop!!)
   
