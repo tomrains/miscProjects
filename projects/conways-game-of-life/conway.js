@@ -1,5 +1,5 @@
-p.onclick = lifeAndDeath(this);
-button.onclick = oneTurn();
+//p.onclick = lifeAndDeath(this);
+//button.onclick = oneTurn();
 
 function lifeAndDeath(el) {
   el.classList.toggle("alive");
@@ -9,7 +9,7 @@ function lifeAndDeath(el) {
 function oneTurn() {
   var classes = []; 
   var newClasses = [];
-  var squares = document.getElementsbyTagName('p');
+  var squares = document.getElementsByTagName('p');
   for (i=0; i<squares.length; i++) {
     classes[i] = squares[i].class;
   }
