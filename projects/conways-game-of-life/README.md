@@ -8,29 +8,20 @@ Initialize page with a set of [8] white blocks on screen in a single line.
   This will require some Javascript using events. When user clicks block, block becomes the other color.
     A simple way to use this could be, display alive if true, or display dead if false.
 
-Allow user to select a block, changing it from white to black, or black to white.
-  So i need to make it so that, when users select a paragraph with class square, the class switches
-  if square class ---> living class
-  if living class --> dead class
-  if dead class --> living class
-  
-  ***Page 277 in the JS book should help me with this***
-  let's experiment a bit to see the best way to do this:
-  here's the basic outline:
-    element.onevent = functionName;
-    
-    the function for now can be called "Alive"
-    if var alive == True, then class is living
-    if var alive == False, then class = dead class
-    
-function reverseLife() {
-  //if square class ---> living class
-  //if living class --> dead class
-  //if dead class --> living class
-}
+Now I have the classes toggling. You are able to toggle them exactly as you wish.
 
-var selected = document.
+*Create button to "initiate" the game.
 
+- Okay, so now I need to figure out how the cells will know which color to turn (aka which class to toggle to)
+could write a separate function for each square ...
+  square1 - if 1 is green, stay alive. else die.
+  2 - if class of surrounding are the same, then die. else, live.
+  3 - if class of surrounding are the same, then die. else, live.
+  4 - if class of surrounding are the same, then die. else, live.
+  5 - if class of surrounding are the same, then die. else, live.
+  6 - if class of surrounding are the same, then die. else, live.
+  7 - if class of surrounding are the same, then die. else, live.
+  8 - if 7 alive, live. if 7 dead, die.
 
 
 *Allow user to press a play button that begins the Conway's game of life simulation.
@@ -62,3 +53,5 @@ Any cell with two neighbors is overcrowded and dies.
   
   Allow user's to "plant" seeds, and instead of something converting immediately to green, 
   it becomes a seed if surrounded by one plant.
+  
+  Add buttons that also allow user to pause or to restart.
