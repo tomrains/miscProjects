@@ -1,4 +1,4 @@
-.square, .dead-square {
+.square, .dead {
   height: 50px;
   width: 50px;
   background-color: white;
@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-.living-square {
+.alive {
   height: 50px;
   width: 50px;
   background-color: green;
