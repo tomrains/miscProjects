@@ -1,4 +1,4 @@
 function lifeAndDeath() {
-  var element = document.getElementsByClass("square");
+  var element = document.getElementById("square1");
   element.classList.toggle("alive");
 }
