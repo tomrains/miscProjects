@@ -22,6 +22,37 @@ could write a separate function for each square ...
   6 - if class of surrounding are the same, then die. else, live.
   7 - if class of surrounding are the same, then die. else, live.
   8 - if 7 alive, live. if 7 dead, die.
+  
+ k, im gonna use the function below as a base for what i wanna do:
+ 
+ //create an array with 8 spots (each spot is what the class should be)
+if { 
+document.getElementById("square1").className == document.getElementById("square3").className}
+  document.getElementById("square1").className = "dead"
+else
+  document.getElementById("square1").className = "alive"
+  
+  to create an array of the paragraphs ... or to get the classes of the paragraphs...
+  var squares = document.getElementsbyTagName('p');
+  for (i=0; i<squares.length; i++) {
+  [[insert function to store the new class in an array]]
+  [[function to loop again through array and set these]
+  (and 205 says what to do for a loop!!)
+  
+  ok, so now i have a nodelist of these elements. p. 196 says i can now loop through nodelist!
+  
+  oh dear ... but i just realized, you dont want to actually change these until everyone knows what they need to change to.
+  so maybe set a variable to something, and then simultaneously change the classes? this is weird.
+
+so at the END of the thing, could have a function that goes through each squareid and set theirs classes equal to the necessary class
+would need to do this simultaneously though. how does that work?
+
+
++++
+- Will need to disallow user to click while "game is running"
+- 
+
+so determine what they all NEED to be (without changing them ... then change them. could have an array with the classes they should be)
 
 
 *Allow user to press a play button that begins the Conway's game of life simulation.
