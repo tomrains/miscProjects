@@ -1,4 +1,5 @@
-p.onclick = lifeAndDeath(this) 
+p.onclick = lifeAndDeath(this);
+button.onclick = oneTurn();
 
 function lifeAndDeath(el) {
   el.classList.toggle("alive");
