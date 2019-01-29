@@ -37,9 +37,10 @@ function oneTurn() {
       else {
         newClasses[z] = "dead";
       }
-    }
-    //now let's change all the styles!
-    for (i=0; i<squares.length; i++) {
-      squares[i].class = newClasses[i].class;
-    }
-  } //ending bracket for oneTurn function
+    } // last curly for else
+  } //last curly for for
+  //now let's change all the styles!
+  for (i=0; i<squares.length; i++) {
+    squares[i].class = newClasses[i].class;
+  }
+} //ending bracket for oneTurn function
