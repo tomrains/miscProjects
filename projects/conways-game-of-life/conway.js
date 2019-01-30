@@ -11,7 +11,7 @@ function oneTurn() {
   var newClasses = [];
   var squares = document.getElementsByTagName('p');
   for (i=0; i<squares.length; i++) {
-    classes[i] = squares[i].class;
+    classes[i] = squares[i].className;
   }
   for (z=0; z<classes.length; z++) {
     if (z == 0) {
@@ -41,6 +41,6 @@ function oneTurn() {
   } //last curly for for
   //now let's change all the styles!
   for (i=0; i<squares.length; i++) {
-    squares[i].class = newClasses[i].class;
+    squares[i].className = newClasses[i].className;
   }
 } //ending bracket for oneTurn function
