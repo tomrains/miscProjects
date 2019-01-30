@@ -19,12 +19,12 @@ function oneTurn() {
         newClasses[z] = "alive";
       }
       else {
-        newClasses[z] = "dead";
+        newClasses[z] = "";
       }
     } // last curly for if z == 0
     else if (z > 0 && z < 7) {
       if (classes[z - 1] == classes[z + 1]) {
-        newClasses[z] = "dead";
+        newClasses[z] = "";
       }
       else {
         newClasses[z] = "alive";
@@ -35,14 +35,14 @@ function oneTurn() {
         newClasses[z] = "alive";
       }
       else {
-        newClasses[z] = "dead";
+        newClasses[z] = "";
       }
     } // last curly for else
   } //last curly for for
   //now let's change all the styles!
   for (i=0; i<squares.length; i++) {
     if (squares[i].className != newClasses[i].className) {
-      lifeAndDeath(); //i think i will need to call this on the p itself
+      lifeAndDeath(); //here we need a new function that goes through and toggles them.
     }
   }
 } //ending bracket for oneTurn function
