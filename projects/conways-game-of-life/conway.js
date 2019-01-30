@@ -39,10 +39,8 @@ function oneTurn() {
       }
     } // last curly for else
   } //last curly for for
-  //now let's change all the styles!
-  //for (i=0; i<squares.length; i++) {
-    //if (squares[i].className != newClasses[i].className) {
-      //lifeAndDeath(); //here we need a new function that goes through and toggles them.
-    //}
-  //}
+  //below, im going to try looping through original node list to see if that helps
+  for (i=0; i<squares.length; i++) {
+    squares[i].className = newClasses[i]; //this might just change the array and not the paragraps themselbes. we'll see
+  }
 } //ending bracket for oneTurn function
