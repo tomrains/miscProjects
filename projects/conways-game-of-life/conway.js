@@ -40,9 +40,9 @@ function oneTurn() {
     } // last curly for else
   } //last curly for for
   //now let's change all the styles!
-  for (i=0; i<squares.length; i++) {
-    if (squares[i].className != newClasses[i].className) {
-      lifeAndDeath(); //here we need a new function that goes through and toggles them.
-    }
-  }
+  //for (i=0; i<squares.length; i++) {
+    //if (squares[i].className != newClasses[i].className) {
+      //lifeAndDeath(); //here we need a new function that goes through and toggles them.
+    //}
+  //}
 } //ending bracket for oneTurn function
