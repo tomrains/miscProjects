@@ -25,54 +25,9 @@ could write a separate function for each square ...
   
  k, im gonna use the function below as a base for what i wanna do:
  
- //create an array with 8 spots (each spot is what the class should be)
-if { 
-document.getElementById("square1").className == document.getElementById("square3").className}
-  document.getElementById("square1").className = "dead"
-else
-  document.getElementById("square1").className = "alive"
-  
-  classes = []; (set it to be 8 long?)
-  newClasses = [];
-  var squares = document.getElementsbyTagName('p');
-  for (i=0; i<squares.length; i++) {
-    classes[i] = squares[i].class
-   }
-  for (z=0; z<classes.length; z++) {
-    if z = 0:
-      if classes[z+1] = "living"
-        #set zclass to living
-      else:
-        #set to dead
-    if z > 1 and z is <7
-      if classes[z - 1] == classes[z+1]
-        #then set zclass to dead
-      else
-        #set z class to living
-     else //if z == 7:
-      if classes[z-1] = "living"
-        #set zclass to living
-      else:
-        #set to dead
+Might need to just have an "alive" class and an "empty" class. otherwise the toggle thing doesnt seem to work!
     
-    -or-
-    
-   
-    
-  //going through the array now, full of classes, to see what the new ones SHOULD be?
-  for (
-  
-  [[function to loop again through array and set these]
-  (and 205 says what to do for a loop!!)
-  
-  ok, so now i have a nodelist of these elements. p. 196 says i can now loop through nodelist!
-  
-  oh dear ... but i just realized, you dont want to actually change these until everyone knows what they need to change to.
-  so maybe set a variable to something, and then simultaneously change the classes? this is weird.
-
-so at the END of the thing, could have a function that goes through each squareid and set theirs classes equal to the necessary class
-would need to do this simultaneously though. how does that work?
-
+ 
 
 +++
 - Will need to disallow user to click while "game is running"
