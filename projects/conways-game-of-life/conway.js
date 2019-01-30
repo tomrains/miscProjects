@@ -41,6 +41,8 @@ function oneTurn() {
   } //last curly for for
   //now let's change all the styles!
   for (i=0; i<squares.length; i++) {
-    squares[i].className = newClasses[i].className;
+    if (squares[i].className != newClasses[i].className) {
+      function lifeAndDeath(); //i think i will need to call this on the p itself
+    }
   }
 } //ending bracket for oneTurn function
