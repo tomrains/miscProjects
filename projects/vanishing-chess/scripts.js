@@ -58,23 +58,8 @@ function setBoard() {
   document.getElementById("64").innerHTML = whiteRook;
 }
 
-function selectedPiece(el) {
-  //disallow moves from empty squares
-  if (el.innerHTML == "") {
-    return;
-  }
-  var selected = document.querySelector("td.selected");
-  if (selected != null) {
-    selected.classList.toggle("selected");
-  }
-  el.classList.toggle("selected");
-}
-
-//the border isnt leaving after it moves -- need to see if order matters on these bad boys' onclicks
-function allowMove(el) {
-  //find selected square
-  var selected = document.querySelector("td.selected");
-  //allow black pawn to move forward 1 or 2 squares if on opening position
+function movePawn() {
+//allow black pawn to move forward 1 or 2 squares if on opening position
   if (selected.innerHTML == blackPawn && selected.id >= 9 && selected.id <= 16) {
     if (el.id - selected.id != 8 && el.id - selected.id != 16) {
     return;
@@ -94,8 +79,28 @@ function allowMove(el) {
   else if (selected.innerHTML == whitePawn && selected.id - el.id != 8) {
     return;
     }
-  
-  //if not allowed, then break out
+}
+
+function selectedPiece(el) {
+  //disallow moves from empty squares
+  if (el.innerHTML == "") {
+    return;
+  }
+  var selected = document.querySelector("td.selected");
+  if (selected != null) {
+    selected.classList.toggle("selected");
+  }
+  el.classList.toggle("selected");
+}
+
+//the border isnt leaving after it moves -- need to see if order matters on these bad boys' onclicks
+function allowMove(el) {
+  //find selected square
+  var selected = document.querySelector("td.selected");
+  //if pawn, run the movePawn function
+  if (selected.innerHTML = "whitePawn" || selected.innerHTML = "blackPawn") {
+    movePawn();
+  }
   //grab piece inside square
   var piece = selected.innerHTML;
   //replace piece inside selected square with blank stuff (could see this not working)
