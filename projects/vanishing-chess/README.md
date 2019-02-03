@@ -11,6 +11,13 @@ if square selected and pawn and a certain square selected, then can move forward
   
   OKAY - so the pawn moves there. obvious glitches are you can move any piece there, and when you click it again, it vanishes.
   go you should make sure the piece has actually moved somewhere legally before you get rid of it. cool though!
+  
+  so for now, we should make it where the pawn can only move forward (and that will just be black pawns . white will be opposite)
+  
+  i dont think i can quite yet prevent other pieces from movign there. for now, i just need to restrict pawns
+  to only moving in their lines. and then later i can add on the attacking piece
+  
+  the pawn is now moving along the line beautifully. woo!
   ------
     
     For now, I can make it where you click a piece, click a square, and then the pieces disappears from current square and appears
