@@ -58,7 +58,7 @@ function setBoard() {
   document.getElementById("64").innerHTML = whiteRook;
 }
 
-function movePawn() {
+function movePawn(selected, el) {
 //allow black pawn to move forward 1 or 2 squares if on opening position
   if (selected.innerHTML == blackPawn && selected.id >= 9 && selected.id <= 16) {
     if (el.id - selected.id != 8 && el.id - selected.id != 16) {
