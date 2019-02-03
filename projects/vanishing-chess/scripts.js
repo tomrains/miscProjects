@@ -67,7 +67,7 @@ function movePawn(selected, el) {
     return;
   }
   //disallow opening pawns jumping over another
-  var squareID = selected.id + el.id / 2
+  var squareID = +selected.id + +el.id / 2
   var square = document.getElementById("`$(squareID)`");
   if (square.innerHTML != "") {
     move = false;
