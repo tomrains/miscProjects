@@ -74,10 +74,14 @@ function selectedPiece(el) {
 function allowMove(el) {
   //find selected square
   var selected = document.querySelector("td.selected");
-  //check to see if movement from select square is allowed
-  if (selected.innerHTML == blackPawn) {
-    //if doesnt fit rule, then break (doesnt include allowing for 2 spots ahead on first move
-    if (el.id - selected.id != 8) { //subtraction does not concatenate)
+  //allow black pawn to move forward 1 or 2 squares if on opening position
+  if (selected.innerHTML == blackPawn && selected.id >= 9 && selected.id <= 16) {
+    if (el.id - selected.id != 8 && el.id - selected.id != 16) {
+    return;
+    }
+  }
+  //allow pawns in non-starting spot to only move forward one space
+  else if (selected.innerHTML == blackPawn && el.id - selected.id != 8) {
       return;
     }
   }
