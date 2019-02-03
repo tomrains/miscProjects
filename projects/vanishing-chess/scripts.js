@@ -73,7 +73,7 @@ function allowMove(el) {
   if (selected.innerHTML == blackPawn) {
     //if doesnt fit rule, then break (doesnt include allowing for 2 spots ahead on first move
     if (el.id - selected.id != 8) { //subtraction does not concatenate)
-      break;
+      return;
     }
   }
   //if not allowed, then break out
