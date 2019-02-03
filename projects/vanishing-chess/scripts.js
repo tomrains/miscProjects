@@ -64,7 +64,17 @@ function selectedPiece(el) {
     selected.classList.toggle("selected");
   }
   el.classList.toggle("selected");
-  //for now, make it where only one can be selected (and then get on with moving pieces!! we can start with pawns (or knights!)
+}
+
+function allowMove(el) {
+  //find selected square
+  var selected = document.querySelector("td.selected");
+  //grab piece inside square
+  var piece = selected.innerHTML;
+  //replace piece inside selected square with blank stuff (could see this not working)
+  selected.innerHTML = "";
+  //change html of selected square to piece
+  el.innerHTML = piece;
 }
 
 setBoard();
