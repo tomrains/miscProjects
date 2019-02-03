@@ -65,6 +65,12 @@ function movePawn(selected, el) {
   if (el.innerHTML != "") {
     move = false;
     return;
+  //disallow opening pawns jumping over another
+  var squareID = selected.id + el.id / 2
+  var square = document.getElementById("`$(squareID)`");
+  if (square.innerHTML != "") {
+    move = false;
+    return;
   }
 //allow black pawn to move forward 1 or 2 squares if on opening position
   else if (selected.innerHTML == blackPawn && selected.id >= 9 && selected.id <= 16) {
