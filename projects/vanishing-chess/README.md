@@ -19,22 +19,13 @@ Specifications
     [have it where you click a piece and then can see where you can move it, and that would be same code where you can only
     move a piece to one of those squares]
 
+add a selector where, if you click on it, it gets a light red border
+
 Let the pieces move
 
-Could create function so that, when page loads, the pieces appear where they are supposed to.
-**function setBoard() {
-  insert images into correct positions on board using dom
-  }
+
   
-  this might be better way to put several identical pieces onto board:
-  doStuff(document.querySelectorAll("#myCircle1, #myCircle2, #myCircle3, #myCircle4"));
-  
-  to pull an image from the html and store in a variable ... 
-  var x = document.getElementbyID("images/black-rook.png");
-  
-  to insert a variable INTO a certain part of the html!!!
-  document.getElementById('1').innerHTML = blackRook;
-  
+
   
   put the image variables in the array (they're set at the beginning)
   then go through the array, and when you find something in array ..
@@ -46,8 +37,12 @@ Could create function so that, when page loads, the pieces appear where they are
   
   
   **MOVEMENT FUNCTION:
+  so you select one and then, when you click another one, you can move the ONE element with class selected to that point!
   
-
+  i think you would make if you select a location WITH an opposite piece where a move IS illegal, then you just switch
+  will also need rule where ONLY black moves, then ONLY white moves, then ONLY black moves, and so on.
 
 Bonus:
 - change board so the bottom right square is a white one
+- make the border on inside of box:
+you can use this code in the selected css class: box-shadow: inset -1px 0 0 red, inset 0 -1px 0 red, inset 1px 0 0 red, inset 0 1px 0 red;
