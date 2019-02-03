@@ -32,6 +32,30 @@ function setBoard() {
   document.getElementById("6").innerHTML = blackBishop;
   document.getElementById("7").innerHTML = blackKnight;
   document.getElementById("8").innerHTML = blackRook;
+  document.getElementById("9").innerHTML = blackPawn;
+  document.getElementById("10").innerHTML = blackPawn;
+  document.getElementById("11").innerHTML = blackPawn;
+  document.getElementById("12").innerHTML = blackPawn;
+  document.getElementById("13").innerHTML = blackPawn;
+  document.getElementById("14").innerHTML = blackPawn;
+  document.getElementById("15").innerHTML = blackPawn;
+  document.getElementById("16").innerHTML = blackPawn;
+  document.getElementById("49").innerHTML = whiteRook;
+  document.getElementById("50").innerHTML = whiteKnight;
+  document.getElementById("51").innerHTML = whiteBishop;
+  document.getElementById("52").innerHTML = whiteQueen;
+  document.getElementById("53").innerHTML = whiteKing;
+  document.getElementById("54").innerHTML = whiteBishop;
+  document.getElementById("55").innerHTML = whiteKnight;
+  document.getElementById("56").innerHTML = whiteRook;
+  document.getElementById("57").innerHTML = whitePawn;
+  document.getElementById("58").innerHTML = whitePawn;
+  document.getElementById("59").innerHTML = whitePawn;
+  document.getElementById("60").innerHTML = whitePawn;
+  document.getElementById("61").innerHTML = whitePawn;
+  document.getElementById("62").innerHTML = whitePawn;
+  document.getElementById("63").innerHTML = whitePawn;
+  document.getElementById("64").innerHTML = whitePawn;
 }
 
 setBoard();
