@@ -8,8 +8,8 @@ var chess_board = [["", "", "", "", "", "", "", ""],
                    ["", "", "", "", "", "", "", ""]]; 
 
 function setBoard() {
-  var x = document.createElement("images/black-rook.png");
-  document.innerHTML(x);
+  var blackRook = document.createElement("images/black-rook.png");
+  document.innerHTML(blackRook);
 }
 
 setBoard();
