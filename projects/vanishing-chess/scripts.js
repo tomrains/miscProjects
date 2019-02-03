@@ -58,4 +58,9 @@ function setBoard() {
   document.getElementById("64").innerHTML = whiteRook;
 }
 
+function selectedPiece(el) {
+  el.classList.toggle("selected");
+  //can you set all other similar elements back to normal?
+}
+
 setBoard();
