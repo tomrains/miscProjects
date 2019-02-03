@@ -11,5 +11,5 @@
 }
 
 .selected { /*this does make the whole board move, which i dont want*/
-  box-shadow: inset -1px 0 0 red, inset 0 -1px 0 red, inset 1px 0 0 red, inset 0 1px 0 red;
+  box-shadow: inset -2px 0 0 red, inset 0 -2px 0 red, inset 2px 0 0 red, inset 0 2px 0 red;
 }
