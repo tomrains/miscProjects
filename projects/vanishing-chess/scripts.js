@@ -8,5 +8,8 @@ var chess_board = [["", "", "", "", "", "", "", ""],
                    ["", "", "", "", "", "", "", ""]]; 
 
 function setBoard() {
-  return undefined;
+  var x = document.createElement("images/black-rook.png");
+  document.innerHTML(x);
 }
+
+setBoard();
