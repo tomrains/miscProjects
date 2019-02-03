@@ -59,6 +59,10 @@ function setBoard() {
 }
 
 function selectedPiece(el) {
+  //disallow moves from empty squares
+  if (el.innerHTML == "") {
+    return;
+  }
   var selected = document.querySelector("td.selected");
   if (selected != null) {
     selected.classList.toggle("selected");
