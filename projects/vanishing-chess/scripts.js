@@ -83,6 +83,8 @@ function allowMove(el) {
   selected.innerHTML = "";
   //change html of selected square to piece
   el.innerHTML = piece;
+  //remove border from selected square
+  selected.classList.toggle("selected");
 }
 
 //pawn movement forward
