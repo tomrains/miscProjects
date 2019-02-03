@@ -24,14 +24,11 @@ var whiteKing = '<img src="images/white-king.png">';
 var whitePawn = '<img src="images/white-pawn.png">';
 
 function setBoard() {
-  document.getElementById("1").innerHTML = blackRook;
-  document.getElementById("2").innerHTML = blackKnight;
-  document.getElementById("3").innerHTML = blackBishop;
+  document.querySelectorAll("#1, #8").innerHTML = blackRook;
+  document.querySelectorAll("#2, #7").innerHTML = blackKnight;
+  document.querySelectorAll("#3, #6").innerHTML = blackBishop;
   document.getElementById("4").innerHTML = blackQueen;
   document.getElementById("5").innerHTML = blackKing;
-  document.getElementById("6").innerHTML = blackBishop;
-  document.getElementById("7").innerHTML = blackKnight;
-  document.getElementById("8").innerHTML = blackRook;
 }
 
 setBoard();
