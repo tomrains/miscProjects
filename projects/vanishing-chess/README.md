@@ -1,7 +1,8 @@
 Specifications
 
 **Rules
-well now i can only click the pawns once. so something's going wrong there. let's figure this out.
+i need to stop the error when selecting a blank space.
+also need to stop error where you cant move pawns after first move.
 
 ..and then we can add on movement by other pieces. king isnt important, but would be easy i believe
 
