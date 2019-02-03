@@ -62,7 +62,7 @@ function setBoard() {
 
 function movePawn(selected, el) {
   //disallow pawns with pieces directly in front of them to move
-  if (el.innerHTML != null) {
+  if (el.innerHTML != "") {
     move = false;
     return;
   }
