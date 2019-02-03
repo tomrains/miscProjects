@@ -62,7 +62,7 @@ function movePawn(selected, el) {
 //allow black pawn to move forward 1 or 2 squares if on opening position
   if (selected.innerHTML == blackPawn && selected.id >= 9 && selected.id <= 16) {
     if (el.id - selected.id != 8 && el.id - selected.id != 16) {
-    return;
+      return;
     }
   }
   //allow pawns in non-starting spot to only move forward one space
@@ -72,7 +72,7 @@ function movePawn(selected, el) {
   //creating movement logic for white pawns
   else if (selected.innerHTML == whitePawn && selected.id >= 49 && selected.id <= 56) {
     if (selected.id - el.id != 8 && selected.id - el.id != 16) {
-    return;
+      return;
     }
   }
   //allow pawns in non-starting spot to only move forward one space
