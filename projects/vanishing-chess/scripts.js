@@ -61,8 +61,12 @@ function setBoard() {
 }
 
 function movePawn(selected, el) {
+  //disallow pawns with pieces directly in front of them to move
+  if (el.innerHTML != null) {
+    move = false;
+    return;
 //allow black pawn to move forward 1 or 2 squares if on opening position
-  if (selected.innerHTML == blackPawn && selected.id >= 9 && selected.id <= 16) {
+  else if (selected.innerHTML == blackPawn && selected.id >= 9 && selected.id <= 16) {
     if (el.id - selected.id != 8 && el.id - selected.id != 16) {
       move = false;
       return;
