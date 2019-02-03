@@ -1,11 +1,11 @@
 .black-square {
   width: 64px;
   height: 64px;
-  background-color: black;
+  background-color: #5C4033;
 }
 
 .white-square {
   width: 64px;
   height: 64px;
-  background-color: #D2B48C;
+  background-color: #DEB887
 }
