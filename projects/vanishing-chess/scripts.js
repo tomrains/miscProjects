@@ -84,7 +84,6 @@ function allowMove(el) {
   else if (selected.innerHTML == blackPawn && el.id - selected.id != 8) {
       return;
     }
-  }
   //if not allowed, then break out
   //grab piece inside square
   var piece = selected.innerHTML;
