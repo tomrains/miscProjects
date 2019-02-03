@@ -9,3 +9,7 @@
   height: 64px;
   background-color: #DEB887
 }
+
+.selected {
+  border: 1px solid red; 
+}
