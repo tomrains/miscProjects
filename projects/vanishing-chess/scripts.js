@@ -98,7 +98,7 @@ function allowMove(el) {
   //find selected square
   var selected = document.querySelector("td.selected");
   //if pawn, run the movePawn function
-  if (selected.innerHTML = "whitePawn" || selected.innerHTML = "blackPawn") {
+  if (selected.innerHTML == "whitePawn" || selected.innerHTML == "blackPawn") {
     movePawn();
   }
   //grab piece inside square
