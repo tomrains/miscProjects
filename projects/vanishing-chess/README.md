@@ -1,8 +1,7 @@
 Specifications
 
 **Rules
-i need to stop the error when selecting a blank space.
-also need to stop error where you cant move pawns after first move.
+lol well now they can move ANYWHERE. not good! gotta fix that for sure. just debug it. i need a break on this clearly. sayonara.
 
 ..and then we can add on movement by other pieces. king isnt important, but would be easy i believe
 
