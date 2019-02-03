@@ -18,11 +18,16 @@ Specifications
     
     [have it where you click a piece and then can see where you can move it, and that would be same code where you can only
     move a piece to one of those squares]
+    
+**okay, need to take a break. when i come back, try to get the selector working!
 
 add a selector where, if you click on it, it gets a light red border
 
 Let the pieces move
 
+could make it for now where just pawns can move
+
+and then, just for fun, could start having the pieces vanish (maybe even before captures happen)
 
   
 
