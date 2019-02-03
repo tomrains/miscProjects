@@ -1,9 +1,14 @@
 Specifications
 
-**Put pieces on the board.
-  This part is easy. The thing I need to know is how to know where to display a piece.
-  What I do know:
+**Rules
     Each square can only show on piece.
+    
+**Next, we want to be able to move select pawns up one or two spaces. That's it for now!
+if square selected and pawn and a certain square selected, then can move forward.
+  move forward means ... pawn is hidden from current square. pawn is put on the newly selected square
+  
+  i think this would be a new function, like move. this happens when an element is red, and a square is clicked that has legal move.
+  ------
     
     For now, I can make it where you click a piece, click a square, and then the pieces disappears from current square and appears
     on the new square.
@@ -19,7 +24,7 @@ Specifications
     [have it where you click a piece and then can see where you can move it, and that would be same code where you can only
     move a piece to one of those squares]
     
-**okay, need to take a break. when i come back, try to get the selector working!
+**might want to change it to where you can unselect a piece, but dont know if thats really necessary
 
 add a selector where, if you click on it, it gets a light red border
 
