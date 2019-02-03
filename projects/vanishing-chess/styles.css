@@ -10,6 +10,6 @@
   background-color: #DEB887
 }
 
-.selected { /*this does make the whole board move, which i dont want*/
+.selected {
   box-shadow: inset -2px 0 0 red, inset 0 -2px 0 red, inset 2px 0 0 red, inset 0 2px 0 red;
 }
