@@ -99,7 +99,7 @@ function allowMove(el) {
   var selected = document.querySelector("td.selected");
   //if pawn, run the movePawn function
   //if selected equal to el, then don't try to move the piece
-  if (selected == el) {
+  if (selected == el || selected == null) {
     return;
   }
   if (selected.innerHTML == whitePawn || selected.innerHTML == blackPawn) {
