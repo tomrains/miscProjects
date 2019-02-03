@@ -80,12 +80,12 @@ function movePawn(selected, el) {
   //if there is a double jump 
   else if (+selected.id - +el.id == 16 || +el.id - +selected.id == 16) {
     //if black pawn is not on home row
-    if (selected.innerHTML == blackPawn && (selected.id < 9 || selected.id > 16) {
+    if (selected.innerHTML == blackPawn && (selected.id < 9 || selected.id > 16)) {
       move = false;
       return;
     }
     //if white pawn is not on home row
-    if (selected.innerHTML == whitePawn && (selected.id < 49 || selected.id > 56) {
+    if (selected.innerHTML == whitePawn && (selected.id < 49 || selected.id > 56)) {
       move = false;
       return;
     }
