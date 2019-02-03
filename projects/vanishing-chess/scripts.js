@@ -40,22 +40,22 @@ function setBoard() {
   document.getElementById("14").innerHTML = blackPawn;
   document.getElementById("15").innerHTML = blackPawn;
   document.getElementById("16").innerHTML = blackPawn;
-  document.getElementById("49").innerHTML = whiteRook;
-  document.getElementById("50").innerHTML = whiteKnight;
-  document.getElementById("51").innerHTML = whiteBishop;
-  document.getElementById("52").innerHTML = whiteQueen;
-  document.getElementById("53").innerHTML = whiteKing;
-  document.getElementById("54").innerHTML = whiteBishop;
-  document.getElementById("55").innerHTML = whiteKnight;
-  document.getElementById("56").innerHTML = whiteRook;
-  document.getElementById("57").innerHTML = whitePawn;
-  document.getElementById("58").innerHTML = whitePawn;
-  document.getElementById("59").innerHTML = whitePawn;
-  document.getElementById("60").innerHTML = whitePawn;
-  document.getElementById("61").innerHTML = whitePawn;
-  document.getElementById("62").innerHTML = whitePawn;
-  document.getElementById("63").innerHTML = whitePawn;
-  document.getElementById("64").innerHTML = whitePawn;
+  document.getElementById("49").innerHTML = whitePawn;
+  document.getElementById("50").innerHTML = whitePawn;
+  document.getElementById("51").innerHTML = whitePawn;
+  document.getElementById("52").innerHTML = whitePawn;
+  document.getElementById("53").innerHTML = whitePawn;
+  document.getElementById("54").innerHTML = whitePawn;
+  document.getElementById("55").innerHTML = whitePawn;
+  document.getElementById("56").innerHTML = whitePawn;
+  document.getElementById("57").innerHTML = whiteRook;
+  document.getElementById("58").innerHTML = whiteKnight;
+  document.getElementById("59").innerHTML = whiteBishop;
+  document.getElementById("60").innerHTML = whiteQueen;
+  document.getElementById("61").innerHTML = whiteKing;
+  document.getElementById("62").innerHTML = whiteBishop;
+  document.getElementById("63").innerHTML = whiteKnight;
+  document.getElementById("64").innerHTML = whiteRook;
 }
 
 setBoard();
