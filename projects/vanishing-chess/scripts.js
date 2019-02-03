@@ -67,11 +67,14 @@ function movePawn(selected, el) {
     return;
   }
   //disallow opening pawns jumping over another
-  var squareID = (+selected.id + +el.id) / 2
-  var square = document.getElementById(squareID);
-  if (square.innerHTML != "") {
-    move = false;
-    return;
+  //first bit tests if it's a jump over
+  if (+selected.id - +el.id == 16 || +el.id - +selected.id == 16) {
+    var squareID = (+selected.id + +el.id) / 2;
+    var square = document.getElementById(squareID);
+    if (square.innerHTML != "") {
+      move = false;
+      return;
+    }
   }
 //allow black pawn to move forward 1 or 2 squares if on opening position
   else if (selected.innerHTML == blackPawn && selected.id >= 9 && selected.id <= 16) {
