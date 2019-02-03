@@ -1,23 +1,16 @@
 Specifications
 
 **Rules
-    Each square can only show on piece.
+
+definitely need a new pawnMove function ....
+..and then we can add on movement by other pieces. king isnt important, but would be easy i believe
+
+
+im thinking that a move function might contain switch cases full of functions...
+...that have things like "pawn move" that determine the rules for a pawn moving
     
-**Next, we want to be able to move select pawns up one or two spaces. That's it for now!
-if square selected and pawn and a certain square selected, then can move forward.
-  move forward means ... pawn is hidden from current square. pawn is put on the newly selected square
-  
-  i think this would be a new function, like move. this happens when an element is red, and a square is clicked that has legal move.
-  
-  OKAY - so the pawn moves there. obvious glitches are you can move any piece there, and when you click it again, it vanishes.
-  go you should make sure the piece has actually moved somewhere legally before you get rid of it. cool though!
-  
-  so for now, we should make it where the pawn can only move forward (and that will just be black pawns . white will be opposite)
-  
-  i dont think i can quite yet prevent other pieces from movign there. for now, i just need to restrict pawns
-  to only moving in their lines. and then later i can add on the attacking piece
-  
-  the pawn is now moving along the line beautifully. woo!
+
+
   ------
     
     For now, I can make it where you click a piece, click a square, and then the pieces disappears from current square and appears
@@ -63,6 +56,4 @@ and then, just for fun, could start having the pieces vanish (maybe even before 
   will also need rule where ONLY black moves, then ONLY white moves, then ONLY black moves, and so on.
 
 Bonus:
-- change board so the bottom right square is a white one
-- make the border on inside of box:
-you can use this code in the selected css class: box-shadow: inset -1px 0 0 red, inset 0 -1px 0 red, inset 1px 0 0 red, inset 0 1px 0 red;
+- if refresh used, alert user that the game will be reset if they go through with it.
