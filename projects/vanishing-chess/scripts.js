@@ -111,7 +111,9 @@ function allowMove(el) {
   if (selected.innerHTML == whitePawn || selected.innerHTML == blackPawn) {
     movePawn(selected, el);
   }
+  //if move has been declared invalid, then reset move to true, and exit this function
   if (!move) {
+    move = true;
     return;
   }
   //grab piece inside square
