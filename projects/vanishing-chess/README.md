@@ -8,6 +8,9 @@ if square selected and pawn and a certain square selected, then can move forward
   move forward means ... pawn is hidden from current square. pawn is put on the newly selected square
   
   i think this would be a new function, like move. this happens when an element is red, and a square is clicked that has legal move.
+  
+  OKAY - so the pawn moves there. obvious glitches are you can move any piece there, and when you click it again, it vanishes.
+  go you should make sure the piece has actually moved somewhere legally before you get rid of it. cool though!
   ------
     
     For now, I can make it where you click a piece, click a square, and then the pieces disappears from current square and appears
