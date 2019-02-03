@@ -60,7 +60,9 @@ function setBoard() {
 
 function selectedPiece(el) {
   var selected = document.getElementsByClassName("selected");
-  selected.classList.toggle("selected");
+  if (selected) {
+    selected.classList.toggle("selected");
+  }
   el.classList.toggle("selected");
   //for now, make it where only one can be selected (and then get on with moving pieces!! we can start with pawns (or knights!)
 }
