@@ -62,21 +62,25 @@ function movePawn(selected, el) {
 //allow black pawn to move forward 1 or 2 squares if on opening position
   if (selected.innerHTML == blackPawn && selected.id >= 9 && selected.id <= 16) {
     if (el.id - selected.id != 8 && el.id - selected.id != 16) {
+      var move = false;
       return;
     }
   }
   //allow pawns in non-starting spot to only move forward one space
   else if (selected.innerHTML == blackPawn && el.id - selected.id != 8) {
+    var move = false;
     return;
     }
   //creating movement logic for white pawns
   else if (selected.innerHTML == whitePawn && selected.id >= 49 && selected.id <= 56) {
     if (selected.id - el.id != 8 && selected.id - el.id != 16) {
+      var move = false;
       return;
     }
   }
   //allow pawns in non-starting spot to only move forward one space
   else if (selected.innerHTML == whitePawn && selected.id - el.id != 8) {
+    var move = false;
     return;
     }
 }
@@ -104,6 +108,9 @@ function allowMove(el) {
   }
   if (selected.innerHTML == whitePawn || selected.innerHTML == blackPawn) {
     movePawn(selected, el);
+  }
+  if (!move) {
+    return;
   }
   //grab piece inside square
   var piece = selected.innerHTML;
