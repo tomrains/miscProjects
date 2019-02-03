@@ -1,9 +1,12 @@
 Specifications
 
 **Rules
+well now i can only click the pawns once. so something's going wrong there. let's figure this out.
 
-definitely need a new pawnMove function ....
 ..and then we can add on movement by other pieces. king isnt important, but would be easy i believe
+
+
+ALSO want to add in attack move for pawn! let's do that.
 
 
 im thinking that a move function might contain switch cases full of functions...
