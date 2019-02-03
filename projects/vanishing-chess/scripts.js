@@ -66,12 +66,26 @@ function movePawn(selected, el) {
     move = false;
     return;
   }
+  //could combine the next two else ifs ... they have the same initial condition!
   //disallow opening pawns jumping over another
   //first bit tests if it's a jump over
-  if (+selected.id - +el.id == 16 || +el.id - +selected.id == 16) {
+  else if (+selected.id - +el.id == 16 || +el.id - +selected.id == 16) {
     var squareID = (+selected.id + +el.id) / 2;
     var square = document.getElementById(squareID);
     if (square.innerHTML != "") {
+      move = false;
+      return;
+    }
+  }
+  //if there is a double jump 
+  else if (+selected.id - +el.id == 16 || +el.id - +selected.id == 16) {
+    //if black pawn is not on home row
+    if (selected.innerHTML == blackPawn && (selected.id < 9 || selected.id > 16) {
+      move = false;
+      return;
+    }
+    //if white pawn is not on home row
+    if (selected.innerHTML == whitePawn && (selected.id < 49 || selected.id > 56) {
       move = false;
       return;
     }
