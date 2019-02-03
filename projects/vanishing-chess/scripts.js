@@ -70,6 +70,7 @@ function selectedPiece(el) {
   el.classList.toggle("selected");
 }
 
+//the border isnt leaving after it moves -- need to see if order matters on these bad boys' onclicks
 function allowMove(el) {
   //find selected square
   var selected = document.querySelector("td.selected");
