@@ -60,7 +60,7 @@ function setBoard() {
 
 function selectedPiece(el) {
   var selected = document.getElementsByClassName("selected");
-  if (selected) {
+  if (selected !== undefined) {
     selected.classList.toggle("selected");
   }
   el.classList.toggle("selected");
