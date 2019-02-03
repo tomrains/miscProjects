@@ -81,9 +81,20 @@ function allowMove(el) {
     }
   }
   //allow pawns in non-starting spot to only move forward one space
-  else if (selected.innerHTML == blackPawn && el.id - selected.id != 8) {
-      return;
+  if (selected.innerHTML == blackPawn && el.id - selected.id != 8) {
+    return;
     }
+  //creating movement logic for white pawns
+  if (selected.innerHTML == whitePawn && selected.id >= 49 && selected.id <= 56) {
+    if (selected.id - el.id != 8 && selected.id - el.id != 16) {
+    return;
+    }
+  }
+  //allow pawns in non-starting spot to only move forward one space
+  if (selected.innerHTML == whitePawn && selected.id - el.id != 8) {
+    return;
+    }
+  
   //if not allowed, then break out
   //grab piece inside square
   var piece = selected.innerHTML;
