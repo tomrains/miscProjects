@@ -59,8 +59,10 @@ function setBoard() {
 }
 
 function selectedPiece(el) {
+  var selected = document.getElementsByClassName("selected");
+  selected.classList.toggle("selected");
   el.classList.toggle("selected");
-  //can you set all other similar elements back to normal?
+  //for now, make it where only one can be selected (and then get on with moving pieces!! we can start with pawns (or knights!)
 }
 
 setBoard();
