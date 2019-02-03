@@ -69,6 +69,14 @@ function selectedPiece(el) {
 function allowMove(el) {
   //find selected square
   var selected = document.querySelector("td.selected");
+  //check to see if movement from select square is allowed
+  if (selected.innerHTML == blackPawn) {
+    //if doesnt fit rule, then break (doesnt include allowing for 2 spots ahead on first move
+    if (el.id - selected.id != 8) { //subtraction does not concatenate)
+      break;
+    }
+  }
+  //if not allowed, then break out
   //grab piece inside square
   var piece = selected.innerHTML;
   //replace piece inside selected square with blank stuff (could see this not working)
@@ -76,5 +84,11 @@ function allowMove(el) {
   //change html of selected square to piece
   el.innerHTML = piece;
 }
+
+//pawn movement forward
+//if you select a piece that has pawn ... pawn can only move to square exactly 8 more (except in starting position)
+// so if black pawn on square 9 - 16, can move two forward or one forward
+//else can only move one forward
+//would need to put allowance move inside allowMove function
 
 setBoard();
