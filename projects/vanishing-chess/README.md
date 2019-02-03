@@ -1,7 +1,11 @@
 Specifications
 
 **Rules
-lol well now they can move ANYWHERE. not good! gotta fix that for sure. just debug it. i need a break on this clearly. sayonara.
+i believe the pawns are all working now. yay
+
+next, let's add in king movement, just because that's so simple! we can let him fall into check for now.
+
+NOTE: some of the el's might help if you change them to selectedSquare or moveCandidate or something similar
 
 ..and then we can add on movement by other pieces. king isnt important, but would be easy i believe
 
