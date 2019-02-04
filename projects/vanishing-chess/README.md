@@ -3,6 +3,30 @@ Specifications
 **Rules
 i believe the pawns are all working now. yay
 
+also make it where it you alternate turns with black and white.
+
+
+need to put these in right order on if else statements ... maybe at end. because this is more ruling true
+oh but some rule it out of it's not equal to 8. have to change that.
+
+black pawns ....
+not on a border...
+if targeted square is 7 or 9 more, and the square.innerhtml is not ""
+then move there
+
+white pawns ....
+not on a border...
+if targeted square is 7 or 9 less and the square.innerhtml is not ""
+then move there
+
+(^^above ones can be woven into the existing rules)
+
+
+
+let's let the pawns to attack, and then we can get the king working
+
+
+
 next, let's add in king movement, just because that's so simple! we can let him fall into check for now.
 
 NOTE: some of the el's might help if you change them to selectedSquare or moveCandidate or something similar
