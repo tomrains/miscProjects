@@ -171,7 +171,8 @@ function moveRook(selected, el) {
     var large = Math.max(selected.id, el.id);
     for (let i = small + 1; i < large; i++) {
       if (document.getElementById(i).innerHTML != "") {
-      return;
+        move = false;
+        return;
       }
     }
   }
