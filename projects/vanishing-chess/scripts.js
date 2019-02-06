@@ -164,10 +164,21 @@ function moveRook(selected, el) {
   if (!((((selected.id-1) / 8 >> 0) == ((el.id-1) / 8 >> 0)) || (((selected.id - el.id) % 8) == 0))) {
     move = false;
     return;
-} //last curly for this function
-  // if not either in same row or in same array, then don't allow move
-  //later, we will block it if a piece is standing in its way
-  //this is where the array would be PERFECT. you just need [x][y], one of them to match the previous one
+  //now need to stop it from jumping over pieces
+  }
+  if ((((selected.id-1) / 8) >> 0) == (((el.id-1) / 8) >> 0)) { //if in same row
+    var small = Math.min(selected.id, el.id);
+    var large = Math.max(selected.id, el.id);
+    for (let i = small + 1; i < large; i++) {
+      if (i.innerHTML != "") {
+      return;
+      }
+    }
+  }
+  if (((selected.id - el.id) % 8) == 0) { //if in same column
+    //but there are pieces between them
+    return;
+  }
 }
 
 setBoard();
