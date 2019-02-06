@@ -177,10 +177,16 @@ function moveRook(selected, el) {
     }
   }
   if (((selected.id - el.id) % 8) == 0) { //if in same column
-    //but there are pieces between them
-    return;
+    var small = Math.min(selected.id, el.id);
+    var large = Math.max(selected.id, el.id);
+    for (let i = small + 8; i < large; i++) {
+      if (document.getElementById(i).innerHTML != "") {
+        move = false;
+        return;
+      }
+    }
   }
-}
+}//last curly in moveRook function
 
 setBoard();
 
