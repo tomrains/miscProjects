@@ -1,7 +1,6 @@
 Specifications
 
 **Rules
-i believe the pawns are all working now. yay
 
 also make it where it you alternate turns with black and white.
 
@@ -88,3 +87,5 @@ and then, just for fun, could start having the pieces vanish (maybe even before 
 
 Bonus:
 - if refresh used, alert user that the game will be reset if they go through with it.
+- alternate turns between black and white
+- allow the pawns to capture (although we can let ALL the pieces capture eventually)
