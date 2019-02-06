@@ -179,7 +179,7 @@ function moveRook(selected, el) {
   if (((selected.id - el.id) % 8) == 0) { //if in same column
     var small = Math.min(selected.id, el.id);
     var large = Math.max(selected.id, el.id);
-    for (let i = small + 8; i < large; i++) {
+    for (let i = small + 8; i < large; i+=8) {
       if (document.getElementById(i).innerHTML != "") {
         move = false;
         return;
