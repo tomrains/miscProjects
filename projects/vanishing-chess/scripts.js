@@ -170,7 +170,7 @@ function moveRook(selected, el) {
     var small = Math.min(selected.id, el.id);
     var large = Math.max(selected.id, el.id);
     for (let i = small + 1; i < large; i++) {
-      if (document.getElementById("i").innerHTML != "") {
+      if (document.getElementById(i).innerHTML != "") {
       return;
       }
     }
