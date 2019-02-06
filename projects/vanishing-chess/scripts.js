@@ -60,6 +60,49 @@ function setBoard() {
   document.getElementById("64").innerHTML = whiteRook;
 }
 
+function selectedPiece(el) {
+  //disallow moves from empty squares
+  if (el.innerHTML == "") {
+    return;
+  }
+  var selected = document.querySelector("td.selected");
+  if (selected != null) {
+    selected.classList.toggle("selected");
+  }
+  el.classList.toggle("selected");
+}
+
+//the border isnt leaving after it moves -- need to see if order matters on these bad boys' onclicks
+function allowMove(el) {
+  //find selected square
+  var selected = document.querySelector("td.selected");
+  //if pawn, run the movePawn function
+  //if selected equal to el, then don't try to move the piece
+  if (selected == el || selected == null) {
+    return;
+  }
+  if (selected.innerHTML == whitePawn || selected.innerHTML == blackPawn) {
+    movePawn(selected, el);
+  }
+  else if (selected.innerHTML == whiteRook || selected.innerHTML == blackRook) {
+    moveRook(selected, el);
+  }
+  //if move has been declared invalid, then reset move to true, and exit this function
+  if (!move) {
+    move = true;
+    return;
+  }
+  //grab piece inside square
+  var piece = selected.innerHTML;
+  //replace piece inside selected square with blank stuff (could see this not working)
+  selected.innerHTML = "";
+  //change html of selected square to piece
+  el.innerHTML = piece;
+  //remove border from selected square
+  selected.classList.toggle("selected");
+  move = true;
+}
+
 function movePawn(selected, el) {
   //disallow pawns with pieces directly in front of them to move
   if (el.innerHTML != "") {
@@ -115,51 +158,9 @@ function movePawn(selected, el) {
     return;
     }
 }
-
-function selectedPiece(el) {
-  //disallow moves from empty squares
-  if (el.innerHTML == "") {
-    return;
-  }
-  var selected = document.querySelector("td.selected");
-  if (selected != null) {
-    selected.classList.toggle("selected");
-  }
-  el.classList.toggle("selected");
+  
+function moveRook(selected, el) {
+  return;
 }
-
-//the border isnt leaving after it moves -- need to see if order matters on these bad boys' onclicks
-function allowMove(el) {
-  //find selected square
-  var selected = document.querySelector("td.selected");
-  //if pawn, run the movePawn function
-  //if selected equal to el, then don't try to move the piece
-  if (selected == el || selected == null) {
-    return;
-  }
-  if (selected.innerHTML == whitePawn || selected.innerHTML == blackPawn) {
-    movePawn(selected, el);
-  }
-  //if move has been declared invalid, then reset move to true, and exit this function
-  if (!move) {
-    move = true;
-    return;
-  }
-  //grab piece inside square
-  var piece = selected.innerHTML;
-  //replace piece inside selected square with blank stuff (could see this not working)
-  selected.innerHTML = "";
-  //change html of selected square to piece
-  el.innerHTML = piece;
-  //remove border from selected square
-  selected.classList.toggle("selected");
-  move = true;
-}
-
-//pawn movement forward
-//if you select a piece that has pawn ... pawn can only move to square exactly 8 more (except in starting position)
-// so if black pawn on square 9 - 16, can move two forward or one forward
-//else can only move one forward
-//would need to put allowance move inside allowMove function
 
 setBoard();
