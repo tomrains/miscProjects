@@ -161,7 +161,7 @@ function movePawn(selected, el) {
   
 function moveRook(selected, el) {
   //check to see if in same row or same column, respectively
-  if (!(((selected.id / 8 >> 0) == (el.id / 8 >> 0)) || (((selected.id - el.id) % 8) == 0))) {
+  if (!((((selected.id-1) / 8 >> 0) == ((el.id-1) / 8 >> 0)) || (((selected.id - el.id) % 8) == 0))) {
     move = false;
     return;
 } //last curly for this function
