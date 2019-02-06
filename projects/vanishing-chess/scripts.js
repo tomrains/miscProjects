@@ -160,8 +160,12 @@ function movePawn(selected, el) {
 }
   
 function moveRook(selected, el) {
-  return;
-  //for now, let's let it move anywhere on the same row or column
+  //check to see if in same row or same column, respectively
+  if !((selected.id % 8 == el.id % 8) || (((selected.id - el.id) % 8) == 0)) {
+    move = false;
+    return;
+} //last curly for this function
+  // if not either in same row or in same array, then don't allow move
   //later, we will block it if a piece is standing in its way
   //this is where the array would be PERFECT. you just need [x][y], one of them to match the previous one
 }
