@@ -93,6 +93,9 @@ function allowMove(el) {
   else if (selected.innerHTML == whiteKing || selected.innerHTML == blackKing) {
     moveKing(selected, el);
   }
+  else if (selected.innerHTML == whiteQueen || selected.innerHTML == blackQueen) {
+    moveQueen(selected, el);
+  }
   //if move has been declared invalid, then reset move to true, and exit this function
   if (!move) {
     move = true;
@@ -264,6 +267,10 @@ function moveKing(selected, el) {
     }
   }
 } // last curly of moveKing function
+
+function moveQueen(selected, el) {
+  return;
+}
 
 setBoard();
 
