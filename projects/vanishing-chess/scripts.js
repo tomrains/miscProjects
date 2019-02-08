@@ -90,6 +90,9 @@ function allowMove(el) {
   else if (selected.innerHTML == whiteBishop || selected.innerHTML == blackBishop) {
     moveBishop(selected, el);
   }
+  else if (selected.innerHTML == whiteKing || selected.innerHTML == blackKing) {
+    moveKing(selected, el);
+  }
   //if move has been declared invalid, then reset move to true, and exit this function
   if (!move) {
     move = true;
@@ -236,6 +239,10 @@ function moveBishop (selected, el) {
     }
   }
 } // last curly in moveBishop function
+
+function moveKing(selected, el) {
+  return;
+}
 
 setBoard();
 
