@@ -9,6 +9,7 @@ var row8 = ["57", "58", "59", "60", "61", "62", "63", "64"];
 
 var move = true;
 var whitesMove = true;
+var selectedExists = true;
 
 //All black pieces
 var blackRook = '<img src="images/black-rook.png">';
@@ -72,6 +73,12 @@ function selectedPiece(el) {
   }
   //find current selected (if there is one) so we can toggle off
   var selected = document.querySelector("td.selected");
+  if (selected) {
+    selectedExists = true;
+  }
+  else {
+    selectedExists = false;
+  }
   if (selected != null) {
     selected.classList.toggle("selected");
   }
@@ -85,9 +92,8 @@ function selectedPiece(el) {
 function allowMove(el) {
   //find selected square
   var selected = document.querySelector("td.selected");
-  //if pawn, run the movePawn function
   //if selected equal to el, then don't try to move the piece
-  if (selected == el || selected == null) {
+  if (selected == el && selectedExists = true) {
     return;
   }
   if (selected.innerHTML == whitePawn || selected.innerHTML == blackPawn) {
@@ -115,7 +121,7 @@ function allowMove(el) {
   }
   //grab piece inside square
   var piece = selected.innerHTML;
-  //replace piece inside selected square with blank stuff (could see this not working)
+  //replace piece inside selected square with blank stuff
   selected.innerHTML = "";
   //change html of selected square to piece
   el.innerHTML = piece;
