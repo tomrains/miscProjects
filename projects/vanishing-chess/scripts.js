@@ -191,6 +191,7 @@ function moveRook(selected, el) {
   }
 }//last curly in moveRook function
 
+//note; could probably write an "invalid move" function : move=false, return?
 
 function moveBishop (selected, el) {
   let small = Math.min(selected.id, el.id);
@@ -211,6 +212,10 @@ function moveBishop (selected, el) {
         move = false;
         return;
       }
+      if (document.getElementById(i).innerHTML != "") {
+        move = false;
+        return;
+      }
     }
   }
   else if ((large - small) % 9 == 0) { // if the difference is 9
@@ -221,6 +226,10 @@ function moveBishop (selected, el) {
     for (let i = small; i < large; i += 9) {
       // if equal to side ones
       if ( ((i % 8) == 0 || ((i - 1) % 8) == 0 ) && i != large && i != small) {
+        move = false;
+        return;
+      }
+      if (document.getElementById(i).innerHTML != "") {
         move = false;
         return;
       }
