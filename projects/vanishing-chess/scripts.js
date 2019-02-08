@@ -241,8 +241,29 @@ function moveBishop (selected, el) {
 } // last curly in moveBishop function
 
 function moveKing(selected, el) {
-  return;
-}
+  var leftSideKingMoves = [-8, -7, 1, 8, 9];
+  var rightSideKingMoves = [-9, -8, -1, 7, 8];
+  var regularKingMoves = [-9, -8, -7, -1, 1, 7, 8, 9];
+  var kingMovement = selected.id - el.id;
+  if ((selected.id - 1) % 8 == 0) {//on left
+    if (leftSideKingMoves.indexOf(kingMovement) == -1) {
+      move = false;
+      return;
+    }
+  }
+  else if (selected.id % 8 == 0) {//on right
+    if (rightSideKingMoves.indexOf(kingMovement) == -1) {
+      move = false;
+      return;
+    }
+  }
+  else { // if in middle
+    if (regularKingMoves.indexOf(kingMovement) == -1) {
+      move = false;
+      return;
+    }
+  }
+} // last curly of moveKing function
 
 setBoard();
 
