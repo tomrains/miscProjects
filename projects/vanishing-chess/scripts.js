@@ -76,7 +76,7 @@ function selectedPiece(el) {
     selected.classList.toggle("selected");
   }
   //if whitesMove is true, and it's white piece, then let it toggle
-  if (whitesMove && whitePieces.indexOf(el.innerHTML) != -1) {
+  if ((whitesMove && whitePieces.indexOf(el.innerHTML) != -1) || (!whitesMove && blackPieces.indexOf(el.innerHTML) != -1) {
     el.classList.toggle("selected");
   }
 } // last curly in selectedPiece function
@@ -122,7 +122,13 @@ function allowMove(el) {
   //remove border from selected square
   selected.classList.toggle("selected");
   move = true;
-}
+  if (whitesMove) {
+    whitesMove = false;
+  }
+  else {
+    whitesMove = true;
+  }
+} //last curly of allow move function
 
 function movePawn(selected, el) {
   //disallow pawns with pieces directly in front of them to move
