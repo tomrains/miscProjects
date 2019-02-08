@@ -281,22 +281,45 @@ function moveQueen(selected, el) {
 }
 
 function moveKnight(selected, el) {
-  return;
-}
-// if it's straight in the middle ... -17, -19, +17, +19, -10, -14, 10, 14
+  var knightMovement = selected.id - el.id;
+  var leftKnight = [15, 6, -10, -17];
+  var secondLeftKnight = [17, 15, 6, -10, -15, -17];
+  var secondRightKnight = [-17, -15, -6, 10, 15, 17];
+  var rightKnight = [17, 10, -6, -15];
+  var centerKnight = [17, 15, -17, -15, 10, 6, -10, -6];
+  if ((selected.id - 1) % 8 == 0) { //if on left
+    if (leftKnight.indexOf(knightMovement) == -1) {
+      move = false;
+      return;
+    }
+  }
+  else if ((selected.id - 2) % 8 == 0) { // if 2nd to left
+    if (secondLeftKnight.indexOf(knightMovement) == -1) {
+      move = false;
+      return;
+    }
+  }
+  else if ((selected.id - 7) % 8 == 0) { // if 2nd to right
+    if (secondRightKnight.indexOf(knightMovement) == -1) {
+      move = false;
+      return;
+    }
+  }
+  else if (selected.id % 8 == 0) { //if on right
+    if (rightKnight.indexOf(knightMovement) == -1) {
+      move = false;
+      return;
+    } 
+  }
+  else { //if in the middle
+    if (centerKnight.indexOf(knightMovement) == -1) {
+      move = false;
+      return;
+    }
+  }
+} // last curly of moveKnight function
 
-// the side thing might work again. cool thing about knights too is they can jump over shite
 
-// you would need to know if it's one second to left or second to right, too. that
-
-// if left
-//     these numbers
-// if 2nd to left
-//     these numbers
-// if 2nd to right
-//     these numbers
-// if right 
-//     these numbers
 
 setBoard();
 
