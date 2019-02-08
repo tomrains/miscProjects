@@ -191,6 +191,7 @@ function moveRook(selected, el) {
   }
 }//last curly in moveRook function
 
+
 function moveBishop (selected, el) {
   let small = Math.min(selected.id, el.id);
   let large = Math.max(selected.id, el.id);
@@ -199,16 +200,24 @@ function moveBishop (selected, el) {
     return;
   }
   //make sure bishops move properly
-  if ((large - small) % 7 == 0) {
+  if ((large - small) % 7 == 0) { //if the difference is 7
+    if (((small - 1) % 8) == 0 || (large % 8) == 0) {
+      move = false;
+      return true;
+    }
     for (let i = small; i < large; i += 7) {
       // if equal to side ones
-      if ( (i%8) == 0 || ((i-1)%8) == 0 ) {
+      if ( (i % 8) == 0 || ((i - 1) % 8) == 0) {
         move = false;
         return;
       }
     }
   }
-  else if ((large - small) % 9 == 0) {
+  else if ((large - small) % 9 == 0) { // if the difference is 9
+    if (((large - 1) % 8) == 0 || (small % 8) == 0) {
+      move = false;
+      return true;
+    }
     for (let i = small; i < large; i += 9) {
       // if equal to side ones
       if ( (i % 8) == 0 || ((i - 1) % 8) == 0 ) {
@@ -219,7 +228,12 @@ function moveBishop (selected, el) {
   }
 } // last curly in moveBishop function
 
-//one thing i thought of is that, from 1 - 64, its 63. its divisble by both 7 and 9 :0. so can do if and else if
+//left side ((i - 1) % 8) == 0
+//right side (i % 8) == 0
+
+if left is big and 9 - bad
+if right is small and 9 - bad
+
 setBoard();
 
 /*had slight epiphany that basically you let every piece move ... you put the moves through a function ..
