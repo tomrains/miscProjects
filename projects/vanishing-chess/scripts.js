@@ -269,7 +269,6 @@ function moveKing(selected, el) {
 } // last curly of moveKing function
 
 function moveQueen(selected, el) {
-  move = false;
   moveRook(selected, el);
   if (move) {
     return;
