@@ -212,7 +212,7 @@ function moveBishop (selected, el) {
         move = false;
         return;
       }
-      if (document.getElementById(i).innerHTML != "" && i != small && i! = large) {
+      if (document.getElementById(i).innerHTML != "" && i != small && i != large) {
         move = false;
         return;
       }
@@ -229,7 +229,7 @@ function moveBishop (selected, el) {
         move = false;
         return;
       }
-      if (document.getElementById(i).innerHTML != "" && i != small && i! = large) {
+      if (document.getElementById(i).innerHTML != "" && i != small && i != large) {
         move = false;
         return;
       }
