@@ -12,7 +12,7 @@ var whitesMove = true;
 
 //set up the teams
 var blackPieces = [blackPawn, blackRook, blackKnight, blackBishop, blackQueen, blackKing];
-var WhitePieces = [whitePawn, whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing];
+var whitePieces = [whitePawn, whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing];
 
 //All black pieces
 var blackRook = '<img src="images/black-rook.png">';
