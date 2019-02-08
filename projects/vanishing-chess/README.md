@@ -1,6 +1,29 @@
 Specifications
 
+
+
 **Rules
+
+they can take turns now. i am a boss.
+
+okay, now to have them capture each other.
+    can only capture pieces of opposite color
+    the king cannot be captured
+    write functinality for what happens when you capture piece
+    pawns have a special capturing move (can do this later)
+    
+    
+then add functionality to know when the king is in check (trickyyyy)
+    alert when opposing king is in check
+    disallow moves by current team that put king in check
+    
+then add in AI
+
+then add in functionality for castling
+    way to see if king has moved
+    way to see if each rook has moved
+    
+add in functionality for stalemate (if there is no legal move ... should be pretty easy really. (maybe famous last words tho))
 
 1  2  3  4  5  6  7   8 
 9  10 11 12 13 14 15 16
