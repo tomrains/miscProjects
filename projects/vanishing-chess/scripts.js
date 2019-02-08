@@ -198,8 +198,28 @@ function moveBishop (selected, el) {
     move = false;
     return;
   }
-}
+  //make sure bishops move properly
+  if ((large - small) % 7 == 0) {
+    for (let i = small; i < large; small + 7;) {
+      // if equal to side ones
+      if ( (i%8) == 0 || ((i-1)%8) == 0 ) {
+        move = false;
+        return;
+      }
+    }
+  }
+  else if ((large - small) % 7 == 0) {
+    for (let i = small; i < large; small + 7;) {
+      // if equal to side ones
+      if ( (i%8) == 0 || ((i-1)%8) == 0 ) {
+        move = false;
+        return;
+      }
+    }
+  }
+} // last curly in moveBishop function
 
+//one thing i thought of is that, from 1 - 64, its 63. its divisble by both 7 and 9 :0. so can do if and else if
 setBoard();
 
 /*had slight epiphany that basically you let every piece move ... you put the moves through a function ..
