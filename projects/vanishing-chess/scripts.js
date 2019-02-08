@@ -200,7 +200,7 @@ function moveBishop (selected, el) {
   }
   //make sure bishops move properly
   if ((large - small) % 7 == 0) {
-    for (let i = small; i < large; small + 7;) {
+    for (let i = small; i < large; small + 7) {
       // if equal to side ones
       if ( (i%8) == 0 || ((i-1)%8) == 0 ) {
         move = false;
