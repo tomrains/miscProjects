@@ -11,12 +11,12 @@ Specifications
 49 50 51 52 53 54 55 56
 57 58 59 60 61 62 63 64
 
+-17, -15, -6, +10, +15, +17
 
 THE KINGS CAN MOVE!
+THE QUEENS CAN MOVE! - they were so easy - who woulda thought (at the beginning at least, who woulda thought?)
+THE KNIGHTS CAN MOVE!!!
 
-next will be queen to move.
-and then i guess the knight will be last (hardest one, im sure of it) - you could be robotic and make an array for each id..
-...that has the allowed moves. that seems like a good job for an object, actually. maybe i'll do it.
 
 //refactoring idea: would be smart to classify certain ids as being left side or right side. then we can use an easy variable.
 
