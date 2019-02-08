@@ -87,6 +87,9 @@ function allowMove(el) {
   else if (selected.innerHTML == whiteRook || selected.innerHTML == blackRook) {
     moveRook(selected, el);
   }
+  else if (selected.innerHTML == whiteBishop || selected.innerHTML == blackBishop) {
+    moveBishop(selected, el);
+  }
   //if move has been declared invalid, then reset move to true, and exit this function
   if (!move) {
     move = true;
@@ -187,6 +190,15 @@ function moveRook(selected, el) {
     }
   }
 }//last curly in moveRook function
+
+function moveBishop (selected, el) {
+  let small = Math.min(selected.id, el.id);
+  let large = Math.max(selected.id, el.id);
+  if (!((large - small) % 7 == 0) || ((large - small) % 9 == 0))) {
+    move = false;
+    return;
+  }
+}
 
 setBoard();
 
