@@ -194,7 +194,7 @@ function moveRook(selected, el) {
 function moveBishop (selected, el) {
   let small = Math.min(selected.id, el.id);
   let large = Math.max(selected.id, el.id);
-  if (!(((large - small) % 7) == 0) || (((large - small) % 9) == 0)) {
+  if (!((large - small) % 7 == 0 || (large - small) % 9 == 0)) {
     move = false;
     return;
   }
