@@ -208,8 +208,8 @@ function moveBishop (selected, el) {
       }
     }
   }
-  else if ((large - small) % 7 == 0) {
-    for (let i = small; i < large; small + 7) {
+  else if ((large - small) % 9 == 0) {
+    for (let i = small; i < large; small + 9) {
       // if equal to side ones
       if ( (i % 8) == 0 || ((i - 1) % 8) == 0 ) {
         move = false;
