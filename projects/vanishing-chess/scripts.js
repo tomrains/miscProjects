@@ -271,7 +271,7 @@ function moveKing(selected, el) {
 function moveQueen(selected, el) {
   move = false;
   moveRook(selected, el);
-  if (move = true) {
+  if (move) {
     return;
   }
   moveBishop(selected, el);
