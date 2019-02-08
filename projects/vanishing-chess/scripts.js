@@ -8,6 +8,11 @@ var row7 = ["49", "50", "51", "52", "53", "54", "55", "56"];
 var row8 = ["57", "58", "59", "60", "61", "62", "63", "64"]; 
 
 var move = true;
+var whitesMove = true;
+
+//set up the teams
+var whitePieces = [blackPawn, blackRook, blackKnight, blackBishop, blackQueen, blackKing];
+var blackPieces = [whitePawn, whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing];
 
 //All black pieces
 var blackRook = '<img src="images/black-rook.png">';
