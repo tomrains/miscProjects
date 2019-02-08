@@ -228,12 +228,6 @@ function moveBishop (selected, el) {
   }
 } // last curly in moveBishop function
 
-//left side ((i - 1) % 8) == 0
-//right side (i % 8) == 0
-
-if left is big and 9 - bad
-if right is small and 9 - bad
-
 setBoard();
 
 /*had slight epiphany that basically you let every piece move ... you put the moves through a function ..
