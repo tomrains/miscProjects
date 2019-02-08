@@ -96,6 +96,9 @@ function allowMove(el) {
   else if (selected.innerHTML == whiteQueen || selected.innerHTML == blackQueen) {
     moveQueen(selected, el);
   }
+  else if (selected.innerHTML == whiteKnight || selected.innerHTML == blackKnight) {
+    moveKnight(selected, el);
+  }
   //if move has been declared invalid, then reset move to true, and exit this function
   if (!move) {
     move = true;
@@ -277,8 +280,23 @@ function moveQueen(selected, el) {
   moveBishop(selected, el);
 }
 
-//so basically let move like a bishop or like a rook?
-// is there a way to run both and see what happens?
+function moveKnight(selected, el) {
+  return;
+}
+// if it's straight in the middle ... -17, -19, +17, +19, -10, -14, 10, 14
+
+// the side thing might work again. cool thing about knights too is they can jump over shite
+
+// you would need to know if it's one second to left or second to right, too. that
+
+// if left
+//     these numbers
+// if 2nd to left
+//     these numbers
+// if 2nd to right
+//     these numbers
+// if right 
+//     these numbers
 
 setBoard();
 
