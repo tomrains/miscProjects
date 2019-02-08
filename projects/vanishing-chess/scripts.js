@@ -273,6 +273,7 @@ function moveQueen(selected, el) {
   if (move) {
     return;
   }
+  move = true;
   moveBishop(selected, el);
 }
 
