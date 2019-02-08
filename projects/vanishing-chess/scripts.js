@@ -127,7 +127,7 @@ function allowMove(el) {
   el.innerHTML = piece;
   //remove border from selected square
   selected.classList.toggle("selected");
-  move = true;
+  move = true; // that might be unnecessary
   if (whitesMove) {
     whitesMove = false;
   }
