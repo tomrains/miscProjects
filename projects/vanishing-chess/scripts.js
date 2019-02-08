@@ -241,8 +241,8 @@ function moveBishop (selected, el) {
 } // last curly in moveBishop function
 
 function moveKing(selected, el) {
-  var leftSideKingMoves = [-8, -7, 1, 8, 9];
-  var rightSideKingMoves = [-9, -8, -1, 7, 8];
+  var leftSideKingMoves = [8, 7, -1, -8, -9];
+  var rightSideKingMoves = [9, 8, 1, -7, -8];
   var regularKingMoves = [-9, -8, -7, -1, 1, 7, 8, 9];
   var kingMovement = selected.id - el.id;
   if ((selected.id - 1) % 8 == 0) {//on left
