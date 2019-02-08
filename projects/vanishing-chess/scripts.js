@@ -70,12 +70,16 @@ function selectedPiece(el) {
   if (el.innerHTML == "") {
     return;
   }
+  //find current selected (if there is one) so we can toggle off
   var selected = document.querySelector("td.selected");
   if (selected != null) {
     selected.classList.toggle("selected");
   }
-  el.classList.toggle("selected");
-}
+  //if whitesMove is true, and it's white piece, then let it toggle
+  if (whitesMove && whitePieces.indexOf(el.innerHTML) != -1) {
+    el.classList.toggle("selected");
+  }
+} // last curly in selectedPiece function
 
 //the border isnt leaving after it moves -- need to see if order matters on these bad boys' onclicks
 function allowMove(el) {
