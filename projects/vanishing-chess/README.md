@@ -2,7 +2,27 @@ Specifications
 
 **Rules
 
-also make it where it you alternate turns with black and white.
+1  2  3  4  5  6  7   8 
+9  10 11 12 13 14 15 16
+17 18 19 20 21 22 23 24
+25 26 27 28 29 30 31 32
+33 34 35 36 37 38 39 40
+41 42 43 44 45 46 47 48
+49 50 51 52 53 54 55 56
+57 58 59 60 61 62 63 64
+
+
+THE KINGS CAN MOVE!
+
+next will be queen to move.
+and then i guess the knight will be last (hardest one, im sure of it) - you could be robotic and make an array for each id..
+...that has the allowed moves. that seems like a good job for an object, actually. maybe i'll do it.
+
+//refactoring idea: would be smart to classify certain ids as being left side or right side. then we can use an easy variable.
+
+
+
+also ... the queen will just be a mix of the rooks and bishops! woo!
 
 
 need to put these in right order on if else statements ... maybe at end. because this is more ruling true
@@ -89,3 +109,4 @@ Bonus:
 - if refresh used, alert user that the game will be reset if they go through with it.
 - alternate turns between black and white
 - allow the pawns to capture (although we can let ALL the pieces capture eventually)
+- code CASTLING (this will be nuuuut) i'm immediately thinking, okay, moveKing (of your color) cannot have been executed ever ...
