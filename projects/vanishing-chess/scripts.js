@@ -269,8 +269,16 @@ function moveKing(selected, el) {
 } // last curly of moveKing function
 
 function moveQueen(selected, el) {
-  return;
+  move = false;
+  moveRook(selected, el);
+  if (move = true) {
+    return;
+  }
+  moveBishop(selected, el);
 }
+
+//so basically let move like a bishop or like a rook?
+// is there a way to run both and see what happens?
 
 setBoard();
 
