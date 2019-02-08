@@ -10,10 +10,6 @@ var row8 = ["57", "58", "59", "60", "61", "62", "63", "64"];
 var move = true;
 var whitesMove = true;
 
-//set up the teams
-var blackPieces = [blackPawn, blackRook, blackKnight, blackBishop, blackQueen, blackKing];
-var whitePieces = [whitePawn, whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing];
-
 //All black pieces
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
@@ -29,6 +25,10 @@ var whiteBishop = '<img src="images/white-bishop.png">';
 var whiteQueen = '<img src="images/white-queen.png">';
 var whiteKing = '<img src="images/white-king.png">';
 var whitePawn = '<img src="images/white-pawn.png">';
+
+//set up the teams
+var blackPieces = [blackPawn, blackRook, blackKnight, blackBishop, blackQueen, blackKing];
+var whitePieces = [whitePawn, whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing];
 
 function setBoard() {
   document.getElementById("1").innerHTML = blackRook;
