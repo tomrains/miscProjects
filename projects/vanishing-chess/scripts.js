@@ -471,7 +471,7 @@ function checkForCheck(selected, el) {
   //pretend that the square you just captured is the new starting square
   selected = el;
   //find the 
-  if (whitePieces.indexOf(selected) != -1) {
+  if (whitePieces.indexOf(selected.innerHTML) != -1) {
     el = document.getElementsByClassName("hasBlackKing");
   }
   else {
@@ -505,12 +505,7 @@ function checkForCheck(selected, el) {
   else {
     inCheck == false;
   }
-  //there might be a way to make this faster. start by getting the piece you just moved.
-  //is the king in check from that piece? of is, it's check. return function.
-  //else. go through all your pieces to see if they can attack the king
-  // the selected is where the piece USED to be. dont kow if that helps necessarily.
-  //at end of function, make sure to change move back to true
-}
+} // last curly of CheckforCheck function
 
 setBoard();
 
