@@ -9,6 +9,7 @@ var row8 = ["57", "58", "59", "60", "61", "62", "63", "64"];
 
 var move = true;
 var whitesMove = true;
+var kingCapture = false;
 
 //All black pieces
 var blackRook = '<img src="images/black-rook.png">';
@@ -72,6 +73,7 @@ function selectedPiece(el) {
   }
   //disallow any pieces from capturing a king
   if (el.innerHTML == whiteKing || el.innerHTML == blackKing) {
+    kingCapture = true;
     return;
   }
   //find current selected (if there is one) so we can toggle off
@@ -101,6 +103,10 @@ function allowMove(el) {
   var selected = document.querySelector("td.selected");
   //if selected equal to el, then don't try to move the piece
   if (selected == el || selected == null) {
+    return;
+  }
+  if (kingCapture) {
+    kingCapture = false;
     return;
   }
   if (selected.innerHTML == whitePawn || selected.innerHTML == blackPawn) {
