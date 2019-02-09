@@ -13,3 +13,11 @@
 .selected {
   box-shadow: inset -2px 0 0 red, inset 0 -2px 0 red, inset 2px 0 0 red, inset 0 2px 0 red;
 }
+
+.hasWhiteKing {
+  //used for quickly locating white king
+}
+
+.hasBlackKing {
+  //used for quickly locating black king
+}
