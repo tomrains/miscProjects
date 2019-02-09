@@ -12,6 +12,8 @@ var whitesMove = true;
 var kingCapture = false;
 var whitePawnAttacking = false;
 var blackPawnAttacking = false;
+var whitePawnBecomesQueen = false;
+var blackPawnBecomesQueen = false;
 
 //All black pieces
 var blackRook = '<img src="images/black-rook.png">';
@@ -125,10 +127,16 @@ function allowMove(el) {
   }
   if (whitePawnAttacking) {
     whitePawnAttack(selected, el);
+    if (el.id < 9) {
+      whitePawnBecomesQueen = true;
+    }
     whitePawnAttacking = false;
   }
   else if (blackPawnAttacking) {
     blackPawnAttack(selected, el);
+    if (el.id > 56) {
+      blackPawnBecomesQueen = true;
+    }
     blackPawnAttacking = false;
   }
   else if (selected.innerHTML == whitePawn || selected.innerHTML == blackPawn) {
@@ -152,6 +160,30 @@ function allowMove(el) {
   //if move has been declared invalid, then reset move to true, and exit this function
   if (!move) {
     move = true;
+    return;
+  }
+  if (whitePawnBecomesQueen) {
+    //clear selected space
+    selected.innerHTML = "";
+    //change html of selected square to piece
+    el.innerHTML = whiteQueen;
+    //remove border from selected square
+    selected.classList.toggle("selected");
+    whitePawnBecomesQueen = false;
+    move = true; // that might be unnecessary
+    whitesMove = false;
+    return;
+  }
+  if (blackPawnBecomesQueen) {
+    //clear selected space
+    selected.innerHTML = "";
+    //change html of selected square to piece
+    el.innerHTML = blackQueen;
+    //remove border from selected square
+    selected.classList.toggle("selected");
+    whitePawnBecomesQueen = false;
+    move = true; // that might be unnecessary
+    whitesMove = true;
     return;
   }
   //grab piece inside square
