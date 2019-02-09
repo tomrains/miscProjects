@@ -205,15 +205,24 @@ function allowMove(el) {
     el.classList.toggle("hasBlackKing");
   }
   move = true; // that might be unnecessary
+  checkForCheck(selected, el);
+  if (inCheck) {
+    if whitesMove {
+      temp = document.getElementsByClassName("hasBlackKing");
+      kingInCheck = temp[0];
+      kingInCheck.classList.toggle("inCheck");
+    }
+    else {
+      temp = document.getElementsByClassName("hasBlackKing");
+      kingInCheck = temp[0];
+      kingInCheck.classList.toggle("inCheck");
+    }
+  }
   if (whitesMove) {
     whitesMove = false;
   }
   else {
     whitesMove = true;
-  }
-  checkForCheck(selected, el);
-  if (inCheck) {
-    alert("You are in check!");
   }
 } //last curly of allow move function
 
