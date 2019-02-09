@@ -17,6 +17,11 @@ if so, it alerts somehow. could literlly just do "alert" for now.
     this function would also be useful for a check at the end of any move...
     ...if you are trying to complete a move, but it puts your own king in check, then the move is disallowed.
     
+could temporarily take king off the board to see if el piece could move there - i really dont know if theres a way to reverse
+what youve done though. so strange.
+    
+    not sure how to do this, but also consider putting functionality for the pieces' movement in another file (it's crowded)
+    
     alert when opposing king is in check
         how can you put other king in check?
             move a piece to be attacking him
