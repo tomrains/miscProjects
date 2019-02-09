@@ -501,10 +501,10 @@ function checkForCheck(selected, el) {
     moveKnight(selected, el);
   }
   if (move) {
-    inCheck == true;
+    inCheck = true;
   }
   else {
-    inCheck == false;
+    inCheck = false;
   }
   move = true; //not really sure if this is the right spot to add this. but move is often starting as false :(
 } // last curly of CheckforCheck function
