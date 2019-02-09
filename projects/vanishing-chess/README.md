@@ -4,6 +4,8 @@ pawns become queens now. YAAAAS QUEEN!!!
 
 **Rules
 
+next thing to do: change it so that once a king is out of check, the inCheck class toggles out
+
 also, because the code is getting tricky, i think it might be smart to refactor the code
 BUT i want to get a real IDE set up so that i can roll stuff back when i make mistakes, that super important.
 
@@ -151,3 +153,5 @@ Bonus:
 - code CASTLING (this will be nuuuut) i'm immediately thinking, okay, moveKing (of your color) cannot have been executed ever ...
 - add functionality that shows the available spaces a selected piece can move to (we've have to use POSITIVE coding here...
 much easier ... now we are assuming true and then ruling out ones that dont fit)
+- have different classes for selected pieces based on how well you're doing. if you're well ahead, they look gold and shiny...
+...if oyu're behind, they look puke green and tired
