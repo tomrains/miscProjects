@@ -200,7 +200,7 @@ function allowMove(el) {
     selected.classList.toggle("hasWhiteKing");
     el.classList.toggle("hasWhiteKing");
   }
-  else if (el.innerHTML = blackKing) {
+  else if (el.innerHTML == blackKing) {
     selected.classList.toggle("hasBlackKing");
     el.classList.toggle("hasBlackKing");
   }
