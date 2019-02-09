@@ -207,7 +207,7 @@ function allowMove(el) {
   move = true; // that might be unnecessary
   checkForCheck(selected, el);
   if (inCheck) {
-    if whitesMove {
+    if (whitesMove) {
       temp = document.getElementsByClassName("hasBlackKing");
       kingInCheck = temp[0];
       kingInCheck.classList.toggle("inCheck");
