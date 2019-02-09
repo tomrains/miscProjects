@@ -227,12 +227,49 @@ function movePawn(selected, el) {
   }
 }
 
+// if it's a left or right side pawn, can only capture a certain way
+// if it's a center pawn, it has two choices. if it's not one of these, then disallow move
+
 function whitePawnAttack(selected, el) {
-  return;
+  if ((selected.id - 1) % 8 == 0)) { //if a left side pawn
+    if ((selected.id - el.id) != 7) {
+      move = false;
+      return;
+    }
+  }
+  if (selected.id % 8 == 0) { // if a right side pawn 
+    if ((selected.id - el.id) != 9) {
+      move = false;
+      return;
+    }
+  }
+  else { //is a center pawn
+    if (!((selected.id - el.id) == 7 || (selected.id - el.id) == 9)) {
+      move = false;
+      return;
+    }
+  }
 }
 
-function blackPawnAttack(selected, el) {
-  return;
+function blackPawnAttack(selected, el) { //same as whitePawnAttack, just with negatives
+  if ((selected.id - 1) % 8 == 0)) { //if a left side pawn
+    if ((selected.id - el.id) != -7) {
+      move = false;
+      return;
+    }
+  }
+  if (selected.id % 8 == 0) { // if a right side pawn 
+    if ((selected.id - el.id) != -9) {
+      move = false;
+      return;
+    }
+  }
+  else { //is a center pawn
+    if (!((selected.id - el.id) == -7 || (selected.id - el.id) == -9)) {
+      move = false;
+      return;
+    }
+  }
 }
   
 function moveRook(selected, el) {
