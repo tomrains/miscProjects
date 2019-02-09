@@ -72,6 +72,14 @@ function selectedPiece(el) {
   }
   //find current selected (if there is one) so we can toggle off
   var selected = document.querySelector("td.selected");
+  //if selected is white and el is black, return (to allow capture)
+  if (whitePieces.indexOf(selected.innerHTML) != -1 && blackPieces.indexOf(el.innerHTML) != -1) {
+    return;
+  }
+  //if selected is black and el is white, return (to allow capture)
+  if (blackPieces.indexOf(selected.innerHTML) != -1 && whitePieces.indexOf(el.innerHTML) != -1) {
+    return;
+  }                                                                        
   if (selected != null) {
     selected.classList.toggle("selected");
   }
