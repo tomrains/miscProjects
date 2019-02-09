@@ -227,11 +227,11 @@ function movePawn(selected, el) {
   }
 }
 
-function whitePawnAttack {
+function whitePawnAttack(selected, el) {
   return;
 }
 
-function blackPawnAttack {
+function blackPawnAttack(selected, el) {
   return;
 }
   
