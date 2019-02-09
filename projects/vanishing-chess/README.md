@@ -4,19 +4,22 @@ Specifications
 
 **Rules
 
-they can take turns now. i am a boss.
-the pieces CAN CAPTURE NOW!!!
-    can only capture pieces of opposite color (check)
-    the king cannot be captured (check)
-    pawns have a special capturing move (can do this later) (check)
-        i would write special functionality for black pawn and white pawn - similar to past functionality for capturing
-        with complex pieces. ✅
+then add functionality to turn pawns into queens when they reach the back row (this is easy, could add soon)
      
 then add functionality to know when the king is in check (trickyyyy)
+i would have a function at the end of a turn or allowMove function that checks to see if king is in check.
+if so, it alerts somehow. could literlly just do "alert" for now.
+    this function would also be useful for a check at the end of any move...
+    ...if you are trying to complete a move, but it puts your own king in check, then the move is disallowed.
+    
     alert when opposing king is in check
+        how can you put other king in check?
+            move a piece to be attacking him
+            move a piece out of the way so that a separate piece is attacking him
+        
     disallow moves by current team that put king in check
     
-then add functionality to turn pawns into queens when they reach the back row
+add functionality to look for checkmate. and, when this function is executed, the game ends and determines a winner
     
 then add in AI
 
@@ -136,3 +139,5 @@ Bonus:
 - alternate turns between black and white
 - allow the pawns to capture (although we can let ALL the pieces capture eventually)
 - code CASTLING (this will be nuuuut) i'm immediately thinking, okay, moveKing (of your color) cannot have been executed ever ...
+- add functionality that shows the available spaces a selected piece can move to (we've have to use POSITIVE coding here...
+much easier ... now we are assuming true and then ruling out ones that dont fit)
