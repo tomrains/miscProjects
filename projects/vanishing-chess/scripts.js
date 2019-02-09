@@ -70,6 +70,10 @@ function selectedPiece(el) {
   if (el.innerHTML == "") {
     return;
   }
+  //disallow any pieces from capturing a king
+  if (el.innerHTML = whiteKing || el.innerHTML = blackKing) {
+    return;
+  }
   //find current selected (if there is one) so we can toggle off
   var selected = document.querySelector("td.selected");
   //if selected is white and el is black, return (to allow capture)
