@@ -213,7 +213,7 @@ function allowMove(el) {
   }
   checkForCheck(selected, el);
   if (inCheck) {
-    alert("You are in check!")
+    alert("You are in check!");
   }
 } //last curly of allow move function
 
