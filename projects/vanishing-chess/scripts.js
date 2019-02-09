@@ -195,6 +195,15 @@ function allowMove(el) {
   el.innerHTML = piece;
   //remove border from selected square
   selected.classList.toggle("selected");
+  //toggle the kings' location class
+  if (el.innerHTML == whiteKing) {
+    selected.classList.toggle("hasWhiteKing");
+    el.classList.toggle("hasWhiteKing");
+  }
+  else if (el.innerHTML = blackKing) {
+    selected.classList.toggle("hasBlackKing");
+    el.classList.toggle("hasBlackKing");
+  }
   move = true; // that might be unnecessary
   if (whitesMove) {
     whitesMove = false;
@@ -389,6 +398,7 @@ function moveKing(selected, el) {
   var rightSideKingMoves = [9, 8, 1, -7, -8];
   var regularKingMoves = [-9, -8, -7, -1, 1, 7, 8, 9];
   var kingMovement = selected.id - el.id;
+  var kingHasMoved = true;
   if ((selected.id - 1) % 8 == 0) {//on left
     if (leftSideKingMoves.indexOf(kingMovement) == -1) {
       move = false;
@@ -458,16 +468,48 @@ function moveKnight(selected, el) {
 } // last curly of moveKnight function
 
 function checkForCheck(selected, el) {
-  //if the el piece could move to where the opposing king is now, definitely return check
-  //could set a hypothetical or checkingCheck function that prevents it from actually moving
-  //...but would need to trick it ignore the king bit that normally disallows it
-  //switch variable for incheck to check,
-  //and then return
-  return;
+  //pretend that the square you just captured is the new starting square
+  selected = el;
+  //find the 
+  if (whitePieces.indexOf(selected) != -1) {
+    el = document.getElementsByClassName("hasBlackKing");
+  }
+  else {
+    el = document.getElementsByClassName("hasWhiteKing");
+  }
+  //checking to see if the newest piece can now attack where the king is
+  if (selected.innerHTML == whitePawn) {
+    whitePawnAttack(selected, el);
+  }
+  else if (selected.innerHTML == blackPawn) {
+    blackPawnAttack(selected, el);
+  }
+  else if (selected.innerHTML == whiteRook || selected.innerHTML == blackRook) {
+    moveRook(selected, el);
+  }
+  else if (selected.innerHTML == whiteBishop || selected.innerHTML == blackBishop) {
+    moveBishop(selected, el);
+  }
+  else if (selected.innerHTML == whiteKing || selected.innerHTML == blackKing) {
+    moveKing(selected, el);
+  }
+  else if (selected.innerHTML == whiteQueen || selected.innerHTML == blackQueen) {
+    moveQueen(selected, el);
+  }
+  else if (selected.innerHTML == whiteKnight || selected.innerHTML == blackKnight) {
+    moveKnight(selected, el);
+  }
+  if (move) {
+    inCheck == true;
+  }
+  else {
+    inCheck == false;
+  }
   //there might be a way to make this faster. start by getting the piece you just moved.
   //is the king in check from that piece? of is, it's check. return function.
   //else. go through all your pieces to see if they can attack the king
   // the selected is where the piece USED to be. dont kow if that helps necessarily.
+  //at end of function, make sure to change move back to true
 }
 
 setBoard();
