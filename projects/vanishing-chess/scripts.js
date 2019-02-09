@@ -459,6 +459,8 @@ function moveKnight(selected, el) {
 
 function checkForCheck(selected, el) {
   //if the el piece could move to where the opposing king is now, definitely return check
+  //could set a hypothetical or checkingCheck function that prevents it from actually moving
+  //...but would need to trick it ignore the king bit that normally disallows it
   //switch variable for incheck to check,
   //and then return
   return;
