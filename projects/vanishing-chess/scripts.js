@@ -472,11 +472,12 @@ function checkForCheck(selected, el) {
   selected = el;
   //find the 
   if (whitePieces.indexOf(selected.innerHTML) != -1) {
-    el = document.getElementsByClassName("hasBlackKing");
+    temp = document.getElementsByClassName("hasBlackKing");
   }
   else {
-    el = document.getElementsByClassName("hasWhiteKing");
+    temp = document.getElementsByClassName("hasWhiteKing");
   }
+  el = temp[0];
   //checking to see if the newest piece can now attack where the king is
   if (selected.innerHTML == whitePawn) {
     whitePawnAttack(selected, el);
