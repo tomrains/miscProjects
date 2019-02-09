@@ -11,7 +11,7 @@
 }
 
 .selected {
-  box-shadow: inset -2px 0 0 red, inset 0 -2px 0 red, inset 2px 0 0 red, inset 0 2px 0 red;
+  box-shadow: inset -2px 0 0 blue, inset 0 -2px 0 blue, inset 2px 0 0 blue, inset 0 2px 0 blue;
 }
 
 .hasWhiteKing {
@@ -20,4 +20,8 @@
 
 .hasBlackKing {
   //used for quickly locating black king
+}
+
+.inCheck {
+  box-shadow: inset -4px 0 0 red, inset 0 -4px 0 red, inset 4px 0 0 red, inset 0 4px 0 red;
 }
