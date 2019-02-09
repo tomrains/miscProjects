@@ -1,13 +1,18 @@
 Specifications
 
-
+pawns become queens now. YAAAAS QUEEN!!!
 
 **Rules
 
-then add functionality to turn pawns into queens when they reach the back row (this is easy, could add soon)
+also, because the code is getting tricky, i think it might be smart to refactor the code
+BUT i want to get a real IDE set up so that i can roll stuff back when i make mistakes, that super important.
+
      
 then add functionality to know when the king is in check (trickyyyy)
-i would have a function at the end of a turn or allowMove function that checks to see if king is in check.
+i would have a function at the end of a turn or allowMove function (right before...
+...you convert the pieces, i would do that. 
+i tihnk you would need to try to move every piece of opposing team to see if they can attack your piece ..
+(and you could do a similar thing for your own pieces to see if checkmate can be prevented) that checks to see if king is in check. 
 if so, it alerts somehow. could literlly just do "alert" for now.
     this function would also be useful for a check at the end of any move...
     ...if you are trying to complete a move, but it puts your own king in check, then the move is disallowed.
