@@ -253,13 +253,13 @@ function whitePawnAttack(selected, el) {
 
 function blackPawnAttack(selected, el) { //same as whitePawnAttack, just with negatives
   if ((selected.id - 1) % 8 == 0) { //if a left side pawn
-    if ((selected.id - el.id) != -7) {
+    if ((selected.id - el.id) != -9) {
       move = false;
       return;
     }
   }
   if (selected.id % 8 == 0) { // if a right side pawn 
-    if ((selected.id - el.id) != -9) {
+    if ((selected.id - el.id) != -7) {
       move = false;
       return;
     }
