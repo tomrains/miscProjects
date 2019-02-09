@@ -71,7 +71,7 @@ function selectedPiece(el) {
     return;
   }
   //disallow any pieces from capturing a king
-  if (el.innerHTML = whiteKing || el.innerHTML = blackKing) {
+  if (el.innerHTML == whiteKing || el.innerHTML == blackKing) {
     return;
   }
   //find current selected (if there is one) so we can toggle off
