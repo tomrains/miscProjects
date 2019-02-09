@@ -86,7 +86,7 @@ function allowMove(el) {
   //find selected square
   var selected = document.querySelector("td.selected");
   //if selected equal to el, then don't try to move the piece
-  if ((selected == el || selected == null) {
+  if (selected == el || selected == null) {
     return;
   }
   if (selected.innerHTML == whitePawn || selected.innerHTML == blackPawn) {
