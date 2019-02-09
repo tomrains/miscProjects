@@ -71,7 +71,17 @@ function selectedPiece(el) {
     return;
   }
   //find current selected (if there is one) so we can toggle off
-  var selected = document.querySelector("td.selected");                                                                       
+  var selected = document.querySelector("td.selected");
+  //if selected is white and el is black, return (to allow capture)
+  if (selected) { 
+    if (whitePieces.indexOf(selected.innerHTML) != -1 && blackPieces.indexOf(el.innerHTML) != -1) {
+      return;
+    }
+    //if selected is black and el is white, return (to allow capture)
+    if (blackPieces.indexOf(selected.innerHTML) != -1 && whitePieces.indexOf(el.innerHTML) != -1) {
+      return;
+    } 
+  }
   if (selected != null) {
     selected.classList.toggle("selected");
   }
@@ -79,14 +89,6 @@ function selectedPiece(el) {
   if ( (whitesMove && whitePieces.indexOf(el.innerHTML) != -1) || (!whitesMove && blackPieces.indexOf(el.innerHTML) != -1) ) {
     el.classList.toggle("selected");
   }
-  //if selected is white and el is black, return (to allow capture)
-  if (whitePieces.indexOf(selected.innerHTML) != -1 && blackPieces.indexOf(el.innerHTML) != -1) {
-    return;
-  }
-  //if selected is black and el is white, return (to allow capture)
-  if (blackPieces.indexOf(selected.innerHTML) != -1 && whitePieces.indexOf(el.innerHTML) != -1) {
-    return;
-  } 
 } // last curly in selectedPiece function
 
 //the border isnt leaving after it moves -- need to see if order matters on these bad boys' onclicks
