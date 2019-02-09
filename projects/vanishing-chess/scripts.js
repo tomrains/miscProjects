@@ -74,7 +74,7 @@ function selectedPiece(el) {
   //find current selected (if there is one) so we can toggle off
   var selected = document.querySelector("td.selected");
   //disallow any pieces from capturing a king, but let's you toggle to move a king
-  if selected {
+  if (selected) {
     if (blackPieces.indexOf(selected.innerHTML) != -1 && el.innerHTML == whiteKing) {
       kingCapture = true;
       return;
