@@ -14,6 +14,7 @@ var whitePawnAttacking = false;
 var blackPawnAttacking = false;
 var whitePawnBecomesQueen = false;
 var blackPawnBecomesQueen = false;
+var inCheck = false;
 
 //All black pieces
 var blackRook = '<img src="images/black-rook.png">';
@@ -200,6 +201,10 @@ function allowMove(el) {
   }
   else {
     whitesMove = true;
+  }
+  checkForCheck(selected, el);
+  if (inCheck) {
+    alert("You are in check!")
   }
 } //last curly of allow move function
 
@@ -452,7 +457,16 @@ function moveKnight(selected, el) {
   }
 } // last curly of moveKnight function
 
-
+function checkForCheck(selected, el) {
+  //if the el piece could move to where the opposing king is now, definitely return check
+  //switch variable for incheck to check,
+  //and then return
+  return;
+  //there might be a way to make this faster. start by getting the piece you just moved.
+  //is the king in check from that piece? of is, it's check. return function.
+  //else. go through all your pieces to see if they can attack the king
+  // the selected is where the piece USED to be. dont kow if that helps necessarily.
+}
 
 setBoard();
 
