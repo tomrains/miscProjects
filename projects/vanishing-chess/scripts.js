@@ -10,6 +10,8 @@ var row8 = ["57", "58", "59", "60", "61", "62", "63", "64"];
 var move = true;
 var whitesMove = true;
 var kingCapture = false;
+var whitePawnAttacking = false;
+var blackPawnAttacking = false;
 
 //All black pieces
 var blackRook = '<img src="images/black-rook.png">';
@@ -87,10 +89,16 @@ function selectedPiece(el) {
   //if selected is white and el is black, return (to allow capture)
   if (selected) { 
     if (whitePieces.indexOf(selected.innerHTML) != -1 && blackPieces.indexOf(el.innerHTML) != -1) {
+      if (selected.innerHTML == whitePawn) {
+        whitePawnAttacking = true;
+      }
       return;
     }
     //if selected is black and el is white, return (to allow capture)
     if (blackPieces.indexOf(selected.innerHTML) != -1 && whitePieces.indexOf(el.innerHTML) != -1) {
+      if (selected.innerHTML == blackPawn) {
+        blackPawnAttacking = true;
+      }
       return;
     } 
   }
@@ -115,7 +123,15 @@ function allowMove(el) {
     kingCapture = false;
     return;
   }
-  if (selected.innerHTML == whitePawn || selected.innerHTML == blackPawn) {
+  if (whitePawnAttacking) {
+    whitePawnAttack(selected, el);
+    whitePawnAttacking = false;
+  }
+  else if (blackPawnAttacking) {
+    blackPawnAttack(selected, el);
+    blackPawnAttacking = false;
+  }
+  else if (selected.innerHTML == whitePawn || selected.innerHTML == blackPawn) {
     movePawn(selected, el);
   }
   else if (selected.innerHTML == whiteRook || selected.innerHTML == blackRook) {
@@ -208,7 +224,15 @@ function movePawn(selected, el) {
   else if (selected.innerHTML == whitePawn && selected.id - el.id != 8) {
     move = false;
     return;
-    }
+  }
+}
+
+function whitePawnAttack {
+  return;
+}
+
+function blackPawnAttack {
+  return;
 }
   
 function moveRook(selected, el) {
