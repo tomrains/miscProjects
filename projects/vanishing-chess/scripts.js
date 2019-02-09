@@ -231,7 +231,7 @@ function movePawn(selected, el) {
 // if it's a center pawn, it has two choices. if it's not one of these, then disallow move
 
 function whitePawnAttack(selected, el) {
-  if ((selected.id - 1) % 8 == 0)) { //if a left side pawn
+  if ((selected.id - 1) % 8 == 0) { //if a left side pawn
     if ((selected.id - el.id) != 7) {
       move = false;
       return;
@@ -252,7 +252,7 @@ function whitePawnAttack(selected, el) {
 }
 
 function blackPawnAttack(selected, el) { //same as whitePawnAttack, just with negatives
-  if ((selected.id - 1) % 8 == 0)) { //if a left side pawn
+  if ((selected.id - 1) % 8 == 0) { //if a left side pawn
     if ((selected.id - el.id) != -7) {
       move = false;
       return;
