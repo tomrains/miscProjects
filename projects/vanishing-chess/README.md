@@ -2,11 +2,21 @@ Specifications
 
 **Rules
 
-next thing to do: change it so that once a king is out of check, the inCheck class toggles out
+**next thing to do: change it so that once a king is out of check, the inCheck class toggles out
+
+OKAY, i've solved a few of the problems, but it still is buggy to where it doesn't alwas think it's in check.
+pretty sure that has something to do with the blackPieces not all being picked up properly. so lets...
+...figure out whats up with that after ive taken a break
 
 also, because the code is getting tricky, i think it might be smart to refactor the code
 BUT i want to get a real IDE set up so that i can roll stuff back when i make mistakes, that super important.
 
+
+now i want to make it where, if you were in check and now you're not, that class toggles off.
+then, make it where your move MUST remove the threat of check (could have special function play if in check at beginning of turn)
+
+
+NOTE: you have to allow the piece to move to see if it's in check, i believe. at least put it there temporarily.
 
 
 ->>> check for checkmate (only check if king in check)
