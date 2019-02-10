@@ -104,7 +104,7 @@ function selectedPiece(el) {
   }
 } // last curly in selectedPiece function
 
-//the border isnt leaving after it moves -- need to see if order matters on these bad boys' onclicks
+
 function allowMove(el) {
   //find selected square
   var selected = document.querySelector("td.selected");
@@ -187,6 +187,15 @@ function allowMove(el) {
   }
   move = true; // that might be unnecessary
   
+  if (whitesMove) {
+    selected.classList.toggle("whitePiece");
+    el.classList.toggle("whitePiece");
+  }
+  else {
+    selected.classList.toggle("blackPiece");
+    el.classList.toggle("blackPiece");
+  }
+  
   //these ones need to be changed. we've already checked to see if
   isWhiteInCheck(selected, el);
   if (whiteInCheck) {
@@ -202,14 +211,6 @@ function allowMove(el) {
   }
   
   //toggle the whitePiece of blackPiece class (could deffo turn this into a function to call, and define it elsewhere)
-  if (whitesMove) {
-    selected.classList.toggle("whitePiece");
-    el.classList.toggle("whitePiece");
-  }
-  else {
-    selected.classList.toggle("blackPiece");
-    el.classList.toggle("blackPiece");
-  }
   //add functionality to where if you WERE in check and now you're not, toggle.
   
   //at beginning, know if the current mover is in check.
