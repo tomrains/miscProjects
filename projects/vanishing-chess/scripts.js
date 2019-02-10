@@ -169,19 +169,17 @@ function allowMove(el) {
     selected.classList.toggle("blackPiece");
     el.classList.toggle("blackPiece");
   }
-  checkForCheck(selected, el);
-  if (inCheck) {
+  isWhiteInCheck(selected, el);
+  if (whiteInCheck) {
     if (whitesMove) {
-      temp = document.getElementsByClassName("hasBlackKing");
+      temp = document.getElementsByClassName("hasWhiteKing");
       kingInCheck = temp[0];
-      kingInCheck.classList.toggle("inCheck");
-    }
-    else {
-      temp = document.getElementsByClassName("hasBlackKing");
-      kingInCheck = temp[0];
-      kingInCheck.classList.toggle("inCheck");
+      kingInCheck.classList.toggle("whiteInCheck");
     }
   }
+  
+  //at some point, i guess when you move out of check, then you need to toggle to the correct check
+  
   if (whitesMove) {
     whitesMove = false;
   }
@@ -438,51 +436,42 @@ function moveKnight(selected, el) {
   }
 } // last curly of moveKnight function
 
-function checkForCheck(selected, el) {
+function isWhiteInCheck(selected, el) {
   //so this needs to also check to see if YOuR king is in check. could easily make two functions that do similar things
   //okay, i'm going to add black and white classes. might have them do something just so i can see them (for now)
   //for every piece in opposing teams array (get them by the values in those maybe? not sure)
   //try to move on the king. if any of them returns move as true, immediately return function and inCheck = true. else its false.
-  //you could deffo make where pieces toggle class black or white depending on where they're moving to. one way to find them
+  
+  //see if your king is in check (and eventually would disallow this move! for that reason might need to move it earlier)
+  //go through all their pieces and see if they can attack where your king is
+  //<<here>>//
+  
   selected = el;
-  //find the
-  if (whitePieces.indexOf(selected.innerHTML) != -1) {
-    temp = document.getElementsByClassName("hasBlackKing");
-  }
-  else {
-    temp = document.getElementsByClassName("hasWhiteKing");
-  }
+  temp = document.getElementsByClassName("hasWhiteKing");
+  //so el will be where the white king is
   el = temp[0];
-  //checking to see if the newest piece can now attack where the king is
-  if (selected.innerHTML == whitePawn) {
-    whitePawnAttack(selected, el);
+  var blackPiecesLeft = document.getElementsByClass("blackPiece");
+  
+  //see if pieces can attack successfully
+  for (let i = 0; i < blackPiecesLeft.length; i++) {
+    piecesAttack(blackPiecesLeft[i], el);
+    if (move) {
+      whiteInCheck = true;
+      return;
+    }
   }
-  else if (selected.innerHTML == blackPawn) {
-    blackPawnAttack(selected, el);
-  }
-  else if (selected.innerHTML == whiteRook || selected.innerHTML == blackRook) {
-    moveRook(selected, el);
-  }
-  else if (selected.innerHTML == whiteBishop || selected.innerHTML == blackBishop) {
-    moveBishop(selected, el);
-  }
-  else if (selected.innerHTML == whiteKing || selected.innerHTML == blackKing) {
-    moveKing(selected, el);
-  }
-  else if (selected.innerHTML == whiteQueen || selected.innerHTML == blackQueen) {
-    moveQueen(selected, el);
-  }
-  else if (selected.innerHTML == whiteKnight || selected.innerHTML == blackKnight) {
-    moveKnight(selected, el);
-  }
-  if (move) {
-    inCheck = true;
-  }
-  else {
-    inCheck = false;
-  }
+  //if not, set move back to true
   move = true;
-} // last curly of CheckforCheck function
+} // last curly of isWhiteInCheck function
+
+function isBlackInCheck(selected, el) {
+  //this function is literally just filled with pieces of code i know i will need later
+//   if (whitePieces.indexOf(selected.innerHTML) != -1) {
+//     temp = document.getElementsByClassName("hasBlackKing");
+//   }
+  return;
+  //  var whitePiecesLeft = document.getElementsByClass("whitePiece");
+} //last curly of isBlackInCheck function
 
 function whatPieceIsIt(selected, el) {
   if (whitePawnAttacking) {
@@ -518,3 +507,27 @@ function whatPieceIsIt(selected, el) {
     moveKnight(selected, el);
   } 
 } //last curly of whatPieceIsIt function
+
+function piecesAttack(selected, el) {
+  if (selected.innerHTML == whitePawn) {
+    whitePawnAttack(selected, el);
+  }
+  else if (selected.innerHTML == blackPawn) {
+    blackPawnAttack(selected, el);
+  }
+  else if (selected.innerHTML == whiteRook || selected.innerHTML == blackRook) {
+    moveRook(selected, el);
+  }
+  else if (selected.innerHTML == whiteBishop || selected.innerHTML == blackBishop) {
+    moveBishop(selected, el);
+  }
+  else if (selected.innerHTML == whiteKing || selected.innerHTML == blackKing) {
+    moveKing(selected, el);
+  }
+  else if (selected.innerHTML == whiteQueen || selected.innerHTML == blackQueen) {
+    moveQueen(selected, el);
+  }
+  else if (selected.innerHTML == whiteKnight || selected.innerHTML == blackKnight) {
+    moveKnight(selected, el);
+  }  
+}
