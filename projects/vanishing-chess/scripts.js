@@ -171,7 +171,7 @@ function allowMove(el) {
   }
   isWhiteInCheck(selected, el);
   if (whiteInCheck) {
-    if (whitesMove) {
+    if (!whitesMove) {
       temp = document.getElementsByClassName("hasWhiteKing");
       kingInCheck = temp[0];
       kingInCheck.classList.toggle("whiteInCheck");
