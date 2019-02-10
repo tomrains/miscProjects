@@ -115,9 +115,7 @@ function allowMove(el) {
     kingCapture = false;
     return;
   }
-  
-  ///ADDD FUNCTION CALL HERE
-  
+  whatPieceIsIt(selected, el);
   //if move has been declared invalid, then reset move to true, and exit this function
   if (!move) {
     move = true;
@@ -510,4 +508,4 @@ function whatPieceIsIt(selected, el) {
   else if (selected.innerHTML == whiteKnight || selected.innerHTML == blackKnight) {
     moveKnight(selected, el);
   } 
-} //last piece of whatPieceIsIt function
+} //last curly of whatPieceIsIt function
