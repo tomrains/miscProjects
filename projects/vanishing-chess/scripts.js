@@ -79,9 +79,6 @@ function selectedPiece(el) {
       return;
     }
   }
-  //setting variable for previous selected and el, in case move must be reverted
-  let previousSelected = selected;
-  let previousEl = el;
   //if selected is white and el is black, return (to allow capture)
   if (selected) {
     if (whitePieces.indexOf(selected.innerHTML) != -1 && blackPieces.indexOf(el.innerHTML) != -1) {
@@ -115,6 +112,11 @@ function allowMove(el) {
   if (selected == el || selected == null) {
     return;
   }
+  
+  //setting variable for previous selected and el, in case move must be reverted
+  let previousSelected = selected;
+  let previousEl = el;
+  
   if (kingCapture) {
     kingCapture = false;
     return;
