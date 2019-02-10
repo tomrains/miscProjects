@@ -496,7 +496,7 @@ function isWhiteInCheck(selected, el) {
   
   //see if pieces can attack successfully
   for (let i = 0; i < blackPiecesLeft.length; i++) {
-    piecesAttack(blackPiecesLeft[i], el);
+    piecesAttack(blackPiecesLeft[i], selected);
     if (move) {
       whiteInCheck = true;
       return;
@@ -516,7 +516,7 @@ function isBlackInCheck(selected, el) {
   let whitePiecesLeft = document.getElementsByClassName("whitePiece");
   //see if pieces can attack successfully
   for (let i = 0; i < whitePiecesLeft.length; i++) {
-    piecesAttack(whitePiecesLeft[i], el);
+    piecesAttack(whitePiecesLeft[i], selected);
     if (move) {
       blackInCheck = true;
       return;
