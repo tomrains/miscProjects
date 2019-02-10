@@ -5,7 +5,8 @@ var whitePawnAttacking = false;
 var blackPawnAttacking = false;
 var whitePawnBecomesQueen = false;
 var blackPawnBecomesQueen = false;
-var inCheck = false;
+var whiteInCheck = false;
+var blackInCheck = false;
 
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
@@ -430,11 +431,10 @@ function moveKnight(selected, el) {
 
 function checkForCheck(selected, el) {
   //so this needs to also check to see if YOuR king is in check. could easily make two functions that do similar things
-  //to see if YOURS is in check though, is to go through EVERY piece and see if it can attack yours
-  // so you'd have to get all pieces that are in the blackPieces or whitePieces array, and play movePiece for them
-  // that's pretty interesting actually
-  // would help if there were function that just determined what the piece should be
-  //pretend that the square you just captured is the new starting square
+  //okay, i'm going to add black and white classes. might have them do something just so i can see them (for now)
+  //for every piece in opposing teams array (get them by the values in those maybe? not sure)
+  //try to move on the king. if any of them returns move as true, immediately return function and inCheck = true. else its false.
+  //you could deffo make where pieces toggle class black or white depending on where they're moving to. one way to find them
   selected = el;
   //find the
   if (whitePieces.indexOf(selected.innerHTML) != -1) {
