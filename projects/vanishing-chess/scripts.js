@@ -1,12 +1,3 @@
-var row1 = ["1", "2", "3", "4", "5", "6", "7", "8"];
-var row2 = ["9", "10", "11", "12", "13", "14", "15", "16"]; 
-var row3 = ["17", "18", "19", "20", "21", "22", "23", "24"]; 
-var row4 = ["25", "26", "27", "28", "29", "30", "31", "32"]; 
-var row5 = ["33", "34", "35", "36", "37", "38", "39", "40"]; 
-var row6 = ["41", "42", "43", "44", "45", "46", "47", "48"]; 
-var row7 = ["49", "50", "51", "52", "53", "54", "55", "56"]; 
-var row8 = ["57", "58", "59", "60", "61", "62", "63", "64"]; 
-
 var move = true;
 var whitesMove = true;
 var kingCapture = false;
@@ -16,15 +7,12 @@ var whitePawnBecomesQueen = false;
 var blackPawnBecomesQueen = false;
 var inCheck = false;
 
-//All black pieces
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
 var blackBishop = '<img src="images/black-bishop.png">';
 var blackQueen = '<img src="images/black-queen.png">';
 var blackKing = '<img src="images/black-king.png">';
 var blackPawn = '<img src="images/black-pawn.png">';
-
-//All white pieces
 var whiteRook = '<img src="images/white-rook.png">';
 var whiteKnight = '<img src="images/white-knight.png">';
 var whiteBishop = '<img src="images/white-bishop.png">';
@@ -32,7 +20,6 @@ var whiteQueen = '<img src="images/white-queen.png">';
 var whiteKing = '<img src="images/white-king.png">';
 var whitePawn = '<img src="images/white-pawn.png">';
 
-//set up the teams
 var blackPieces = [blackPawn, blackRook, blackKnight, blackBishop, blackQueen, blackKing];
 var whitePieces = [whitePawn, whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing];
 
@@ -71,12 +58,14 @@ function setBoard() {
   document.getElementById("64").innerHTML = whiteRook;
 }
 
+setBoard();
+
 function selectedPiece(el) {
   //disallow moves from empty squares
   if (el.innerHTML == "") {
     return;
   }
-  //find current selected (if there is one) so we can toggle off
+  //find current selected (if there is one)
   var selected = document.querySelector("td.selected");
   //disallow any pieces from capturing a king, but lets you toggle to move a king
   if (selected) {
@@ -90,7 +79,7 @@ function selectedPiece(el) {
     }
   }
   //if selected is white and el is black, return (to allow capture)
-  if (selected) { 
+  if (selected) {
     if (whitePieces.indexOf(selected.innerHTML) != -1 && blackPieces.indexOf(el.innerHTML) != -1) {
       if (selected.innerHTML == whitePawn) {
         whitePawnAttacking = true;
@@ -103,7 +92,7 @@ function selectedPiece(el) {
         blackPawnAttacking = true;
       }
       return;
-    } 
+    }
   }
   if (selected != null) {
     selected.classList.toggle("selected");
@@ -164,26 +153,22 @@ function allowMove(el) {
     return;
   }
   if (whitePawnBecomesQueen) {
-    //clear selected space
     selected.innerHTML = "";
-    //change html of selected square to piece
     el.innerHTML = whiteQueen;
-    //remove border from selected square
     selected.classList.toggle("selected");
     whitePawnBecomesQueen = false;
-    move = true; // that might be unnecessary
+    move = true;
+    //need to loop in the checkInCheck bit here eventually
     whitesMove = false;
     return;
   }
   if (blackPawnBecomesQueen) {
-    //clear selected space
     selected.innerHTML = "";
-    //change html of selected square to piece
     el.innerHTML = blackQueen;
-    //remove border from selected square
     selected.classList.toggle("selected");
-    whitePawnBecomesQueen = false;
-    move = true; // that might be unnecessary
+    blackPawnBecomesQueen = false;
+    move = true;
+    //need to loop in the checkInCheck bit here eventually
     whitesMove = true;
     return;
   }
@@ -243,7 +228,7 @@ function movePawn(selected, el) {
       return;
     }
   }
-  //if there is a double jump 
+  //if there is a double jump
   if (+selected.id - +el.id == 16 || +el.id - +selected.id == 16) {
     //if black pawn is not on home row
     if (selected.innerHTML == blackPawn && (selected.id < 9 || selected.id > 16)) {
@@ -292,7 +277,7 @@ function whitePawnAttack(selected, el) {
       return;
     }
   }
-  if (selected.id % 8 == 0) { // if a right side pawn 
+  if (selected.id % 8 == 0) { // if a right side pawn
     if ((selected.id - el.id) != 9) {
       move = false;
       return;
@@ -313,7 +298,7 @@ function blackPawnAttack(selected, el) { //same as whitePawnAttack, just with ne
       return;
     }
   }
-  if (selected.id % 8 == 0) { // if a right side pawn 
+  if (selected.id % 8 == 0) { // if a right side pawn
     if ((selected.id - el.id) != -7) {
       move = false;
       return;
@@ -326,7 +311,7 @@ function blackPawnAttack(selected, el) { //same as whitePawnAttack, just with ne
     }
   }
 }
-  
+
 function moveRook(selected, el) {
   //check to see if in same row or same column, respectively
   if (!((((selected.id-1) / 8 >> 0) == ((el.id-1) / 8 >> 0)) || (((selected.id - el.id) % 8) == 0))) {
@@ -355,8 +340,6 @@ function moveRook(selected, el) {
     }
   }
 }//last curly in moveRook function
-
-//note; could probably write an "invalid move" function : move=false, return?
 
 function moveBishop (selected, el) {
   let small = Math.min(selected.id, el.id);
@@ -466,7 +449,7 @@ function moveKnight(selected, el) {
     if (rightKnight.indexOf(knightMovement) == -1) {
       move = false;
       return;
-    } 
+    }
   }
   else { //if in the middle
     if (centerKnight.indexOf(knightMovement) == -1) {
@@ -479,7 +462,7 @@ function moveKnight(selected, el) {
 function checkForCheck(selected, el) {
   //pretend that the square you just captured is the new starting square
   selected = el;
-  //find the 
+  //find the
   if (whitePieces.indexOf(selected.innerHTML) != -1) {
     temp = document.getElementsByClassName("hasBlackKing");
   }
@@ -515,10 +498,5 @@ function checkForCheck(selected, el) {
   else {
     inCheck = false;
   }
-  move = true; //not really sure if this is the right spot to add this. but move is often starting as false :(
+  move = true;
 } // last curly of CheckforCheck function
-
-setBoard();
-
-/*had slight epiphany that basically you let every piece move ... you put the moves through a function ..
-to see if it's an illegal move. if it is, you tell it that it cant move - yay! */
