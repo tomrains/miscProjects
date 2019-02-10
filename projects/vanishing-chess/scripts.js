@@ -169,7 +169,7 @@ function allowMove(el) {
     return;
   }
   
-  if (blacksMove && blackInCheck) {
+  if (!whitesMove && blackInCheck) {
     selected.innerHTML = previousSelected.innerHTML;
     el.innerHTML = previousEl.innerhtml;
     return;
