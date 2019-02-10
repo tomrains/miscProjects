@@ -79,6 +79,9 @@ function selectedPiece(el) {
       return;
     }
   }
+  //setting variable for previous selected and el, in case move must be reverted
+  let previousSelected = selected;
+  let previousEl = el;
   //if selected is white and el is black, return (to allow capture)
   if (selected) {
     if (whitePieces.indexOf(selected.innerHTML) != -1 && blackPieces.indexOf(el.innerHTML) != -1) {
@@ -122,21 +125,6 @@ function allowMove(el) {
     move = true;
     return;
   }
-  
-  // see if in check. if so, disallow move.
-  if (whitesMove) {
-    isWhiteInCheck(selected, el);
-    if (whiteInCheck) {
-      return;
-    }
-  }
-  else {
-    isBlackInCheck(selected, el);
-    if (blackInCheck) {
-      return;
-    }
-  }
-  
   if (whitePawnBecomesQueen) {
     selected.innerHTML = "";
     el.innerHTML = whiteQueen;
@@ -166,6 +154,27 @@ function allowMove(el) {
   //remove border from selected square
   selected.classList.toggle("selected");
   //toggle the kings' location class
+  
+  // see if in check. if so, disallow move.
+  if (whitesMove) {
+    isWhiteInCheck(selected, el);
+  }
+  else {
+    isBlackInCheck(selected, el);
+  }
+  
+  if (whitesMove && whiteInCheck) {
+    selected.innerHTML = previousSelected.innerHTML;
+    el.innerHTML = previousEl.innerhtml;
+    return;
+  }
+  
+  if (blacksMove && blackInCheck) {
+    selected.innerHTML = previousSelected.innerHTML;
+    el.innerHTML = previousEl.innerhtml;
+    return;
+  }
+  
   if (el.innerHTML == whiteKing) {
     selected.classList.toggle("hasWhiteKing");
     el.classList.toggle("hasWhiteKing");
