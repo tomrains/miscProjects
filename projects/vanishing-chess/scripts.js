@@ -114,8 +114,8 @@ function allowMove(el) {
   }
   
   //setting variable for previous selected and el, in case move must be reverted
-  let previousSelected = selected;
-  let previousEl = el;
+  var previousSelected = selected;
+  var previousEl = el;
   
   if (kingCapture) {
     kingCapture = false;
