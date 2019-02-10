@@ -213,10 +213,10 @@ function allowMove(el) {
   //uncheck kings that are out of check
   var whiteKingCheckToggled = document.getElementsByClassName("whiteInCheck");
   var blackKingCheckToggled = document.getElementsByClassName("blackInCheck");
-  if (!whiteInCheck && whiteKingCheckToggled) {
+  if (!whiteInCheck && whiteKingCheckToggled.length > 0) {
     whiteKingCheckToggled[0].classList.toggle("whiteInCheck");
   }
-  if (!blackInCheck && blackKingCheckToggled) {
+  if (!blackInCheck && blackKingCheckToggled.length > 0) {
     blackKingCheckToggled[0].classList.toggle("blackInCheck");
   }
   
