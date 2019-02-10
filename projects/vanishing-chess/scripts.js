@@ -181,14 +181,11 @@ function allowMove(el) {
     el.innerHTML = previousEl.innerhtml;
     return;
   }
-  
   if (!whitesMove && blackInCheck) {
     selected.innerHTML = previousSelected.innerHTML;
     el.innerHTML = previousEl.innerhtml;
     return;
   }
-  
-  move = true; // that might be unnecessary
   
   if (whitesMove) {
     selected.classList.toggle("whitePiece");
@@ -199,20 +196,22 @@ function allowMove(el) {
     el.classList.toggle("blackPiece");
   }
   
-  //puts king in check if need be
-  //can refactor this to only go through code on appropriate team's turn
-  isWhiteInCheck(selected, el);
-  if (whiteInCheck) {
-    let temp = document.getElementsByClassName("hasWhiteKing");
-    kingInCheck = temp[0];
-    kingInCheck.classList.toggle("whiteInCheck");
+  //check to see if opposing king in check
+  if (!whitesMove) {
+    isWhiteInCheck(selected, el);
+    if (whiteInCheck) {
+      let temp = document.getElementsByClassName("hasWhiteKing");
+      kingInCheck = temp[0];
+      kingInCheck.classList.toggle("whiteInCheck");
+    }
   }
-  
-  isBlackInCheck(selected, el);
-  if (blackInCheck) {
-    let temp = document.getElementsByClassName("hasBlackKing");
-    kingInCheck = temp[0];
-    kingInCheck.classList.toggle("blackInCheck");
+  if (whitesMove) {
+    isBlackInCheck(selected, el);
+    if (blackInCheck) {
+      let temp = document.getElementsByClassName("hasBlackKing");
+      kingInCheck = temp[0];
+      kingInCheck.classList.toggle("blackInCheck");
+    }
   }
   
   //unchecks kings that are out of check if need be
