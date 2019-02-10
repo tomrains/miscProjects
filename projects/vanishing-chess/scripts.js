@@ -197,9 +197,19 @@ function allowMove(el) {
     el.classList.toggle("blackPiece");
   }
   
-  //might need to add code to toggle for kings in check
+  //puts king in check if need be
+  if (whiteInCheck) {
+    let temp = document.getElementsByClassName("hasWhiteKing");
+    kingInCheck = temp[0];
+    kingInCheck.classList.toggle("whiteInCheck");
   
-  //uncheck kings that are out of check
+  if (blackInCheck) {
+    let temp = document.getElementsByClassName("hasBlackKing");
+    kingInCheck = temp[0];
+    kingInCheck.classList.toggle("blackInCheck");
+  }
+  
+  //unchecks kings that are out of check if need be
   var whiteKingCheckToggled = document.getElementsByClassName("whiteInCheck");
   var blackKingCheckToggled = document.getElementsByClassName("blackInCheck");
   if (!whiteInCheck && whiteKingCheckToggled.length > 0) {
