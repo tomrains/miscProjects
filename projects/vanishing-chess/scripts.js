@@ -502,6 +502,7 @@ function isWhiteInCheck(selected, el) {
     }
   }
   //if not, set move back to true
+  whiteInCheck = false;
   move = true;
 } // last curly of isWhiteInCheck function
 
@@ -520,6 +521,7 @@ function isBlackInCheck(selected, el) {
       return;
     }
   }
+  blackInCheck = false;
   move = true;
 }
 
