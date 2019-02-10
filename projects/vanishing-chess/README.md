@@ -1,14 +1,24 @@
 Specifications
 
-//Putting in note from Atom to GitHub.
-pawns become queens now. YAAAAS QUEEN!!!
-
 **Rules
 
 next thing to do: change it so that once a king is out of check, the inCheck class toggles out
 
 also, because the code is getting tricky, i think it might be smart to refactor the code
 BUT i want to get a real IDE set up so that i can roll stuff back when i make mistakes, that super important.
+
+
+
+->>> check for checkmate (only check if king in check)
+see if king can move somewhere, and then is not in check
+see if attacking piece can be taken out, and king is then not in check
+see if something can move to block line of attack, and king is THEN not in check
+if all these are impossible, then it's checkmate
+
+->>>> to check for stalemate
+if king is NOT currently in check, then check for this
+look at all your current available moves, and if they all lead to king being in check, then its stalemate
+
 
 
 then add functionality to know when the king is in check (trickyyyy)
