@@ -160,6 +160,15 @@ function allowMove(el) {
     el.classList.toggle("hasBlackKing");
   }
   move = true; // that might be unnecessary
+  //toggle the whitePiece of blackPiece class (could deffo turn this into a function to call, and define it elsewhere)
+  if (whitesMove) {
+    selected.classList.toggle("whitePiece");
+    el.classList.toggle("whitePiece");
+  }
+  else {
+    selected.classList.toggle("blackPiece");
+    el.classList.toggle("blackPiece");
+  }
   checkForCheck(selected, el);
   if (inCheck) {
     if (whitesMove) {
