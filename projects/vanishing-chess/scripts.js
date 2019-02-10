@@ -187,21 +187,18 @@ function allowMove(el) {
   }
   move = true; // that might be unnecessary
   
+  //these ones need to be changed. we've already checked to see if
   isWhiteInCheck(selected, el);
   if (whiteInCheck) {
-    if (!whitesMove) {
-      temp = document.getElementsByClassName("hasWhiteKing");
-      kingInCheck = temp[0];
-      kingInCheck.classList.toggle("whiteInCheck");
-    }
+    temp = document.getElementsByClassName("hasWhiteKing");
+    kingInCheck = temp[0];
+    kingInCheck.classList.toggle("whiteInCheck");
   }
   isBlackInCheck(selected, el);
   if (blackInCheck) {
-    if (whitesMove) {
-      temp = document.getElementsByClassName("hasBlackKing");
-      kingInCheck = temp[0];
-      kingInCheck.classList.toggle("blackInCheck");
-    }
+    temp = document.getElementsByClassName("hasBlackKing");
+    kingInCheck = temp[0];
+    kingInCheck.classList.toggle("blackInCheck");
   }
   
   //toggle the whitePiece of blackPiece class (could deffo turn this into a function to call, and define it elsewhere)
