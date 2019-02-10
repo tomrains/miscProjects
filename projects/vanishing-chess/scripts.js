@@ -450,7 +450,7 @@ function isWhiteInCheck(selected, el) {
   temp = document.getElementsByClassName("hasWhiteKing");
   //so el will be where the white king is
   el = temp[0];
-  var blackPiecesLeft = document.getElementsByClass("blackPiece");
+  var blackPiecesLeft = document.getElementsByClassName("blackPiece");
   
   //see if pieces can attack successfully
   for (let i = 0; i < blackPiecesLeft.length; i++) {
