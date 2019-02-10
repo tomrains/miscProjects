@@ -177,6 +177,14 @@ function allowMove(el) {
       kingInCheck.classList.toggle("whiteInCheck");
     }
   }
+  isBlackInCheck(selected, el);
+  if (blackInCheck) {
+    if (whitesMove) {
+      temp = document.getElementsByClassName("hasBlackKing");
+      kingInCheck = temp[0];
+      kingInCheck.classList.toggle("blackInCheck");
+    }
+  }
   
   //at some point, i guess when you move out of check, then you need to toggle to the correct check
   
@@ -464,14 +472,21 @@ function isWhiteInCheck(selected, el) {
   move = true;
 } // last curly of isWhiteInCheck function
 
+
 function isBlackInCheck(selected, el) {
-  //this function is literally just filled with pieces of code i know i will need later
-//   if (whitePieces.indexOf(selected.innerHTML) != -1) {
-//     temp = document.getElementsByClassName("hasBlackKing");
-//   }
-  return;
-  //  var whitePiecesLeft = document.getElementsByClass("whitePiece");
-} //last curly of isBlackInCheck function
+  selected = el;
+  temp = document.getElementsByClassName("hasBlackKing");
+  //so el will be where the black king is
+  el = temp[0];
+  var whitePiecesLeft = document.getElementsByClassName("whitePiece");
+  //see if pieces can attack successfully
+  for (let i = 0; i < whitePiecesLeft.length; i++) {
+    piecesAttack(whitePiecesLeft[i], el);
+    if (move) {
+      blackInCheck = true;
+      return;
+    }
+  }
 
 function whatPieceIsIt(selected, el) {
   if (whitePawnAttacking) {
