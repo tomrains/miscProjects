@@ -202,6 +202,7 @@ function allowMove(el) {
     let temp = document.getElementsByClassName("hasWhiteKing");
     kingInCheck = temp[0];
     kingInCheck.classList.toggle("whiteInCheck");
+  }
   
   if (blackInCheck) {
     let temp = document.getElementsByClassName("hasBlackKing");
