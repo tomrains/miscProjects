@@ -197,19 +197,7 @@ function allowMove(el) {
     el.classList.toggle("blackPiece");
   }
   
-  //these ones need to be changed. we've already checked to see if
-  isWhiteInCheck(selected, el);
-  if (whiteInCheck) {
-    temp = document.getElementsByClassName("hasWhiteKing");
-    kingInCheck = temp[0];
-    kingInCheck.classList.toggle("whiteInCheck");
-  }
-  isBlackInCheck(selected, el);
-  if (blackInCheck) {
-    temp = document.getElementsByClassName("hasBlackKing");
-    kingInCheck = temp[0];
-    kingInCheck.classList.toggle("blackInCheck");
-  }
+  //might need to add code to toggle for kings in check
   
   //uncheck kings that are out of check
   var whiteKingCheckToggled = document.getElementsByClassName("whiteInCheck");
