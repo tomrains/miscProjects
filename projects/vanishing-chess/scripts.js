@@ -487,6 +487,8 @@ function isBlackInCheck(selected, el) {
       return;
     }
   }
+  move = true;
+}
 
 function whatPieceIsIt(selected, el) {
   if (whitePawnAttacking) {
