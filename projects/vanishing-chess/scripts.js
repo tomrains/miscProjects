@@ -199,14 +199,14 @@ function allowMove(el) {
   
   //puts king in check if need be
   //can refactor this to only go through code on appropriate team's turn
-  isWhiteinCheck(selected, el);
+  isWhiteInCheck(selected, el);
   if (whiteInCheck) {
     let temp = document.getElementsByClassName("hasWhiteKing");
     kingInCheck = temp[0];
     kingInCheck.classList.toggle("whiteInCheck");
   }
   
-  isBlackinCheck(selected, el);
+  isBlackInCheck(selected, el);
   if (blackInCheck) {
     let temp = document.getElementsByClassName("hasBlackKing");
     kingInCheck = temp[0];
