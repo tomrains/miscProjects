@@ -115,38 +115,9 @@ function allowMove(el) {
     kingCapture = false;
     return;
   }
-  if (whitePawnAttacking) {
-    whitePawnAttack(selected, el);
-    if (el.id < 9) {
-      whitePawnBecomesQueen = true;
-    }
-    whitePawnAttacking = false;
-  }
-  else if (blackPawnAttacking) {
-    blackPawnAttack(selected, el);
-    if (el.id > 56) {
-      blackPawnBecomesQueen = true;
-    }
-    blackPawnAttacking = false;
-  }
-  else if (selected.innerHTML == whitePawn || selected.innerHTML == blackPawn) {
-    movePawn(selected, el);
-  }
-  else if (selected.innerHTML == whiteRook || selected.innerHTML == blackRook) {
-    moveRook(selected, el);
-  }
-  else if (selected.innerHTML == whiteBishop || selected.innerHTML == blackBishop) {
-    moveBishop(selected, el);
-  }
-  else if (selected.innerHTML == whiteKing || selected.innerHTML == blackKing) {
-    moveKing(selected, el);
-  }
-  else if (selected.innerHTML == whiteQueen || selected.innerHTML == blackQueen) {
-    moveQueen(selected, el);
-  }
-  else if (selected.innerHTML == whiteKnight || selected.innerHTML == blackKnight) {
-    moveKnight(selected, el);
-  }
+  
+  ///ADDD FUNCTION CALL HERE
+  
   //if move has been declared invalid, then reset move to true, and exit this function
   if (!move) {
     move = true;
@@ -460,6 +431,11 @@ function moveKnight(selected, el) {
 } // last curly of moveKnight function
 
 function checkForCheck(selected, el) {
+  //so this needs to also check to see if YOuR king is in check. could easily make two functions that do similar things
+  //to see if YOURS is in check though, is to go through EVERY piece and see if it can attack yours
+  // so you'd have to get all pieces that are in the blackPieces or whitePieces array, and play movePiece for them
+  // that's pretty interesting actually
+  // would help if there were function that just determined what the piece should be
   //pretend that the square you just captured is the new starting square
   selected = el;
   //find the
@@ -500,3 +476,38 @@ function checkForCheck(selected, el) {
   }
   move = true;
 } // last curly of CheckforCheck function
+
+function whatPieceIsIt(selected, el) {
+  if (whitePawnAttacking) {
+    whitePawnAttack(selected, el);
+    if (el.id < 9) {
+      whitePawnBecomesQueen = true;
+    }
+    whitePawnAttacking = false;
+  }
+  else if (blackPawnAttacking) {
+    blackPawnAttack(selected, el);
+    if (el.id > 56) {
+      blackPawnBecomesQueen = true;
+    }
+    blackPawnAttacking = false;
+  }
+  else if (selected.innerHTML == whitePawn || selected.innerHTML == blackPawn) {
+    movePawn(selected, el);
+  }
+  else if (selected.innerHTML == whiteRook || selected.innerHTML == blackRook) {
+    moveRook(selected, el);
+  }
+  else if (selected.innerHTML == whiteBishop || selected.innerHTML == blackBishop) {
+    moveBishop(selected, el);
+  }
+  else if (selected.innerHTML == whiteKing || selected.innerHTML == blackKing) {
+    moveKing(selected, el);
+  }
+  else if (selected.innerHTML == whiteQueen || selected.innerHTML == blackQueen) {
+    moveQueen(selected, el);
+  }
+  else if (selected.innerHTML == whiteKnight || selected.innerHTML == blackKnight) {
+    moveKnight(selected, el);
+  } 
+} //last piece of whatPieceIsIt function
