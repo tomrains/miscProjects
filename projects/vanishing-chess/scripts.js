@@ -489,8 +489,8 @@ function isWhiteInCheck(selected, el) {
   //<<here>>//
   
   selected = el;
+  //the code on theseInCheck functions is wonky. check later.
   temp = document.getElementsByClassName("hasWhiteKing");
-  //so el will be where the white king is
   el = temp[0];
   let blackPiecesLeft = document.getElementsByClassName("blackPiece");
   
@@ -509,9 +509,9 @@ function isWhiteInCheck(selected, el) {
 
 
 function isBlackInCheck(selected, el) {
+  //the code on theseInCheck functions is wonky. check later.
   selected = el;
   temp = document.getElementsByClassName("hasBlackKing");
-  //so el will be where the black king is
   el = temp[0];
   let whitePiecesLeft = document.getElementsByClassName("whitePiece");
   //see if pieces can attack successfully
