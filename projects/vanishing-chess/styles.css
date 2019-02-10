@@ -27,9 +27,9 @@
 }
 
 .blackPiece {
-  box-shadow: inset -2px 0 0 black, inset 0 -2px 0 black, inset 2px 0 0 black, inset 0 2px 0 black;  
+  //used to know where every black piece is  
 }
 
 .whitePiece {
-  box-shadow: inset -2px 0 0 white, inset 0 -2px 0 white, inset 2px 0 0 white, inset 0 2px 0 white;  
+  //used to know where every white piece is 
 }
