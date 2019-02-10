@@ -479,24 +479,13 @@ function moveKnight(selected, el) {
 } // last curly of moveKnight function
 
 function isWhiteInCheck(selected, el) {
-  //so this needs to also check to see if YOuR king is in check. could easily make two functions that do similar things
-  //okay, i'm going to add black and white classes. might have them do something just so i can see them (for now)
-  //for every piece in opposing teams array (get them by the values in those maybe? not sure)
-  //try to move on the king. if any of them returns move as true, immediately return function and inCheck = true. else its false.
-  
-  //see if your king is in check (and eventually would disallow this move! for that reason might need to move it earlier)
-  //go through all their pieces and see if they can attack where your king is
-  //<<here>>//
-  
-  selected = el;
-  //the code on theseInCheck functions is wonky. check later.
-  temp = document.getElementsByClassName("hasWhiteKing");
-  el = temp[0];
+  let temp = document.getElementsByClassName("hasWhiteKing");
+  let whiteKingAttacked = temp[0];
   let blackPiecesLeft = document.getElementsByClassName("blackPiece");
   
   //see if pieces can attack successfully
   for (let i = 0; i < blackPiecesLeft.length; i++) {
-    piecesAttack(blackPiecesLeft[i], selected);
+    piecesAttack(blackPiecesLeft[i], whiteKingAttacked);
     if (move) {
       whiteInCheck = true;
       return;
@@ -509,14 +498,12 @@ function isWhiteInCheck(selected, el) {
 
 
 function isBlackInCheck(selected, el) {
-  //the code on theseInCheck functions is wonky. check later.
-  selected = el;
-  temp = document.getElementsByClassName("hasBlackKing");
-  el = temp[0];
+  let temp = document.getElementsByClassName("hasBlackKing");
+  let blackKingAttacked = temp[0];
   let whitePiecesLeft = document.getElementsByClassName("whitePiece");
   //see if pieces can attack successfully
   for (let i = 0; i < whitePiecesLeft.length; i++) {
-    piecesAttack(whitePiecesLeft[i], selected);
+    piecesAttack(whitePiecesLeft[i], blackKingAttacked);
     if (move) {
       blackInCheck = true;
       return;
