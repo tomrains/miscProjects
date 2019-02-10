@@ -210,17 +210,17 @@ function allowMove(el) {
     kingInCheck.classList.toggle("blackInCheck");
   }
   
-  //toggle the whitePiece of blackPiece class (could deffo turn this into a function to call, and define it elsewhere)
-  //add functionality to where if you WERE in check and now you're not, toggle.
+  //uncheck kings that are out of check
+  var whiteKingCheckToggled = document.getElementByClassName("whiteInCheck");
+  var blackKingCheckToggled = document.getElementByClassName("blackInCheck");
+  if (!whiteInCheck && whiteKingCheckToggled) {
+    whiteKingCheckToggled[0].classList.toggle("whiteInCheck");
+  }
+  if (!blackInCheck && blackKingCheckToggled) {
+    blackKingCheckToggled[0].classList.toggle("blackInCheck");
+  }
   
-  //at beginning, know if the current mover is in check.
-  //if it is, then implement a checker to make sure they are not in check after move. if so, disallow.
-    
-  //at end of turn ...
-    //if opposing team in check, make sure to turn on their inCheck function
-  
-  //at some point, i guess when you move out of check, then you need to toggle to the correct check
-  
+  //now that move is done, switch to other team's move
   if (whitesMove) {
     whitesMove = false;
   }
