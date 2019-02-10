@@ -22,7 +22,7 @@
   //used for quickly locating black king
 }
 
-.inCheck {
+.whiteInCheck, .blackInCheck {
   box-shadow: inset -4px 0 0 red, inset 0 -4px 0 red, inset 4px 0 0 red, inset 0 4px 0 red;
 }
 
