@@ -186,15 +186,7 @@ function allowMove(el) {
     el.classList.toggle("hasBlackKing");
   }
   move = true; // that might be unnecessary
-  //toggle the whitePiece of blackPiece class (could deffo turn this into a function to call, and define it elsewhere)
-  if (whitesMove) {
-    selected.classList.toggle("whitePiece");
-    el.classList.toggle("whitePiece");
-  }
-  else {
-    selected.classList.toggle("blackPiece");
-    el.classList.toggle("blackPiece");
-  }
+  
   isWhiteInCheck(selected, el);
   if (whiteInCheck) {
     if (!whitesMove) {
@@ -210,6 +202,16 @@ function allowMove(el) {
       kingInCheck = temp[0];
       kingInCheck.classList.toggle("blackInCheck");
     }
+  }
+  
+  //toggle the whitePiece of blackPiece class (could deffo turn this into a function to call, and define it elsewhere)
+  if (whitesMove) {
+    selected.classList.toggle("whitePiece");
+    el.classList.toggle("whitePiece");
+  }
+  else {
+    selected.classList.toggle("blackPiece");
+    el.classList.toggle("blackPiece");
   }
   //add functionality to where if you WERE in check and now you're not, toggle.
   
@@ -491,7 +493,7 @@ function isWhiteInCheck(selected, el) {
   temp = document.getElementsByClassName("hasWhiteKing");
   //so el will be where the white king is
   el = temp[0];
-  var blackPiecesLeft = document.getElementsByClassName("blackPiece");
+  let blackPiecesLeft = document.getElementsByClassName("blackPiece");
   
   //see if pieces can attack successfully
   for (let i = 0; i < blackPiecesLeft.length; i++) {
@@ -512,7 +514,7 @@ function isBlackInCheck(selected, el) {
   temp = document.getElementsByClassName("hasBlackKing");
   //so el will be where the black king is
   el = temp[0];
-  var whitePiecesLeft = document.getElementsByClassName("whitePiece");
+  let whitePiecesLeft = document.getElementsByClassName("whitePiece");
   //see if pieces can attack successfully
   for (let i = 0; i < whitePiecesLeft.length; i++) {
     piecesAttack(whitePiecesLeft[i], el);
