@@ -157,7 +157,7 @@ function allowMove(el) {
   selected.classList.toggle("selected");
   //toggle the kings' location class
   
-  // see if in check. if so, disallow move.
+  //check to see if pieces in check
   if (whitesMove) {
     isWhiteInCheck(selected, el);
   }
@@ -165,6 +165,7 @@ function allowMove(el) {
     isBlackInCheck(selected, el);
   }
   
+  // see if in check. if so, disallow move.
   if (whitesMove && whiteInCheck) {
     selected.innerHTML = previousSelected.innerHTML;
     el.innerHTML = previousEl.innerhtml;
