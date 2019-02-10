@@ -157,6 +157,17 @@ function allowMove(el) {
   selected.classList.toggle("selected");
   //toggle the kings' location class
   
+  if (el.innerHTML == whiteKing) {
+  selected.classList.toggle("hasWhiteKing");
+  el.classList.toggle("hasWhiteKing");
+  }
+  else if (el.innerHTML == blackKing) {
+    selected.classList.toggle("hasBlackKing");
+    el.classList.toggle("hasBlackKing");
+  }
+  
+  //will need to change above code to go back to not having king if the move isnt allowed
+  
   //check to see if pieces in check. pairs with code below (refactor to make new function?)
   if (whitesMove) {
     isWhiteInCheck(selected, el);
@@ -177,14 +188,6 @@ function allowMove(el) {
     return;
   }
   
-  if (el.innerHTML == whiteKing) {
-    selected.classList.toggle("hasWhiteKing");
-    el.classList.toggle("hasWhiteKing");
-  }
-  else if (el.innerHTML == blackKing) {
-    selected.classList.toggle("hasBlackKing");
-    el.classList.toggle("hasBlackKing");
-  }
   move = true; // that might be unnecessary
   
   if (whitesMove) {
