@@ -25,3 +25,11 @@
 .inCheck {
   box-shadow: inset -4px 0 0 red, inset 0 -4px 0 red, inset 4px 0 0 red, inset 0 4px 0 red;
 }
+
+.blackPiece {
+  box-shadow: inset -2px 0 0 black, inset 0 -2px 0 black, inset 2px 0 0 black, inset 0 2px 0 black;  
+}
+
+.whitePiece {
+  box-shadow: inset -2px 0 0 white, inset 0 -2px 0 white, inset 2px 0 0 white, inset 0 2px 0 white;  
+}
