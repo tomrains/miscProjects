@@ -122,6 +122,21 @@ function allowMove(el) {
     move = true;
     return;
   }
+  
+  // see if in check. if so, disallow move.
+  if (whitesMove) {
+    isWhiteInCheck(selected, el);
+    if (whiteInCheck) {
+      return;
+    }
+  }
+  else {
+    isBlackInCheck(selected, el);
+    if (blackInCheck) {
+      return;
+    }
+  }
+  
   if (whitePawnBecomesQueen) {
     selected.innerHTML = "";
     el.innerHTML = whiteQueen;
@@ -185,6 +200,13 @@ function allowMove(el) {
       kingInCheck.classList.toggle("blackInCheck");
     }
   }
+  //add functionality to where if you WERE in check and now you're not, toggle.
+  
+  //at beginning, know if the current mover is in check.
+  //if it is, then implement a checker to make sure they are not in check after move. if so, disallow.
+    
+  //at end of turn ...
+    //if opposing team in check, make sure to turn on their inCheck function
   
   //at some point, i guess when you move out of check, then you need to toggle to the correct check
   
