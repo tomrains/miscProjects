@@ -175,10 +175,10 @@ function allowMove(el) {
   
   //check to see if pieces in check. pairs with code below (refactor to make new function?)
   if (whitesMove) {
-    isWhiteInCheck(selected, el);
+    isWhiteInCheck();
   }
   else {
-    isBlackInCheck(selected, el);
+    isBlackInCheck(s);
   }
   // see if in check. if so, disallow move.
   if (whitesMove && whiteInCheck) {
@@ -223,7 +223,7 @@ function allowMove(el) {
   
   //check to see if opposing king in check
   if (!whitesMove) {
-    isWhiteInCheck(selected, el);
+    isWhiteInCheck();
     if (whiteInCheck) {
       let temp = document.getElementsByClassName("hasWhiteKing");
       kingInCheck = temp[0];
@@ -231,7 +231,7 @@ function allowMove(el) {
     }
   }
   if (whitesMove) {
-    isBlackInCheck(selected, el);
+    isBlackInCheck();
     if (blackInCheck) {
       let temp = document.getElementsByClassName("hasBlackKing");
       kingInCheck = temp[0];
@@ -518,7 +518,7 @@ function moveKnight(selected, el) {
   }
 } // last curly of moveKnight function
 
-function isWhiteInCheck(selected, el) {
+function isWhiteInCheck() {
   let temp = document.getElementsByClassName("hasWhiteKing");
   let whiteKingAttacked = temp[0];
   let blackPiecesLeft = document.getElementsByClassName("blackPiece");
@@ -537,7 +537,7 @@ function isWhiteInCheck(selected, el) {
 } // last curly of isWhiteInCheck function
 
 
-function isBlackInCheck(selected, el) {
+function isBlackInCheck() {
   let temp = document.getElementsByClassName("hasBlackKing");
   let blackKingAttacked = temp[0];
   let whitePiecesLeft = document.getElementsByClassName("whitePiece");
