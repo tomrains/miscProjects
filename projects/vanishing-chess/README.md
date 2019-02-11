@@ -2,11 +2,15 @@ Specifications
 
 **Rules
 
-**next thing to do: change it so that once a king is out of check, the inCheck class toggles out
+**OKAY, 
 
-OKAY, i've solved a few of the problems, but it still is buggy to where it doesn't alwas think it's in check.
-pretty sure that has something to do with the blackPieces not all being picked up properly. so lets...
-...figure out whats up with that after ive taken a break
+two things:
+
+when a piece is CAPTURED, it should lose all the classes that were there with it, and gain all the classes of the...
+... "conquering" piece NICE!
+
+why are some of the getElementsByClassName objects so buggy, like filled with undefineds? likely root of our problems.
+second, i have a bug where it thinks black is in check even when it taint. does that one not have changes its twinf unction does?
 
 also, because the code is getting tricky, i think it might be smart to refactor the code
 BUT i want to get a real IDE set up so that i can roll stuff back when i make mistakes, that super important.
