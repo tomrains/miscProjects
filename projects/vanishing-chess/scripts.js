@@ -178,7 +178,7 @@ function allowMove(el) {
     isWhiteInCheck();
   }
   else {
-    isBlackInCheck(s);
+    isBlackInCheck();
   }
   // see if in check. if so, disallow move.
   if (whitesMove && whiteInCheck) {
