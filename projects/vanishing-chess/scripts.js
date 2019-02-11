@@ -114,8 +114,8 @@ function allowMove(el) {
   }
   
   //setting variable for previous selected and el, in case move must be reverted
-  var previousSelected = selected;
-  var previousEl = el;
+  var previousSelected = selected.innerHTML;
+  var previousEl = el.innerHTML;
   
   if (kingCapture) {
     kingCapture = false;
@@ -177,8 +177,8 @@ function allowMove(el) {
   }
   // see if in check. if so, disallow move.
   if (whitesMove && whiteInCheck) {
-    selected.innerHTML = previousSelected.innerHTML;
-    el.innerHTML = previousEl.innerhtml;
+    selected.innerHTML = previousSelected;
+    el.innerHTML = previousEl;
     return;
   }
   if (!whitesMove && blackInCheck) {
