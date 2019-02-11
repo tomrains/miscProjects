@@ -8,6 +8,8 @@ var blackPawnBecomesQueen = false;
 var whiteInCheck = false;
 var blackInCheck = false;
 var captureMove = false;
+var whiteLoses = false;
+var blackLoses = false;
 
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
@@ -646,8 +648,20 @@ function isCheckmate() {
 }
 
 function didWhiteLose() {
-  return;
-}
+  //see if king can move anywhere
+  let king = document.getElementsByClassName("hasWhiteKing");
+  for (let i = king.id - 9; i < king.id + 9; i++) {
+    moveKing(king, i);
+    if (move) {
+      isWhiteInCheck();
+      if (!whiteInCheck) {
+        return;
+      }
+    }
+  }
+  whiteLoses = true;
+  alert("Checkmate. Black wins!");
+} //last curly in didWhiteLose
 
 function didBlackLose() {
   return;
@@ -657,3 +671,7 @@ function didBlackLose() {
 // see if attacking piece can be taken out, and king is then not in check
 // see if something can move to block line of attack, and king is THEN not in check
 // if all these are impossible, then it's checkmate
+
+//so take where the king is in a variable ...
+//and then cycle through for the 8 potential it can do?
+//anywhere from -9 to +9, don't do 0 though.
