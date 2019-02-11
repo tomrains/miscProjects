@@ -2,15 +2,16 @@ Specifications
 
 **Rules
 
-**OKAY, 
+**OKAY, im working on checkmate. easy next step can be to make it trigger after opponent makes move, instead of ...
+...at beginning of turn lol
 
-two things:
+it does seem to be going well. i bet i'll find bugs later though :D
+i'll start adding in checkmate functionality.
 
-when a piece is CAPTURED, it should lose all the classes that were there with it, and gain all the classes of the...
-... "conquering" piece NICE!
+hmm, it seems to be working now? i am suspicious, but maybe it's all good?? im scared to debug more lol
 
-so i think one way to do this is ... find way to see if the move is a capture move. if so, turn on marker variable.
-if move fails, turn marker variable back off
+so i think one way to do this is ... find way to see if the move is a capture move. if so, turn on marker variable. [done]
+if move fails, turn marker variable back off [done]
 if move is successful, somehow turn off the irrelevant classes of the existing piece
     could use something like ... if whites move, and was capture, and square has blackPiece class, toggle that class (or remove?)
 and then turn off the marker variable capture again
