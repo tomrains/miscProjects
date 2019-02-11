@@ -137,6 +137,7 @@ function allowMove(el) {
     whitePawnBecomesQueen = false;
     move = true;
     //need to loop in the checkInCheck bit here eventually
+    //probably need to add in the "remove class" thing here for enemy pieces
     whitesMove = false;
     captureMove = false;
     return;
@@ -148,6 +149,7 @@ function allowMove(el) {
     blackPawnBecomesQueen = false;
     move = true;
     //need to loop in the checkInCheck bit here eventually
+    //probably need to add in the "remove class" thing here for enemy pieces
     whitesMove = true;
     captureMove = false;
     return;
@@ -161,6 +163,16 @@ function allowMove(el) {
   //remove border from selected square
   selected.classList.toggle("selected");
   //toggle the kings' location class
+  
+  //if move was a captured move, turn off the opposing whitePiece or blackPiece class
+  if (captureMove) {
+    if (whitesMove) {
+      el.classList.remove("blackPiece");
+    }
+    if (!whitesMove) {
+      el.classList.remove("whitePiece");
+    }
+  }
   
   if (el.innerHTML == whiteKing) {
   selected.classList.remove("hasWhiteKing");
@@ -193,6 +205,15 @@ function allowMove(el) {
       selected.classList.add("hasBlackKing");
       el.classList.remove("hasBlackKing");
     }
+    //if move was a captured move, turn off the opposing whitePiece or blackPiece class
+    if (captureMove) {
+      if (whitesMove) {
+        el.classList.add("blackPiece");
+      }
+      if (!whitesMove) {
+        el.classList.add("whitePiece");
+      }
+    }
     captureMove = false;
     return;
   }
@@ -207,6 +228,15 @@ function allowMove(el) {
     else if (el.innerHTML == blackKing) {
       selected.classList.add("hasBlackKing");
       el.classList.remove("hasBlackKing");
+    }
+    //if move was a captured move, turn off the opposing whitePiece or blackPiece class
+    if (captureMove) {
+      if (whitesMove) {
+        el.classList.add("blackPiece");
+      }
+      if (!whitesMove) {
+        el.classList.add("whitePiece");
+      }
     }
     captureMove = false;
     return;
@@ -249,15 +279,6 @@ function allowMove(el) {
     blackKingCheckToggled[0].classList.toggle("blackInCheck");
   }
   
-  //if move was a captured move, turn off the opposing whitePiece or blackPiece class
-  if (captureMove) {
-    if (whitesMove) {
-      el.classList.remove("blackPiece");
-    }
-    if (!whitesMove) {
-      el.classList.remove("whitePiece");
-    }
-  }
   //turn off captureMove i
   captureMove = false;
   
