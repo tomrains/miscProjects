@@ -163,12 +163,12 @@ function allowMove(el) {
   //toggle the kings' location class
   
   if (el.innerHTML == whiteKing) {
-  selected.classList.toggle("hasWhiteKing");
-  el.classList.toggle("hasWhiteKing");
+  selected.classList.remove("hasWhiteKing");
+  el.classList.add("hasWhiteKing");
   }
   else if (el.innerHTML == blackKing) {
-    selected.classList.toggle("hasBlackKing");
-    el.classList.toggle("hasBlackKing");
+    selected.classList.remove("hasBlackKing");
+    el.classList.add("hasBlackKing");
   }
   
   //will need to change above code to go back to not having king if the move isnt allowed
@@ -186,12 +186,12 @@ function allowMove(el) {
     el.innerHTML = previousEl;
     //toggle the king locations back!
     if (el.innerHTML == whiteKing) {
-      selected.classList.toggle("hasWhiteKing");
-      el.classList.toggle("hasWhiteKing");
+      selected.classList.add("hasWhiteKing");
+      el.classList.remove("hasWhiteKing");
     }
     else if (el.innerHTML == blackKing) {
-      selected.classList.toggle("hasBlackKing");
-      el.classList.toggle("hasBlackKing");
+      selected.classList.add("hasBlackKing");
+      el.classList.remove("hasBlackKing");
     }
     captureMove = false;
     return;
@@ -201,12 +201,12 @@ function allowMove(el) {
     el.innerHTML = previousEl;
     //toggle the king locations back!
     if (el.innerHTML == whiteKing) {
-      selected.classList.toggle("hasWhiteKing");
-      el.classList.toggle("hasWhiteKing");
+      selected.classList.add("hasWhiteKing");
+      el.classList.remove("hasWhiteKing");
     }
     else if (el.innerHTML == blackKing) {
-      selected.classList.toggle("hasBlackKing");
-      el.classList.toggle("hasBlackKing");
+      selected.classList.add("hasBlackKing");
+      el.classList.remove("hasBlackKing");
     }
     captureMove = false;
     return;
