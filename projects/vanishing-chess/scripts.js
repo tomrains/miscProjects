@@ -7,6 +7,7 @@ var whitePawnBecomesQueen = false;
 var blackPawnBecomesQueen = false;
 var whiteInCheck = false;
 var blackInCheck = false;
+var captureMove = false;
 
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
@@ -85,6 +86,7 @@ function selectedPiece(el) {
       if (selected.innerHTML == whitePawn) {
         whitePawnAttacking = true;
       }
+      captureMove = true;
       return;
     }
     //if selected is black and el is white, return (to allow capture)
@@ -92,6 +94,7 @@ function selectedPiece(el) {
       if (selected.innerHTML == blackPawn) {
         blackPawnAttacking = true;
       }
+      captureMove = true;
       return;
     }
   }
@@ -135,6 +138,7 @@ function allowMove(el) {
     move = true;
     //need to loop in the checkInCheck bit here eventually
     whitesMove = false;
+    captureMove = false;
     return;
   }
   if (blackPawnBecomesQueen) {
@@ -145,6 +149,7 @@ function allowMove(el) {
     move = true;
     //need to loop in the checkInCheck bit here eventually
     whitesMove = true;
+    captureMove = false;
     return;
   }
   //grab piece inside square
@@ -188,6 +193,7 @@ function allowMove(el) {
       selected.classList.toggle("hasBlackKing");
       el.classList.toggle("hasBlackKing");
     }
+    captureMove = false;
     return;
   }
   if (!whitesMove && blackInCheck) {
@@ -202,6 +208,7 @@ function allowMove(el) {
       selected.classList.toggle("hasBlackKing");
       el.classList.toggle("hasBlackKing");
     }
+    captureMove = false;
     return;
   }
   
@@ -241,6 +248,18 @@ function allowMove(el) {
   if (!blackInCheck && blackKingCheckToggled.length > 0) {
     blackKingCheckToggled[0].classList.toggle("blackInCheck");
   }
+  
+  //if move was a captured move, turn off the opposing whitePiece or blackPiece class
+  if (captureMove) {
+    if (whitesMove) {
+      el.classList.remove("blackPiece");
+    }
+    if (!whitesMove) {
+      el.classList.remove("whitePiece");
+    }
+  }
+  //turn off captureMove i
+  captureMove = false;
   
   //now that move is done, switch to other team's move
   if (whitesMove) {
