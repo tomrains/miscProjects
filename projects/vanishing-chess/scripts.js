@@ -179,11 +179,29 @@ function allowMove(el) {
   if (whitesMove && whiteInCheck) {
     selected.innerHTML = previousSelected;
     el.innerHTML = previousEl;
+    //toggle the king locations back!
+    if (el.innerHTML == whiteKing) {
+      selected.classList.toggle("hasWhiteKing");
+      el.classList.toggle("hasWhiteKing");
+    }
+    else if (el.innerHTML == blackKing) {
+      selected.classList.toggle("hasBlackKing");
+      el.classList.toggle("hasBlackKing");
+    }
     return;
   }
   if (!whitesMove && blackInCheck) {
     selected.innerHTML = previousSelected.innerHTML;
     el.innerHTML = previousEl.innerhtml;
+    //toggle the king locations back!
+    if (el.innerHTML == whiteKing) {
+      selected.classList.toggle("hasWhiteKing");
+      el.classList.toggle("hasWhiteKing");
+    }
+    else if (el.innerHTML == blackKing) {
+      selected.classList.toggle("hasBlackKing");
+      el.classList.toggle("hasBlackKing");
+    }
     return;
   }
   
