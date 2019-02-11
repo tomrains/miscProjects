@@ -653,6 +653,7 @@ function didBlackLose() {
   return;
 }
 // see if king can move somewhere, and then is not in check
+  //do moveKing and then isWhiteInCheck for 9 possible moves.
 // see if attacking piece can be taken out, and king is then not in check
 // see if something can move to block line of attack, and king is THEN not in check
 // if all these are impossible, then it's checkmate
