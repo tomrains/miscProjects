@@ -552,6 +552,8 @@ function whatPieceIsIt(selected, el) {
 } //last curly of whatPieceIsIt function
 
 function piecesAttack(selected, el) {
+  //default should always be set to true (trying to fix check bug)
+  move = true;
   if (selected.innerHTML == whitePawn) {
     whitePawnAttack(selected, el);
   }
