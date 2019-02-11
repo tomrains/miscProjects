@@ -63,6 +63,7 @@ function setBoard() {
 setBoard();
 
 function selectedPiece(el) {
+  isCheckmate();
   //disallow moves from empty squares
   if (el.innerHTML == "") {
     return;
@@ -633,4 +634,25 @@ function piecesAttack(selected, el) {
   else if (selected.innerHTML == whiteKnight || selected.innerHTML == blackKnight) {
     moveKnight(selected, el);
   }  
+} //last curly for piecesAttack
+
+function isCheckmate() {
+  if (whiteInCheck) {
+    didWhiteLose();
+  }
+  if (blackInCheck) {
+    didBlackLose();
+  }
 }
+
+function didWhiteLose() {
+  return;
+}
+
+function didBlackLose() {
+  return;
+}
+// see if king can move somewhere, and then is not in check
+// see if attacking piece can be taken out, and king is then not in check
+// see if something can move to block line of attack, and king is THEN not in check
+// if all these are impossible, then it's checkmate
