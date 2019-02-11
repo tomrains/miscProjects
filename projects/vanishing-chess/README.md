@@ -9,6 +9,12 @@ two things:
 when a piece is CAPTURED, it should lose all the classes that were there with it, and gain all the classes of the...
 ... "conquering" piece NICE!
 
+so i think one way to do this is ... find way to see if the move is a capture move. if so, turn on marker variable.
+if move fails, turn marker variable back off
+if move is successful, somehow turn off the irrelevant classes of the existing piece
+    could use something like ... if whites move, and was capture, and square has blackPiece class, toggle that class (or remove?)
+and then turn off the marker variable capture again
+
 why are some of the getElementsByClassName objects so buggy, like filled with undefineds? likely root of our problems.
 second, i have a bug where it thinks black is in check even when it taint. does that one not have changes its twinf unction does?
 
