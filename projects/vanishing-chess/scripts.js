@@ -191,8 +191,8 @@ function allowMove(el) {
     return;
   }
   if (!whitesMove && blackInCheck) {
-    selected.innerHTML = previousSelected.innerHTML;
-    el.innerHTML = previousEl.innerhtml;
+    selected.innerHTML = previousSelected;
+    el.innerHTML = previousEl;
     //toggle the king locations back!
     if (el.innerHTML == whiteKing) {
       selected.classList.toggle("hasWhiteKing");
