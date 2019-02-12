@@ -65,7 +65,6 @@ function setBoard() {
 setBoard();
 
 function selectedPiece(el) {
-  isCheckmate();
   //disallow moves from empty squares
   if (el.innerHTML == "") {
     return;
@@ -292,6 +291,9 @@ function allowMove(el) {
   else {
     whitesMove = true;
   }
+  
+  //moved isCheckmate here so you can know at end of attacking players' turn
+  isCheckmate();
 } //last curly of allow move function
 
 function movePawn(selected, el) {
