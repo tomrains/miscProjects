@@ -641,6 +641,8 @@ function piecesAttack(selected, el) {
 } //last curly for piecesAttack
 
 function isCheckmate() {
+  //including attackers array in this function so the subfunctions can access it
+  let attackers = [];
   if (whiteInCheck) {
     didWhiteLose();
   }
@@ -657,7 +659,25 @@ function didWhiteLose() {
     if (move) {
       isWhiteInCheck();
       if (!whiteInCheck) {
+        //switch back to being in check
+        whiteInCheck = true;
         return;
+      }
+    }
+  }
+  findBlackAttackingPiece();
+  if (attackers.length < 2) { //if there are multiple attackers, then life goes on.
+    let temp = attackers[0]
+    let whitePiecesLeft = document.getElementsByClassName("whitePiece");
+    //see if pieces can attack successfully
+    for (let i = 0; i < whitePiecesLeft.length; i++) {
+      piecesAttack(whitePiecesLeft[i], temp);
+      if (move) {
+        isWhiteInCheck();
+        if (!whiteInCheck) {
+          whiteInCheck = true;
+          return;
+        }
       }
     }
   }
@@ -668,12 +688,20 @@ function didWhiteLose() {
 function didBlackLose() {
   return;
 }
-// see if king can move somewhere, and then is not in check
-  //do moveKing and then isWhiteInCheck for 9 possible moves.
-// see if attacking piece can be taken out, and king is then not in check
+
+function findBlackAttackingPiece() {
+  let temp = document.getElementsByClassName("hasWhiteKing");
+  let whiteKingAttacked = temp[0];
+  let blackPiecesLeft = document.getElementsByClassName("blackPiece");
+  //see if pieces can attack successfully
+  for (let i = 0; i < blackPiecesLeft.length; i++) {
+    piecesAttack(blackPiecesLeft[i], whiteKingAttacked);
+    if (move) {
+      attackers = attackers.push(blackPiecesLeft[i]);
+    }
+  }
+}
+
+// see if attacking piece can be taken out, and king is then not in check [done]
 // see if something can move to block line of attack, and king is THEN not in check
 // if all these are impossible, then it's checkmate
-
-//so take where the king is in a variable ...
-//and then cycle through for the 8 potential it can do?
-//anywhere from -9 to +9, don't do 0 though.
