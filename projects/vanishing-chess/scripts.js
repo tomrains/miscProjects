@@ -10,6 +10,7 @@ var blackInCheck = false;
 var captureMove = false;
 var whiteLoses = false;
 var blackLoses = false;
+var attackers = [];
 
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
@@ -641,8 +642,6 @@ function piecesAttack(selected, el) {
 } //last curly for piecesAttack
 
 function isCheckmate() {
-  //including attackers array in this function so the subfunctions can access it
-  let attackers = [];
   if (whiteInCheck) {
     didWhiteLose();
   }
@@ -690,6 +689,7 @@ function didBlackLose() {
 }
 
 function findBlackAttackingPiece() {
+  attackers = [];
   let temp = document.getElementsByClassName("hasWhiteKing");
   let whiteKingAttacked = temp[0];
   let blackPiecesLeft = document.getElementsByClassName("blackPiece");
