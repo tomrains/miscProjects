@@ -2,8 +2,15 @@ Specifications
 
 **Rules
 
-**OKAY, im working on checkmate. easy next step can be to make it trigger after opponent makes move, instead of ...
-...at beginning of turn lol
+**OKAY, im working on checkmate. 
+
+it's all there. now just KILL IT!!!
+
+the 'move king' and 'kill the attacker' portions seem to be working - wahoo!
+
+now for the hard part, to see if you can BLOCK the attacker. this will also use the attacker array, which will help immensely.
+
+
 
 it does seem to be going well. i bet i'll find bugs later though :D
 i'll start adding in checkmate functionality.
