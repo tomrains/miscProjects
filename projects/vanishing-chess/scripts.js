@@ -691,6 +691,18 @@ function didWhiteLose() {
       }
     }
   }
+  //<<code here will determine if the piece can be blocked//>>
+  //execute the code to see where they are moving, and if the move can be blocked
+  let attackingPiece = attackers[0];
+  if (attackingPiece.innerHTML == blackRook) {
+    return;
+  }
+  if (attackingPiece.innerHTML == blackBishop) {
+    return;
+  }
+  if (attackingPiece.innerHTML == blackQueen) {
+    return;
+  }
   whiteLoses = true;
   alert("Checkmate. Black wins!");
 } //last curly in didWhiteLose
@@ -699,6 +711,117 @@ function didBlackLose() {
   return;
 }
 
-// see if attacking piece can be taken out, and king is then not in check [done]
-// see if something can move to block line of attack, and king is THEN not in check
+// see if something can move to block line of attack, and king is THEN not in check [wip]
+
+//if attacking pawn, can't get between
+//if knight, cant get between
+// can't be king
+// if queen, bishop, or rook, must get in their line of sight
+//not sure how i can make it work ....
+//i would borrow code from their movement functions
+//and for each of the paths along their movement, if any of the opposing team pieces can move in it, its not checkmate
+
 // if all these are impossible, then it's checkmate
+
+
+// function moveRook(selected, el) {
+//   //check to see if in same row or same column, respectively
+//   }
+//   if (((attackingPiece.id / 8) >> 0) == (((whiteKingAttacked.id-1) / 8) >> 0)) { //if in same row
+//     var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
+//     var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
+//     for (let i = small + 1; i < large; i++) {
+         //let whitePiecesLeft = document.getElementsByClassName("whitePiece");
+
+//<<<the BELOW is the typical code to see if they can attack. will change of course. but great start
+
+// for (let i = 0; i < whitePiecesLeft.length; i++) {
+//       piecesAttack(whitePiecesLeft[i], temp);
+//       if (move) {
+//         isWhiteInCheck();
+//         if (!whiteInCheck) {
+//           whiteInCheck = true;
+//           var attackers = []; //probably need to add this before every return
+//           return;
+//         }
+//       }
+//     }
+
+
+
+         //see if white team pieces can move to the square. 
+        // you would need a modified version of piecesAttack. you want the pawns to move normally
+//so i is piece along path
+         //if they can, then return and set equal to whatever
+//       }
+//     }
+//   }
+//   if (((selected.id - el.id) % 8) == 0) { //if in same column
+//     var small = Math.min(selected.id, el.id);
+//     var large = Math.max(selected.id, el.id);
+//     for (let i = small + 8; i < large; i+=8) {
+//       if (document.getElementById(i).innerHTML != "") {
+//         move = false;
+//         return;
+//       }
+//     }
+//   }
+// }//last curly in moveRook function
+
+
+
+
+// function moveBishop (selected, el) {
+//   let small = Math.min(selected.id, el.id);
+//   let large = Math.max(selected.id, el.id);
+//   if (!((large - small) % 7 == 0 || (large - small) % 9 == 0)) {
+//     move = false;
+//     return;
+//   }
+//   //make sure bishops move properly
+//   if ((large - small) % 7 == 0) { //if the difference is 7
+//     if (((small - 1) % 8) == 0 || (large % 8) == 0) {
+//       move = false;
+//       return true;
+//     }
+//     for (let i = small; i < large; i += 7) {
+//       // if equal to side ones
+//       if ( ((i % 8) == 0 || ((i - 1) % 8) == 0) && i != large && i != small) {
+//         move = false;
+//         return;
+//       }
+//       if (document.getElementById(i).innerHTML != "" && i != small && i != large) {
+//         move = false;
+//         return;
+//       }
+//     }
+//   }
+//   else if ((large - small) % 9 == 0) { // if the difference is 9
+//     if (((large - 1) % 8) == 0 || (small % 8) == 0) {
+//       move = false;
+//       return true;
+//     }
+//     for (let i = small; i < large; i += 9) {
+//       // if equal to side ones
+//       if ( ((i % 8) == 0 || ((i - 1) % 8) == 0 ) && i != large && i != small) {
+//         move = false;
+//         return;
+//       }
+//       if (document.getElementById(i).innerHTML != "" && i != small && i != large) {
+//         move = false;
+//         return;
+//       }
+//     }
+//   }
+// } // last curly in moveBishop function
+
+
+
+// function moveQueen(selected, el) {
+//   moveRook(selected, el);
+//   if (move) {
+//     return;
+//   }
+//   move = true;
+//   moveBishop(selected, el);
+// }
