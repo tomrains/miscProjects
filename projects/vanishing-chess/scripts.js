@@ -724,14 +724,24 @@ function didBlackLose() {
 // if all these are impossible, then it's checkmate
 
 
-// function moveRook(selected, el) {
+// function moveRook(selected, el) { //DELETE this line
 //   //check to see if in same row or same column, respectively
 //   }
 //   if (((attackingPiece.id / 8) >> 0) == (((whiteKingAttacked.id-1) / 8) >> 0)) { //if in same row
 //     var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
 //     var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
-//     for (let i = small + 1; i < large; i++) {
-         //let whitePiecesLeft = document.getElementsByClassName("whitePiece");
+//     let whitePiecesLeft = document.getElementsByClassName("whitePiece");
+//     for (let i = small + 1; i < large; i++) { //for each possible square
+//       for (let j = 0; i < whitePiecesLeft.length; j++) {
+//         canPieceBlock(whitePiecesLeft[j], i);
+         //if (move) {
+            //move = true;
+           //return;
+//////////////}
+//j is cycling through pieces, i is the square they're going to
+           
+//add in code for if pawn, too
+
 
 //<<<the BELOW is the typical code to see if they can attack. will change of course. but great start
 
@@ -825,3 +835,23 @@ function didBlackLose() {
 //   move = true;
 //   moveBishop(selected, el);
 // }
+
+function canPieceBlock(blocker, square) {
+  if (blocker.innerHTML == whitePawn || blocker.innerHTML == blackPawn) {
+    movePawn(blocker, square);
+  else if (blocker.innerHTML == whiteRook || blocker.innerHTML == blackRook) {
+    moveRook(blocker, square);
+  }
+  else if (blocker.innerHTML == whiteBishop || blocker.innerHTML == blackBishop) {
+    moveBishop(blocker, square);
+  }
+  else if (blocker.innerHTML == whiteKing || blocker.innerHTML == blackKing) {
+    moveKing(blocker, square);
+  }
+  else if (blocker.innerHTML == whiteQueen || blocker.innerHTML == blackQueen) {
+    moveQueen(blocker, square);
+  }
+  else if (blocker.innerHTML == whiteKnight || blocker.innerHTML == blackKnight) {
+    moveKnight(blocker, square);
+  } 
+}
