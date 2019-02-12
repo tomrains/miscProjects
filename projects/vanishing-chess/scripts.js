@@ -10,7 +10,6 @@ var blackInCheck = false;
 var captureMove = false;
 var whiteLoses = false;
 var blackLoses = false;
-var attackers = [];
 
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
@@ -664,9 +663,21 @@ function didWhiteLose() {
       }
     }
   }
-  findBlackAttackingPiece();
+  //code below finds the attacking piece
+  var attackers = [];
+  let temp = document.getElementsByClassName("hasWhiteKing");
+  let whiteKingAttacked = temp[0];
+  let blackPiecesLeft = document.getElementsByClassName("blackPiece");
+  //see if pieces can attack successfully
+  for (let i = 0; i < blackPiecesLeft.length; i++) {
+    piecesAttack(blackPiecesLeft[i], whiteKingAttacked);
+    if (move) {
+      attackers = attackers.push(blackPiecesLeft[i]);
+    }
+  }
+  //now attacking piece(s) have been found
   if (attackers.length < 2) { //if there are multiple attackers, then life goes on.
-    let temp = attackers[0]
+    let temp = attackers[0];
     let whitePiecesLeft = document.getElementsByClassName("whitePiece");
     //see if pieces can attack successfully
     for (let i = 0; i < whitePiecesLeft.length; i++) {
@@ -686,20 +697,6 @@ function didWhiteLose() {
 
 function didBlackLose() {
   return;
-}
-
-function findBlackAttackingPiece() {
-  attackers = [];
-  let temp = document.getElementsByClassName("hasWhiteKing");
-  let whiteKingAttacked = temp[0];
-  let blackPiecesLeft = document.getElementsByClassName("blackPiece");
-  //see if pieces can attack successfully
-  for (let i = 0; i < blackPiecesLeft.length; i++) {
-    piecesAttack(blackPiecesLeft[i], whiteKingAttacked);
-    if (move) {
-      attackers = attackers.push(blackPiecesLeft[i]);
-    }
-  }
 }
 
 // see if attacking piece can be taken out, and king is then not in check [done]
