@@ -664,7 +664,6 @@ function didWhiteLose() {
     }
   }
   //code below finds the attacking piece
-  var attackers = [];
   let temp = document.getElementsByClassName("hasWhiteKing");
   let whiteKingAttacked = temp[0];
   let blackPiecesLeft = document.getElementsByClassName("blackPiece");
@@ -686,6 +685,7 @@ function didWhiteLose() {
         isWhiteInCheck();
         if (!whiteInCheck) {
           whiteInCheck = true;
+          var attackers = []; //probably need to add this before every return
           return;
         }
       }
