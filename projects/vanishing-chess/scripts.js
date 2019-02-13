@@ -527,8 +527,8 @@ function moveKing(selected, el) {
           }
           document.getElementById("5").innerHTML = "";
           document.getElementById("1").innerHTML = "";
-          document.getElementById("2").innerHTML = "blackKing";
-          document.getElementById("3").innerHTML = "blackRook";
+          document.getElementById("3").innerHTML = blackKing;
+          document.getElementById("4").innerHTML = blackRook;
         }
       }
     }
