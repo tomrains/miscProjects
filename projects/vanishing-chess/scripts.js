@@ -817,9 +817,166 @@ function didWhiteLose() {
   alert("Checkmate. Black wins!");
 } //last curly in didWhiteLose
 
-function didBlackLose() {
-  return;
-}
+function didBlackLose() { //this function is JUST like didWhiteLose(), just with colors switched
+  //see if king can move anywhere
+  let king = document.getElementsByClassName("hasBlackKing");
+  for (let i = king.id - 9; i < king.id + 9; i++) {
+    moveKing(king, i);
+    if (move) {
+      isBlackInCheck();
+      if (!blackInCheck) {
+        //switch back to being in check
+        blackInCheck = true;
+        return;
+      }
+    }
+  }
+  //code below finds the attacking piece
+  let attackers = [];
+  let temp = document.getElementsByClassName("hasBlackKing");
+  let blackKingAttacked = temp[0];
+  let whitePiecesLeft = document.getElementsByClassName("whitePiece");
+  //see if pieces can attack successfully
+  for (let i = 0; i < whitePiecesLeft.length; i++) {
+    piecesAttack(whitePiecesLeft[i], blackKingAttacked);
+    if (move) {
+      attackers.push(whitePiecesLeft[i]);
+    }
+  }
+  //now attacking piece(s) have been found
+  let blackPiecesLeft = document.getElementsByClassName("blackPiece");
+  if (attackers.length < 2) { //if there are multiple attackers, then life goes on.
+    let temp = attackers[0];
+    //see if pieces can attack successfully
+    for (let i = 0; i < blackPiecesLeft.length; i++) {
+      piecesAttack(blackPiecesLeft[i], temp);
+      if (move) {
+        isBlackInCheck();
+        if (!blackInCheck) {
+          blackInCheck = true;
+          attackers = []; //probably need to add this before every return
+          return;
+        }
+      }
+    }
+  }
+  //<<code here will determine if the piece can be blocked//>>
+  let attackingPiece = attackers[0];
+  if (attackingPiece.innerHTML == whiteRook) {
+    if (((attackingPiece.id / 8) >> 0) == (((blackKingAttacked.id-1) / 8) >> 0)) { //if in same row
+      var small = Math.min(attackingPiece.id, blackKingAttacked.id);
+      var large = Math.max(attackingPiece.id, blackKingAttacked.id);
+      for (let i = small + 1; i < large; i++) { //for each possible square
+        for (let j = 0; i < blackPiecesLeft.length; j++) {//for each possible piece
+          canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+          if (move) {
+            move = true;
+            return;
+          }
+        }
+      }
+    }
+    if (((attackingPiece.id - blackKingAttacked.id) % 8) == 0) { //if in same column
+      var small = Math.min(attackingPiece.id, blackKingAttacked.id);
+      var large = Math.max(attackingPiece.id, blackKingAttacked.id);
+      for (let i = small + 8; i < large; i+=8) { // for each square between the pieces
+        for (let j = 0; i < blackPiecesLeft.length; j++) { // for each remaining piece
+          canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+          if (move) {
+            move = true;
+            return;
+          }
+        }
+      }
+    }
+  } //last curly for if attacking piece is a blackRook
+  if (attackingPiece.innerHTML == whiteBishop) {
+    let small = Math.min(attackingPiece.id, blackKingAttacked.id);
+    let large = Math.max(attackingPiece.id, blackKingAttacked.id);
+    if ((large - small) % 7 == 0) { //if the difference is 7
+      for (let i = small; i < large; i += 7) {//for each possible square
+        for (let j = 0; i < blackPiecesLeft.length; j++) {//for each possible piece}
+          canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+          if (move) {
+            move = true;
+            return;
+          }
+        }
+      }
+    }
+    else if ((large - small) % 9 == 0) { // if the difference is 9
+      for (let i = small; i < large; i += 9) {
+        for (let j = 0; i < blackPiecesLeft.length; j++) {//for each possible piece}
+          canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+          if (move) {
+            move = true;
+            return;
+          }
+        }
+      }
+    } 
+  } //last curly to check for bishop
+  if (attackingPiece.innerHTML == whiteQueen) { // so you'd have to know how it's attacking first .. like rook or like bishop?
+    moveQueen(attackingPiece, king);
+    if (queenAttackingLikeBishop) { // the below code is just a copy of the above
+      let small = Math.min(attackingPiece.id, blackKingAttacked.id);
+      let large = Math.max(attackingPiece.id, blackKingAttacked.id);
+      if ((large - small) % 7 == 0) { //if the difference is 7
+        for (let i = small; i < large; i += 7) {//for each possible square
+          for (let j = 0; i < blackPiecesLeft.length; j++) {//for each possible piece}
+            canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+            if (move) {
+              move = true;
+              return;
+            }
+          }
+        }
+      }
+      else if ((large - small) % 9 == 0) { // if the difference is 9
+        for (let i = small; i < large; i += 9) {
+          for (let j = 0; i < blackPiecesLeft.length; j++) {//for each possible piece}
+            canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+            if (move) {
+              move = true;
+              return;
+            }
+          }
+        }
+      }
+    }
+    if (queenAttackingLikeRook) {
+      if (((attackingPiece.id / 8) >> 0) == (((blackKingAttacked.id-1) / 8) >> 0)) { //if in same row
+        var small = Math.min(attackingPiece.id, blackKingAttacked.id);
+        var large = Math.max(attackingPiece.id, blackKingAttacked.id);
+        for (let i = small + 1; i < large; i++) { //for each possible square
+          for (let j = 0; i < blackPiecesLeft.length; j++) {//for each possible piece
+            canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+            if (move) {
+              move = true;
+              return;
+            }
+          }
+        }
+      }
+      if (((attackingPiece.id - blackKingAttacked.id) % 8) == 0) { //if in same column
+        var small = Math.min(attackingPiece.id, blackKingAttacked.id);
+        var large = Math.max(attackingPiece.id, blackKingAttacked.id);
+        for (let i = small + 8; i < large; i+=8) { // for each square between the pieces
+          for (let j = 0; i < blackPiecesLeft.length; j++) { // for each remaining piece
+            canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+            if (move) {
+              move = true;
+              return;
+            }
+          }
+        }
+      }
+    }
+  }
+  blackLoses = true;
+  alert("Checkmate. White wins!");
+} //last curly in didBlackLose
+
 
 function canPieceBlock(blocker, square) {
   if (blocker.innerHTML == whitePawn || blocker.innerHTML == blackPawn) {
