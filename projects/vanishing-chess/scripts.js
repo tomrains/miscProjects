@@ -707,7 +707,7 @@ function didWhiteLose() {
       var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
       var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
       for (let i = small + 1; i < large; i++) { //for each possible square
-        for (let j = 0; i j whitePiecesLeft.length; j++) {//for each possible piece
+        for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece
           canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
             move = true;
