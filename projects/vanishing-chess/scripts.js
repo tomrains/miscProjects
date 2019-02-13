@@ -292,6 +292,28 @@ function allowMove(el) {
   //turn off captureMove i
   captureMove = false;
   
+  //if king moved, turn that king movement to true
+  if (selected.innerHTML == whiteKing) {
+    whiteKingHasMoved = true;
+  }
+  else if (selected.innerHTML == blackKing) { 
+    blackKingHasMoved = true;
+  }
+  
+  //check on the hasMoved variables for rooks
+  if (selected.id == 1 && selected.innerHTML == blackRook) {
+    leftBlackRookHasMoved = true;
+  }
+  else if (selected.id == 8 && selected.innerHTML == blackRook) {
+    rightBlackRookHasMoved = true;
+  }
+  else if (selected.id == 57 && selected.innerHTML == whiteRook) {
+    leftWhiteRookHasMoved = true;
+  }
+  else if (selected.id == 64 && selected.innerHTML == whiteRook) {
+    rightWhiteRookHasMoved = true;
+  }
+  
   //now that move is done, switch to other team's move
   if (whitesMove) {
     whitesMove = false;
@@ -1068,4 +1090,13 @@ function canPieceBlock(blocker, square) {
   else if (blocker.innerHTML == whiteKnight || blocker.innerHTML == blackKnight) {
     moveKnight(blocker, square);
   } 
+}
+
+function castle() {
+  //you get here if the king hasn't moved yet and is trying to move to one of these weird squares
+  //if castle option 1
+  //else if castle option 2
+  //else if castle option 3
+  //else if castle option 4
+  return;
 }
