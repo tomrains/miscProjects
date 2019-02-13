@@ -525,7 +525,10 @@ function moveKing(selected, el) {
               }
             }
           }
-          //add in text here to show what pieces should do when they move
+          document.getElementById("5").innerHTML = "";
+          document.getElementById("1").innerHTML = "";
+          document.getElementById("2").innerHTML = "blackKing";
+          document.getElementById("3").innerHTML = "blackRook";
         }
       }
     }
