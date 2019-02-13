@@ -10,8 +10,8 @@ var blackInCheck = false;
 var captureMove = false;
 var whiteLoses = false;
 var blackLoses = false;
-var queenMovesLikeBishop = false;
-var queenMovesLikeRook = false;
+var queenAttackingLikeBishop = false;
+var queenAttackingLikeRook = false;
 
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
@@ -501,15 +501,15 @@ function moveKing(selected, el) {
 function moveQueen(selected, el) {
   moveRook(selected, el);
   if (move) {
-    queenMovesLikeRook = true;
-    queenMovesLikeBishop = false;
+    queenAttackingLikeRook = true;
+    queenAttackingLikeBishop = false;
     return;
   }
   move = true;
   moveBishop(selected, el);
   if (move) {
-    queenMovesLikeBishop = true;
-    queenMovesLikeRook = false;
+    queenAttackingLikeBishop = true;
+    queenAttackingLikeRook = false;
   }
 }
 
