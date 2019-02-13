@@ -301,16 +301,16 @@ function allowMove(el) {
   }
   
   //check on the hasMoved variables for rooks
-  if (selected.id == 1 && selected.innerHTML == blackRook) {
+  if (selected.id == 1 && el.innerHTML == blackRook) {
     leftBlackRookHasMoved = true;
   }
-  else if (selected.id == 8 && selected.innerHTML == blackRook) {
+  else if (selected.id == 8 && el.innerHTML == blackRook) {
     rightBlackRookHasMoved = true;
   }
-  else if (selected.id == 57 && selected.innerHTML == whiteRook) {
+  else if (selected.id == 57 && el.innerHTML == whiteRook) {
     leftWhiteRookHasMoved = true;
   }
-  else if (selected.id == 64 && selected.innerHTML == whiteRook) {
+  else if (selected.id == 64 && el.innerHTML == whiteRook) {
     rightWhiteRookHasMoved = true;
   }
   
