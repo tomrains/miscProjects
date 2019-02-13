@@ -508,17 +508,35 @@ function moveKing(selected, el) {
   var kingHasMoved = true;
   
   //add in castling functionality here
+  // i believe it is important to disallow the king from moving here if he is in check...
+  //...that way we don't have to reverse it later on like with other moves (switching two == annoying!)
   if (el.id == 3) {//if black king moving to left, queenside
-    return;
+    if (blackKingHasMoved == false && leftBlackRookHasMoved == false) {
+      if (document.getElementByID("2").innerHTML == "" && document.getElementByID("3").innerHTML == "" && document.getElementByID("4").innerHTML == "" {
+        return;
+      }
+    }
   }
   else if (el.id == 7) {//if black king moving to right, king side
-    return;
+    if (blackKingHasMoved == false && rightBlackRookHasMoved == false) {
+      if (document.getElementByID("6").innerHTML == "" && document.getElementByID("7").innerHTML == "") {
+        return;
+      }
+    }
   }
   else if (el.id == 59) {//if white king move to left, queenside
-    return;
+    if (whiteKingHasMoved == false && leftWhiteRookHasMoved == false) {
+      if (document.getElementByID("58").innerHTML == "" && document.getElementByID("59").innerHTML == "" && document.getElementByID("60").innerHTML == "") {
+        return;
+      }
+    }
   }
   else if (el.id == 63) {//if white king moving to right, kingside
-    return;
+    if (whiteKingHasMoved == false && rightWhiteRookHasMoved == false) {
+      if (document.getElementByID("62").innerHTML == "" && document.getElementByID("63").innerHTML == "") {
+        return;
+      }
+    }
   }
     
   if ((selected.id - 1) % 8 == 0) {//on left
