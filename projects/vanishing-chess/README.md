@@ -2,9 +2,12 @@ Specifications
 
 **Rules
 
-**OKAY, im working on checkmate. 
+**OKAY, im working on castling - this will be a piece of cake compared to other movements!
 
-it's all there. now just KILL IT!!!
+okay, black checkmate functionality now working. will check for bugs later on. even getting a super simple AI...
+...i think would help make it more interesting to check for bugs.
+
+
 
 the 'move king' and 'kill the attacker' portions seem to be working - wahoo!
 
