@@ -12,6 +12,12 @@ var whiteLoses = false;
 var blackLoses = false;
 var queenAttackingLikeBishop = false;
 var queenAttackingLikeRook = false;
+var whiteKingHasMoved = false;
+var blackKingHasMoved = false;
+var leftWhiteRookHasMoved = false;
+var rightWhiteRookHasMoved = false;
+var leftBlackRookHasMoved = false;
+var rightBlackRookHasMoved = false;
 
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
