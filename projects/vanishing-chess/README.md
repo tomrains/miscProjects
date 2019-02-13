@@ -2,10 +2,13 @@ Specifications
 
 **Rules
 
+NOTE: for some reason, after black castles, it thinks it is still black's turn.
+
 NOW i am going to move them, then check for check, and be able to move them back if in check
 also should add variable about, if you've castled once on your team, then of course you cant castle again...
 ...obvious but probably useful.
 
+also obvious ... don't allow king to do this if king is CURRENTLY in check
 
 
 **OKAY, im working on castling - this will be a piece of cake compared to other movements!
