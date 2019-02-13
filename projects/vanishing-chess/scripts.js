@@ -506,6 +506,21 @@ function moveKing(selected, el) {
   var regularKingMoves = [-9, -8, -7, -1, 1, 7, 8, 9];
   var kingMovement = selected.id - el.id;
   var kingHasMoved = true;
+  
+  //add in castling functionality here
+  if (el.id == 3) {//if black king moving to left, queenside
+    return;
+  }
+  else if (el.id == 7) {//if black king moving to right, king side
+    return;
+  }
+  else if (el.id == 59) {//if white king move to left, queenside
+    return;
+  }
+  else if (el.id == 63) {//if white king moving to right, kingside
+    return;
+  }
+    
   if ((selected.id - 1) % 8 == 0) {//on left
     if (leftSideKingMoves.indexOf(kingMovement) == -1) {
       move = false;
