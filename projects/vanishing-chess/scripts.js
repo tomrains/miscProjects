@@ -676,9 +676,9 @@ function didWhiteLose() {
     }
   }
   //now attacking piece(s) have been found
+  let whitePiecesLeft = document.getElementsByClassName("whitePiece");
   if (attackers.length < 2) { //if there are multiple attackers, then life goes on.
     let temp = attackers[0];
-    let whitePiecesLeft = document.getElementsByClassName("whitePiece");
     //see if pieces can attack successfully
     for (let i = 0; i < whitePiecesLeft.length; i++) {
       piecesAttack(whitePiecesLeft[i], temp);
@@ -698,7 +698,6 @@ function didWhiteLose() {
     if (((attackingPiece.id / 8) >> 0) == (((whiteKingAttacked.id-1) / 8) >> 0)) { //if in same row
       var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
       var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
-      let whitePiecesLeft = document.getElementsByClassName("whitePiece");
       for (let i = small + 1; i < large; i++) { //for each possible square
         for (let j = 0; i < whitePiecesLeft.length; j++) {//for each possible piece
           canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
@@ -724,9 +723,32 @@ function didWhiteLose() {
     }
   } //last curly for if attacking piece is a blackRook
   if (attackingPiece.innerHTML == blackBishop) {
-    return;
-  }
-  if (attackingPiece.innerHTML == blackQueen) {
+    let small = Math.min(attackingPiece.id, whiteKingAttacked.id);
+    let large = Math.max(attackingPiece.id, whiteKingAttacked.id);
+    if ((large - small) % 7 == 0) { //if the difference is 7
+      for (let i = small; i < large; i += 7) {//for each possible square
+        for (let j = 0; i < whitePiecesLeft.length; j++) {//for each possible piece}
+          canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+          if (move) {
+            move = true;
+            return;
+          }
+        }
+      }
+    }
+    else if ((large - small) % 9 == 0) { // if the difference is 9
+      for (let i = small; i < large; i += 9) {
+        for (let j = 0; i < whitePiecesLeft.length; j++) {//for each possible piece}
+          canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+          if (move) {
+            move = true;
+            return;
+          }
+        }
+      }
+    } 
+  } //last curly to check for bishop
+  if (attackingPiece.innerHTML == blackQueen) { // so you'd have to know how it's attacking first .. like rook or like bishop?
     return;
   }
   whiteLoses = true;
@@ -737,17 +759,6 @@ function didBlackLose() {
   return;
 }
 
-// see if something can move to block line of attack, and king is THEN not in check [wip]
-
-
-
-//code below is lines of code i'll need for the function
-//   //check to see if in same row or same column, respectively
-//   }
-
-//////////////}
-//j is cycling through pieces, i is the square they're going to
-           
 
 
 //<<<the BELOW is the typical code to see if they can attack. will change of course. but great start
@@ -777,51 +788,6 @@ function didBlackLose() {
 // }//last curly in moveRook function
 
 
-
-
-// function moveBishop (selected, el) {
-//   let small = Math.min(selected.id, el.id);
-//   let large = Math.max(selected.id, el.id);
-//   if (!((large - small) % 7 == 0 || (large - small) % 9 == 0)) {
-//     move = false;
-//     return;
-//   }
-//   //make sure bishops move properly
-//   if ((large - small) % 7 == 0) { //if the difference is 7
-//     if (((small - 1) % 8) == 0 || (large % 8) == 0) {
-//       move = false;
-//       return true;
-//     }
-//     for (let i = small; i < large; i += 7) {
-//       // if equal to side ones
-//       if ( ((i % 8) == 0 || ((i - 1) % 8) == 0) && i != large && i != small) {
-//         move = false;
-//         return;
-//       }
-//       if (document.getElementById(i).innerHTML != "" && i != small && i != large) {
-//         move = false;
-//         return;
-//       }
-//     }
-//   }
-//   else if ((large - small) % 9 == 0) { // if the difference is 9
-//     if (((large - 1) % 8) == 0 || (small % 8) == 0) {
-//       move = false;
-//       return true;
-//     }
-//     for (let i = small; i < large; i += 9) {
-//       // if equal to side ones
-//       if ( ((i % 8) == 0 || ((i - 1) % 8) == 0 ) && i != large && i != small) {
-//         move = false;
-//         return;
-//       }
-//       if (document.getElementById(i).innerHTML != "" && i != small && i != large) {
-//         move = false;
-//         return;
-//       }
-//     }
-//   }
-// } // last curly in moveBishop function
 
 
 
