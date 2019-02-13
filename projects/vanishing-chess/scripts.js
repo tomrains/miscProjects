@@ -710,8 +710,12 @@ function didWhiteLose() {
         for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece
           canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
-            move = true;
-            return;
+            isWhiteInCheck();
+            if (!whiteInCheck) {
+              whiteInCheck = true;
+              attackers = []; //probably need to add this before every return
+              return;
+            }
           }
         }
       }
@@ -723,8 +727,12 @@ function didWhiteLose() {
         for (let j = 0; j < whitePiecesLeft.length; j++) { // for each remaining piece
           canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
-            move = true;
-            return;
+            isWhiteInCheck();
+            if (!whiteInCheck) {
+              whiteInCheck = true;
+              attackers = []; //probably need to add this before every return
+              return;
+            }
           }
         }
       }
@@ -737,9 +745,13 @@ function didWhiteLose() {
       for (let i = small; i < large; i += 7) {//for each possible square
         for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece}
           canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
-          if (move) {
-            move = true;
-            return;
+           if (move) {
+            isWhiteInCheck();
+            if (!whiteInCheck) {
+              whiteInCheck = true;
+              attackers = []; //probably need to add this before every return
+              return;
+            }
           }
         }
       }
@@ -749,8 +761,12 @@ function didWhiteLose() {
         for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece}
           canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
-            move = true;
-            return;
+            isWhiteInCheck();
+            if (!whiteInCheck) {
+              whiteInCheck = true;
+              attackers = []; //probably need to add this before every return
+              return;
+            }
           }
         }
       }
@@ -766,8 +782,12 @@ function didWhiteLose() {
           for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece}
             canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
-              move = true;
-              return;
+              isWhiteInCheck();
+              if (!whiteInCheck) {
+                whiteInCheck = true;
+                attackers = []; //probably need to add this before every return
+                return;
+              }
             }
           }
         }
@@ -777,8 +797,12 @@ function didWhiteLose() {
           for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece}
             canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
-              move = true;
-              return;
+              isWhiteInCheck();
+              if (!whiteInCheck) {
+                whiteInCheck = true;
+                attackers = []; //probably need to add this before every return
+                return;
+              }
             }
           }
         }
@@ -792,8 +816,12 @@ function didWhiteLose() {
           for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece
             canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
-              move = true;
-              return;
+              isWhiteInCheck();
+              if (!whiteInCheck) {
+                whiteInCheck = true;
+                attackers = []; //probably need to add this before every return
+                return;
+              }
             }
           }
         }
@@ -805,8 +833,12 @@ function didWhiteLose() {
           for (let j = 0; j < whitePiecesLeft.length; j++) { // for each remaining piece
             canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
-              move = true;
-              return;
+              isWhiteInCheck();
+              if (!whiteInCheck) {
+                whiteInCheck = true;
+                attackers = []; //probably need to add this before every return
+                return;
+              }
             }
           }
         }
@@ -827,6 +859,7 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
       if (!blackInCheck) {
         //switch back to being in check
         blackInCheck = true;
+        attackers = [];
         return;
       }
     }
@@ -870,8 +903,12 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
         for (let j = 0; j < blackPiecesLeft.length; j++) {//for each possible piece
           canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
-            move = true;
-            return;
+            isBlackInCheck();
+            if (!blackInCheck) {
+              blackInCheck = true;
+              attackers = []; //probably need to add this before every return
+              return;
+            }
           }
         }
       }
@@ -883,8 +920,12 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
         for (let j = 0; j < blackPiecesLeft.length; j++) { // for each remaining piece
           canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
-            move = true;
-            return;
+            isBlackInCheck();
+            if (!blackInCheck) {
+              blackInCheck = true;
+              attackers = []; //probably need to add this before every return
+              return;
+            }
           }
         }
       }
@@ -898,8 +939,12 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
         for (let j = 0; j < blackPiecesLeft.length; j++) {//for each possible piece}
           canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
-            move = true;
-            return;
+            isBlackInCheck();
+            if (!blackInCheck) {
+              blackInCheck = true;
+              attackers = []; //probably need to add this before every return
+              return;
+            }
           }
         }
       }
@@ -909,8 +954,12 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
         for (let j = 0; j < blackPiecesLeft.length; j++) {//for each possible piece}
           canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
-            move = true;
-            return;
+            isBlackInCheck();
+            if (!blackInCheck) {
+              blackInCheck = true;
+              attackers = []; //probably need to add this before every return
+              return;
+            }
           }
         }
       }
@@ -926,8 +975,12 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
           for (let j = 0; j < blackPiecesLeft.length; j++) {//for each possible piece}
             canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
-              move = true;
-              return;
+              isBlackInCheck();
+              if (!blackInCheck) {
+                blackInCheck = true;
+                attackers = []; //probably need to add this before every return
+                return;
+              }
             }
           }
         }
@@ -937,8 +990,12 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
           for (let j = 0; j < blackPiecesLeft.length; j++) {//for each possible piece}
             canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
-              move = true;
-              return;
+              isBlackInCheck();
+              if (!blackInCheck) {
+                blackInCheck = true;
+                attackers = []; //probably need to add this before every return
+                return;
+              }
             }
           }
         }
@@ -952,8 +1009,12 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
           for (let j = 0; j < blackPiecesLeft.length; j++) {//for each possible piece
             canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
-              move = true;
-              return;
+              isBlackInCheck();
+              if (!blackInCheck) {
+                blackInCheck = true;
+                attackers = []; //probably need to add this before every return
+                return;
+              }
             }
           }
         }
@@ -965,8 +1026,12 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
           for (let j = 0; j < blackPiecesLeft.length; j++) { // for each remaining piece
             canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
-              move = true;
-              return;
+              isBlackInCheck();
+              if (!blackInCheck) {
+                blackInCheck = true;
+                attackers = []; //probably need to add this before every return
+                return;
+              }
             }
           }
         }
