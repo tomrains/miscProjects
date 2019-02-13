@@ -517,7 +517,7 @@ function moveKing(selected, el) {
       if (!blackInCheck) {   
         if (document.getElementById("2").innerHTML == "" && document.getElementById("3").innerHTML == "" && document.getElementById("4").innerHTML == "") {
           for (var a = 2; a < 5; a++) { //for each square between them
-            for (let b = 0; b < whitePiecesLeft.length; j++) { // for each remaining piece
+            for (let b = 0; b < whitePiecesLeft.length; b++) { // for each remaining piece
               piecesAttack(whitePiecesLeft[b], a); //see if the piece can attack any of the squares
               if (move) { //if a piece is able to move there, then exit the king moving at all
                 move = false;
