@@ -664,7 +664,7 @@ function didWhiteLose() {
     }
   }
   //code below finds the attacking piece
-  var attackers;
+  let attackers = [];
   let temp = document.getElementsByClassName("hasWhiteKing");
   let whiteKingAttacked = temp[0];
   let blackPiecesLeft = document.getElementsByClassName("blackPiece");
@@ -672,7 +672,7 @@ function didWhiteLose() {
   for (let i = 0; i < blackPiecesLeft.length; i++) {
     piecesAttack(blackPiecesLeft[i], whiteKingAttacked);
     if (move) {
-      attackers = attackers.push(blackPiecesLeft[i]);
+      attackers.push(blackPiecesLeft[i]);
     }
   }
   //now attacking piece(s) have been found
