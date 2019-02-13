@@ -707,7 +707,7 @@ function didWhiteLose() {
       var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
       var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
       for (let i = small + 1; i < large; i++) { //for each possible square
-        for (let j = 0; i < whitePiecesLeft.length; j++) {//for each possible piece
+        for (let j = 0; i j whitePiecesLeft.length; j++) {//for each possible piece
           canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
             move = true;
@@ -720,7 +720,7 @@ function didWhiteLose() {
       var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
       var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
       for (let i = small + 8; i < large; i+=8) { // for each square between the pieces
-        for (let j = 0; i < whitePiecesLeft.length; j++) { // for each remaining piece
+        for (let j = 0; j < whitePiecesLeft.length; j++) { // for each remaining piece
           canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
             move = true;
@@ -735,7 +735,7 @@ function didWhiteLose() {
     let large = Math.max(attackingPiece.id, whiteKingAttacked.id);
     if ((large - small) % 7 == 0) { //if the difference is 7
       for (let i = small; i < large; i += 7) {//for each possible square
-        for (let j = 0; i < whitePiecesLeft.length; j++) {//for each possible piece}
+        for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece}
           canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
             move = true;
@@ -746,7 +746,7 @@ function didWhiteLose() {
     }
     else if ((large - small) % 9 == 0) { // if the difference is 9
       for (let i = small; i < large; i += 9) {
-        for (let j = 0; i < whitePiecesLeft.length; j++) {//for each possible piece}
+        for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece}
           canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
             move = true;
@@ -763,7 +763,7 @@ function didWhiteLose() {
       let large = Math.max(attackingPiece.id, whiteKingAttacked.id);
       if ((large - small) % 7 == 0) { //if the difference is 7
         for (let i = small; i < large; i += 7) {//for each possible square
-          for (let j = 0; i < whitePiecesLeft.length; j++) {//for each possible piece}
+          for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece}
             canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
               move = true;
@@ -774,7 +774,7 @@ function didWhiteLose() {
       }
       else if ((large - small) % 9 == 0) { // if the difference is 9
         for (let i = small; i < large; i += 9) {
-          for (let j = 0; i < whitePiecesLeft.length; j++) {//for each possible piece}
+          for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece}
             canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
               move = true;
@@ -789,7 +789,7 @@ function didWhiteLose() {
         var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
         var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
         for (let i = small + 1; i < large; i++) { //for each possible square
-          for (let j = 0; i < whitePiecesLeft.length; j++) {//for each possible piece
+          for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece
             canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
               move = true;
@@ -802,7 +802,7 @@ function didWhiteLose() {
         var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
         var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
         for (let i = small + 8; i < large; i+=8) { // for each square between the pieces
-          for (let j = 0; i < whitePiecesLeft.length; j++) { // for each remaining piece
+          for (let j = 0; j < whitePiecesLeft.length; j++) { // for each remaining piece
             canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
               move = true;
@@ -867,7 +867,7 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
       var small = Math.min(attackingPiece.id, blackKingAttacked.id);
       var large = Math.max(attackingPiece.id, blackKingAttacked.id);
       for (let i = small + 1; i < large; i++) { //for each possible square
-        for (let j = 0; i < blackPiecesLeft.length; j++) {//for each possible piece
+        for (let j = 0; j < blackPiecesLeft.length; j++) {//for each possible piece
           canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
             move = true;
@@ -880,7 +880,7 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
       var small = Math.min(attackingPiece.id, blackKingAttacked.id);
       var large = Math.max(attackingPiece.id, blackKingAttacked.id);
       for (let i = small + 8; i < large; i+=8) { // for each square between the pieces
-        for (let j = 0; i < blackPiecesLeft.length; j++) { // for each remaining piece
+        for (let j = 0; j < blackPiecesLeft.length; j++) { // for each remaining piece
           canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
             move = true;
@@ -895,7 +895,7 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
     let large = Math.max(attackingPiece.id, blackKingAttacked.id);
     if ((large - small) % 7 == 0) { //if the difference is 7
       for (let i = small; i < large; i += 7) {//for each possible square
-        for (let j = 0; i < blackPiecesLeft.length; j++) {//for each possible piece}
+        for (let j = 0; j < blackPiecesLeft.length; j++) {//for each possible piece}
           canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
             move = true;
@@ -906,7 +906,7 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
     }
     else if ((large - small) % 9 == 0) { // if the difference is 9
       for (let i = small; i < large; i += 9) {
-        for (let j = 0; i < blackPiecesLeft.length; j++) {//for each possible piece}
+        for (let j = 0; j < blackPiecesLeft.length; j++) {//for each possible piece}
           canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
           if (move) {
             move = true;
@@ -923,7 +923,7 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
       let large = Math.max(attackingPiece.id, blackKingAttacked.id);
       if ((large - small) % 7 == 0) { //if the difference is 7
         for (let i = small; i < large; i += 7) {//for each possible square
-          for (let j = 0; i < blackPiecesLeft.length; j++) {//for each possible piece}
+          for (let j = 0; j < blackPiecesLeft.length; j++) {//for each possible piece}
             canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
               move = true;
@@ -934,7 +934,7 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
       }
       else if ((large - small) % 9 == 0) { // if the difference is 9
         for (let i = small; i < large; i += 9) {
-          for (let j = 0; i < blackPiecesLeft.length; j++) {//for each possible piece}
+          for (let j = 0; j < blackPiecesLeft.length; j++) {//for each possible piece}
             canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
               move = true;
@@ -949,7 +949,7 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
         var small = Math.min(attackingPiece.id, blackKingAttacked.id);
         var large = Math.max(attackingPiece.id, blackKingAttacked.id);
         for (let i = small + 1; i < large; i++) { //for each possible square
-          for (let j = 0; i < blackPiecesLeft.length; j++) {//for each possible piece
+          for (let j = 0; j < blackPiecesLeft.length; j++) {//for each possible piece
             canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
               move = true;
@@ -962,7 +962,7 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
         var small = Math.min(attackingPiece.id, blackKingAttacked.id);
         var large = Math.max(attackingPiece.id, blackKingAttacked.id);
         for (let i = small + 8; i < large; i+=8) { // for each square between the pieces
-          for (let j = 0; i < blackPiecesLeft.length; j++) { // for each remaining piece
+          for (let j = 0; j < blackPiecesLeft.length; j++) { // for each remaining piece
             canPieceBlock(blackPiecesLeft[j], i); //see if the piece can move to the square, acting as a block
             if (move) {
               move = true;
