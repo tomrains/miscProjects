@@ -10,6 +10,8 @@ var blackInCheck = false;
 var captureMove = false;
 var whiteLoses = false;
 var blackLoses = false;
+var queenMovesLikeBishop = false;
+var queenMovesLikeRook = false;
 
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
@@ -499,10 +501,16 @@ function moveKing(selected, el) {
 function moveQueen(selected, el) {
   moveRook(selected, el);
   if (move) {
+    queenMovesLikeRook = true;
+    queenMovesLikeBishop = false;
     return;
   }
   move = true;
   moveBishop(selected, el);
+  if (move) {
+    queenMovesLikeBishop = true;
+    queenMovesLikeRook = false;
+  }
 }
 
 function moveKnight(selected, el) {
@@ -749,7 +757,61 @@ function didWhiteLose() {
     } 
   } //last curly to check for bishop
   if (attackingPiece.innerHTML == blackQueen) { // so you'd have to know how it's attacking first .. like rook or like bishop?
-    return;
+    moveQueen(attackingPiece, king);
+    if (queenAttackingLikeBishop) { // the below code is just a copy of the above
+      let small = Math.min(attackingPiece.id, whiteKingAttacked.id);
+      let large = Math.max(attackingPiece.id, whiteKingAttacked.id);
+      if ((large - small) % 7 == 0) { //if the difference is 7
+        for (let i = small; i < large; i += 7) {//for each possible square
+          for (let j = 0; i < whitePiecesLeft.length; j++) {//for each possible piece}
+            canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+            if (move) {
+              move = true;
+              return;
+            }
+          }
+        }
+      }
+      else if ((large - small) % 9 == 0) { // if the difference is 9
+        for (let i = small; i < large; i += 9) {
+          for (let j = 0; i < whitePiecesLeft.length; j++) {//for each possible piece}
+            canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+            if (move) {
+              move = true;
+              return;
+            }
+          }
+        }
+      }
+    }
+    if (queenAttackingLikeRook) {
+      if (((attackingPiece.id / 8) >> 0) == (((whiteKingAttacked.id-1) / 8) >> 0)) { //if in same row
+        var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
+        var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
+        for (let i = small + 1; i < large; i++) { //for each possible square
+          for (let j = 0; i < whitePiecesLeft.length; j++) {//for each possible piece
+            canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+            if (move) {
+              move = true;
+              return;
+            }
+          }
+        }
+      }
+      if (((attackingPiece.id - whiteKingAttacked.id) % 8) == 0) { //if in same column
+        var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
+        var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
+        for (let i = small + 8; i < large; i+=8) { // for each square between the pieces
+          for (let j = 0; i < whitePiecesLeft.length; j++) { // for each remaining piece
+            canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+            if (move) {
+              move = true;
+              return;
+            }
+          }
+        }
+      }
+    }
   }
   whiteLoses = true;
   alert("Checkmate. Black wins!");
@@ -758,47 +820,6 @@ function didWhiteLose() {
 function didBlackLose() {
   return;
 }
-
-
-
-//<<<the BELOW is the typical code to see if they can attack. will change of course. but great start
-
-// for (let i = 0; i < whitePiecesLeft.length; i++) {
-//       piecesAttack(whitePiecesLeft[i], temp);
-//       if (move) {
-//         isWhiteInCheck();
-//         if (!whiteInCheck) {
-//           whiteInCheck = true;
-//           var attackers = []; //probably need to add this before every return
-//           return;
-//         }
-//       }
-//     }
-
-
-
-         //see if white team pieces can move to the square. 
-        // you would need a modified version of piecesAttack. you want the pawns to move normally
-//so i is piece along path
-         //if they can, then return and set equal to whatever
-//       }
-//     }
-//   }
-
-// }//last curly in moveRook function
-
-
-
-
-
-// function moveQueen(selected, el) {
-//   moveRook(selected, el);
-//   if (move) {
-//     return;
-//   }
-//   move = true;
-//   moveBishop(selected, el);
-// }
 
 function canPieceBlock(blocker, square) {
   if (blocker.innerHTML == whitePawn || blocker.innerHTML == blackPawn) {
