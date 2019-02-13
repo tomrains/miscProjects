@@ -2,11 +2,37 @@ Specifications
 
 **Rules
 
+NOW i am going to move them, then check for check, and be able to move them back if in check
+also should add variable about, if you've castled once on your team, then of course you cant castle again...
+...obvious but probably useful.
+
+
+
 **OKAY, im working on castling - this will be a piece of cake compared to other movements!
+important castling functionality i just remembered:
+    if you pass through check while castling, then castle must be disallowed.
+    add this last. i already have an outline for this to work anyway
 
 okay, black checkmate functionality now working. will check for bugs later on. even getting a super simple AI...
 ...i think would help make it more interesting to check for bugs.
 
+
+castling functionality:
+disallow castle if white king has moved
+disallow castle if black king has moved
+disallow if particular rook has moved
+variables for:
+each rook: if moved
+each king if moved
+
+also of course, only allow if the spaces between them are all currently empty
+
+now just need to add the "if king is trying to move to one of these squares"
+
+next i'll add the castling function, which can be called if king attempts to move two or three awee to particular squares...
+...this can be part of king move as well.
+
+allow the king to move to these particular squares ... maybe even make sure they want to castle.
 
 
 the 'move king' and 'kill the attacker' portions seem to be working - wahoo!
