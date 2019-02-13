@@ -293,10 +293,10 @@ function allowMove(el) {
   captureMove = false;
   
   //if king moved, turn that king movement to true
-  if (selected.innerHTML == whiteKing) {
+  if (el.innerHTML == whiteKing) {
     whiteKingHasMoved = true;
   }
-  else if (selected.innerHTML == blackKing) { 
+  else if (el.innerHTML == blackKing) { 
     blackKingHasMoved = true;
   }
   
