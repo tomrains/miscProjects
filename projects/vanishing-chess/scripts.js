@@ -515,7 +515,7 @@ function moveKing(selected, el) {
   if (el.id == 3) {//if black king moving to left, queenside
     if (blackKingHasMoved == false && leftBlackRookHasMoved == false) {
       if (!blackInCheck) {   
-        if (document.getElementByID("2").innerHTML == "" && document.getElementByID("3").innerHTML == "" && document.getElementByID("4").innerHTML == "") {
+        if (document.getElementById("2").innerHTML == "" && document.getElementById("3").innerHTML == "" && document.getElementById("4").innerHTML == "") {
           for (var a = 2; a < 5; a++) { //for each square between them
             for (let b = 0; b < whitePiecesLeft.length; j++) { // for each remaining piece
               piecesAttack(whitePiecesLeft[b], a); //see if the piece can attack any of the squares
@@ -535,21 +535,21 @@ function moveKing(selected, el) {
   }
   else if (el.id == 7) {//if black king moving to right, king side
     if (blackKingHasMoved == false && rightBlackRookHasMoved == false) {
-      if (document.getElementByID("6").innerHTML == "" && document.getElementByID("7").innerHTML == "") {
+      if (document.getElementById("6").innerHTML == "" && document.getElementById("7").innerHTML == "") {
         return;
       }
     }
   }
   else if (el.id == 59) {//if white king move to left, queenside
     if (whiteKingHasMoved == false && leftWhiteRookHasMoved == false) {
-      if (document.getElementByID("58").innerHTML == "" && document.getElementByID("59").innerHTML == "" && document.getElementByID("60").innerHTML == "") {
+      if (document.getElementById("58").innerHTML == "" && document.getElementById("59").innerHTML == "" && document.getElementById("60").innerHTML == "") {
         return;
       }
     }
   }
   else if (el.id == 63) {//if white king moving to right, kingside
     if (whiteKingHasMoved == false && rightWhiteRookHasMoved == false) {
-      if (document.getElementByID("62").innerHTML == "" && document.getElementByID("63").innerHTML == "") {
+      if (document.getElementById("62").innerHTML == "" && document.getElementById("63").innerHTML == "") {
         return;
       }
     }
