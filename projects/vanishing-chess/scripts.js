@@ -510,10 +510,23 @@ function moveKing(selected, el) {
   //add in castling functionality here
   // i believe it is important to disallow the king from moving here if he is in check...
   //...that way we don't have to reverse it later on like with other moves (switching two == annoying!)
+  whitePiecesLeft = document.getElementsByClassName("whitePiece");
+  blackPiecesLeft = document.getElementsByClassName("blackPiece");
   if (el.id == 3) {//if black king moving to left, queenside
     if (blackKingHasMoved == false && leftBlackRookHasMoved == false) {
-      if (document.getElementByID("2").innerHTML == "" && document.getElementByID("3").innerHTML == "" && document.getElementByID("4").innerHTML == "" {
-        return;
+      if (!blackInCheck) {   
+        if (document.getElementByID("2").innerHTML == "") && document.getElementByID("3").innerHTML == "" && document.getElementByID("4").innerHTML == "" {
+          for (var a = 2; a < 5; a++) { //for each square between them
+            for (let b = 0; b < whitePiecesLeft.length; j++) { // for each remaining piece
+              piecesAttack(whitePiecesLeft[b], a); //see if the piece can attack any of the squares
+              if (move) { //if a piece is able to move there, then exit the king moving at all
+                move = false;
+                return;
+              }
+            }
+          }
+          //add in text here to show what pieces should do when they move
+        }
       }
     }
   }
