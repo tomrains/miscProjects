@@ -692,11 +692,36 @@ function didWhiteLose() {
     }
   }
   //<<code here will determine if the piece can be blocked//>>
-  //execute the code to see where they are moving, and if the move can be blocked
   let attackingPiece = attackers[0];
   if (attackingPiece.innerHTML == blackRook) {
-    return;
-  }
+    if (((attackingPiece.id / 8) >> 0) == (((whiteKingAttacked.id-1) / 8) >> 0)) { //if in same row
+      var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
+      var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
+      let whitePiecesLeft = document.getElementsByClassName("whitePiece");
+      for (let i = small + 1; i < large; i++) { //for each possible square
+        for (let j = 0; i < whitePiecesLeft.length; j++) {//for each possible piece
+          canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+          if (move) {
+            move = true;
+            return;
+          }
+        }
+      }
+    }
+    if (((attackingPiece.id - whiteKingAttacked.id) % 8) == 0) { //if in same column
+      var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
+      var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
+      for (let i = small + 8; i < large; i+=8) { // for each square between the pieces
+        for (let j = 0; i < whitePiecesLeft.length; j++) { // for each remaining piece
+          canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
+          if (move) {
+            move = true;
+            return;
+          }
+        }
+      }
+    }
+  } //last curly for if attacking piece is a blackRook
   if (attackingPiece.innerHTML == blackBishop) {
     return;
   }
@@ -713,34 +738,15 @@ function didBlackLose() {
 
 // see if something can move to block line of attack, and king is THEN not in check [wip]
 
-//if attacking pawn, can't get between
-//if knight, cant get between
-// can't be king
-// if queen, bishop, or rook, must get in their line of sight
-//not sure how i can make it work ....
-//i would borrow code from their movement functions
-//and for each of the paths along their movement, if any of the opposing team pieces can move in it, its not checkmate
-
-// if all these are impossible, then it's checkmate
 
 
-// function moveRook(selected, el) { //DELETE this line
+//code below is lines of code i'll need for the function
 //   //check to see if in same row or same column, respectively
 //   }
-//   if (((attackingPiece.id / 8) >> 0) == (((whiteKingAttacked.id-1) / 8) >> 0)) { //if in same row
-//     var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
-//     var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
-//     let whitePiecesLeft = document.getElementsByClassName("whitePiece");
-//     for (let i = small + 1; i < large; i++) { //for each possible square
-//       for (let j = 0; i < whitePiecesLeft.length; j++) {
-//         canPieceBlock(whitePiecesLeft[j], i);
-         //if (move) {
-            //move = true;
-           //return;
+
 //////////////}
 //j is cycling through pieces, i is the square they're going to
            
-//add in code for if pawn, too
 
 
 //<<<the BELOW is the typical code to see if they can attack. will change of course. but great start
@@ -766,16 +772,7 @@ function didBlackLose() {
 //       }
 //     }
 //   }
-//   if (((selected.id - el.id) % 8) == 0) { //if in same column
-//     var small = Math.min(selected.id, el.id);
-//     var large = Math.max(selected.id, el.id);
-//     for (let i = small + 8; i < large; i+=8) {
-//       if (document.getElementById(i).innerHTML != "") {
-//         move = false;
-//         return;
-//       }
-//     }
-//   }
+
 // }//last curly in moveRook function
 
 
