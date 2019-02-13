@@ -686,7 +686,7 @@ function didWhiteLose() {
         isWhiteInCheck();
         if (!whiteInCheck) {
           whiteInCheck = true;
-          var attackers = []; //probably need to add this before every return
+          attackers = []; //probably need to add this before every return
           return;
         }
       }
