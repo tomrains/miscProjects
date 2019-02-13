@@ -515,7 +515,7 @@ function moveKing(selected, el) {
   if (el.id == 3) {//if black king moving to left, queenside
     if (blackKingHasMoved == false && leftBlackRookHasMoved == false) {
       if (!blackInCheck) {   
-        if (document.getElementByID("2").innerHTML == "") && document.getElementByID("3").innerHTML == "" && document.getElementByID("4").innerHTML == "" {
+        if (document.getElementByID("2").innerHTML == "" && document.getElementByID("3").innerHTML == "" && document.getElementByID("4").innerHTML == "" {
           for (var a = 2; a < 5; a++) { //for each square between them
             for (let b = 0; b < whitePiecesLeft.length; j++) { // for each remaining piece
               piecesAttack(whitePiecesLeft[b], a); //see if the piece can attack any of the squares
