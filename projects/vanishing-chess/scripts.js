@@ -535,7 +535,7 @@ function moveKing(selected, el) {
           document.getElementById("5").classList.remove("hasBlackKing");
           document.getElementById("1").innerHTML = "";
           document.getElementById("3").innerHTML = blackKing;
-          document.getElementById("3").classList.add("hasWhiteKing");
+          document.getElementById("3").classList.add("hasBlackKing");
           document.getElementById("4").innerHTML = blackRook;
           blackKingHasMoved = true;
           leftBlackRookHasMoved = true;
