@@ -140,6 +140,7 @@ function allowMove(el) {
   //if you just completed a castle, everything is already good. ignore rest of function
   if (justCastled) {
     justCastled = false;
+    move = true; //move kept being false for some reason
     return;
   }
   //if move has been declared invalid, then reset move to true, and exit this function
@@ -553,7 +554,6 @@ function moveKing(selected, el) {
           whitesMove = true;
           justCastled = true;
           isCheckmate();
-          move = true;
         }
       }
     }
@@ -584,7 +584,6 @@ function moveKing(selected, el) {
           document.getElementById("6").classList.add("blackPiece");
           blackKingHasMoved = true;
           leftBlackRookHasMoved = true;
-          move = true;
           isWhiteInCheck();
           if (whiteInCheck) {
             let temp = document.getElementsByClassName("hasWhiteKing");
