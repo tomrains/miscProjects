@@ -21,7 +21,7 @@ var rightBlackRookHasMoved = false;
 var justCastled = false;
 let attackMe;
 var castleInProgress = false;
-var emptySquare;
+var emptySquares;
 var vanishID;
 
 var blackRook = '<img src="images/black-rook.png">';
@@ -1320,6 +1320,6 @@ function canPieceBlock(blocker, square) {
 function vanishSquare() {
   emptySquares = document.getElementsByClassName("empty");
   vanishID = Math.floor(Math.random() * emptySquares.length); //this needs a +1 or -1 in here somewhere
-  emptySquare[vanishID].innerHTML = blackHole;
-  emptySquare.classList.remove("empty");
+  emptySquares[vanishID].innerHTML = blackHole;
+  emptySquares[vanishID].classList.remove("empty");
 }
