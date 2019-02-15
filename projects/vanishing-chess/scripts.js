@@ -544,7 +544,6 @@ function moveKing(selected, el) {
           document.getElementById("4").classList.add("blackPiece");
           blackKingHasMoved = true;
           leftBlackRookHasMoved = true;
-          move = true;
           isWhiteInCheck();
           if (whiteInCheck) {
             let temp = document.getElementsByClassName("hasWhiteKing");
@@ -554,6 +553,7 @@ function moveKing(selected, el) {
           whitesMove = true;
           justCastled = true;
           isCheckmate();
+          move = true;
         }
       }
     }
