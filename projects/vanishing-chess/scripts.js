@@ -533,10 +533,14 @@ function moveKing(selected, el) {
           }
           document.getElementById("5").innerHTML = "";
           document.getElementById("5").classList.remove("hasBlackKing");
+          document.getElementById("5").classList.remove("blackPiece");
           document.getElementById("1").innerHTML = "";
+          document.getElementById("1").classList.remove("blackPiece");
           document.getElementById("3").innerHTML = blackKing;
           document.getElementById("3").classList.add("hasBlackKing");
+          document.getElementById("3").classList.add("blackPiece");
           document.getElementById("4").innerHTML = blackRook;
+          document.getElementById("4").classList.add("blackPiece");
           blackKingHasMoved = true;
           leftBlackRookHasMoved = true;
           move = true;
