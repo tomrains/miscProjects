@@ -18,6 +18,7 @@ var leftWhiteRookHasMoved = false;
 var rightWhiteRookHasMoved = false;
 var leftBlackRookHasMoved = false;
 var rightBlackRookHasMoved = false;
+var justCastled = false;
 
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
@@ -135,6 +136,12 @@ function allowMove(el) {
     return;
   }
   whatPieceIsIt(selected, el);
+  
+  //if you just completed a castle, everything is already good. ignore rest of function
+  if (justCastled) {
+    justCastled = false;
+    return;
+  }
   //if move has been declared invalid, then reset move to true, and exit this function
   if (!move) {
     move = true;
@@ -505,7 +512,6 @@ function moveKing(selected, el) {
   var rightSideKingMoves = [9, 8, 1, -7, -8];
   var regularKingMoves = [-9, -8, -7, -1, 1, 7, 8, 9];
   var kingMovement = selected.id - el.id;
-  var kingHasMoved = true;
   
   //add in castling functionality here
   // i believe it is important to disallow the king from moving here if he is in check...
@@ -526,9 +532,23 @@ function moveKing(selected, el) {
             }
           }
           document.getElementById("5").innerHTML = "";
+          document.getElementById("5").classList.remove("hasBlackKing");
           document.getElementById("1").innerHTML = "";
           document.getElementById("3").innerHTML = blackKing;
+          document.getElementById("3").classList.add("hasWhiteKing");
           document.getElementById("4").innerHTML = blackRook;
+          isWhiteInCheck();
+          if (whiteInCheck) {
+            let temp = document.getElementsByClassName("hasWhiteKing");
+            kingInCheck = temp[0];
+            kingInCheck.classList.toggle("whiteInCheck");
+          }
+          blackKingHasMoved = true;
+          leftBlackRookHasMoved = true;
+          whitesMove = true;
+          move = true;
+          justCastled = true;
+          isCheckmate();
         }
       }
     }
