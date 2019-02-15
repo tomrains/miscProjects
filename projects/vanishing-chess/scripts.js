@@ -597,10 +597,42 @@ function moveKing(selected, el) {
       }
     }
   }  
-  else if (el.id == 59) {//if white king move to left, queenside
+  if (el.id == 59) {//if white king move to left, queenside
     if (whiteKingHasMoved == false && leftWhiteRookHasMoved == false) {
-      if (document.getElementById("58").innerHTML == "" && document.getElementById("59").innerHTML == "" && document.getElementById("60").innerHTML == "") {
-        return;
+      if (!whiteInCheck) {   
+        if (document.getElementById("58").innerHTML == "" && document.getElementById("59").innerHTML == "" && document.getElementById("60").innerHTML == "") {
+          for (var e = 58; e < 61; e++) { //for each square between them
+            for (let f = 0; f < blackPiecesLeft.length; f++) { // for each remaining piece
+              piecesAttack(blackPiecesLeft[f], e); //see if the piece can attack any of the squares
+              if (move) { //if a piece is able to move there, then exit the king moving at all
+                move = false;
+                return;
+              }
+            }
+          }
+          document.getElementById("61").innerHTML = "";
+          document.getElementById("61").classList.remove("hasWhiteKing");
+          document.getElementById("61").classList.remove("whitePiece");
+          document.getElementById("61").classList.remove("selected");
+          document.getElementById("57").innerHTML = "";
+          document.getElementById("57").classList.remove("whitePiece");
+          document.getElementById("59").innerHTML = whiteKing;
+          document.getElementById("59").classList.add("hasWhiteKing");
+          document.getElementById("59").classList.add("whitePiece");
+          document.getElementById("60").innerHTML = whiteRook;
+          document.getElementById("60").classList.add("whitePiece");
+          whiteKingHasMoved = true;
+          leftWhiteRookHasMoved = true;
+          isBlackInCheck();
+          if (blackInCheck) {
+            let temp = document.getElementsByClassName("hasBlackKing");
+            kingInCheck = temp[0];
+            kingInCheck.classList.toggle("blackInCheck");
+          }
+          whitesMove = false;
+          justCastled = true;
+          isCheckmate();
+        }
       }
     }
   }
