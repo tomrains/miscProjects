@@ -20,6 +20,7 @@ var leftBlackRookHasMoved = false;
 var rightBlackRookHasMoved = false;
 var justCastled = false;
 let attackMe;
+var castleInProgress = false;
 
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
@@ -142,6 +143,7 @@ function allowMove(el) {
   if (justCastled) {
     justCastled = false;
     move = true; //move kept being false for some reason
+    castleInProgress = false;
     return;
   }
   //if move has been declared invalid, then reset move to true, and exit this function
@@ -520,16 +522,18 @@ function moveKing(selected, el) {
   //...that way we don't have to reverse it later on like with other moves (switching two == annoying!)
   whitePiecesLeft = document.getElementsByClassName("whitePiece");
   blackPiecesLeft = document.getElementsByClassName("blackPiece");
-  if (el.id == 3) {//if black king moving to left, queenside
+  if (el.id == 3 && castleInProgress) {//if black king moving to left, queenside
     if (blackKingHasMoved == false && leftBlackRookHasMoved == false) {
       if (!blackInCheck) {   
         if (document.getElementById("2").innerHTML == "" && document.getElementById("3").innerHTML == "" && document.getElementById("4").innerHTML == "") {
           for (var a = 2; a < 5; a++) { //for each square between them
+            castleInProgress = true;
             for (let b = 0; b < whitePiecesLeft.length; b++) { // for each remaining piece
               attackMe = document.getElementById(a);
               piecesAttack(whitePiecesLeft[b], a); //see if the piece can attack any of the squares
               if (move) { //if a piece is able to move there, then exit the king moving at all
                 move = false;
+                castleInProgress = false;
                 return;
               }
             }
@@ -560,16 +564,18 @@ function moveKing(selected, el) {
       }
     }
   }
-  if (el.id == 7) {///if black king moving to right, king side
+  if (el.id == 7 && castleInProgress) {///if black king moving to right, king side
     if (blackKingHasMoved == false && rightBlackRookHasMoved == false) {
       if (!blackInCheck) {   
         if (document.getElementById("6").innerHTML == "" && document.getElementById("7").innerHTML == "") {
           for (var c = 6; c < 8; c++) { //for each square between them
+            castleInProgress = true;
             for (let d = 0; d < whitePiecesLeft.length; d++) { // for each remaining piece
               attackMe = document.getElementById(c);
               piecesAttack(whitePiecesLeft[d], attackMe); //see if the piece can attack any of the squares
               if (move) { //if a piece is able to move there, then exit the king moving at all
                 move = false;
+                castleInProgress = false;
                 return;
               }
             }
@@ -600,16 +606,18 @@ function moveKing(selected, el) {
       }
     }
   }  
-  if (el.id == 59) {//if white king move to left, queenside
+  if (el.id == 59 && castleInProgress) {//if white king move to left, queenside
     if (whiteKingHasMoved == false && leftWhiteRookHasMoved == false) {
       if (!whiteInCheck) {   
         if (document.getElementById("58").innerHTML == "" && document.getElementById("59").innerHTML == "" && document.getElementById("60").innerHTML == "") {
           for (var e = 58; e < 61; e++) { //for each square between them
+            castleInProgress = true;
             for (let f = 0; f < blackPiecesLeft.length; f++) { // for each remaining piece
               attackMe = document.getElementById(e);
               piecesAttack(blackPiecesLeft[f], attackMe); //see if the piece can attack any of the squares
               if (move) { //if a piece is able to move there, then exit the king moving at all
                 move = false;
+                castleInProgress = false;
                 return;
               }
             }
@@ -640,7 +648,7 @@ function moveKing(selected, el) {
       }
     }
   }
-  else if (el.id == 63) {//if white king moving to right, kingside
+  else if (el.id == 63 && castleInProgress) {//if white king moving to right, kingside
     if (whiteKingHasMoved == false && rightWhiteRookHasMoved == false) {
       if (document.getElementById("62").innerHTML == "" && document.getElementById("63").innerHTML == "") {
         return;
