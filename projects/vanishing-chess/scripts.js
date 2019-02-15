@@ -1262,11 +1262,11 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
 } //last curly in didBlackLose
 
 function alertWhiteWin() {
-  alert("Checkmate. White wins!");
+  document.getElementById(whiteWins).style.display = 'block';
 }
 
 function alertBlackWin() {
-  alert("Checkmate. Black wins!");
+  document.getElementById(blackWins).style.display = 'block';
 }
 
 
