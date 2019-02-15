@@ -265,11 +265,15 @@ function allowMove(el) {
   
   if (whitesMove) {
     selected.classList.toggle("whitePiece");
+    selected.classList.add("empty");
     el.classList.toggle("whitePiece");
+    el.classList.remove("empty");
   }
   else {
     selected.classList.toggle("blackPiece");
+    selected.classList.add("empty");
     el.classList.toggle("blackPiece");
+    el.classList.remove("empty");
   }
   
   //check to see if opposing king in check
@@ -542,13 +546,17 @@ function moveKing(selected, el) {
           document.getElementById("5").classList.remove("hasBlackKing");
           document.getElementById("5").classList.remove("blackPiece");
           document.getElementById("5").classList.remove("selected");
+          document.getElementById("5").classList.add("empty");
           document.getElementById("1").innerHTML = "";
-          document.getElementById("1").classList.remove("blackPiece");
+          document.getElementById("1").classList.remove("blackPiece")
+          document.getElementById("1").classList.add("empty");;
           document.getElementById("3").innerHTML = blackKing;
           document.getElementById("3").classList.add("hasBlackKing");
           document.getElementById("3").classList.add("blackPiece");
+          document.getElementById("3").classList.remove("empty");
           document.getElementById("4").innerHTML = blackRook;
           document.getElementById("4").classList.add("blackPiece");
+          document.getElementById("4").classList.add("empty");
           blackKingHasMoved = true;
           leftBlackRookHasMoved = true;
           isWhiteInCheck();
@@ -584,13 +592,17 @@ function moveKing(selected, el) {
           document.getElementById("5").classList.remove("hasBlackKing");
           document.getElementById("5").classList.remove("blackPiece");
           document.getElementById("5").classList.remove("selected");
+          document.getElementById("5").classList.add("empty");
           document.getElementById("8").innerHTML = "";
           document.getElementById("8").classList.remove("blackPiece");
+          document.getElementById("8").classList.add("empty");
           document.getElementById("7").innerHTML = blackKing;
           document.getElementById("7").classList.add("hasBlackKing");
           document.getElementById("7").classList.add("blackPiece");
+          document.getElementById("7").classList.remove("empty");
           document.getElementById("6").innerHTML = blackRook;
           document.getElementById("6").classList.add("blackPiece");
+          document.getElementById("6").classList.remove("empty");
           blackKingHasMoved = true;
           leftBlackRookHasMoved = true;
           isWhiteInCheck();
@@ -626,13 +638,17 @@ function moveKing(selected, el) {
           document.getElementById("61").classList.remove("hasWhiteKing");
           document.getElementById("61").classList.remove("whitePiece");
           document.getElementById("61").classList.remove("selected");
+          document.getElementById("61").classList.add("empty");
           document.getElementById("57").innerHTML = "";
           document.getElementById("57").classList.remove("whitePiece");
+          document.getElementById("57").classList.add("empty");
           document.getElementById("59").innerHTML = whiteKing;
           document.getElementById("59").classList.add("hasWhiteKing");
           document.getElementById("59").classList.add("whitePiece");
+          document.getElementById("59").classList.remove("empty");
           document.getElementById("60").innerHTML = whiteRook;
           document.getElementById("60").classList.add("whitePiece");
+          document.getElementById("60").classList.remove("empty");
           whiteKingHasMoved = true;
           leftWhiteRookHasMoved = true;
           isBlackInCheck();
@@ -674,14 +690,18 @@ function moveKing(selected, el) {
           document.getElementById("61").innerHTML = "";
           document.getElementById("61").classList.remove("hasWhiteKing");
           document.getElementById("61").classList.remove("whitePiece");
+          document.getElementById("61").classList.add("empty");
           document.getElementById("61").classList.remove("selected");
           document.getElementById("64").innerHTML = "";
           document.getElementById("64").classList.remove("whitePiece");
+          document.getElementById("64").classList.add("empty");
           document.getElementById("63").innerHTML = whiteKing;
           document.getElementById("63").classList.add("hasWhiteKing");
           document.getElementById("63").classList.add("whitePiece");
+          document.getElementById("63").classList.remove("empty");
           document.getElementById("62").innerHTML = whiteRook;
           document.getElementById("62").classList.add("whitePiece");
+          document.getElementById("62").classList.remove("empty");
           whiteKingHasMoved = true;
           rightWhiteRookHasMoved = true;
           isBlackInCheck();
