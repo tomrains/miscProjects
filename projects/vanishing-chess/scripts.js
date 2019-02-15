@@ -537,16 +537,16 @@ function moveKing(selected, el) {
           document.getElementById("3").innerHTML = blackKing;
           document.getElementById("3").classList.add("hasWhiteKing");
           document.getElementById("4").innerHTML = blackRook;
+          blackKingHasMoved = true;
+          leftBlackRookHasMoved = true;
+          move = true;
           isWhiteInCheck();
           if (whiteInCheck) {
             let temp = document.getElementsByClassName("hasWhiteKing");
             kingInCheck = temp[0];
             kingInCheck.classList.toggle("whiteInCheck");
           }
-          blackKingHasMoved = true;
-          leftBlackRookHasMoved = true;
           whitesMove = true;
-          move = true;
           justCastled = true;
           isCheckmate();
         }
