@@ -19,6 +19,7 @@ var rightWhiteRookHasMoved = false;
 var leftBlackRookHasMoved = false;
 var rightBlackRookHasMoved = false;
 var justCastled = false;
+let attackMe;
 
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
@@ -525,6 +526,7 @@ function moveKing(selected, el) {
         if (document.getElementById("2").innerHTML == "" && document.getElementById("3").innerHTML == "" && document.getElementById("4").innerHTML == "") {
           for (var a = 2; a < 5; a++) { //for each square between them
             for (let b = 0; b < whitePiecesLeft.length; b++) { // for each remaining piece
+              attackMe = document.getElementById("a");
               piecesAttack(whitePiecesLeft[b], a); //see if the piece can attack any of the squares
               if (move) { //if a piece is able to move there, then exit the king moving at all
                 move = false;
@@ -564,7 +566,8 @@ function moveKing(selected, el) {
         if (document.getElementById("6").innerHTML == "" && document.getElementById("7").innerHTML == "") {
           for (var c = 6; c < 8; c++) { //for each square between them
             for (let d = 0; d < whitePiecesLeft.length; d++) { // for each remaining piece
-              piecesAttack(whitePiecesLeft[d], c); //see if the piece can attack any of the squares
+              attackMe = document.getElementById("c");
+              piecesAttack(whitePiecesLeft[d], attackMe); //see if the piece can attack any of the squares
               if (move) { //if a piece is able to move there, then exit the king moving at all
                 move = false;
                 return;
@@ -603,7 +606,8 @@ function moveKing(selected, el) {
         if (document.getElementById("58").innerHTML == "" && document.getElementById("59").innerHTML == "" && document.getElementById("60").innerHTML == "") {
           for (var e = 58; e < 61; e++) { //for each square between them
             for (let f = 0; f < blackPiecesLeft.length; f++) { // for each remaining piece
-              piecesAttack(blackPiecesLeft[f], e); //see if the piece can attack any of the squares
+              attackMe = document.getElementById("e");
+              piecesAttack(blackPiecesLeft[f], attackMe); //see if the piece can attack any of the squares
               if (move) { //if a piece is able to move there, then exit the king moving at all
                 move = false;
                 return;
