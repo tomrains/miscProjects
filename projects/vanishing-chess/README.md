@@ -2,7 +2,15 @@ Specifications
 
 **Rules
 
-NOTE: for some reason, after black castles, it thinks it is still black's turn.
+OMG. The castling all works now. I guess it's time to debug the checkmate, which is broken.
+And once that seems decent, it'll be time to add in .....
+vanishing squares!!!
+
+I would like to add in a simple AI just so I don't have to move them all, but we'll see. that might be supah hard. D:
+
+the checkmate is super buggy tho. i put the white king in check, easily escapable, and it said checkmate
+
+
 
 NOW i am going to move them, then check for check, and be able to move them back if in check
 also should add variable about, if you've castled once on your team, then of course you cant castle again...
