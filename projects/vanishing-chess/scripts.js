@@ -21,6 +21,8 @@ var rightBlackRookHasMoved = false;
 var justCastled = false;
 let attackMe;
 var castleInProgress = false;
+var emptySquares;
+var vanishID;
 
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
@@ -34,6 +36,7 @@ var whiteBishop = '<img src="images/white-bishop.png">';
 var whiteQueen = '<img src="images/white-queen.png">';
 var whiteKing = '<img src="images/white-king.png">';
 var whitePawn = '<img src="images/white-pawn.png">';
+var blackHole = '<img src="images/black-hole.png">';
 
 var blackPieces = [blackPawn, blackRook, blackKnight, blackBishop, blackQueen, blackKing];
 var whitePieces = [whitePawn, whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing];
@@ -305,6 +308,9 @@ function allowMove(el) {
   }
   
   //turn off captureMove i
+  if (captureMove) {
+    vanishSquare();
+  }
   captureMove = false;
   
   //if king moved, turn that king movement to true
@@ -1311,11 +1317,9 @@ function canPieceBlock(blocker, square) {
   } 
 }
 
-function castle() {
-  //you get here if the king hasn't moved yet and is trying to move to one of these weird squares
-  //if castle option 1
-  //else if castle option 2
-  //else if castle option 3
-  //else if castle option 4
-  return;
+function vanishSquare() {
+  emptySquares = document.getElementsByClassName("empty");
+  vanishID = Math.floor(Math.random() * emptySquares.length); //this needs a +1 or -1 in here somewhere
+  emptySquare[vanishID].innerHTML = blackHole;
+  emptySquare.classList.remove("empty");
 }
