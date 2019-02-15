@@ -522,7 +522,7 @@ function moveKing(selected, el) {
   //...that way we don't have to reverse it later on like with other moves (switching two == annoying!)
   whitePiecesLeft = document.getElementsByClassName("whitePiece");
   blackPiecesLeft = document.getElementsByClassName("blackPiece");
-  if (el.id == 3 && castleInProgress) {//if black king moving to left, queenside
+  if (el.id == 3 && !castleInProgress) {//if black king moving to left, queenside
     if (blackKingHasMoved == false && leftBlackRookHasMoved == false) {
       if (!blackInCheck) {   
         if (document.getElementById("2").innerHTML == "" && document.getElementById("3").innerHTML == "" && document.getElementById("4").innerHTML == "") {
@@ -564,7 +564,7 @@ function moveKing(selected, el) {
       }
     }
   }
-  if (el.id == 7 && castleInProgress) {///if black king moving to right, king side
+  if (el.id == 7 && !castleInProgress) {///if black king moving to right, king side
     if (blackKingHasMoved == false && rightBlackRookHasMoved == false) {
       if (!blackInCheck) {   
         if (document.getElementById("6").innerHTML == "" && document.getElementById("7").innerHTML == "") {
@@ -606,7 +606,7 @@ function moveKing(selected, el) {
       }
     }
   }  
-  if (el.id == 59 && castleInProgress) {//if white king move to left, queenside
+  if (el.id == 59 && !castleInProgress) {//if white king move to left, queenside
     if (whiteKingHasMoved == false && leftWhiteRookHasMoved == false) {
       if (!whiteInCheck) {   
         if (document.getElementById("58").innerHTML == "" && document.getElementById("59").innerHTML == "" && document.getElementById("60").innerHTML == "") {
