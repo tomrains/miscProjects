@@ -1065,7 +1065,7 @@ function didWhiteLose() {
     }
   }
   whiteLoses = true;
-  alert("Checkmate. Black wins!");
+  alertBlackWin();
 } //last curly in didWhiteLose
 
 function didBlackLose() { //this function is JUST like didWhiteLose(), just with colors switched
@@ -1258,8 +1258,16 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
     }
   }
   blackLoses = true;
-  alert("Checkmate. White wins!");
+  alertWhiteWin();
 } //last curly in didBlackLose
+
+function alertWhiteWin() {
+  alert("Checkmate. White wins!");
+}
+
+function alertBlackWin() {
+  alert("Checkmate. Black wins!");
+}
 
 
 function canPieceBlock(blocker, square) {
