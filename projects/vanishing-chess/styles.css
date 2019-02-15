@@ -33,3 +33,11 @@
 .whitePiece {
   //used to know where every white piece is 
 }
+
+.whiteWins {
+  //used after white has won to display a victory message
+}
+
+.blackWins {
+  //used after black has won to display a victory message
+}
