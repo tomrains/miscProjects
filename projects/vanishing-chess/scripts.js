@@ -1258,7 +1258,7 @@ function didBlackLose() { //this function is JUST like didWhiteLose(), just with
     }
   }
   blackLoses = true;
-  alert("Checkmate. White wins!");
+  alert("Checkmate. White wins!"), 5000;
 } //last curly in didBlackLose
 
 
