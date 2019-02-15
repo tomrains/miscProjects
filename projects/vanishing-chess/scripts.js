@@ -558,13 +558,46 @@ function moveKing(selected, el) {
       }
     }
   }
-  else if (el.id == 7) {//if black king moving to right, king side
+  if (el.id == 7) {///if black king moving to right, king side
     if (blackKingHasMoved == false && rightBlackRookHasMoved == false) {
-      if (document.getElementById("6").innerHTML == "" && document.getElementById("7").innerHTML == "") {
-        return;
+      if (!blackInCheck) {   
+        if (document.getElementById("6").innerHTML == "" && document.getElementById("7").innerHTML == "") {
+          for (var c = 6; c < 8; c++) { //for each square between them
+            for (let d = 0; d < whitePiecesLeft.length; d++) { // for each remaining piece
+              piecesAttack(whitePiecesLeft[d], c); //see if the piece can attack any of the squares
+              if (move) { //if a piece is able to move there, then exit the king moving at all
+                move = false;
+                return;
+              }
+            }
+          }
+          document.getElementById("5").innerHTML = "";
+          document.getElementById("5").classList.remove("hasBlackKing");
+          document.getElementById("5").classList.remove("blackPiece");
+          document.getElementById("5").classList.remove("selected");
+          document.getElementById("8").innerHTML = "";
+          document.getElementById("8").classList.remove("blackPiece");
+          document.getElementById("7").innerHTML = blackKing;
+          document.getElementById("7").classList.add("hasBlackKing");
+          document.getElementById("7").classList.add("blackPiece");
+          document.getElementById("6").innerHTML = blackRook;
+          document.getElementById("6").classList.add("blackPiece");
+          blackKingHasMoved = true;
+          leftBlackRookHasMoved = true;
+          move = true;
+          isWhiteInCheck();
+          if (whiteInCheck) {
+            let temp = document.getElementsByClassName("hasWhiteKing");
+            kingInCheck = temp[0];
+            kingInCheck.classList.toggle("whiteInCheck");
+          }
+          whitesMove = true;
+          justCastled = true;
+          isCheckmate();
+        }
       }
     }
-  }
+  }  
   else if (el.id == 59) {//if white king move to left, queenside
     if (whiteKingHasMoved == false && leftWhiteRookHasMoved == false) {
       if (document.getElementById("58").innerHTML == "" && document.getElementById("59").innerHTML == "" && document.getElementById("60").innerHTML == "") {
