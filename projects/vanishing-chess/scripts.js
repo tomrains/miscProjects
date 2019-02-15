@@ -22,11 +22,6 @@ var justCastled = false;
 let attackMe;
 var castleInProgress = false;
 
-//wanna see what happens
-$( function() {
-  $( "#dialog" ).dialog();
-} );
-
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
 var blackBishop = '<img src="images/black-bishop.png">';
