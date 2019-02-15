@@ -534,6 +534,7 @@ function moveKing(selected, el) {
           document.getElementById("5").innerHTML = "";
           document.getElementById("5").classList.remove("hasBlackKing");
           document.getElementById("5").classList.remove("blackPiece");
+          document.getElementById("5").classList.remove("selected");
           document.getElementById("1").innerHTML = "";
           document.getElementById("1").classList.remove("blackPiece");
           document.getElementById("3").innerHTML = blackKing;
