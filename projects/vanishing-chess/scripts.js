@@ -21,7 +21,7 @@ var rightBlackRookHasMoved = false;
 var justCastled = false;
 let attackMe;
 var castleInProgress = false;
-var emptySquares;
+var emptySquare;
 var vanishID;
 
 var blackRook = '<img src="images/black-rook.png">';
