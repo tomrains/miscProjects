@@ -648,14 +648,55 @@ function moveKing(selected, el) {
       }
     }
   }
-  else if (el.id == 63 && castleInProgress) {//if white king moving to right, kingside
+//   else if (el.id == 63 && castleInProgress) {//if white king moving to right, kingside
+//     if (whiteKingHasMoved == false && rightWhiteRookHasMoved == false) {
+//       if (document.getElementById("62").innerHTML == "" && document.getElementById("63").innerHTML == "") {
+//         return;
+//       }
+//     }
+//   }
+  if (el.id == 63 && !castleInProgress) {//if white king moving to right, kingside
     if (whiteKingHasMoved == false && rightWhiteRookHasMoved == false) {
-      if (document.getElementById("62").innerHTML == "" && document.getElementById("63").innerHTML == "") {
-        return;
+      if (!whiteInCheck) {   
+        if (document.getElementById("62").innerHTML == "" && document.getElementById("63").innerHTML == "") {
+          for (var g = 62; g < 64; g++) { //for each square between them
+            castleInProgress = true;
+            for (let h = 0; h < blackPiecesLeft.length; h++) { // for each remaining piece
+              attackMe = document.getElementById(g);
+              piecesAttack(blackPiecesLeft[h], attackMe); //see if the piece can attack any of the squares
+              if (move) { //if a piece is able to move there, then exit the king moving at all
+                move = false;
+                castleInProgress = false;
+                return;
+              }
+            }
+          }
+          document.getElementById("61").innerHTML = "";
+          document.getElementById("61").classList.remove("hasWhiteKing");
+          document.getElementById("61").classList.remove("whitePiece");
+          document.getElementById("61").classList.remove("selected");
+          document.getElementById("64").innerHTML = "";
+          document.getElementById("64").classList.remove("whitePiece");
+          document.getElementById("63").innerHTML = whiteKing;
+          document.getElementById("63").classList.add("hasWhiteKing");
+          document.getElementById("63").classList.add("whitePiece");
+          document.getElementById("62").innerHTML = whiteRook;
+          document.getElementById("62").classList.add("whitePiece");
+          whiteKingHasMoved = true;
+          rightWhiteRookHasMoved = true;
+          isBlackInCheck();
+          if (blackInCheck) {
+            let temp = document.getElementsByClassName("hasBlackKing");
+            kingInCheck = temp[0];
+            kingInCheck.classList.toggle("blackInCheck");
+          }
+          whitesMove = false;
+          justCastled = true;
+          isCheckmate();
+        }
       }
     }
   }
-    
   if ((selected.id - 1) % 8 == 0) {//on left
     if (leftSideKingMoves.indexOf(kingMovement) == -1) {
       move = false;
