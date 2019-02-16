@@ -8,6 +8,7 @@ h1 {
 li {
   display: inline-block;
   margin: 5px;
+  padding: 5px 5px 5px 0;
   background: black;
   font-family: verdana;
 }
