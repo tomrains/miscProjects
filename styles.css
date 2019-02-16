@@ -11,5 +11,6 @@ li {
   margin: 5px;
   padding: 5px 5px 5px 0;
   background: #9bbbef;
+  border-radius: 5%;
   font-family: verdana;
 }
