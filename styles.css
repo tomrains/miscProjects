@@ -1,5 +1,9 @@
 /* Let's add some CSS styling to the homepage*/
-h1 {
+body {
+  background: black;
+}
+
+  h1 {
   background: black;
   color: white;
   font-family: verdana;
@@ -16,8 +20,11 @@ li {
   font-family: verdana;
 }
 
-footer { //the actual footer
+.container {
   background: black;
+}
+
+footer { //the actual footer
+  background-color: black;
   color: white;
-  padding: 100px 0px;
 }
