@@ -16,7 +16,11 @@ li {
   font-family: verdana;
 }
 
-.footer {
+.footer { //the div container that contains footer
   background: black;
   color: white;
+}
+
+footer { //the actual footer
+  background: black;
 }
