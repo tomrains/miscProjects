@@ -28,3 +28,7 @@ footer { //the actual footer
   background-color: black;
   color: white;
 }
+
+footer p {
+  margin: 15px 0 0 0;
+}
