@@ -3,12 +3,13 @@ body {
   background: black;
 }
 
-  h1 {
+h1 {
   background: black;
   color: white;
   font-family: verdana;
   font-size: 400%;
   padding: 20px;
+  margin: 15px 0 0 0;
 }
 
 li {
