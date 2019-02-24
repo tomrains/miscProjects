@@ -1,5 +1,8 @@
 //adding the necessary click events to each TD
-document.getElementsByTagName("TD").addEventListener("click", getMoving(this));
+var allSquares = document.getElementsByTagName("TD");
+for (let a = 0; a < allSquares.length; a++) {
+  allSquares[a].addEventListener("click", getMoving(allSquares[a]));
+}
 
 function getMoving(td) {
   selectedPiece(td);
