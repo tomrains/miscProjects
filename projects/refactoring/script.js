@@ -340,7 +340,7 @@ function blackAI() {
   let blackAITeam = document.getElementsByClassName("blackPiece"); //run selected on a random black piece
   let selectBlackPiece = blackAITeam[Math.floor(16 * Math.random())]; //choose a random number between 0 and length - 1, inclusive.
   selectedPiece(selectBlackPiece);
-  //try to move it to a random square
+  //try to move it to a random square <--- do this next!
   //keep doing this until move successful
 }
 
