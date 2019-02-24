@@ -42,6 +42,8 @@ var emptySquares;
 var vanishID;
 let selectBlackPiece;
 let blackAITeam;
+let botSuccess;
+let blackAttack;
 
 var blackRook = '<img src="images/black-rook.png">';
 var blackKnight = '<img src="images/black-knight.png">';
@@ -328,7 +330,8 @@ function allowMove(el) {
   
   //moved isCheckmate here so you can know at end of attacking players' turn
   isCheckmate();
-  
+  //change botSuccess variable to true so blackAI will exit because of successful move
+  botSuccess = true;
   //going to try adding in a blackAI function here
   if (!whitesMove) {
     blackAI();
@@ -337,11 +340,21 @@ function allowMove(el) {
 
 //adding in blackAI() function
 function blackAI() {
-  let blackAITeam = document.getElementsByClassName("blackPiece"); //run selected on a random black piece
-  let selectBlackPiece = blackAITeam[Math.floor(16 * Math.random())]; //choose a random number between 0 and length - 1, inclusive.
-  selectedPiece(selectBlackPiece);
-  //try to move it to a random square <--- do this next!
-  //keep doing this until move successful
+  if (botSuccess) {
+    botSuccess = false;
+    let blackAITeam = document.getElementsByClassName("blackPiece"); //run selected on a random black piece
+    let selectBlackPiece = blackAITeam[Math.floor(16 * Math.random())]; //choose a random number between 0 and length - 1, inclusive.
+    selectedPiece(selectBlackPiece);
+    blackAttack = document.getElementById(Math.floor(64 * Math.random()) + 1); //add +1
+    allowMove(blackAttack);
+    //if success, then return;
+    //else, do this function again
+    if (botSuccess) {
+      return;
+    }
+    else {
+      blackAI();
+  }
 }
 
 function movePawn(selected, el) {
