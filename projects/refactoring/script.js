@@ -331,6 +331,9 @@ function allowMove(el) {
   
   //moved isCheckmate here so you can know at end of attacking players' turn
   isCheckmate();
+  if (move && inAILoop) {
+    botSuccess = true;
+  }
   if (inAILoop && botSuccess) {
     inAILoop = false;
     return;
@@ -341,6 +344,7 @@ function allowMove(el) {
     blackAI();
   }
   inAILoop = false;
+  
 } //last curly of allow move function
 
 //adding in blackAI() function
