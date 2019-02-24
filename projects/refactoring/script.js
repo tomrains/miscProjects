@@ -354,6 +354,7 @@ function blackAI() {
     }
     else {
       blackAI();
+    }
   }
 }
 
