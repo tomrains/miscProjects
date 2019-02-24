@@ -350,7 +350,9 @@ function blackAI() {
     let blackAITeam = document.getElementsByClassName("blackPiece"); //run selected on a random black piece
     let selectBlackPiece = blackAITeam[Math.floor(16 * Math.random())]; //choose a random number between 0 and length - 1, inclusive.
     selectedPiece(selectBlackPiece);
+    allowMove(selectBlackPiece);
     blackAttack = document.getElementById(Math.floor(64 * Math.random()) + 1); //add +1
+    selectedPiece(blackAttack);
     allowMove(blackAttack);
     //if success, then return;
     //else, do this function again
