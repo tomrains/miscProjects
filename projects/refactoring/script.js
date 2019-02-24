@@ -4,9 +4,12 @@ for (let a = 0; a < allSquares.length; a++) {
   allSquares[a].addEventListener("click", getMoving(allSquares[a]));
 }
 
+var c = 0;
+
 function getMoving(td) {
-  selectedPiece(td);
-  allowMove(td);
+  c++;
+  //selectedPiece(td);
+  //allowMove(td);
 }
 
 var move = true;
