@@ -42,7 +42,7 @@ var emptySquares;
 var vanishID;
 let selectBlackPiece;
 let blackAITeam;
-let botSuccess;
+let botSuccess = true;
 let blackAttack;
 
 var blackRook = '<img src="images/black-rook.png">';
@@ -331,16 +331,16 @@ function allowMove(el) {
   //moved isCheckmate here so you can know at end of attacking players' turn
   isCheckmate();
   //change botSuccess variable to true so blackAI will exit because of successful move
-  botSuccess = true;
   //going to try adding in a blackAI function here
   if (!whitesMove) {
     blackAI();
   }
+  botSuccess = true;
 } //last curly of allow move function
 
 //adding in blackAI() function
 function blackAI() {
-  if (botSuccess) {
+  if (!botSuccess) {
     botSuccess = false;
     let blackAITeam = document.getElementsByClassName("blackPiece"); //run selected on a random black piece
     let selectBlackPiece = blackAITeam[Math.floor(16 * Math.random())]; //choose a random number between 0 and length - 1, inclusive.
