@@ -5,6 +5,7 @@ for (let a = 0; a < allSquares.length; a++) {
     function() {
       selectedPiece(allSquares[a]);
     }
+  );
   allSquares[a].addEventListener("click", 
     function() {
       allowMove(allSquares[a]);
