@@ -326,7 +326,17 @@ function allowMove(el) {
   
   //moved isCheckmate here so you can know at end of attacking players' turn
   isCheckmate();
+  
+  //going to try adding in a blackAI function here
+  if (!whitesMove) {
+    blackAI();
+  }
 } //last curly of allow move function
+
+//adding in blackAI() function
+function blackAI() {
+  return;
+}
 
 function movePawn(selected, el) {
   //disallow pawns with pieces directly in front of them to move
