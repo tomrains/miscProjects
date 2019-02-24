@@ -1,1 +1,23 @@
+.black-square {
+  width: 64px;
+  height: 64px;
+  background-color: #5C4033;
+}
 
+.white-square {
+  width: 64px;
+  height: 64px;
+  background-color: #DEB887
+}
+
+.selected {
+  box-shadow: inset -2px 0 0 blue, inset 0 -2px 0 blue, inset 2px 0 0 blue, inset 0 2px 0 blue;
+}
+
+.hasWhiteKing {
+  //used for quickly locating white king
+}
+
+.hasBlackKing {
+  //used for quickly locating black king
+}
