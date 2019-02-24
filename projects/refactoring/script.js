@@ -341,32 +341,31 @@ function allowMove(el) {
   //change botSuccess variable to true so blackAI will exit because of successful move
   //going to try adding in a blackAI function here
   if (!whitesMove) {
-    blackAI();
+    if (!botSuccess) {
+      inAIloop = true;
+      let blackAITeam = document.getElementsByClassName("blackPiece"); //run selected on a random black piece
+      let selectBlackPiece = blackAITeam[Math.floor(16 * Math.random())]; //choose a random number between 0 and length - 1, inclusive.
+      selectedPiece(selectBlackPiece);
+      allowMove(selectBlackPiece);
+      blackAttack = document.getElementById(Math.floor(64 * Math.random()) + 1); //add +1
+      selectedPiece(blackAttack);
+      allowMove(blackAttack);
+      //if success, then return;
+      //else, do this function again
+      if (botSuccess) {
+        return;
+      }
+      else {
+        blackAI();
+      }
+    }
   }
   inAILoop = false;
-  
 } //last curly of allow move function
 
 //adding in blackAI() function
 function blackAI() {
-  if (!botSuccess) {
-    inAIloop = true;
-    let blackAITeam = document.getElementsByClassName("blackPiece"); //run selected on a random black piece
-    let selectBlackPiece = blackAITeam[Math.floor(16 * Math.random())]; //choose a random number between 0 and length - 1, inclusive.
-    selectedPiece(selectBlackPiece);
-    allowMove(selectBlackPiece);
-    blackAttack = document.getElementById(Math.floor(64 * Math.random()) + 1); //add +1
-    selectedPiece(blackAttack);
-    allowMove(blackAttack);
-    //if success, then return;
-    //else, do this function again
-    if (botSuccess) {
-      return;
-    }
-    else {
-      blackAI();
-    }
-  }
+  return;
 }
 
 function movePawn(selected, el) {
