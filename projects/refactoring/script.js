@@ -882,7 +882,9 @@ function isCheckmate() {
 
 function didWhiteLose() {
   //see if king can move anywhere
-  let king = document.getElementsByClassName("hasWhiteKing");
+  //the below is going to get multiple elements! not good
+  let temp = document.getElementsByClassName("hasWhiteKing");
+  let king = temp[0]
   for (let i = king.id - 9; i < king.id + 9; i++) {
     moveKing(king, i);
     if (move) {
