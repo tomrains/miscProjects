@@ -7,6 +7,10 @@ So, when you play, it's now black's turn, then the AI goes. so when it switches 
 so pick a random piece, and try to move it to a random square. do this until it is successful. this is another case ..
 ... where it would make more sense to have a list of available moves, instead of relying on counting moves out.
 
+ai note:
+could get randomized array of the pieces and randomized array of potential moves.
+and from there, loop through them all to see if they work. if they do, then we good. else, keep goingl
+
 
 So let's see if I can get an array of arrays to work in JS.
 
