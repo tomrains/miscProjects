@@ -1,5 +1,15 @@
 Refactoring the vanishing chess game
 
+I'd like to think about how to add a random AI. I would learn a lot that way, and it would make it easier to actually play!
+
+So, when you play, it's now black's turn, then the AI goes. so when it switches to black's turn, call a function like...
+...blackAI(), so that the other team will move randomly.
+so pick a random piece, and try to move it to a random square. do this until it is successful. this is another case ..
+... where it would make more sense to have a list of available moves, instead of relying on counting moves out.
+
+
+So let's see if I can get an array of arrays to work in JS.
+
 Bonus:
 
 - if refresh used, alert user that the game will be reset if they go through with it.
@@ -15,3 +25,4 @@ Bonus:
 - allow ability to see if you're in check AND the piece is selected. should overrule the other ones
 - add AI
 - add stalemate functionality
+- let user choose if they want to be black or white
