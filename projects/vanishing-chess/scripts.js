@@ -41,43 +41,6 @@ var blackHole = '<img src="images/black-hole.png">';
 var blackPieces = [blackPawn, blackRook, blackKnight, blackBishop, blackQueen, blackKing];
 var whitePieces = [whitePawn, whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing];
 
-function setBoard() {
-  document.getElementById("1").innerHTML = blackRook;
-  document.getElementById("2").innerHTML = blackKnight;
-  document.getElementById("3").innerHTML = blackBishop;
-  document.getElementById("4").innerHTML = blackQueen;
-  document.getElementById("5").innerHTML = blackKing;
-  document.getElementById("6").innerHTML = blackBishop;
-  document.getElementById("7").innerHTML = blackKnight;
-  document.getElementById("8").innerHTML = blackRook;
-  document.getElementById("9").innerHTML = blackPawn;
-  document.getElementById("10").innerHTML = blackPawn;
-  document.getElementById("11").innerHTML = blackPawn;
-  document.getElementById("12").innerHTML = blackPawn;
-  document.getElementById("13").innerHTML = blackPawn;
-  document.getElementById("14").innerHTML = blackPawn;
-  document.getElementById("15").innerHTML = blackPawn;
-  document.getElementById("16").innerHTML = blackPawn;
-  document.getElementById("49").innerHTML = whitePawn;
-  document.getElementById("50").innerHTML = whitePawn;
-  document.getElementById("51").innerHTML = whitePawn;
-  document.getElementById("52").innerHTML = whitePawn;
-  document.getElementById("53").innerHTML = whitePawn;
-  document.getElementById("54").innerHTML = whitePawn;
-  document.getElementById("55").innerHTML = whitePawn;
-  document.getElementById("56").innerHTML = whitePawn;
-  document.getElementById("57").innerHTML = whiteRook;
-  document.getElementById("58").innerHTML = whiteKnight;
-  document.getElementById("59").innerHTML = whiteBishop;
-  document.getElementById("60").innerHTML = whiteQueen;
-  document.getElementById("61").innerHTML = whiteKing;
-  document.getElementById("62").innerHTML = whiteBishop;
-  document.getElementById("63").innerHTML = whiteKnight;
-  document.getElementById("64").innerHTML = whiteRook;
-}
-
-setBoard();
-
 function selectedPiece(el) {
   //disallow moves from empty squares
   if (el.innerHTML == "") {
