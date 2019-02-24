@@ -885,12 +885,14 @@ function didWhiteLose() {
   //the below is going to get multiple elements! not good
   let tempKing = document.getElementsByClassName("hasWhiteKing");
   let king = tempKing[0];
-  for (let i = king.id - 9; i < king.id + 9; i++) {
+  //see if king can move to an adjacent space
+  //change i < king.id + 9 to i < king.id + 10
+  for (let i = king.id - 9; i < king.id + 10; i++) {
     moveKing(king, i);
     if (move) {
       isWhiteInCheck();
       if (!whiteInCheck) {
-        //switch back to being in check
+        //if this move is a success, switch back to being in check and exit function
         whiteInCheck = true;
         return;
       }
@@ -919,7 +921,6 @@ function didWhiteLose() {
         isWhiteInCheck();
         if (!whiteInCheck) {
           whiteInCheck = true;
-          attackers = []; //probably need to add this before every return
           return;
         }
       }
