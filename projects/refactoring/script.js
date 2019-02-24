@@ -1,3 +1,10 @@
+//adding the necessary click events to each TD
+var allSquares = document.getElementsByTagName("TD");
+for (let a = 0; a < allSquares.length; a++) {
+  allSquares[a].addEventListener("click", selectedPiece(allSquares[a]));
+  allSquares[a].addEventListener("click", allowMove(allSquare[a]));
+}
+
 var move = true;
 var whitesMove = true;
 var kingCapture = false;
@@ -368,20 +375,6 @@ function movePawn(selected, el) {
 
 // if it's a left or right side pawn, can only capture a certain way
 // if it's a center pawn, it has two choices. if it's not one of these, then disallow move
-
-//adding the necessary click events to each TD
-var allSquares = document.getElementsByTagName("TD");
-for (let a = 0; a < allSquares.length; a++) {
-  allSquares[a].addEventListener("click", getMoving(allSquares[a]));
-}
-
-var c = 0;
-
-function getMoving(td) {
-  c++;
-  selectedPiece(td);
-  allowMove(td);
-}
 
 function whitePawnAttack(selected, el) {
   if ((selected.id - 1) % 8 == 0) { //if a left side pawn
