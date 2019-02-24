@@ -285,10 +285,11 @@ function allowMove(el) {
     blackKingCheckToggled[0].classList.toggle("blackInCheck");
   }
   
-  //turn off captureMove i
-  if (captureMove) {
-    vanishSquare();
-  }
+//taking out the below function for now
+//   if (captureMove) {
+//     vanishSquare();
+//   }
+  //turn off captureMove
   captureMove = false;
   
   //if king moved, turn that king movement to true
@@ -1108,11 +1109,4 @@ function canPieceBlock(blocker, square) {
   else if (blocker.innerHTML == whiteKnight || blocker.innerHTML == blackKnight) {
     moveKnight(blocker, square);
   } 
-}
-
-function vanishSquare() {
-  emptySquares = document.getElementsByClassName("empty");
-  vanishID = Math.floor(Math.random() * emptySquares.length); //this needs a +1 or -1 in here somewhere
-  emptySquares[vanishID].innerHTML = blackHole;
-  emptySquares[vanishID].classList.remove("empty");
 }
