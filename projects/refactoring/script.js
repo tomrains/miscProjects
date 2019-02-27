@@ -369,9 +369,15 @@ function blackAI() {
 }
 
 function moveWhitePawn(selected, el) {
-  //write function to see if el is a value under the key for selected
-  return;
+  //if the attempted move is legal
+  if (legalWhitePawnMoves[selected].indexOf(el) != -1) {
+    //then allow, or disallow, or whatever. default move i believe now is false. will need to change that!
+    return;
+  }
 }
+
+//populate the below with legal whitePawn moves
+let legalWhitePawnMoves = {};
 
 // So let's see if I can get an array of arrays to work in JS. so to move a piece ... 
 // you would get the square it's on  (selected)
