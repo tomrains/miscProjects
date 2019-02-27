@@ -13,6 +13,14 @@ and from there, loop through them all to see if they work. if they do, then we g
 
 
 So let's see if I can get an array of arrays to work in JS.
+so to move a piece ...
+you would get the square it's on
+you would see what type of piece it is
+you would get the square it wants to go to
+you would see if the square it wants to go to is a fair move under piece's dictionary/object
+then you would check to make sure none are in its way
+the select move i believe already does the 
+let's try it for one of the pawns!
 
 Bonus:
 
