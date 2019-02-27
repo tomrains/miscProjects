@@ -368,13 +368,22 @@ function blackAI() {
   return;
 }
 
-function movePawn(selected, el) {
+function moveWhitePawn(selected, el) {
+  //write function to see if el is a value under the key for selected
   return;
 }
 
+// So let's see if I can get an array of arrays to work in JS. so to move a piece ... 
+// you would get the square it's on  (selected)
+// you would see what type of piece it is (you know it's a white pawn)
+// you would get the square it wants to go to (el)
+// you would see if the square it wants to go to is a fair move under piece's dictionary/object 
+// then you would check to make sure none are in its way the select move i believe already does the 
+// let's try it for one of the pawns!
+
+
 // if it's a left or right side pawn, can only capture a certain way
 // if it's a center pawn, it has two choices. if it's not one of these, then disallow move
-
 function whitePawnAttack(selected, el) {
   if ((selected.id - 1) % 8 == 0) { //if a left side pawn
     if ((selected.id - el.id) != 7) {
@@ -816,8 +825,11 @@ function whatPieceIsIt(selected, el) {
     }
     blackPawnAttacking = false;
   }
-  else if (selected.innerHTML == whitePawn || selected.innerHTML == blackPawn) {
-    movePawn(selected, el);
+  else if (selected.innerHTML == whitePawn) {
+    moveWhitePawn(selected, el);
+  }
+  else if (selected.innerHTML == blackPawn) {
+    moveBlackPawn(selected, el);
   }
   else if (selected.innerHTML == whiteRook || selected.innerHTML == blackRook) {
     moveRook(selected, el);
