@@ -369,59 +369,7 @@ function blackAI() {
 }
 
 function movePawn(selected, el) {
-  //disallow pawns with pieces directly in front of them to move
-  if (el.innerHTML != "") {
-    move = false;
-    return;
-  }
-  //could combine the next two else ifs ... they have the same initial condition!
-  //disallow opening pawns jumping over another
-  //first bit tests if it's a jump over
-  if (+selected.id - +el.id == 16 || +el.id - +selected.id == 16) {
-    var squareID = (+selected.id + +el.id) / 2;
-    var square = document.getElementById(squareID);
-    if (square.innerHTML != "") {
-      move = false;
-      return;
-    }
-  }
-  //if there is a double jump
-  if (+selected.id - +el.id == 16 || +el.id - +selected.id == 16) {
-    //if black pawn is not on home row
-    if (selected.innerHTML == blackPawn && (selected.id < 9 || selected.id > 16)) {
-      move = false;
-      return;
-    }
-    //if white pawn is not on home row
-    if (selected.innerHTML == whitePawn && (selected.id < 49 || selected.id > 56)) {
-      move = false;
-      return;
-    }
-  }
-//allow black pawn to move forward 1 or 2 squares if on opening position
-  else if (selected.innerHTML == blackPawn && selected.id >= 9 && selected.id <= 16) {
-    if (el.id - selected.id != 8 && el.id - selected.id != 16) {
-      move = false;
-      return;
-    }
-  }
-  //allow pawns in non-starting spot to only move forward one space
-  else if (selected.innerHTML == blackPawn && el.id - selected.id != 8) {
-    move = false;
-    return;
-    }
-  //creating movement logic for white pawns
-  else if (selected.innerHTML == whitePawn && selected.id >= 49 && selected.id <= 56) {
-    if (selected.id - el.id != 8 && selected.id - el.id != 16) {
-      move = false;
-      return;
-    }
-  }
-  //allow pawns in non-starting spot to only move forward one space
-  else if (selected.innerHTML == whitePawn && selected.id - el.id != 8) {
-    move = false;
-    return;
-  }
+  return;
 }
 
 // if it's a left or right side pawn, can only capture a certain way
