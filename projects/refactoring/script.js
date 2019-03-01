@@ -545,202 +545,9 @@ function moveKing(selected, el) {
   var rightSideKingMoves = [9, 8, 1, -7, -8];
   var regularKingMoves = [-9, -8, -7, -1, 1, 7, 8, 9];
   var kingMovement = selected.id - el.id;
-  
-  //add in castling functionality here
-  // i believe it is important to disallow the king from moving here if he is in check...
-  //...that way we don't have to reverse it later on like with other moves (switching two == annoying!)
-  whitePiecesLeft = document.getElementsByClassName("whitePiece");
-  blackPiecesLeft = document.getElementsByClassName("blackPiece");
-  if (el.id == 3 && !castleInProgress) {//if black king moving to left, queenside
-    if (blackKingHasMoved == false && leftBlackRookHasMoved == false) {
-      if (!blackInCheck) {   
-        if (document.getElementById("2").innerHTML == "" && document.getElementById("3").innerHTML == "" && document.getElementById("4").innerHTML == "") {
-          for (var a = 2; a < 5; a++) { //for each square between them
-            castleInProgress = true;
-            for (let b = 0; b < whitePiecesLeft.length; b++) { // for each remaining piece
-              attackMe = document.getElementById(a);
-              piecesAttack(whitePiecesLeft[b], a); //see if the piece can attack any of the squares
-              if (move) { //if a piece is able to move there, then exit the king moving at all
-                move = false;
-                castleInProgress = false;
-                return;
-              }
-            }
-          }
-          document.getElementById("5").innerHTML = "";
-          document.getElementById("5").classList.remove("hasBlackKing");
-          document.getElementById("5").classList.remove("blackPiece");
-          document.getElementById("5").classList.remove("selected");
-          document.getElementById("5").classList.add("empty");
-          document.getElementById("1").innerHTML = "";
-          document.getElementById("1").classList.remove("blackPiece")
-          document.getElementById("1").classList.add("empty");;
-          document.getElementById("3").innerHTML = blackKing;
-          document.getElementById("3").classList.add("hasBlackKing");
-          document.getElementById("3").classList.add("blackPiece");
-          document.getElementById("3").classList.remove("empty");
-          document.getElementById("4").innerHTML = blackRook;
-          document.getElementById("4").classList.add("blackPiece");
-          document.getElementById("4").classList.add("empty");
-          blackKingHasMoved = true;
-          leftBlackRookHasMoved = true;
-          isWhiteInCheck();
-          if (whiteInCheck) {
-            let temp = document.getElementsByClassName("hasWhiteKing");
-            kingInCheck = temp[0];
-            kingInCheck.classList.toggle("whiteInCheck");
-          }
-          whitesMove = true;
-          justCastled = true;
-          isCheckmate();
-        }
-      }
-    }
-  }
-  if (el.id == 7 && !castleInProgress) {///if black king moving to right, king side
-    if (blackKingHasMoved == false && rightBlackRookHasMoved == false) {
-      if (!blackInCheck) {   
-        if (document.getElementById("6").innerHTML == "" && document.getElementById("7").innerHTML == "") {
-          for (var c = 6; c < 8; c++) { //for each square between them
-            castleInProgress = true;
-            for (let d = 0; d < whitePiecesLeft.length; d++) { // for each remaining piece
-              attackMe = document.getElementById(c);
-              piecesAttack(whitePiecesLeft[d], attackMe); //see if the piece can attack any of the squares
-              if (move) { //if a piece is able to move there, then exit the king moving at all
-                move = false;
-                castleInProgress = false;
-                return;
-              }
-            }
-          }
-          document.getElementById("5").innerHTML = "";
-          document.getElementById("5").classList.remove("hasBlackKing");
-          document.getElementById("5").classList.remove("blackPiece");
-          document.getElementById("5").classList.remove("selected");
-          document.getElementById("5").classList.add("empty");
-          document.getElementById("8").innerHTML = "";
-          document.getElementById("8").classList.remove("blackPiece");
-          document.getElementById("8").classList.add("empty");
-          document.getElementById("7").innerHTML = blackKing;
-          document.getElementById("7").classList.add("hasBlackKing");
-          document.getElementById("7").classList.add("blackPiece");
-          document.getElementById("7").classList.remove("empty");
-          document.getElementById("6").innerHTML = blackRook;
-          document.getElementById("6").classList.add("blackPiece");
-          document.getElementById("6").classList.remove("empty");
-          blackKingHasMoved = true;
-          leftBlackRookHasMoved = true;
-          isWhiteInCheck();
-          if (whiteInCheck) {
-            let temp = document.getElementsByClassName("hasWhiteKing");
-            kingInCheck = temp[0];
-            kingInCheck.classList.toggle("whiteInCheck");
-          }
-          whitesMove = true;
-          justCastled = true;
-          isCheckmate();
-        }
-      }
-    }
-  }  
-  if (el.id == 59 && !castleInProgress) {//if white king move to left, queenside
-    if (whiteKingHasMoved == false && leftWhiteRookHasMoved == false) {
-      if (!whiteInCheck) {   
-        if (document.getElementById("58").innerHTML == "" && document.getElementById("59").innerHTML == "" && document.getElementById("60").innerHTML == "") {
-          for (var e = 58; e < 61; e++) { //for each square between them
-            castleInProgress = true;
-            for (let f = 0; f < blackPiecesLeft.length; f++) { // for each remaining piece
-              attackMe = document.getElementById(e);
-              piecesAttack(blackPiecesLeft[f], attackMe); //see if the piece can attack any of the squares
-              if (move) { //if a piece is able to move there, then exit the king moving at all
-                move = false;
-                castleInProgress = false;
-                return;
-              }
-            }
-          }
-          document.getElementById("61").innerHTML = "";
-          document.getElementById("61").classList.remove("hasWhiteKing");
-          document.getElementById("61").classList.remove("whitePiece");
-          document.getElementById("61").classList.remove("selected");
-          document.getElementById("61").classList.add("empty");
-          document.getElementById("57").innerHTML = "";
-          document.getElementById("57").classList.remove("whitePiece");
-          document.getElementById("57").classList.add("empty");
-          document.getElementById("59").innerHTML = whiteKing;
-          document.getElementById("59").classList.add("hasWhiteKing");
-          document.getElementById("59").classList.add("whitePiece");
-          document.getElementById("59").classList.remove("empty");
-          document.getElementById("60").innerHTML = whiteRook;
-          document.getElementById("60").classList.add("whitePiece");
-          document.getElementById("60").classList.remove("empty");
-          whiteKingHasMoved = true;
-          leftWhiteRookHasMoved = true;
-          isBlackInCheck();
-          if (blackInCheck) {
-            let temp = document.getElementsByClassName("hasBlackKing");
-            kingInCheck = temp[0];
-            kingInCheck.classList.toggle("blackInCheck");
-          }
-          whitesMove = false;
-          justCastled = true;
-          isCheckmate();
-        }
-      }
-    }
-  }
-//   else if (el.id == 63 && castleInProgress) {//if white king moving to right, kingside
-//     if (whiteKingHasMoved == false && rightWhiteRookHasMoved == false) {
-//       if (document.getElementById("62").innerHTML == "" && document.getElementById("63").innerHTML == "") {
-//         return;
-//       }
-//     }
-//   }
-  if (el.id == 63 && !castleInProgress) {//if white king moving to right, kingside
-    if (whiteKingHasMoved == false && rightWhiteRookHasMoved == false) {
-      if (!whiteInCheck) {   
-        if (document.getElementById("62").innerHTML == "" && document.getElementById("63").innerHTML == "") {
-          for (var g = 62; g < 64; g++) { //for each square between them
-            castleInProgress = true;
-            for (let h = 0; h < blackPiecesLeft.length; h++) { // for each remaining piece
-              attackMe = document.getElementById(g);
-              piecesAttack(blackPiecesLeft[h], attackMe); //see if the piece can attack any of the squares
-              if (move) { //if a piece is able to move there, then exit the king moving at all
-                move = false;
-                castleInProgress = false;
-                return;
-              }
-            }
-          }
-          document.getElementById("61").innerHTML = "";
-          document.getElementById("61").classList.remove("hasWhiteKing");
-          document.getElementById("61").classList.remove("whitePiece");
-          document.getElementById("61").classList.add("empty");
-          document.getElementById("61").classList.remove("selected");
-          document.getElementById("64").innerHTML = "";
-          document.getElementById("64").classList.remove("whitePiece");
-          document.getElementById("64").classList.add("empty");
-          document.getElementById("63").innerHTML = whiteKing;
-          document.getElementById("63").classList.add("hasWhiteKing");
-          document.getElementById("63").classList.add("whitePiece");
-          document.getElementById("63").classList.remove("empty");
-          document.getElementById("62").innerHTML = whiteRook;
-          document.getElementById("62").classList.add("whitePiece");
-          document.getElementById("62").classList.remove("empty");
-          whiteKingHasMoved = true;
-          rightWhiteRookHasMoved = true;
-          isBlackInCheck();
-          if (blackInCheck) {
-            let temp = document.getElementsByClassName("hasBlackKing");
-            kingInCheck = temp[0];
-            kingInCheck.classList.toggle("blackInCheck");
-          }
-          whitesMove = false;
-          justCastled = true;
-          isCheckmate();
-        }
-      }
-    }
+  //add in IF castling functionality, to go to the castle function
+  if (el.id == 3 || el.id == 7 || el.id == 59 || el.id == 63) {
+    castleMe(selected, el);
   }
   if ((selected.id - 1) % 8 == 0) {//on left
     if (leftSideKingMoves.indexOf(kingMovement) != -1) {
@@ -1149,6 +956,206 @@ function canPieceBlock(blocker, square) {
   else if (blocker.innerHTML == whiteKnight || blocker.innerHTML == blackKnight) {
     moveKnight(blocker, square);
   } 
+}
+
+//this needs to be changed to return certain value if castle was a success. and change the move=false, move=true if need be
+function castleMe(selected, el) {
+  //add in castling functionality here
+  // i believe it is important to disallow the king from moving here if he is in check...
+  //...that way we don't have to reverse it later on like with other moves (switching two == annoying!)
+  whitePiecesLeft = document.getElementsByClassName("whitePiece");
+  blackPiecesLeft = document.getElementsByClassName("blackPiece");
+  if (el.id == 3 && !castleInProgress) {//if black king moving to left, queenside
+    if (blackKingHasMoved == false && leftBlackRookHasMoved == false) {
+      if (!blackInCheck) {   
+        if (document.getElementById("2").innerHTML == "" && document.getElementById("3").innerHTML == "" && document.getElementById("4").innerHTML == "") {
+          for (var a = 2; a < 5; a++) { //for each square between them
+            castleInProgress = true;
+            for (let b = 0; b < whitePiecesLeft.length; b++) { // for each remaining piece
+              attackMe = document.getElementById(a);
+              piecesAttack(whitePiecesLeft[b], a); //see if the piece can attack any of the squares
+              if (move) { //if a piece is able to move there, then exit the king moving at all
+                move = false;
+                castleInProgress = false;
+                return;
+              }
+            }
+          }
+          document.getElementById("5").innerHTML = "";
+          document.getElementById("5").classList.remove("hasBlackKing");
+          document.getElementById("5").classList.remove("blackPiece");
+          document.getElementById("5").classList.remove("selected");
+          document.getElementById("5").classList.add("empty");
+          document.getElementById("1").innerHTML = "";
+          document.getElementById("1").classList.remove("blackPiece")
+          document.getElementById("1").classList.add("empty");;
+          document.getElementById("3").innerHTML = blackKing;
+          document.getElementById("3").classList.add("hasBlackKing");
+          document.getElementById("3").classList.add("blackPiece");
+          document.getElementById("3").classList.remove("empty");
+          document.getElementById("4").innerHTML = blackRook;
+          document.getElementById("4").classList.add("blackPiece");
+          document.getElementById("4").classList.add("empty");
+          blackKingHasMoved = true;
+          leftBlackRookHasMoved = true;
+          isWhiteInCheck();
+          if (whiteInCheck) {
+            let temp = document.getElementsByClassName("hasWhiteKing");
+            kingInCheck = temp[0];
+            kingInCheck.classList.toggle("whiteInCheck");
+          }
+          whitesMove = true;
+          justCastled = true;
+          isCheckmate();
+        }
+      }
+    }
+  }
+  if (el.id == 7 && !castleInProgress) {///if black king moving to right, king side
+    if (blackKingHasMoved == false && rightBlackRookHasMoved == false) {
+      if (!blackInCheck) {   
+        if (document.getElementById("6").innerHTML == "" && document.getElementById("7").innerHTML == "") {
+          for (var c = 6; c < 8; c++) { //for each square between them
+            castleInProgress = true;
+            for (let d = 0; d < whitePiecesLeft.length; d++) { // for each remaining piece
+              attackMe = document.getElementById(c);
+              piecesAttack(whitePiecesLeft[d], attackMe); //see if the piece can attack any of the squares
+              if (move) { //if a piece is able to move there, then exit the king moving at all
+                move = false;
+                castleInProgress = false;
+                return;
+              }
+            }
+          }
+          document.getElementById("5").innerHTML = "";
+          document.getElementById("5").classList.remove("hasBlackKing");
+          document.getElementById("5").classList.remove("blackPiece");
+          document.getElementById("5").classList.remove("selected");
+          document.getElementById("5").classList.add("empty");
+          document.getElementById("8").innerHTML = "";
+          document.getElementById("8").classList.remove("blackPiece");
+          document.getElementById("8").classList.add("empty");
+          document.getElementById("7").innerHTML = blackKing;
+          document.getElementById("7").classList.add("hasBlackKing");
+          document.getElementById("7").classList.add("blackPiece");
+          document.getElementById("7").classList.remove("empty");
+          document.getElementById("6").innerHTML = blackRook;
+          document.getElementById("6").classList.add("blackPiece");
+          document.getElementById("6").classList.remove("empty");
+          blackKingHasMoved = true;
+          leftBlackRookHasMoved = true;
+          isWhiteInCheck();
+          if (whiteInCheck) {
+            let temp = document.getElementsByClassName("hasWhiteKing");
+            kingInCheck = temp[0];
+            kingInCheck.classList.toggle("whiteInCheck");
+          }
+          whitesMove = true;
+          justCastled = true;
+          isCheckmate();
+        }
+      }
+    }
+  }  
+  if (el.id == 59 && !castleInProgress) {//if white king move to left, queenside
+    if (whiteKingHasMoved == false && leftWhiteRookHasMoved == false) {
+      if (!whiteInCheck) {   
+        if (document.getElementById("58").innerHTML == "" && document.getElementById("59").innerHTML == "" && document.getElementById("60").innerHTML == "") {
+          for (var e = 58; e < 61; e++) { //for each square between them
+            castleInProgress = true;
+            for (let f = 0; f < blackPiecesLeft.length; f++) { // for each remaining piece
+              attackMe = document.getElementById(e);
+              piecesAttack(blackPiecesLeft[f], attackMe); //see if the piece can attack any of the squares
+              if (move) { //if a piece is able to move there, then exit the king moving at all
+                move = false;
+                castleInProgress = false;
+                return;
+              }
+            }
+          }
+          document.getElementById("61").innerHTML = "";
+          document.getElementById("61").classList.remove("hasWhiteKing");
+          document.getElementById("61").classList.remove("whitePiece");
+          document.getElementById("61").classList.remove("selected");
+          document.getElementById("61").classList.add("empty");
+          document.getElementById("57").innerHTML = "";
+          document.getElementById("57").classList.remove("whitePiece");
+          document.getElementById("57").classList.add("empty");
+          document.getElementById("59").innerHTML = whiteKing;
+          document.getElementById("59").classList.add("hasWhiteKing");
+          document.getElementById("59").classList.add("whitePiece");
+          document.getElementById("59").classList.remove("empty");
+          document.getElementById("60").innerHTML = whiteRook;
+          document.getElementById("60").classList.add("whitePiece");
+          document.getElementById("60").classList.remove("empty");
+          whiteKingHasMoved = true;
+          leftWhiteRookHasMoved = true;
+          isBlackInCheck();
+          if (blackInCheck) {
+            let temp = document.getElementsByClassName("hasBlackKing");
+            kingInCheck = temp[0];
+            kingInCheck.classList.toggle("blackInCheck");
+          }
+          whitesMove = false;
+          justCastled = true;
+          isCheckmate();
+        }
+      }
+    }
+  }
+//   else if (el.id == 63 && castleInProgress) {//if white king moving to right, kingside
+//     if (whiteKingHasMoved == false && rightWhiteRookHasMoved == false) {
+//       if (document.getElementById("62").innerHTML == "" && document.getElementById("63").innerHTML == "") {
+//         return;
+//       }
+//     }
+//   }
+  if (el.id == 63 && !castleInProgress) {//if white king moving to right, kingside
+    if (whiteKingHasMoved == false && rightWhiteRookHasMoved == false) {
+      if (!whiteInCheck) {   
+        if (document.getElementById("62").innerHTML == "" && document.getElementById("63").innerHTML == "") {
+          for (var g = 62; g < 64; g++) { //for each square between them
+            castleInProgress = true;
+            for (let h = 0; h < blackPiecesLeft.length; h++) { // for each remaining piece
+              attackMe = document.getElementById(g);
+              piecesAttack(blackPiecesLeft[h], attackMe); //see if the piece can attack any of the squares
+              if (move) { //if a piece is able to move there, then exit the king moving at all
+                move = false;
+                castleInProgress = false;
+                return;
+              }
+            }
+          }
+          document.getElementById("61").innerHTML = "";
+          document.getElementById("61").classList.remove("hasWhiteKing");
+          document.getElementById("61").classList.remove("whitePiece");
+          document.getElementById("61").classList.add("empty");
+          document.getElementById("61").classList.remove("selected");
+          document.getElementById("64").innerHTML = "";
+          document.getElementById("64").classList.remove("whitePiece");
+          document.getElementById("64").classList.add("empty");
+          document.getElementById("63").innerHTML = whiteKing;
+          document.getElementById("63").classList.add("hasWhiteKing");
+          document.getElementById("63").classList.add("whitePiece");
+          document.getElementById("63").classList.remove("empty");
+          document.getElementById("62").innerHTML = whiteRook;
+          document.getElementById("62").classList.add("whitePiece");
+          document.getElementById("62").classList.remove("empty");
+          whiteKingHasMoved = true;
+          rightWhiteRookHasMoved = true;
+          isBlackInCheck();
+          if (blackInCheck) {
+            let temp = document.getElementsByClassName("hasBlackKing");
+            kingInCheck = temp[0];
+            kingInCheck.classList.toggle("blackInCheck");
+          }
+          whitesMove = false;
+          justCastled = true;
+          isCheckmate();
+        }
+      }
+    }
+  }
 }
 
 //An outline for future dictionaries
