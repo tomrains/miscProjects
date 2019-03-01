@@ -130,7 +130,7 @@ function allowMove(el) {
   //if you just completed a castle, everything is already good. ignore rest of function
   if (justCastled) {
     justCastled = false;
-    move = true; //move kept being false for some reason
+    move = false;
     castleInProgress = false;
     return;
   }
@@ -145,7 +145,7 @@ function allowMove(el) {
     el.innerHTML = whiteQueen;
     selected.classList.toggle("selected");
     whitePawnBecomesQueen = false;
-    move = true;
+    move = false;
     //need to loop in the checkInCheck bit here eventually
     //probably need to add in the "remove class" thing here for enemy pieces
     whitesMove = false;
@@ -157,7 +157,7 @@ function allowMove(el) {
     el.innerHTML = blackQueen;
     selected.classList.toggle("selected");
     blackPawnBecomesQueen = false;
-    move = true;
+    move = false;
     //need to loop in the checkInCheck bit here eventually
     //probably need to add in the "remove class" thing here for enemy pieces
     whitesMove = true;
@@ -774,7 +774,6 @@ function moveQueen(selected, el) {
     queenAttackingLikeBishop = false;
     return;
   }
-  move = true;
   moveBishop(selected, el);
   if (move) {
     queenAttackingLikeBishop = true;
@@ -836,7 +835,6 @@ function isWhiteInCheck() {
   }
   //if not, set move back to true
   whiteInCheck = false;
-  move = true;
 } // last curly of isWhiteInCheck function
 
 
@@ -853,7 +851,6 @@ function isBlackInCheck() {
     }
   }
   blackInCheck = false;
-  move = true;
 }
 
 function whatPieceIsIt(selected, el) {
@@ -896,7 +893,7 @@ function whatPieceIsIt(selected, el) {
 
 function piecesAttack(selected, el) {
   //default should always be set to true (trying to fix check bug)
-  move = true;
+  move = false;
   if (selected.innerHTML == whitePawn) {
     whitePawnAttack(selected, el);
   }
