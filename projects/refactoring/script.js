@@ -135,10 +135,11 @@ function allowMove(el) {
     return;
   }
   //if move has been declared invalid, then reset move to true, and exit this function
-  if (!move) {
-    move = true;
-    return;
-  }
+  //taking out below for now! it allows illegal moves after enough attempts
+//   if (!move) {
+//     move = true;
+//     return;
+//   }
   if (whitePawnBecomesQueen) {
     selected.innerHTML = "";
     el.innerHTML = whiteQueen;
