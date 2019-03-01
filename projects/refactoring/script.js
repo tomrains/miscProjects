@@ -784,32 +784,32 @@ function moveKnight(selected, el) {
   var rightKnight = [17, 10, -6, -15];
   var centerKnight = [17, 15, -17, -15, 10, 6, -10, -6];
   if ((selected.id - 1) % 8 == 0) { //if on left
-    if (leftKnight.indexOf(knightMovement) == -1) {
-      move = false;
+    if (leftKnight.indexOf(knightMovement) != -1) {
+      move = true;
       return;
     }
   }
   else if ((selected.id - 2) % 8 == 0) { // if 2nd to left
-    if (secondLeftKnight.indexOf(knightMovement) == -1) {
-      move = false;
+    if (secondLeftKnight.indexOf(knightMovement) != -1) {
+      move = true;
       return;
     }
   }
   else if ((selected.id - 7) % 8 == 0) { // if 2nd to right
-    if (secondRightKnight.indexOf(knightMovement) == -1) {
-      move = false;
+    if (secondRightKnight.indexOf(knightMovement) != -1) {
+      move = true;
       return;
     }
   }
   else if (selected.id % 8 == 0) { //if on right
-    if (rightKnight.indexOf(knightMovement) == -1) {
-      move = false;
+    if (rightKnight.indexOf(knightMovement) != -1) {
+      move = true;
       return;
     }
   }
   else { //if in the middle
-    if (centerKnight.indexOf(knightMovement) == -1) {
-      move = false;
+    if (centerKnight.indexOf(knightMovement) != -1) {
+      move = true;
       return;
     }
   }
