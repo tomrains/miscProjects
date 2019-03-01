@@ -501,19 +501,16 @@ function moveRook(selected, el) {
 function moveBishop (selected, el) {
   let small = Math.min(selected.id, el.id);
   let large = Math.max(selected.id, el.id);
-  if (!((large - small) % 7 == 0 || (large - small) % 9 == 0)) {
-    move = false;
-    return;
-  }
   //make sure bishops move properly
   if ((large - small) % 7 == 0) { //if the difference is 7
+    move = true;
     if (((small - 1) % 8) == 0 || (large % 8) == 0) {
       move = false;
-      return true;
+      return;
     }
     for (let i = small; i < large; i += 7) {
       // if equal to side ones
-      if ( ((i % 8) == 0 || ((i - 1) % 8) == 0) && i != large && i != small) {
+      if (((i % 8) == 0 || ((i - 1) % 8) == 0) && i != large && i != small) {
         move = false;
         return;
       }
@@ -524,9 +521,10 @@ function moveBishop (selected, el) {
     }
   }
   else if ((large - small) % 9 == 0) { // if the difference is 9
+    move = true;
     if (((large - 1) % 8) == 0 || (small % 8) == 0) {
       move = false;
-      return true;
+      return;
     }
     for (let i = small; i < large; i += 9) {
       // if equal to side ones
