@@ -331,36 +331,36 @@ function allowMove(el) {
   
   //moved isCheckmate here so you can know at end of attacking players' turn
   isCheckmate();
-  if (move && inAILoop) {
-    botSuccess = true;
-  }
-  if (inAILoop && botSuccess) {
-    inAILoop = false;
-    return;
-  }
+//   if (move && inAILoop) {
+//     botSuccess = true;
+//   }
+//   if (inAILoop && botSuccess) {
+//     inAILoop = false;
+//     return;
+//   }
   //change botSuccess variable to true so blackAI will exit because of successful move
   //going to try adding in a blackAI function here
-  if (!whitesMove) {
-    if (!botSuccess) {
-      inAIloop = true;
-      let blackAITeam = document.getElementsByClassName("blackPiece"); //run selected on a random black piece
-      let selectBlackPiece = blackAITeam[Math.floor(16 * Math.random())]; //choose a random number between 0 and length - 1, inclusive.
-      selectedPiece(selectBlackPiece);
-      allowMove(selectBlackPiece);
-      blackAttack = document.getElementById(Math.floor(64 * Math.random()) + 1); //add +1
-      selectedPiece(blackAttack);
-      allowMove(blackAttack);
-      //if success, then return;
-      //else, do this function again
-      if (botSuccess) {
-        return;
-      }
-      else {
-        blackAI();
-      }
-    }
-  }
-  inAILoop = false;
+//   if (!whitesMove) {
+//     if (!botSuccess) {
+//       inAIloop = true;
+//       let blackAITeam = document.getElementsByClassName("blackPiece"); //run selected on a random black piece
+//       let selectBlackPiece = blackAITeam[Math.floor(16 * Math.random())]; //choose a random number between 0 and length - 1, inclusive.
+//       selectedPiece(selectBlackPiece);
+//       allowMove(selectBlackPiece);
+//       blackAttack = document.getElementById(Math.floor(64 * Math.random()) + 1); //add +1
+//       selectedPiece(blackAttack);
+//       allowMove(blackAttack);
+//       //if success, then return;
+//       //else, do this function again
+//       if (botSuccess) {
+//         return;
+//       }
+//       else {
+//         blackAI();
+//       }
+//     }
+//   }
+//   inAILoop = false;
 } //last curly of allow move function
 
 //adding in blackAI() function
@@ -371,6 +371,13 @@ function blackAI() {
 function moveWhitePawn(selected, el) {
   //if the attempted move is legal, change move to true
   if (legalWhitePawnMoves[selected.id].indexOf(parseInt(el.id)) != -1) {
+    move = true;
+  }
+}
+
+function moveBlackPawn(selected, el) {
+  //if the attempted move is legal, change move to true
+  if (legalBlackPawnMoves[selected.id].indexOf(parseInt(el.id)) != -1) {
     move = true;
   }
 }
@@ -387,6 +394,18 @@ let legalWhitePawnMoves = {
   33: [], 34: [], 35: [], 36: [], 37: [], 38: [], 39: [], 40: [],
   41: [], 42: [], 43: [], 44: [], 45: [], 46: [], 47: [], 48: [],
   49: [33, 41], 50: [34, 42], 51: [35, 43], 52: [36, 44], 53: [37, 45], 54: [38, 46], 55: [39, 47], 56: [40, 48],
+  57: [], 58: [], 59: [], 60: [], 61: [], 62: [], 63: [], 64: [],
+};
+
+let legalBlackPawnMoves = {
+  0: [],
+  01: [], 02: [], 03: [], 04: [], 05: [], 06: [], 07: [], 08: [],
+  09: [17, 25], 10: [18, 26], 11: [19, 27], 12: [20, 28], 13: [21, 29], 14: [22, 30], 15: [23, 31], 16: [24, 32],
+  17: [], 18: [], 19: [], 20: [], 21: [], 22: [], 23: [], 24: [],
+  25: [], 26: [], 27: [], 28: [], 29: [], 30: [], 31: [], 32: [],
+  33: [], 34: [], 35: [], 36: [], 37: [], 38: [], 39: [], 40: [],
+  41: [], 42: [], 43: [], 44: [], 45: [], 46: [], 47: [], 48: [],
+  49: [], 50: [], 51: [], 52: [], 53: [], 54: [], 55: [], 56: [],
   57: [], 58: [], 59: [], 60: [], 61: [], 62: [], 63: [], 64: [],
 };
 
@@ -1138,7 +1157,7 @@ function canPieceBlock(blocker, square) {
 //   17: [], 18: [], 19: [], 20: [], 21: [], 22: [], 23: [], 24: [],
 //   25: [], 26: [], 27: [], 28: [], 29: [], 30: [], 31: [], 32: [],
 //   33: [], 34: [], 35: [], 36: [], 37: [], 38: [], 39: [], 40: [],
-//   41: [], 42: [], 43: [], 44: [], 45: [], 46: [], 47: [], 48: [].
-//   49: [33, 41], 50: [34, 42], 51: [35, 43], 52: [36, 44], 53: [37, 45], 54: [38, 46] 55: [39, 47], 56: [40, 48],
+//   41: [], 42: [], 43: [], 44: [], 45: [], 46: [], 47: [], 48: [],
+//   49: [], 50: [], 51: [], 52: [], 53: [], 54: [], 55: [], 56: [],
 //   57: [], 58: [], 59: [], 60: [], 61: [], 62: [], 63: [], 64: [],
 // };
