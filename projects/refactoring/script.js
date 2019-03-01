@@ -164,6 +164,11 @@ function allowMove(el) {
     captureMove = false;
     return;
   }
+  
+  //disallow move is move == false
+  if (!move) {
+    return;
+  }
   //grab piece inside square
   var piece = selected.innerHTML;
   //replace piece inside selected square with blank stuff
