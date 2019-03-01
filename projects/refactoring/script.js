@@ -743,20 +743,20 @@ function moveKing(selected, el) {
     }
   }
   if ((selected.id - 1) % 8 == 0) {//on left
-    if (leftSideKingMoves.indexOf(kingMovement) == -1) {
-      move = false;
+    if (leftSideKingMoves.indexOf(kingMovement) != -1) {
+      move = true;
       return;
     }
   }
   else if (selected.id % 8 == 0) {//on right
-    if (rightSideKingMoves.indexOf(kingMovement) == -1) {
-      move = false;
+    if (rightSideKingMoves.indexOf(kingMovement) != -1) {
+      move = true;
       return;
     }
   }
   else { // if in middle
-    if (regularKingMoves.indexOf(kingMovement) == -1) {
-      move = false;
+    if (regularKingMoves.indexOf(kingMovement) != -1) {
+      move = true;
       return;
     }
   }
