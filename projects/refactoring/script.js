@@ -474,12 +474,8 @@ function blackPawnAttack(selected, el) { //same as whitePawnAttack, just with ne
 
 function moveRook(selected, el) {
   //check to see if in same row or same column, respectively
-  if (!((((selected.id-1) / 8 >> 0) == ((el.id-1) / 8 >> 0)) || (((selected.id - el.id) % 8) == 0))) {
-    move = false;
-    return;
-  //now need to stop it from jumping over pieces
-  }
   if ((((selected.id-1) / 8) >> 0) == (((el.id-1) / 8) >> 0)) { //if in same row
+    move = true;
     var small = Math.min(selected.id, el.id);
     var large = Math.max(selected.id, el.id);
     for (let i = small + 1; i < large; i++) {
@@ -490,6 +486,7 @@ function moveRook(selected, el) {
     }
   }
   if (((selected.id - el.id) % 8) == 0) { //if in same column
+    move = true;
     var small = Math.min(selected.id, el.id);
     var large = Math.max(selected.id, el.id);
     for (let i = small + 8; i < large; i+=8) {
