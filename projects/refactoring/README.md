@@ -1,5 +1,13 @@
 Refactoring the vanishing chess game
 
+Now I deffo need to break up the castling function from the king movement function ....
+...because the castling functin is such a mess
+
+(this might just be unnecessary though now, even if it wouldve been cleaner...)
+...would it hurt to make the ids like this .. 11 - 18, 21 - 18 .... 81-88? 
+Then you could automatially know if the column or row ..
+..were the same
+
 I'd like to think about how to add a random AI. I would learn a lot that way, and it would make it easier to actually play!
 
 So, when you play, it's now black's turn, then the AI goes. so when it switches to black's turn, call a function like...
