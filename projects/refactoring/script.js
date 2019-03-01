@@ -453,20 +453,20 @@ function whitePawnAttack(selected, el) {
 
 function blackPawnAttack(selected, el) { //same as whitePawnAttack, just with negatives
   if ((selected.id - 1) % 8 == 0) { //if a left side pawn
-    if ((selected.id - el.id) != -9) {
-      move = false;
+    if ((selected.id - el.id) == -9) {
+      move = true;
       return;
     }
   }
   if (selected.id % 8 == 0) { // if a right side pawn
-    if ((selected.id - el.id) != -7) {
-      move = false;
+    if ((selected.id - el.id) == -7) {
+      move = true;
       return;
     }
   }
   else { //is a center pawn
-    if (!((selected.id - el.id) == -7 || (selected.id - el.id) == -9)) {
-      move = false;
+    if (((selected.id - el.id) == -7 || (selected.id - el.id) == -9)) {
+      move = true;
       return;
     }
   }
