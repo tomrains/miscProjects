@@ -370,7 +370,7 @@ function blackAI() {
 
 function moveWhitePawn(selected, el) {
   //if the attempted move is legal, change move to true
-  if (legalWhitePawnMoves[selected].indexOf(el.id) != -1) {
+  if (legalWhitePawnMoves[selected.id].indexOf(el.id) != -1) {
     move = true;
   }
 }
