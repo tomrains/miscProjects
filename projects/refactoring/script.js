@@ -369,15 +369,26 @@ function blackAI() {
 }
 
 function moveWhitePawn(selected, el) {
-  //if the attempted move is legal
+  //if the attempted move is legal, change move to true
   if (legalWhitePawnMoves[selected].indexOf(el) != -1) {
-    //then allow, or disallow, or whatever. default move i believe now is false. will need to change that!
-    return;
+    move = true;
   }
 }
 
 //populate the below with legal whitePawn moves
-let legalWhitePawnMoves = {};
+//i would create a separate dictionary for the attack moves
+//and now i need to set the default move to false!
+let legalWhitePawnMoves = {
+  0: [],
+  01: [], 02: [], 03: [], 04: [], 05: [], 06: [], 07: [], 08: [],
+  09: [], 10: [], 11: [], 12: [], 13: [], 14: [], 15: [], 16: [],
+  17: [], 18: [], 19: [], 20: [], 21: [], 22: [], 23: [], 24: [],
+  25: [], 26: [], 27: [], 28: [], 29: [], 30: [], 31: [], 32: [],
+  33: [], 34: [], 35: [], 36: [], 37: [], 38: [], 39: [], 40: [],
+  41: [], 42: [], 43: [], 44: [], 45: [], 46: [], 47: [], 48: [].
+  49: [33, 41], 50: [34, 42], 51: [35, 43], 52: [36, 44], 53: [37, 45], 54: [38, 46] 55: [39, 47], 56: [40, 48],
+  57: [], 58: [], 59: [], 60: [], 61: [], 62: [], 63: [], 64: [],
+};
 
 // So let's see if I can get an array of arrays to work in JS. so to move a piece ... 
 // you would get the square it's on  (selected)
@@ -1118,3 +1129,16 @@ function canPieceBlock(blocker, square) {
     moveKnight(blocker, square);
   } 
 }
+
+//An outline for future dictionaries
+// let legalWhitePawnMoves = {
+//   0: [],
+//   01: [], 02: [], 03: [], 04: [], 05: [], 06: [], 07: [], 08: [],
+//   09: [], 10: [], 11: [], 12: [], 13: [], 14: [], 15: [], 16: [],
+//   17: [], 18: [], 19: [], 20: [], 21: [], 22: [], 23: [], 24: [],
+//   25: [], 26: [], 27: [], 28: [], 29: [], 30: [], 31: [], 32: [],
+//   33: [], 34: [], 35: [], 36: [], 37: [], 38: [], 39: [], 40: [],
+//   41: [], 42: [], 43: [], 44: [], 45: [], 46: [], 47: [], 48: [].
+//   49: [33, 41], 50: [34, 42], 51: [35, 43], 52: [36, 44], 53: [37, 45], 54: [38, 46] 55: [39, 47], 56: [40, 48],
+//   57: [], 58: [], 59: [], 60: [], 61: [], 62: [], 63: [], 64: [],
+// };
