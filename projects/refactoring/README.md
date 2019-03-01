@@ -9,7 +9,20 @@ so pick a random piece, and try to move it to a random square. do this until it 
 
 ai note:
 could get randomized array of the pieces and randomized array of potential moves.
-and from there, loop through them all to see if they work. if they do, then we good. else, keep goingl
+and from there, loop through them all to see if they work. if they do, then we good. else, keep going!
+
+01 02 03 04 05 06 07 08
+09 10 11 12 13 14 15 16
+17 18 19 20 21 22 23 24
+25 26 27 28 29 30 31 32
+33 34 35 36 37 38 39 40
+41 42 43 44 45 46 47 48
+49 50 51 52 53 54 55 56
+57 58 59 60 61 62 63 64
+
+the pawns seem to be working now.
+im thinking once i get all the pieces working again, i will enact a basic AI that i can EASILY toggle on or off ...
+...so i can turn off when need be while i debug
 
 
 So let's see if I can get an array of arrays to work in JS.
