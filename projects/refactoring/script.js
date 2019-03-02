@@ -934,8 +934,11 @@ function alertBlackWin() {
 
 
 function canPieceBlock(blocker, square) {
-  if (blocker.innerHTML == whitePawn || blocker.innerHTML == blackPawn) {
-    movePawn(blocker, square);
+  if (blocker.innerHTML == whitePawn) {
+    moveWhitePawn(blocker, square);
+  }
+  else if (blocker.innerHTML == blackPawn) {
+    moveBlackPawn(blocker, square);
   }
   else if (blocker.innerHTML == whiteRook || blocker.innerHTML == blackRook) {
     moveRook(blocker, square);
