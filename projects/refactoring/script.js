@@ -843,7 +843,7 @@ function didWhiteLose() {
     } 
   } //last curly to check for bishop
   if (attackingBlackPiece.innerHTML == blackQueen) { // so you'd have to know how it's attacking first .. like rook or like bishop?
-    moveQueen(attackingBlackPiece, king);
+    moveQueen(attackingBlackPiece, whiteKingAttacked);
     if (queenAttackingLikeBishop) { // the below code is just a copy of the above
       let small = Math.min(attackingBlackPiece.id, whiteKingAttacked.id);
       let large = Math.max(attackingBlackPiece.id, whiteKingAttacked.id);
