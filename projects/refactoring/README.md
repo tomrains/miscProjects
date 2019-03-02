@@ -8,6 +8,11 @@ Now I deffo need to break up the castling function from the king movement functi
 Then you could automatially know if the column or row ..
 ..were the same
 
+SO ... fairly large problem here ...
+when the king is hypothetically moving to get out of check, if IT attacks the attacking piece,
+and the systems checks again to see if it's in check, it has king in its old spot and thinking...
+...that the old piece is still there. so that's useless. need to change
+
 I'd like to think about how to add a random AI. I would learn a lot that way, and it would make it easier to actually play!
 
 So, when you play, it's now black's turn, then the AI goes. so when it switches to black's turn, call a function like...
