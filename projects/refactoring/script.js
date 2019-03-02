@@ -735,7 +735,7 @@ function didWhiteLose() {
   //see if king can move to an adjacent space
   //change i < king.id + 9 to i < king.id + 10
   for (let i = whiteKingAttacked.id - 9; i < whiteKingAttacked.id + 10; i++) {
-    moveKing(whiteKingAttacked, i);
+    moveKing(whiteKingAttacked, document.getElementById(i));
     if (move) {
       isWhiteInCheck();
       if (!whiteInCheck) {
