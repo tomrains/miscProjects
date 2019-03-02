@@ -757,8 +757,8 @@ function didWhiteLose() {
   }
   //now attacking piece(s) have been found
   let whitePiecesLeft = document.getElementsByClassName("whitePiece");
+  let attackingBlackPiece = attackers[0];
   if (attackers.length < 2) { //if there are multiple attackers, then life goes on since you cant stop both
-    let attackingBlackPiece = attackers[0];
     //see if white pieces can take out attacking black piece successfully
     for (let i = 0; i < whitePiecesLeft.length; i++) {
       piecesAttack(whitePiecesLeft[i], attackingBlackPiece);
