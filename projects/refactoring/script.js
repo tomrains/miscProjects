@@ -730,13 +730,12 @@ function isCheckmate() {
 
 function didWhiteLose() {
   //see if king can move anywhere
-  //the below is going to get multiple elements! not good
   let tempKing = document.getElementsByClassName("hasWhiteKing");
-  let king = tempKing[0];
+  let whiteKingAttacked = tempKing[0];
   //see if king can move to an adjacent space
   //change i < king.id + 9 to i < king.id + 10
-  for (let i = king.id - 9; i < king.id + 10; i++) {
-    moveKing(king, i);
+  for (let i = whiteKingAttacked.id - 9; i < whiteKingAttacked.id + 10; i++) {
+    moveKing(whiteKingAttacked, i);
     if (move) {
       isWhiteInCheck();
       if (!whiteInCheck) {
@@ -748,8 +747,6 @@ function didWhiteLose() {
   }
   //code below finds the attacking piece
   let attackers = [];
-  let temp = document.getElementsByClassName("hasWhiteKing");
-  let whiteKingAttacked = temp[0];
   let blackPiecesLeft = document.getElementsByClassName("blackPiece");
   //see if pieces can attack successfully
   for (let i = 0; i < blackPiecesLeft.length; i++) {
@@ -760,11 +757,11 @@ function didWhiteLose() {
   }
   //now attacking piece(s) have been found
   let whitePiecesLeft = document.getElementsByClassName("whitePiece");
-  if (attackers.length < 2) { //if there are multiple attackers, then life goes on.
-    let temp = attackers[0];
-    //see if pieces can attack successfully
+  if (attackers.length < 2) { //if there are multiple attackers, then life goes on since you cant stop both
+    let attackingBlackPiece = attackers[0];
+    //see if white pieces can take out attacking black piece successfully
     for (let i = 0; i < whitePiecesLeft.length; i++) {
-      piecesAttack(whitePiecesLeft[i], temp);
+      piecesAttack(whitePiecesLeft[i], attackingBlackPiece);
       if (move) {
         isWhiteInCheck();
         if (!whiteInCheck) {
@@ -775,11 +772,10 @@ function didWhiteLose() {
     }
   }
   //<<code here will determine if the piece can be blocked//>>
-  let attackingPiece = attackers[0];
-  if (attackingPiece.innerHTML == blackRook) {
-    if (((attackingPiece.id / 8) >> 0) == (((whiteKingAttacked.id-1) / 8) >> 0)) { //if in same row
-      var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
-      var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
+  if (attackingBlackPiece.innerHTML == blackRook) {
+    if (((attackingBlackPiece.id / 8) >> 0) == (((whiteKingAttacked.id-1) / 8) >> 0)) { //if in same row
+      var small = Math.min(attackingBlackPiece.id, whiteKingAttacked.id);
+      var large = Math.max(attackingBlackPiece.id, whiteKingAttacked.id);
       for (let i = small + 1; i < large; i++) { //for each possible square
         for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece
           canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
@@ -794,9 +790,9 @@ function didWhiteLose() {
         }
       }
     }
-    if (((attackingPiece.id - whiteKingAttacked.id) % 8) == 0) { //if in same column
-      var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
-      var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
+    if (((attackingBlackPiece.id - whiteKingAttacked.id) % 8) == 0) { //if in same column
+      var small = Math.min(attackingBlackPiece.id, whiteKingAttacked.id);
+      var large = Math.max(attackingBlackPiece.id, whiteKingAttacked.id);
       for (let i = small + 8; i < large; i+=8) { // for each square between the pieces
         for (let j = 0; j < whitePiecesLeft.length; j++) { // for each remaining piece
           canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
@@ -812,9 +808,9 @@ function didWhiteLose() {
       }
     }
   } //last curly for if attacking piece is a blackRook
-  if (attackingPiece.innerHTML == blackBishop) {
-    let small = Math.min(attackingPiece.id, whiteKingAttacked.id);
-    let large = Math.max(attackingPiece.id, whiteKingAttacked.id);
+  if (attackingBlackPiece.innerHTML == blackBishop) {
+    let small = Math.min(attackingBlackPiece.id, whiteKingAttacked.id);
+    let large = Math.max(attackingBlackPiece.id, whiteKingAttacked.id);
     if ((large - small) % 7 == 0) { //if the difference is 7
       for (let i = small; i < large; i += 7) {//for each possible square
         for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece}
@@ -846,11 +842,11 @@ function didWhiteLose() {
       }
     } 
   } //last curly to check for bishop
-  if (attackingPiece.innerHTML == blackQueen) { // so you'd have to know how it's attacking first .. like rook or like bishop?
-    moveQueen(attackingPiece, king);
+  if (attackingBlackPiece.innerHTML == blackQueen) { // so you'd have to know how it's attacking first .. like rook or like bishop?
+    moveQueen(attackingBlackPiece, king);
     if (queenAttackingLikeBishop) { // the below code is just a copy of the above
-      let small = Math.min(attackingPiece.id, whiteKingAttacked.id);
-      let large = Math.max(attackingPiece.id, whiteKingAttacked.id);
+      let small = Math.min(attackingBlackPiece.id, whiteKingAttacked.id);
+      let large = Math.max(attackingBlackPiece.id, whiteKingAttacked.id);
       if ((large - small) % 7 == 0) { //if the difference is 7
         for (let i = small; i < large; i += 7) {//for each possible square
           for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece}
@@ -883,9 +879,9 @@ function didWhiteLose() {
       }
     }
     if (queenAttackingLikeRook) {
-      if (((attackingPiece.id / 8) >> 0) == (((whiteKingAttacked.id-1) / 8) >> 0)) { //if in same row
-        var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
-        var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
+      if (((attackingBlackPiece.id / 8) >> 0) == (((whiteKingAttacked.id-1) / 8) >> 0)) { //if in same row
+        var small = Math.min(attackingBlackPiece.id, whiteKingAttacked.id);
+        var large = Math.max(attackingBlackPiece.id, whiteKingAttacked.id);
         for (let i = small + 1; i < large; i++) { //for each possible square
           for (let j = 0; j < whitePiecesLeft.length; j++) {//for each possible piece
             canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
@@ -900,9 +896,9 @@ function didWhiteLose() {
           }
         }
       }
-      if (((attackingPiece.id - whiteKingAttacked.id) % 8) == 0) { //if in same column
-        var small = Math.min(attackingPiece.id, whiteKingAttacked.id);
-        var large = Math.max(attackingPiece.id, whiteKingAttacked.id);
+      if (((attackingBlackPiece.id - whiteKingAttacked.id) % 8) == 0) { //if in same column
+        var small = Math.min(attackingBlackPiece.id, whiteKingAttacked.id);
+        var large = Math.max(attackingBlackPiece.id, whiteKingAttacked.id);
         for (let i = small + 8; i < large; i+=8) { // for each square between the pieces
           for (let j = 0; j < whitePiecesLeft.length; j++) { // for each remaining piece
             canPieceBlock(whitePiecesLeft[j], i); //see if the piece can move to the square, acting as a block
