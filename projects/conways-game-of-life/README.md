@@ -1,15 +1,21 @@
 Specifications
 
 --refactoring goals:
-I would like to make it look more like a pineapple wedge. 
-  -- very unsure how to do this. let me do some research. (could use a grid, and then different borders, to do this.
+*I would like to make it look more like a pineapple wedge. 
+  -- very unsure how to do this. let me do some research. (could use a grid, and then different borders, to do this.)
   -- 12 wedges in total maybe? would be like a clock. 
-  -- this site looks useful: https://css-tricks.com/the-shapes-of-css/
+  -- this site looks useful: https://css-tricks.com/the-shapes-of-css/ (something like the cone shape looks helpful)
   ideas: you could just have different images display, rather than different classes
+
 I would like to have long-lasting blocks be different colors. Maybe yellow, green, and blue, or something similar 
   -- this would like be a pretty easy formula to write. can just tweak the existing one.
+  (okay, so how does this work
+  
+  again, you will look at neighboring blocks
 I would also like there to be a button that you press, and it keeps going indefinitely.
   -- this would just call the function that changes colors every second, i believe. would use some stuff i've learned recently, too!
+  
+--decent outline: just have a grid, and the outer shapes in the grid can form the outline of the conway's game of life.
 
 Goal: to create a 1D version of Conway's World
 
