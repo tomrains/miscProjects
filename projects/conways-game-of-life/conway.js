@@ -45,42 +45,43 @@ function oneTurn() {
   }
 } //ending bracket for oneTurn function
 
+//numbers in this function will obviously need to change
 function testSquares() {
-  var classes = []; 
-  var newClasses = [];
-  var squares = document.getElementsByTagName('td');
-  for (i=0; i<squares.length; i++) {
-    classes[i] = squares[i].className;
+  var theClasses = []; 
+  var theNewClasses = [];
+  var borders = document.getElementsByClassName('border');
+  for (j=0; j<borders.length; j++) {
+    borders[j] = borders[j].className;
   }
-  for (z=0; z<classes.length; z++) {
-    if (z == 0) {
-      if (classes[z+1] == "alive") {
-        newClasses[z] = "alive";
+  for (y=0; y<theClasses.length; y++) {
+    if (y == 0) {
+      if (theClasses[y+1] == "alive") {
+        theNewClasses[y] = "alive";
       }
       else {
-        newClasses[z] = "";
+        theNewClasses[y] = "";
       }
     } // last curly for if z == 0
-    else if (z > 0 && z < 7) {
-      if (classes[z - 1] == classes[z + 1]) {
-        newClasses[z] = "";
+    else if (y > 0 && y < 7) {
+      if (theClasses[y - 1] == theClasses[y + 1]) {
+        theNewClasses[y] = "";
       }
       else {
-        newClasses[z] = "alive";
+        theNewClasses[y] = "alive";
       }
     } // last curly for else if
     else { //if z == 7
-      if (classes[z - 1] == "alive") {
-        newClasses[z] = "alive";
+      if (theClasses[y - 1] == "alive") {
+        theNewClasses[y] = "alive";
       }
       else {
-        newClasses[z] = "";
+        theNewClasses[y] = "";
       }
     } // last curly for else
   } //last curly for for
   //below, im going to try looping through original node list to see if that helps
-  for (i=0; i<squares.length; i++) {
-    squares[i].className = newClasses[i]; //this might just change the array and not the paragraps themselbes. we'll see
+  for (j=0; j<borders.length; j++) {
+    borders[j].className = theNewClasses[j]; //this might just change the array and not the paragraps themselbes. we'll see
   }
 } //ending bracket for testSquares function
 
