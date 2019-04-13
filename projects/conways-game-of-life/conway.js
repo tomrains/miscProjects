@@ -38,7 +38,7 @@ function testSquares() {
       }
     } // last curly for first block
     else if (y > 0 && y < 63) {
-      if (theClasses[y - 1] == theClasses[y + 1]) {
+      if (theClasses[y - 1] != "" && theClasses[y + 1] != "") { //if both are alive, it's dead
         theNewClasses[y] = "";
       }
       else {
