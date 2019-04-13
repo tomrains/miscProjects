@@ -31,7 +31,7 @@ function testSquares() {
     if (y == 0) {
       //if the second square isn't dead
       if (theClasses[1] != "") {
-        theNewClasses[y] = alive;
+        theNewClasses[y] = "alive";
       }
       else { //if the square is dead
         theNewClasses[y] = "";
