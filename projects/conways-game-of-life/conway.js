@@ -52,14 +52,14 @@ function testSquares() {
   //below, im going to try looping through original node list to see if that helps
   for (j=0; j<theClasses.length; j++) {
     if (theClasses[j] == "alive" && theNewClasses[j] == "alive") {
-      elements[j].className == "alive1";
+      elements[j].className = "alive1";
     }
     else if (theClasses[j] == "alive1" && theNewClasses[j] == "alive") {
-      elements[j].className == "alive2";
+      elements[j].className = "alive2";
     }
     //it would also be cool if, after being alive for 3, it always dies (might make it look cooler, who knows?)
     else if (theClasses[j] == "alive2" && theNewClasses[j] == "alive") {
-      elements[j].className == "alive2";
+      elements[j].className = "alive2";
     }
     else {
     elements[j].className = theNewClasses[j];
