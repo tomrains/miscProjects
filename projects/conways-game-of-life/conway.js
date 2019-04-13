@@ -51,7 +51,19 @@ function testSquares() {
   } //last curly for for
   //below, im going to try looping through original node list to see if that helps
   for (j=0; j<theClasses.length; j++) {
-    elements[j].className = theNewClasses[j]; //this might just change the array and not the paragraps themselbes. we'll see
+    if (theClasses[j] == "alive" && theNewClasses[j] == "alive") {
+      elements[j].className == "alive1";
+    }
+    else if (theClasses[j] == "alive1" && theNewClasses[j] == "alive") {
+      elements[j].className == "alive2";
+    }
+    //it would also be cool if, after being alive for 3, it always dies (might make it look cooler, who knows?)
+    else if (theClasses[j] == "alive2" && theNewClasses[j] == "alive") {
+      elements[j].className == "alive2";
+    }
+    else {
+    elements[j].className = theNewClasses[j];
+    }
   }
 } //ending bracket for testSquares function
 
