@@ -1,6 +1,22 @@
 .alive {
   height: 50px;
   width: 50px;
+  background-color: yellow;
+  border: 2px solid red;
+  text-align: center;
+}
+
+.alive1 {
+  height: 50px;
+  width: 50px;
+  background-color: light-green;
+  border: 2px solid red;
+  text-align: center;
+}
+
+.alive2 {
+  height: 50px;
+  width: 50px;
   background-color: green;
   border: 2px solid red;
   text-align: center;
