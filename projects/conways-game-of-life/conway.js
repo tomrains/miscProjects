@@ -2,7 +2,12 @@
 //button.onclick = oneTurn();
 
 function lifeAndDeath(el) {
-  el.classList.toggle("alive");
+  if (el.className == "") {
+    el.className = "alive";
+  }
+  else {
+    el.className = "";
+  }
 }
 
 //numbers in this function will obviously need to change (i think just add numbers to the existing ones so the ids work)
