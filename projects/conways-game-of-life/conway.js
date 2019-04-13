@@ -65,7 +65,13 @@ function testSquares() {
     }
     //it would also be cool if, after being alive for 3, it always dies (might make it look cooler, who knows?)
     else if (theClasses[j] == "alive2" && theNewClasses[j] == "alive") {
-      elements[j].className = "alive2";
+      elements[j].className = "alive3";
+    }
+    else if (theClasses[j] == "alive3" && theNewClasses[j] == "alive") {
+      elements[j].className = "alive4";
+    }
+    else if (theClasses[j] == "alive4" && theNewClasses[j] == "alive") {
+      elements[j].className = "";
     }
     else {
     elements[j].className = theNewClasses[j];
