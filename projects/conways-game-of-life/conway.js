@@ -50,16 +50,21 @@ function oneTurn() {
 function testSquares() {
   var theClasses = []; 
   var theNewClasses = [];
-  //making an array filled with classnames
-  var borders = document.getElementsByClassName('grab-me');
-  for (j=0; j<borders.length; j++) {
-    borders[j] = borders[j].className;
+  var elements = [];
+  //making an array filled with the square elements
+  for (i=0; i<12; i++) {
+    var square = document.getElementById(i);
+    elements[i] = square;
+  }
+  //fill an array with class names
+  for (j=0; j<elements.length; j++) {
+    theClasses[j] = elements[j].className;
   }
   //loop through each to get what it should be
   for (y=0; y<theClasses.length; y++) {
   //adding the appropriate class to newClass for first block
     if (y == 0) {
-      if (theClasses[11] == theClasses[y + 1]) {
+      if (theClasses[11] == theClasses[1]) {
         theNewClasses[y] = "";
       }
       else {
@@ -76,7 +81,7 @@ function testSquares() {
     } // last curly for else if
     //adding the appropriate class to newClass for last block
     else { //if y == 11
-      if (theClasses[y - 1] == theClasses[0]) {
+      if (theClasses[10] == theClasses[0]) {
         theNewClasses[y] = "";
       }
       else {
@@ -85,8 +90,8 @@ function testSquares() {
     } // last curly for else
   } //last curly for for
   //below, im going to try looping through original node list to see if that helps
-  for (j=0; j<borders.length; j++) {
-    borders[j].className = theNewClasses[j]; //this might just change the array and not the paragraps themselbes. we'll see
+  for (j=0; j<theClasses.length; j++) {
+    theClasses[j].className = theNewClasses[j]; //this might just change the array and not the paragraps themselbes. we'll see
   }
 } //ending bracket for testSquares function
 
