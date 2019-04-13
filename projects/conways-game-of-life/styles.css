@@ -22,6 +22,22 @@
   text-align: center;
 }
 
+.alive3 {
+  height: 50px;
+  width: 50px;
+  background-color: orange;
+  border: 2px solid red;
+  text-align: center;
+}
+
+.alive4 {
+  height: 50px;
+  width: 50px;
+  background-color: brown;
+  border: 2px solid red;
+  text-align: center;
+}
+
 p, td {
   height: 50px;
   width: 50px;
