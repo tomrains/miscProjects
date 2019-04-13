@@ -51,7 +51,7 @@ function testSquares() {
   } //last curly for for
   //below, im going to try looping through original node list to see if that helps
   for (j=0; j<theClasses.length; j++) {
-    theClasses[j].className = theNewClasses[j]; //this might just change the array and not the paragraps themselbes. we'll see
+    elements[j].className = theNewClasses[j]; //this might just change the array and not the paragraps themselbes. we'll see
   }
 } //ending bracket for testSquares function
 
