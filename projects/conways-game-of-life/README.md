@@ -6,6 +6,10 @@ Specifications
   -- 12 wedges in total maybe? would be like a clock. 
   -- this site looks useful: https://css-tricks.com/the-shapes-of-css/ (something like the cone shape looks helpful)
   ideas: you could just have different images display, rather than different classes
+  
+  let's think about how the logic for the javascript will work in creating the right css class. i think it would help to number the id's in order, not like i have currently.
+  
+  -- so basically i want to toggle on and off the things. 
 
 I would like to have long-lasting blocks be different colors. Maybe yellow, green, and blue, or something similar 
   -- this would like be a pretty easy formula to write. can just tweak the existing one.
