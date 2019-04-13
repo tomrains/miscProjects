@@ -8,18 +8,18 @@ Specifications
   ideas: you could just have different images display, rather than different classes
   
   let's think about how the logic for the javascript will work in creating the right css class. i think it would help to number the id's in order, not like i have currently.
-  
-  -- so basically i want to toggle on and off the things. 
 
-I would like to have long-lasting blocks be different colors. Maybe yellow, green, and blue, or something similar 
-  -- this would like be a pretty easy formula to write. can just tweak the existing one.
-  (okay, so how does this work
   
-  again, you will look at neighboring blocks
-I would also like there to be a button that you press, and it keeps going indefinitely.
+
+**I would also like there to be a button that you press, and it keeps going indefinitely.
   -- this would just call the function that changes colors every second, i believe. would use some stuff i've learned recently, too!
   
 --decent outline: just have a grid, and the outer shapes in the grid can form the outline of the conway's game of life.
+
+so how to do the logic of colors? would be easy to make the centers different colors ... yellow, light-green, green!
+
+-- i really like the idea of having a "garden", with dividers that go around to keep it as a basically 1D garden. chessboard setup basically, with a spiral walls to keep everything one square wide.
+
 
 Goal: to create a 1D version of Conway's World
 
