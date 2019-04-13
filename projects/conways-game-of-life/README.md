@@ -22,6 +22,11 @@ so how to do the logic of colors? would be easy to make the centers different co
 -- i really like the idea of having a "garden", with dividers that go around to keep it as a basically 1D garden. chessboard setup basically, with a spiral walls to keep everything one square wide.
 
 **i would like to connect the first and last squares so their growth isn't based on just one other square. that means two others are based on three, though.
+  OR -- have it like this:
+  if first square alive and second square alive ... first square dies
+  if first square dead and second square alive ... first square comes to life
+  if first square alive and second square deadd ... first square stays alive
+  if first square dead and second square dead ... stays dead
 
 
 Goal: to create a 1D version of Conway's World
