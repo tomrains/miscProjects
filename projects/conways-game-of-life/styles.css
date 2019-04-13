@@ -1,12 +1,12 @@
 .alive {
-  height: 50px !important;
-  width: 50px !important;
-  background-color: green !important;
-  border: 2px solid red !important;
-  text-align: center !important;
+  height: 50px;
+  width: 50px;
+  background-color: green;
+  border: 2px solid red;
+  text-align: center;
 }
 
-p, .border {
+p, td {
   height: 50px;
   width: 50px;
   background-color: white;
