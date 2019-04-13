@@ -41,6 +41,9 @@ function testSquares() {
       if (theClasses[y - 1] != "" && theClasses[y + 1] != "") { //if both are alive, it's dead
         theNewClasses[y] = "";
       }
+      else if (theClasses[y - 1] == "" && theClasses[y + 1] == "") { //if both are alive, it's dead
+        theNewClasses[y] = "";
+      }
       else {
         theNewClasses[y] = "alive";
       }
