@@ -51,7 +51,7 @@ function testSquares() {
   var theClasses = []; 
   var theNewClasses = [];
   //making an array filled with classnames
-  var borders = document.getElementsByClassName('border');
+  var borders = document.getElementsByClassName('grab-me');
   for (j=0; j<borders.length; j++) {
     borders[j] = borders[j].className;
   }
