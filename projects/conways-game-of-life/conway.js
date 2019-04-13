@@ -17,7 +17,7 @@ function testSquares() {
   var theNewClasses = [];
   var elements = [];
   //making an array filled with the square elements
-  for (i=0; i<12; i++) {
+  for (i=0; i<64; i++) {
     var square = document.getElementById(i);
     elements[i] = square;
   }
@@ -29,14 +29,15 @@ function testSquares() {
   for (y=0; y<theClasses.length; y++) {
   //adding the appropriate class to newClass for first block
     if (y == 0) {
-      if (theClasses[11] == theClasses[1]) {
+      //if the second square isn't dead
+      if (theClasses[1] != "") {
+        theNewClasses[y] = alive;
+      }
+      else { //if the square is dead
         theNewClasses[y] = "";
       }
-      else {
-        theNewClasses[y] = "alive";
-      }
     } // last curly for first block
-    else if (y > 0 && y < 11) {
+    else if (y > 0 && y < 63) {
       if (theClasses[y - 1] == theClasses[y + 1]) {
         theNewClasses[y] = "";
       }
@@ -45,12 +46,12 @@ function testSquares() {
       }
     } // last curly for else if
     //adding the appropriate class to newClass for last block
-    else { //if y == 11
-      if (theClasses[10] == theClasses[0]) {
-        theNewClasses[y] = "";
+    else { //if y == 63
+      if (theClasses[62] != "") { //if the second to last square isnt dead
+        theNewClasses[y] = "alive";
       }
       else {
-        theNewClasses[y] = "alive";
+        theNewClasses[y] = "";
       }
     } // last curly for else
   } //last curly for for
