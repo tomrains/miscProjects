@@ -45,24 +45,28 @@ function oneTurn() {
   }
 } //ending bracket for oneTurn function
 
-//numbers in this function will obviously need to change
+//numbers in this function will obviously need to change (i think just add numbers to the existing ones so the ids work)
+//can take out the added numbers later if we delete the original!
 function testSquares() {
   var theClasses = []; 
   var theNewClasses = [];
+  //making an array filled with classnames
   var borders = document.getElementsByClassName('border');
   for (j=0; j<borders.length; j++) {
     borders[j] = borders[j].className;
   }
+  //loop through each to get what it should be
   for (y=0; y<theClasses.length; y++) {
+  //adding the appropriate class to newClass for first block
     if (y == 0) {
-      if (theClasses[y+1] == "alive") {
-        theNewClasses[y] = "alive";
-      }
-      else {
+      if (theClasses[11] == theClasses[y + 1]) {
         theNewClasses[y] = "";
       }
-    } // last curly for if z == 0
-    else if (y > 0 && y < 7) {
+      else {
+        theNewClasses[y] = "alive";
+      }
+    } // last curly for first block
+    else if (y > 0 && y < 11) {
       if (theClasses[y - 1] == theClasses[y + 1]) {
         theNewClasses[y] = "";
       }
@@ -70,12 +74,13 @@ function testSquares() {
         theNewClasses[y] = "alive";
       }
     } // last curly for else if
-    else { //if z == 7
-      if (theClasses[y - 1] == "alive") {
-        theNewClasses[y] = "alive";
+    //adding the appropriate class to newClass for last block
+    else { //if y == 11
+      if (theClasses[y - 1] == theClasses[0]) {
+        theNewClasses[y] = "";
       }
       else {
-        theNewClasses[y] = "";
+        theNewClasses[y] = "alive";
       }
     } // last curly for else
   } //last curly for for
