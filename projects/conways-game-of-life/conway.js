@@ -30,11 +30,17 @@ function testSquares() {
   //adding the appropriate class to newClass for first block
     if (y == 0) {
       //if the second square isn't dead
-      if (theClasses[1] != "") {
-        theNewClasses[y] = "alive";
+      if (theClasses[0] == "" && theClasses[1] != "") { //if first dead and second alive
+        theNewClasses[0] = "alive";
       }
-      else { //if the square is dead
-        theNewClasses[y] = "";
+      else if (theClasses[0] != "" && theClasses[1] == "") { //if first alive and second dead
+        theNewClasses[0] = "alive";
+      }
+      else if (theClasses[0] == "" && theClasses[1] == "") { //if both dead
+        theNewClasses[0] = "";
+      }
+      else { //if both alive
+        theNewClasses[0] = "";
       }
     } // last curly for first block
     else if (y > 0 && y < 63) {
@@ -50,14 +56,20 @@ function testSquares() {
     } // last curly for else if
     //adding the appropriate class to newClass for last block
     else { //if y == 63
-      if (theClasses[62] != "") { //if the second to last square isnt dead
-        theNewClasses[y] = "alive";
+      if (theClasses[63] == "" && theClasses[62] != "") { //if first dead and second alive
+        theNewClasses[63] = "alive";
       }
-      else {
-        theNewClasses[y] = "";
+      else if (theClasses[63] != "" && theClasses[62] == "") { //if first alive and second dead
+        theNewClasses[63] = "alive";
       }
-    } // last curly for else
-  } //last curly for for
+      else if (theClasses[63] == "" && theClasses[62] == "") { //if both dead
+        theNewClasses[63] = "";
+      }
+      else { //if both alive
+        theNewClasses[63] = "";
+      }
+    }
+  } //last curly for for loop
   //below, im going to try looping through original node list to see if that helps
   for (j=0; j<theClasses.length; j++) {
     if (theClasses[j] == "alive" && theNewClasses[j] == "alive") {
