@@ -54,6 +54,6 @@ p, td {
   text-align: center;
 }
 
-#0, #1, #2 {
+[id="0"] {
   border-bottom: 4px solid brown;
 }
