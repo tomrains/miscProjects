@@ -79,3 +79,8 @@ p, td {
   border-right: 4px solid brown;
   border-left: 4px solid brown;
 }
+
+[id="33"] {
+  border-right: 4px solid brown;
+  border-top: 4px solid brown;
+}
