@@ -33,7 +33,7 @@
 .alive4 {
   height: 50px;
   width: 50px;
-  background-color: brown;
+  background-color: chocolate;
   border: 2px solid red;
   text-align: center;
 }
@@ -54,6 +54,6 @@ p, td {
   text-align: center;
 }
 
-[id="0"] {
+[id="0"], [id="1"], [id="2"], [id="3"], [id="4"], [id="5"], [id="6"] {
   border-bottom: 4px solid brown;
 }
