@@ -62,10 +62,15 @@ p, td {
   border-left: 4px solid brown;
 }
 
-[id="15"], [id="16"], [id="17"], [id="18"], [id="19"], [id="20"] {
+[id="15"], [id="16"], [id="17"], [id="18"], [id="19"], [id="20"], [id="27"] {
   border-top: 4px solid brown;
 }
 
 [id="22"], [id="23"], [id="24"], [id="25"], [id="26"] {
   border-right: 4px solid brown;
+}
+
+[id="27"], [id="28"], [id="29"], [id="30"], [id="31"] {
+  border-top: 4px solid brown;
+  border-bottom: 4px solid brown;
 }
