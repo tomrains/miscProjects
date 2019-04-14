@@ -85,7 +85,7 @@ p, td {
   border-left: 4px solid brown;
 }
 
-[id="38"] {
+[id="38"], [id="54"] {
   border-right: 4px solid brown;
   border-bottom: 4px solid brown;
 }
@@ -95,7 +95,7 @@ p, td {
   border-bottom: 4px solid brown;
 }
 
-[id="43"] {
+[id="43"], [id="57"] {
   border-left: 4px solid brown;
   border-bottom: 4px solid brown;
 }
@@ -111,6 +111,16 @@ p, td {
 }
 
 [id="48"], [id="49"], [id="50"] {
+  border-top: 4px solid brown;
+  border-bottom: 4px solid brown;
+}
+
+[id="52"], [id="53"] {
+  border-right: 4px solid brown;
+  border-left: 4px solid brown;
+}
+
+[id="55"], [id="56"] {
   border-top: 4px solid brown;
   border-bottom: 4px solid brown;
 }
