@@ -53,3 +53,7 @@ p, td {
   border: 2px solid white;
   text-align: center;
 }
+
+#0, #1, #2 {
+  border-bottom: 4px solid brown;
+}
