@@ -66,6 +66,6 @@ p, td {
   border-top: 4px solid brown;
 }
 
-[id="22"], [id="23"], [id="24"], [id="25"], [id="26"], {
+[id="22"], [id="23"], [id="24"], [id="25"], [id="26"] {
   border-right: 4px solid brown;
 }
