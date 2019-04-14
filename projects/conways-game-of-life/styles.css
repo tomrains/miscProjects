@@ -75,7 +75,7 @@ p, td {
   border-bottom: 4px solid brown;
 }
 
-[id="33"], [id="51"] {
+[id="33"], [id="51"], [id="61"] {
   border-right: 4px solid brown;
   border-top: 4px solid brown;
 }
@@ -85,7 +85,7 @@ p, td {
   border-left: 4px solid brown;
 }
 
-[id="38"], [id="54"] {
+[id="38"], [id="54"], [id="62"] {
   border-right: 4px solid brown;
   border-bottom: 4px solid brown;
 }
@@ -105,7 +105,7 @@ p, td {
   border-left: 4px solid brown;
 }
 
-[id="47"] {
+[id="47"], [id="59"] {
   border-top: 4px solid brown;
   border-left: 4px solid brown;
 }
@@ -123,4 +123,20 @@ p, td {
 [id="55"], [id="56"] {
   border-top: 4px solid brown;
   border-bottom: 4px solid brown;
+}
+
+[id="58"] {
+  border-right: 4px solid brown;
+  border-left: 4px solid brown;
+}
+
+[id="60"] {
+  border-top: 4px solid brown;
+  border-bottom: 4px solid brown;
+}
+
+[id="63"] {
+  border-top: 4px solid brown;
+  border-bottom: 4px solid brown;
+  border-left: 4px solid brown;
 }
