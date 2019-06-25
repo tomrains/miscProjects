@@ -91,6 +91,6 @@ function testSquares() {
     else {
     elements[j].className = theNewClasses[j];
     }
-  }
+  } setTimeout(this.testSquares, 500);
 } //ending bracket for testSquares function
 
