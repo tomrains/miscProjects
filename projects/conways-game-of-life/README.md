@@ -1,5 +1,18 @@
 Specifications
 
+Stuff I could do on June 25:
+
+Switch out the colors for images of plants - seeds, sprout, flower, bush, tree
+make the page mobile responsive
+get start and stop button where you can have it keep going indefinitely
+
+
+
+
+
+
+________________________________
+
 --refactoring goals:
 *I would like to make it look more like a pineapple wedge. 
   -- very unsure how to do this. let me do some research. (could use a grid, and then different borders, to do this.)
