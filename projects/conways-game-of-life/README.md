@@ -2,9 +2,10 @@ Specifications
 
 Stuff I could do on June 25:
 
-Switch out the colors for images of plants - seeds, sprout, flower, bush, tree
+Switch out the colors for images of plants - seeds, sprout, tiny tree, regular tree, tree about to die
 make the page mobile responsive
 get start and stop button where you can have it keep going indefinitely
+would like to add some background on what it is since it's not self-explanatory
 
 
 
