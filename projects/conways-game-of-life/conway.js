@@ -1,14 +1,15 @@
 //p.onclick = lifeAndDeath(this);
 //button.onclick = oneTurn();
 
-// function lifeAndDeath(el) {
-//   if (el.className == "") {
-//     el.className = "alive";
-//   }
-//   else {
-//     el.className = "";
-//   }
-// }
+//gives life to squares when you click on them
+function lifeAndDeath(el) {
+  if (el.className == "") {
+    el.className = "alive";
+  }
+  else {
+    el.className = "";
+  }
+}
 
 let life = true;
 
