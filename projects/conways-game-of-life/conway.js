@@ -1,18 +1,28 @@
 //p.onclick = lifeAndDeath(this);
 //button.onclick = oneTurn();
 
-function lifeAndDeath(el) {
-  if (el.className == "") {
-    el.className = "alive";
-  }
-  else {
-    el.className = "";
-  }
+// function lifeAndDeath(el) {
+//   if (el.className == "") {
+//     el.className = "alive";
+//   }
+//   else {
+//     el.className = "";
+//   }
+// }
+
+let life = true;
+
+function stop() {
+  this.life = false;
 }
 
 //numbers in this function will obviously need to change (i think just add numbers to the existing ones so the ids work)
 //can take out the added numbers later if we delete the original!
 function testSquares() {
+  if (this.life === false) {
+    this.life = true;
+    return;
+  }
   var theClasses = []; 
   var theNewClasses = [];
   var elements = [];
