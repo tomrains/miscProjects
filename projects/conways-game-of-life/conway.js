@@ -24,6 +24,7 @@ function testSquares(speed) {
     this.life = true;
     return;
   }
+  let speed = parseInt(speed, 10);
   var theClasses = []; 
   var theNewClasses = [];
   var elements = [];
