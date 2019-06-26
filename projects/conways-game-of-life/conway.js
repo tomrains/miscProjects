@@ -103,6 +103,6 @@ function testSquares(speed) {
     else {
     elements[j].className = theNewClasses[j];
     }
-  } setTimeout(this.testSquares(speed), speed);
+  } setTimeout(this.testSquares(), speed);
 } //ending bracket for testSquares function
 
