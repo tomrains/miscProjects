@@ -19,7 +19,7 @@ function stop() {
 
 //numbers in this function will obviously need to change (i think just add numbers to the existing ones so the ids work)
 //can take out the added numbers later if we delete the original!
-function testSquares() {
+function testSquares(speed) {
   if (this.life === false) {
     this.life = true;
     return;
@@ -102,6 +102,6 @@ function testSquares() {
     else {
     elements[j].className = theNewClasses[j];
     }
-  } setTimeout(this.testSquares, 500);
+  } setTimeout(this.testSquares, speed);
 } //ending bracket for testSquares function
 
