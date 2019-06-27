@@ -124,7 +124,7 @@ function goSlow() {
     else {
     elements[j].className = theNewClasses[j];
     }
-  } setTimeout(this.goSlow(), 1000);
+  } setTimeout(this.goSlow, 1000);
 }
 
 function goNormal() {
