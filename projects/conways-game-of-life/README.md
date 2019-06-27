@@ -10,7 +10,13 @@ would like to add some background on what it is since it's not self-explanatory
 
 
 if the squares are all blank, probably best to turn off the speed settings
-also need to disable pressing the same speed button twice, it makes two strands that we dont want
+
+
+My Garden of Life game is inspired by Conway's Game of Life [link], a simulated world where the life and death of each square depends on the vitality of the surrounding squares. In Conway's game of life, 
+
+In my Garden of Life,
+
+I first made this using a 1D column of just five squares. I learned how to manipulate the DOM and change the appearance of the squares using a toggle function to switch CSS classes (life and death, black and white). This was the first time I had ever made something _happen_ on a page. That was a big moment for me.
 
 ________________________________
 
