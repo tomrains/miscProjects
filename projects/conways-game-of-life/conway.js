@@ -12,6 +12,7 @@ function lifeAndDeath(el) {
 }
 
 let life = true;
+let speed;
 
 function stop() {
   this.life = false;
@@ -24,7 +25,7 @@ function testSquares(speed) {
     this.life = true;
     return;
   }
-  speed = parseInt(speed, 10);
+  this.speed = speed || this.speed;
   var theClasses = []; 
   var theNewClasses = [];
   var elements = [];
@@ -103,6 +104,6 @@ function testSquares(speed) {
     else {
     elements[j].className = theNewClasses[j];
     }
-  } setTimeout(this.testSquares, speed);
+  } setTimeout(this.testSquares, speed || this.speed);
 } //ending bracket for testSquares function
 
