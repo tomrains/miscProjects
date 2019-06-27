@@ -43,7 +43,7 @@ function fastTrue() {
 
 //i think the three below could be combined into one
 function goSlow() {
-  if (this.slowTrue === false) {
+  if (this.slow === false) {
     return;
   }
   var theClasses = []; 
@@ -128,7 +128,7 @@ function goSlow() {
 }
 
 function goNormal() {
-  if (this.normalTrue === false) {
+  if (this.normal === false) {
     return;
   }
   var theClasses = []; 
@@ -213,7 +213,7 @@ function goNormal() {
 }
 
 function goFast(speed) {
-  if (this.fastTrue === false) {
+  if (this.fast === false) {
     return;
   }
   var theClasses = []; 
