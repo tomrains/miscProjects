@@ -21,18 +21,24 @@ function stop() {
   this.slow = false;
   this.normal = false;
   this.fast = false;
+  document.getElementById("slow").disabled = false;
+  document.getElementById("normal").disabled = false;
+  document.getElementById("fast").disabled = false;
 }
 
 function slowTrue() {
   this.slow = true;
+  document.getElementById("slow").disabled = true;
 }
 
 function normalTrue() {
   this.normal = true;
+  document.getElementById("normal").disabled = true;
 }
 
 function fastTrue() {
   this.fast = true;
+  document.getElementById("fast").disabled = true;
 }
 
 // function stopRunningFunction() {
