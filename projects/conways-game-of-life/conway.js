@@ -18,6 +18,25 @@ function stop() {
   this.life = false;
 }
 
+//i think the three below could be combined into one
+function goSlow(speed) {
+  this.life=false;
+  this.life=true;
+  testSquares(speed);
+}
+
+function goNormal(speed) {
+  this.life=false;
+  this.life=true;
+  testSquares(speed);
+}
+
+function goFast(speed) {
+  this.life=false;
+  this.life=true;
+  testSquares(speed);
+}
+
 //numbers in this function will obviously need to change (i think just add numbers to the existing ones so the ids work)
 //can take out the added numbers later if we delete the original!
 function testSquares(speed) {
