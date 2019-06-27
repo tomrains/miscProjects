@@ -25,7 +25,12 @@ function testSquares(speed) {
     this.life = true;
     return;
   }
-  this.speed = speed || this.speed;
+  if (speed === undefined) {
+    speed = this.speed;
+  }
+  else {
+    this.speed = speed;
+  }
   var theClasses = []; 
   var theNewClasses = [];
   var elements = [];
