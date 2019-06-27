@@ -12,7 +12,7 @@ function lifeAndDeath(el) {
 }
 
 let life = true;
-let slow = true
+let slow = true;
 let normal = true;
 let fast = true;
 let speed;
