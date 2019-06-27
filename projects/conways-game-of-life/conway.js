@@ -15,7 +15,7 @@ let life = true;
 let speed;
 
 function stop() {
-  this.life = false;
+  this.life = !this.life;
 }
 
 //i think the three below could be combined into one
