@@ -124,7 +124,7 @@ function goSlow() {
     else {
     elements[j].className = theNewClasses[j];
     }
-  } setTimeout(this.testSquares, 1000);
+  } setTimeout(this.goSlow(), 1000);
 }
 
 function goNormal() {
@@ -209,7 +209,7 @@ function goNormal() {
     else {
     elements[j].className = theNewClasses[j];
     }
-  } setTimeout(this.testSquares, 500);
+  } setTimeout(this.goNormal, 500);
 }
 
 function goFast(speed) {
@@ -294,7 +294,7 @@ function goFast(speed) {
     else {
     elements[j].className = theNewClasses[j];
     }
-  } setTimeout(this.testSquares, 200);
+  } setTimeout(this.goFast, 200);
 }
 
 // //numbers in this function will obviously need to change (i think just add numbers to the existing ones so the ids work)
