@@ -31,7 +31,7 @@ function normalTrue {
   this.normal = true;
 }
 
-function normalTrue {
+function fastTrue {
   this.fast = true;
 }
 
