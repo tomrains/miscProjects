@@ -19,24 +19,23 @@ function stop() {
 }
 
 function stopRunningFunction() {
-  this.life = !this.life;
+  if (this.life === true) {
+    this.life = false;
+  }
 }
 
 //i think the three below could be combined into one
 function goSlow(speed) {
-  this.life=false;
   this.life=true;
   testSquares(speed);
 }
 
 function goNormal(speed) {
-  this.life=false;
   this.life=true;
   testSquares(speed);
 }
 
 function goFast(speed) {
-  this.life=false;
   this.life=true;
   testSquares(speed);
 }
