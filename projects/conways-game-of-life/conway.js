@@ -15,6 +15,10 @@ let life = true;
 let speed;
 
 function stop() {
+  this.life = false;
+}
+
+function stopRunningFunction() {
   this.life = !this.life;
 }
 
