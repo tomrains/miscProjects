@@ -23,15 +23,15 @@ function stop() {
   this.fast = false;
 }
 
-function slowTrue {
+function slowTrue() {
   this.slow = true;
 }
 
-function normalTrue {
+function normalTrue() {
   this.normal = true;
 }
 
-function fastTrue {
+function fastTrue() {
   this.fast = true;
 }
 
