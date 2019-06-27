@@ -9,8 +9,8 @@ would like to add some background on what it is since it's not self-explanatory
 
 
 
-
-
+if the squares are all blank, probably best to turn off the speed settings
+also need to disable pressing the same speed button twice, it makes two strands that we dont want
 
 ________________________________
 
