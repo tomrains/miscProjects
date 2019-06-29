@@ -38,13 +38,13 @@
   text-align: center;
 }
 
-tr {
+.tr {
   width: 100%;
 }
 
-td {
-/*   width: 100%; */
-/*   height: width; //dont know if this will work */
+.td {
+  width: 12.5%;
+  height: 12.5%
   background-color: white;
   border: 1px solid bisque;
   text-align: center;
