@@ -39,7 +39,7 @@
 }
 
 td {
-  width: 12%;
+  width: 100%;
   height: width; //dont know if this will work
   background-color: white;
   border: 1px solid bisque;
