@@ -2,7 +2,7 @@
   height: 50px;
   width: 50px;
   background-image:url(acorn.png);
-  background-color: yellow;
+/*   background-color: yellow; */
   border: 1px solid bisque;
   text-align: center;
 }
@@ -11,7 +11,7 @@
   height: 50px;
   width: 50px;
   background-image:url(sprout.png);
-  background-color: lightgreen;
+/*   background-color: lightgreen; */
   border: 1px solid bisque;
   text-align: center;
 }
@@ -20,7 +20,7 @@
   height: 50px;
   width: 50px;
   background-image:url(pine.png);
-  background-color: green;
+/*   background-color: green; */
   border: 1px solid bisque;
   text-align: center;
 }
@@ -29,7 +29,7 @@
   height: 50px;
   width: 50px;
   background-image:url(oak.png);
-  background-color: orange;
+/*   background-color: orange; */
   border: 1px solid bisque;
   text-align: center;
 }
@@ -38,7 +38,7 @@
   height: 50px;
   width: 50px;
   background-image:url(old-tree.png);
-  background-color: chocolate;
+/*   background-color: chocolate; */
   border: 1px solid bisque;
   text-align: center;
 }
