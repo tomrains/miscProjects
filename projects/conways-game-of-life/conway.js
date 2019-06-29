@@ -9,11 +9,11 @@ let deadtree = '<img src="dead-tree.png">';
 
 //gives life to squares when you click on them
 function lifeAndDeath(el) {
-  if (el.className == "") {
-    el.className = "alive";
+  if (el.innerHTML == "") {
+    el.innerHTML = acorn;
   }
   else {
-    el.className = "";
+    el.innerHTML = "";
   }
 }
 
