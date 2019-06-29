@@ -39,8 +39,8 @@
 }
 
 td {
-  height: 50px;
-  width: 50px;
+  width: 12%;
+  height: width; //dont know if this will work
   background-color: white;
   border: 1px solid bisque;
   text-align: center;
