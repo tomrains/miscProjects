@@ -4,17 +4,12 @@ Stuff I could do on June 25:
 
 Switch out the colors for images of plants - seeds, sprout, tiny tree, regular tree, tree about to die
 make the page mobile responsive
-get start and stop button where you can have it keep going indefinitely
 would like to add some background on what it is since it's not self-explanatory
-
-
-
-if the squares are all blank, probably best to turn off the speed settings
 
 
 My Garden of Life game is inspired by Conway's Game of Life [link], a simulated world where the life and death of each square depends on the vitality of the surrounding squares. In Conway's game of life, 
 
-In my Garden of Life,
+In my Garden of Life, there exists a spiral garden. The red lines you see are walls dividing the plants from each other. You can play seeds wherever you like in the garden and watch them grow. If a square is touched by no live squares, it dries up and dies. If it is surrounded by two live squares, it is choked out and perishes. However, if it is surrounded by just one live square, then it thrives and advances in age. Because there are 64 squares in the garden, and each square can be empty or have a seed, sprout, sapling, an oak, or a snag (dying tree), that means there are 6 ^ 64 possible garden configurations. That is equal to 6.3340287e+49, also known as 63 quindecillion. Poke around, plant seeds, and see what happens!
 
 I first made this using a 1D column of just five squares. I learned how to manipulate the DOM and change the appearance of the squares using a toggle function to switch CSS classes (life and death, black and white). This was the first time I had ever made something _happen_ on a page. That was a big moment for me.
 
