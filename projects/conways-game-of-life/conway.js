@@ -176,13 +176,13 @@ function goNormal() {
   //adding the appropriate class to newClass for first block
     if (y == 0) {
       //if the second square isn't dead
-      if (theClasses[0] == "" && theClasses[1] != "") { //if first dead and second alive
+      if (theClasses[0] == "" && (theClasses[1] != "" && theClasses[1] != "alive4")) { //if first dead and second alive
         theNewClasses[0] = "alive";
       }
-      else if (theClasses[0] != "" && theClasses[1] == "") { //if first alive and second dead
+      else if (theClasses[0] != "" && (theClasses[1] == "" ||  && theClasses[1] != "alive4")) { //if first alive and second dead
         theNewClasses[0] = "alive";
       }
-      else if (theClasses[0] == "" && theClasses[1] == "") { //if both dead
+      else if ((theClasses[0] == "" || theClasses[0] == "alive4") && (theClasses[1] == "" || theClasses[1] == "alive4")) { //if both dead
         theNewClasses[0] = "";
       }
       else { //if both alive
@@ -190,10 +190,10 @@ function goNormal() {
       }
     } // last curly for first block
     else if (y > 0 && y < 63) {
-      if (theClasses[y - 1] != "" && theClasses[y + 1] != "") { //if both are alive, it's dead
+      if ((theClasses[y - 1] != "" && theClasses[y - 1] != "alive4") && (theClasses[y + 1] != "" && theClasses[y - 1] != "alive4")) { //if both are alive, it's dead
         theNewClasses[y] = "";
       }
-      else if (theClasses[y - 1] == "" && theClasses[y + 1] == "") { //if both are alive, it's dead
+      else if ((theClasses[y - 1] == "" || theClasses[y - 1] == "alive4") && (theClasses[y + 1] == "" || theClasses[y - 1] == "alive4")) { //if both are dead, it's dead
         theNewClasses[y] = "";
       }
       else {
@@ -202,13 +202,13 @@ function goNormal() {
     } // last curly for else if
     //adding the appropriate class to newClass for last block
     else { //if y == 63
-      if (theClasses[63] == "" && theClasses[62] != "") { //if first dead and second alive
+      if ((theClasses[63] == "" || theClasses[63] == "alive4") && (theClasses[62] != "" || theClasses[62] != "alive4")) { //if first dead and second alive
         theNewClasses[63] = "alive";
       }
-      else if (theClasses[63] != "" && theClasses[62] == "") { //if first alive and second dead
+      else if (theClasses[63] != "" && (theClasses[62] == "" || theClasses[62] == "alive4")) { //if first alive and second dead
         theNewClasses[63] = "alive";
       }
-      else if (theClasses[63] == "" && theClasses[62] == "") { //if both dead
+      else if ((theClasses[63] == "" || theClasses[63] == "alive4") && (theClasses[62] == "" || theClasses[62] == "alive4")) { //if both dead
         theNewClasses[63] = "";
       }
       else { //if both alive
@@ -239,9 +239,8 @@ function goNormal() {
       elements[j].className = "alive4";
       elements[j].innerHTML = deadtree;
     }
-    else if (theClasses[j] == "alive4" && theNewClasses[j] == "alive") {
-      elements[j].className = "";
-      elements[j].innerHTML = "";
+    else if (theClasses[j] == "alive4") {
+      //nothing happens
     }
     else { //if the plant needs to die
     elements[j].className = ""; 
