@@ -17,6 +17,8 @@ function lifeAndDeath(el) {
   }
 }
 
+document.getElementById("stop").disabled = true;
+
 let life = true;
 let slow = true;
 let normal = true;
@@ -30,21 +32,25 @@ function stop() {
   document.getElementById("slow").disabled = false;
   document.getElementById("normal").disabled = false;
   document.getElementById("fast").disabled = false;
+  document.getElementById("stop").disabled = true;
 }
 
 function slowTrue() {
   this.slow = true;
   document.getElementById("slow").disabled = true;
+  document.getElementById("stop").disabled = false;
 }
 
 function normalTrue() {
   this.normal = true;
   document.getElementById("normal").disabled = true;
+  document.getElementById("stop").disabled = false;
 }
 
 function fastTrue() {
   this.fast = true;
   document.getElementById("fast").disabled = true;
+  document.getElementById("stop").disabled = false;
 }
 
 // function stopRunningFunction() {
