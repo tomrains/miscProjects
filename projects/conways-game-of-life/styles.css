@@ -9,6 +9,7 @@
 .alive1 {
 /*   height: 50px;
   width: 50px; */
+  content:url(acorn.png);
   background-color: lightgreen;
   border: 1px solid bisque;
   text-align: center;
