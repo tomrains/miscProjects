@@ -87,7 +87,7 @@ function goSlow() {
       else if ((theClasses[0] != "" theClasses[0] != "alive4") && (theClasses[1] == "" || theClasses[1] == "alive4")) { //if first alive and second dead
         theNewClasses[0] = "alive";
       }
-      else if ((theClasses[0] == "" || theClasses[0] == "alive4") && (theClasses[1] == "" || theClasses[0] == "alive4")) { //if both dead
+      else if ((theClasses[0] == "" || theClasses[0] == "alive4") && (theClasses[1] == "" || theClasses[1] == "alive4")) { //if both dead
         theNewClasses[0] = "";
       }
       else { //if both alive
@@ -144,9 +144,9 @@ function goSlow() {
       elements[j].className = "alive4";
       elements[j].innerHTML = deadtree;
     }
-    else if (theClasses[j] == "alive4" && theNewClasses[j] == "alive") {
+    else if (theClasses[j] == "alive4") {
       elements[j].className = "";
-      elements[j].innerHTML = "";
+      elements[j].innerHTML = deadtree;
     }
     else { //if the plant needs to die
     elements[j].className = ""; 
