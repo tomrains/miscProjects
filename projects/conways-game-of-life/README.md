@@ -17,6 +17,9 @@ make the page mobile responsive
 would like to add some background on what it is since it's not self-explanatory
 
 add a reset button
+add whatever year it is (each turn is 1 year)
+add a little acorn icon for when you plant acorn
+add a little hatchet icon for when you hover over a plant
 
 
 My Garden of Life game is inspired by Conway's Game of Life [link], a simulated world where the life and death of each square depends on the vitality of the surrounding squares. In Conway's game of life, 
