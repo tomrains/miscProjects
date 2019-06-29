@@ -84,7 +84,7 @@ function goSlow() {
       if ((theClasses[0] == "" || theClasses[0] == "alive4") && (theClasses[1] != "" && theClasses[1] != "alive4")) { //if first dead and second alive
         theNewClasses[0] = "alive";
       }
-      else if ((theClasses[0] != "" theClasses[0] != "alive4") && (theClasses[1] == "" || theClasses[1] == "alive4")) { //if first alive and second dead
+      else if ((theClasses[0] != "" && theClasses[0] != "alive4") && (theClasses[1] == "" || theClasses[1] == "alive4")) { //if first alive and second dead
         theNewClasses[0] = "alive";
       }
       else if ((theClasses[0] == "" || theClasses[0] == "alive4") && (theClasses[1] == "" || theClasses[1] == "alive4")) { //if both dead
