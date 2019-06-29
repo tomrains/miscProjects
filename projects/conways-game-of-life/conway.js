@@ -17,7 +17,8 @@ function lifeAndDeath(el) {
   }
 }
 
-document.getElementById("stop").disabled = true;
+let stop = document.getElementById("stop");
+stop.disabled = true;
 
 let life = true;
 let slow = true;
