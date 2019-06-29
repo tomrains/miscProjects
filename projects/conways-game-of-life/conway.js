@@ -11,9 +11,11 @@ let deadtree = '<img src="dead-tree.png">';
 function lifeAndDeath(el) {
   if (el.innerHTML == " " || el.innerHTML == "") {
     el.innerHTML = acorn;
+    el.className = "alive";
   }
   else {
     el.innerHTML = "";
+    el.className = "";
   }
 }
 
