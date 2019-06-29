@@ -218,24 +218,34 @@ function goNormal() {
   } //last curly for for loop
   //below, im going to try looping through original node list to see if that helps
   for (j=0; j<theClasses.length; j++) {
-    if (theClasses[j] == "alive" && theNewClasses[j] == "alive") {
+    if (theClasses[j] == "" && theNewClasses[j] == "alive") {
+      elements[j].className = "alive";
+      elements[j].innerHTML = acorn;
+    }
+    else if (theClasses[j] == "alive" && theNewClasses[j] == "alive") {
       elements[j].className = "alive1";
+      elements[j].innerHTML = sprout;
     }
     else if (theClasses[j] == "alive1" && theNewClasses[j] == "alive") {
       elements[j].className = "alive2";
+      elements[j].innerHTML = pine;
     }
     //it would also be cool if, after being alive for 3, it always dies (might make it look cooler, who knows?)
     else if (theClasses[j] == "alive2" && theNewClasses[j] == "alive") {
       elements[j].className = "alive3";
+      elements[j].innerHTML = oak;
     }
     else if (theClasses[j] == "alive3" && theNewClasses[j] == "alive") {
       elements[j].className = "alive4";
+      elements[j].innerHTML = deadtree;
     }
     else if (theClasses[j] == "alive4" && theNewClasses[j] == "alive") {
       elements[j].className = "";
+      elements[j].innerHTML = "";
     }
-    else {
-    elements[j].className = theNewClasses[j];
+    else { //if the plant needs to die
+    elements[j].className = ""; 
+    elements[j].innerHTML = "";
     }
   } setTimeout(this.goNormal, 250);
 }
@@ -303,24 +313,34 @@ function goFast(speed) {
   } //last curly for for loop
   //below, im going to try looping through original node list to see if that helps
   for (j=0; j<theClasses.length; j++) {
-    if (theClasses[j] == "alive" && theNewClasses[j] == "alive") {
+    if (theClasses[j] == "" && theNewClasses[j] == "alive") {
+      elements[j].className = "alive";
+      elements[j].innerHTML = acorn;
+    }
+    else if (theClasses[j] == "alive" && theNewClasses[j] == "alive") {
       elements[j].className = "alive1";
+      elements[j].innerHTML = sprout;
     }
     else if (theClasses[j] == "alive1" && theNewClasses[j] == "alive") {
       elements[j].className = "alive2";
+      elements[j].innerHTML = pine;
     }
     //it would also be cool if, after being alive for 3, it always dies (might make it look cooler, who knows?)
     else if (theClasses[j] == "alive2" && theNewClasses[j] == "alive") {
       elements[j].className = "alive3";
+      elements[j].innerHTML = oak;
     }
     else if (theClasses[j] == "alive3" && theNewClasses[j] == "alive") {
       elements[j].className = "alive4";
+      elements[j].innerHTML = deadtree;
     }
     else if (theClasses[j] == "alive4" && theNewClasses[j] == "alive") {
       elements[j].className = "";
+      elements[j].innerHTML = "";
     }
-    else {
-    elements[j].className = theNewClasses[j];
+    else { //if the plant needs to die
+    elements[j].className = ""; 
+    elements[j].innerHTML = "";
     }
   } setTimeout(this.goFast, 50);
 }
