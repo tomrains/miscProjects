@@ -1,6 +1,12 @@
 //p.onclick = lifeAndDeath(this);
 //button.onclick = oneTurn();
 
+let acorn = '<img src="acorn.png">';
+let sprout = '<img src="sprout.png">';
+let pine = '<img src="pine.png">';
+let oak = '<img src="oak.png">';
+let deadtree = '<img src="dead-tree.png">';
+
 //gives life to squares when you click on them
 function lifeAndDeath(el) {
   if (el.className == "") {
