@@ -125,19 +125,24 @@ function goSlow() {
   for (j=0; j<theClasses.length; j++) {
     if (theClasses[j] == "alive" && theNewClasses[j] == "alive") {
       elements[j].className = "alive1";
+      elements[j].innerHTML = sprout;
     }
     else if (theClasses[j] == "alive1" && theNewClasses[j] == "alive") {
       elements[j].className = "alive2";
+      elements[j].innerHTML = pine;
     }
     //it would also be cool if, after being alive for 3, it always dies (might make it look cooler, who knows?)
     else if (theClasses[j] == "alive2" && theNewClasses[j] == "alive") {
       elements[j].className = "alive3";
+      elements[j].innerHTML = oak;
     }
     else if (theClasses[j] == "alive3" && theNewClasses[j] == "alive") {
       elements[j].className = "alive4";
+      elements[j].innerHTML = deadtree;
     }
     else if (theClasses[j] == "alive4" && theNewClasses[j] == "alive") {
       elements[j].className = "";
+      elements[j].innerHTML = "";
     }
     else {
     elements[j].className = theNewClasses[j];
