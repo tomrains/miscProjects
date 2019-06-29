@@ -1,3 +1,8 @@
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .alive {
 /*   background-image: url(acorn.png);
   background-size: 50px 50px; */
