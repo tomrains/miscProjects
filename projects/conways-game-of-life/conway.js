@@ -145,7 +145,8 @@ function goSlow() {
       elements[j].innerHTML = "";
     }
     else {
-    elements[j].className = theNewClasses[j];
+    elements[j].className = theNewClasses[j]; //im not quite understanding what this line does
+    elements[j].innerHTML = "";
     }
   } setTimeout(this.goSlow, 800);
 }
