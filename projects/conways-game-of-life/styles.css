@@ -1,7 +1,7 @@
 .alive {
   height: 50px;
   width: 50px;
-  background-image:url(acorn.png);
+  image: url(acorn.png);
 /*   background-color: yellow; */
   border: 1px solid bisque;
   text-align: center;
@@ -10,7 +10,7 @@
 .alive1 {
   height: 50px;
   width: 50px;
-  background-image:url(sprout.png);
+  image: url(sprout.png);
 /*   background-color: lightgreen; */
   border: 1px solid bisque;
   text-align: center;
@@ -19,7 +19,7 @@
 .alive2 {
   height: 50px;
   width: 50px;
-  background-image:url(pine.png);
+  image: url(pine.png);
 /*   background-color: green; */
   border: 1px solid bisque;
   text-align: center;
@@ -28,7 +28,7 @@
 .alive3 {
   height: 50px;
   width: 50px;
-  background-image:url(oak.png);
+  image: url(oak.png);
 /*   background-color: orange; */
   border: 1px solid bisque;
   text-align: center;
@@ -37,7 +37,7 @@
 .alive4 {
   height: 50px;
   width: 50px;
-  background-image:url(old-tree.png);
+  image: url(old-tree.png);
 /*   background-color: chocolate; */
   border: 1px solid bisque;
   text-align: center;
