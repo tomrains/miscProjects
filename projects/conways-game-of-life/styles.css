@@ -4,17 +4,7 @@ img {
 }
 
 .alive {
-/*   background-image: url(acorn.png);
-  background-size: 50px 50px; */
-  display: inline-block;
-  width: 50px; 
-  height: 50px;
-  margin: 0;
-  padding: 0;
-  content: url(acorn.png);
-/*   background-color: yellow; */
-  border: 1px solid bisque;
-/*   text-align: center; */
+/*   just a holder used to see if something is alive and calculate its next move */
 }
 
 .alive1 {
