@@ -64,15 +64,15 @@ function goSlow() {
   if (this.slow === false) {
     return;
   }
-  var theClasses = []; 
-  var theNewClasses = [];
+  var theClasses = []; //current classes
+  var theNewClasses = []; //whether a square should live or die based on class
   var elements = [];
   //making an array filled with the square elements
   for (i=0; i<64; i++) {
     var square = document.getElementById(i);
     elements[i] = square;
   }
-  //fill an array with class names
+  //fill an array with class names (alive and "")
   for (j=0; j<elements.length; j++) {
     theClasses[j] = elements[j].className;
   }
@@ -123,7 +123,11 @@ function goSlow() {
   } //last curly for for loop
   //below, im going to try looping through original node list to see if that helps
   for (j=0; j<theClasses.length; j++) {
-    if (theClasses[j] == "alive" && theNewClasses[j] == "alive") {
+    if (theClasses[j] == "" && theNewClasses[j] == "alive") {
+      elements[j].className = "alive";
+      elements[j].innerHTML = acorn;
+    }
+    else if (theClasses[j] == "alive" && theNewClasses[j] == "alive") {
       elements[j].className = "alive1";
       elements[j].innerHTML = sprout;
     }
@@ -144,8 +148,8 @@ function goSlow() {
       elements[j].className = "";
       elements[j].innerHTML = "";
     }
-    else {
-    elements[j].className = theNewClasses[j]; //im not quite understanding what this line does
+    else { //if the plant needs to die
+    elements[j].className = ""; 
     elements[j].innerHTML = "";
     }
   } setTimeout(this.goSlow, 800);
