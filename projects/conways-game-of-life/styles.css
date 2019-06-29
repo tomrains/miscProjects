@@ -1,9 +1,11 @@
 .alive {
   background-image: url(acorn.png);
-  background-size: 45px 45px;
+  background-size: 50px 50px;
   display: inline-block;
   width: 50px; 
   height: 50px;
+  margin: 0;
+  padding: 0;
   content:"";
 /*   background-color: yellow; */
   border: 1px solid bisque;
