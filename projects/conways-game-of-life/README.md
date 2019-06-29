@@ -16,6 +16,8 @@ Switch out the colors for images of plants - seeds, sprout, tiny tree, regular t
 make the page mobile responsive
 would like to add some background on what it is since it's not self-explanatory
 
+add a reset button
+
 
 My Garden of Life game is inspired by Conway's Game of Life [link], a simulated world where the life and death of each square depends on the vitality of the surrounding squares. In Conway's game of life, 
 
