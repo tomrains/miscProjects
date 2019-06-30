@@ -145,7 +145,7 @@ function goSlow() {
       elements[j].innerHTML = deadtree;
     }
     else if (theClasses[j] == "alive4") {
-      elements[j].className = "";
+      elements[j].className = "alive4";
       elements[j].innerHTML = deadtree;
     }
     else { //if the plant needs to die
