@@ -95,7 +95,7 @@ function goSlow() {
       }
     } // last curly for first block
     else if (y > 0 && y < 63) {
-      if ((theClasses[y - 1] != "" && theClasses[y - 1] != "alive4") && (theClasses[y + 1] != "" && theClasses[y + 1] != "alive")) { //if both are alive, it's dead
+      if ((theClasses[y - 1] != "" && theClasses[y - 1] != "alive4") && (theClasses[y + 1] != "" && theClasses[y + 1] != "alive4")) { //if both are alive, it's dead
         theNewClasses[y] = "";
       }
       else if ((theClasses[y - 1] == "" || theClasses[y - 1] == "alive4") && (theClasses[y + 1] == "" || theClasses[y + 1] == "alive4")) { //if both are dead, it's dead
