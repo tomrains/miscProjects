@@ -12,21 +12,12 @@ baby tree: <div>Icons made by <a href="https://www.freepik.com/" title="Freepik"
 
 dead tree credit: <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
-Switch out the colors for images of plants - seeds, sprout, tiny tree, regular tree, tree about to die
-make the page mobile responsive
-would like to add some background on what it is since it's not self-explanatory
-
+make the page look nicer/centered
 add a reset button
 add whatever year it is (each turn is 1 year)
 add a little acorn icon for when you plant acorn
 add a little hatchet icon for when you hover over a plant
 
-
-My Garden of Life game is inspired by Conway's Game of Life [link], a simulated world where the life and death of each square depends on the vitality of the surrounding squares. In Conway's game of life, 
-
-In my Garden of Life, there exists a spiral garden. The red lines you see are walls dividing the plants from each other. You can play seeds wherever you like in the garden and watch them grow. If a square is touched by no live squares, it dries up and dies. If it is surrounded by two live squares, it is choked out and perishes. However, if it is surrounded by just one live square, then it thrives and advances in age. Because there are 64 squares in the garden, and each square can be empty or have a seed, sprout, sapling, an oak, or a snag (dying tree), that means there are 6 ^ 64 possible garden configurations. That is equal to 6.3340287e+49, also known as 63 quindecillion. Poke around, plant seeds, and see what happens!
-
-I first made this using a 1D column of just five squares. I learned how to manipulate the DOM and change the appearance of the squares using a toggle function to switch CSS classes (life and death, black and white). This was the first time I had ever made something _happen_ on a page. That was a big moment for me.
 
 ________________________________
 
