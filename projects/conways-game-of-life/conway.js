@@ -62,7 +62,8 @@ function reset() {
     square.className = "";
   }
   counter = 0;
-  //still need to do the proper resets ...
+  let year = document.getElementById("year");
+  year.innerHTML = "Year: 0";
 }
 
 // function stopRunningFunction() {
