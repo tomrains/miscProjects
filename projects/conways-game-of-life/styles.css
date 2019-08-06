@@ -10,6 +10,11 @@ body {
 #buttons {
   text-align: center;
 }
+
+#year {
+  /*nothing for now*/
+}
+
 .alive {
 /*   just a holder used to see if something is alive and calculate its next move */
 }
