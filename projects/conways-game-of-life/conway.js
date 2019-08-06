@@ -119,7 +119,7 @@ function goSlow() {
     } // last curly for else if
     //adding the appropriate class to newClass for last block
     else { //if y == 63
-      if ((theClasses[63] == "" || theClasses[63] == "alive4") && (theClasses[62] != "" && theClasses[62] !="alive4")) { //if first dead and second alive
+      if ((theClasses[63] == "" || theClasses[63] == "alive4") && (theClasses[62] != "" && theClasses[62] != "alive4")) { //if first dead and second alive
         theNewClasses[63] = "alive";
       }
       else if ((theClasses[63] != "" && theClasses[63] != "alive4") && (theClasses[62] == "" || theClasses[62] == "alive4")) { //if first alive and second dead
@@ -175,15 +175,15 @@ function goNormal() {
   if (this.normal === false) {
     return;
   }
-  var theClasses = []; 
-  var theNewClasses = [];
+  var theClasses = []; //current classes
+  var theNewClasses = []; //whether a square should live or die based on class
   var elements = [];
   //making an array filled with the square elements
   for (i=0; i<64; i++) {
     var square = document.getElementById(i);
     elements[i] = square;
   }
-  //fill an array with class names
+  //fill an array with class names (alives or "")
   for (j=0; j<elements.length; j++) {
     theClasses[j] = elements[j].className;
   }
@@ -192,11 +192,11 @@ function goNormal() {
   //adding the appropriate class to newClass for first block
     if (y == 0) {
       //if the second square isn't dead
-      if (theClasses[0] == "" && (theClasses[1] != "" && theClasses[1] != "alive4")) { //if first dead and second alive
+      if ((theClasses[0] == "" || theClasses[0] == "alive4") && (theClasses[1] != "" && theClasses[1] != "alive4")) { //if first dead and second alive
         theNewClasses[0] = "alive";
       }
-      else if ((theClasses[0] != "") && (theClasses[1] == "")) { //if first alive and second dead
-        theNewClasses[0] = "alive"; //line above got messed up somehow
+      else if ((theClasses[0] != "" && theClasses[0] != "alive4") && (theClasses[1] == "" || theClasses[1] == "alive4")) { //if first alive and second dead
+        theNewClasses[0] = "alive";
       }
       else if ((theClasses[0] == "" || theClasses[0] == "alive4") && (theClasses[1] == "" || theClasses[1] == "alive4")) { //if both dead
         theNewClasses[0] = "";
@@ -206,10 +206,10 @@ function goNormal() {
       }
     } // last curly for first block
     else if (y > 0 && y < 63) {
-      if ((theClasses[y - 1] != "" && theClasses[y - 1] != "alive4") && (theClasses[y + 1] != "" && theClasses[y - 1] != "alive4")) { //if both are alive, it's dead
+      if ((theClasses[y - 1] != "" && theClasses[y - 1] != "alive4") && (theClasses[y + 1] != "" && theClasses[y + 1] != "alive4")) { //if both are alive, it's dead
         theNewClasses[y] = "";
       }
-      else if ((theClasses[y - 1] == "" || theClasses[y - 1] == "alive4") && (theClasses[y + 1] == "" || theClasses[y - 1] == "alive4")) { //if both are dead, it's dead
+      else if ((theClasses[y - 1] == "" || theClasses[y - 1] == "alive4") && (theClasses[y + 1] == "" || theClasses[y + 1] == "alive4")) { //if both are dead, it's dead
         theNewClasses[y] = "";
       }
       else {
@@ -218,10 +218,10 @@ function goNormal() {
     } // last curly for else if
     //adding the appropriate class to newClass for last block
     else { //if y == 63
-      if ((theClasses[63] == "" || theClasses[63] == "alive4") && (theClasses[62] != "" || theClasses[62] != "alive4")) { //if first dead and second alive
+      if ((theClasses[63] == "" || theClasses[63] == "alive4") && (theClasses[62] != "" && theClasses[62] != "alive4")) { //if first dead and second alive
         theNewClasses[63] = "alive";
       }
-      else if (theClasses[63] != "" && (theClasses[62] == "" || theClasses[62] == "alive4")) { //if first alive and second dead
+      else if ((theClasses[63] != "" && theClasses[63] != "alive4") && (theClasses[62] == "" || theClasses[62] == "alive4")) { //if first alive and second dead
         theNewClasses[63] = "alive";
       }
       else if ((theClasses[63] == "" || theClasses[63] == "alive4") && (theClasses[62] == "" || theClasses[62] == "alive4")) { //if both dead
@@ -263,7 +263,7 @@ function goNormal() {
     elements[j].className = ""; 
     elements[j].innerHTML = "";
     }
-  } 
+  }
   counter = counter + 1;
   year = document.getElementById("year");
   year.innerHTML = "Year: " + counter;
@@ -274,15 +274,15 @@ function goFast(speed) {
   if (this.fast === false) {
     return;
   }
-  var theClasses = []; 
-  var theNewClasses = [];
+  var theClasses = []; //current classes
+  var theNewClasses = []; //whether a square should live or die based on class
   var elements = [];
   //making an array filled with the square elements
   for (i=0; i<64; i++) {
     var square = document.getElementById(i);
     elements[i] = square;
   }
-  //fill an array with class names
+  //fill an array with class names (alives or "")
   for (j=0; j<elements.length; j++) {
     theClasses[j] = elements[j].className;
   }
@@ -291,13 +291,13 @@ function goFast(speed) {
   //adding the appropriate class to newClass for first block
     if (y == 0) {
       //if the second square isn't dead
-      if (theClasses[0] == "" && theClasses[1] != "") { //if first dead and second alive
+      if ((theClasses[0] == "" || theClasses[0] == "alive4") && (theClasses[1] != "" && theClasses[1] != "alive4")) { //if first dead and second alive
         theNewClasses[0] = "alive";
       }
-      else if (theClasses[0] != "" && theClasses[1] == "") { //if first alive and second dead
+      else if ((theClasses[0] != "" && theClasses[0] != "alive4") && (theClasses[1] == "" || theClasses[1] == "alive4")) { //if first alive and second dead
         theNewClasses[0] = "alive";
       }
-      else if (theClasses[0] == "" && theClasses[1] == "") { //if both dead
+      else if ((theClasses[0] == "" || theClasses[0] == "alive4") && (theClasses[1] == "" || theClasses[1] == "alive4")) { //if both dead
         theNewClasses[0] = "";
       }
       else { //if both alive
@@ -305,10 +305,10 @@ function goFast(speed) {
       }
     } // last curly for first block
     else if (y > 0 && y < 63) {
-      if (theClasses[y - 1] != "" && theClasses[y + 1] != "") { //if both are alive, it's dead
+      if ((theClasses[y - 1] != "" && theClasses[y - 1] != "alive4") && (theClasses[y + 1] != "" && theClasses[y + 1] != "alive4")) { //if both are alive, it's dead
         theNewClasses[y] = "";
       }
-      else if (theClasses[y - 1] == "" && theClasses[y + 1] == "") { //if both are alive, it's dead
+      else if ((theClasses[y - 1] == "" || theClasses[y - 1] == "alive4") && (theClasses[y + 1] == "" || theClasses[y + 1] == "alive4")) { //if both are dead, it's dead
         theNewClasses[y] = "";
       }
       else {
@@ -317,13 +317,13 @@ function goFast(speed) {
     } // last curly for else if
     //adding the appropriate class to newClass for last block
     else { //if y == 63
-      if (theClasses[63] == "" && theClasses[62] != "") { //if first dead and second alive
+      if ((theClasses[63] == "" || theClasses[63] == "alive4") && (theClasses[62] != "" && theClasses[62] != "alive4")) { //if first dead and second alive
         theNewClasses[63] = "alive";
       }
-      else if (theClasses[63] != "" && theClasses[62] == "") { //if first alive and second dead
+      else if ((theClasses[63] != "" && theClasses[63] != "alive4") && (theClasses[62] == "" || theClasses[62] == "alive4")) { //if first alive and second dead
         theNewClasses[63] = "alive";
       }
-      else if (theClasses[63] == "" && theClasses[62] == "") { //if both dead
+      else if ((theClasses[63] == "" || theClasses[63] == "alive4") && (theClasses[62] == "" || theClasses[62] == "alive4")) { //if both dead
         theNewClasses[63] = "";
       }
       else { //if both alive
@@ -362,7 +362,7 @@ function goFast(speed) {
     elements[j].className = ""; 
     elements[j].innerHTML = "";
     }
-  } 
+  }
   counter = counter + 1;
   year = document.getElementById("year");
   year.innerHTML = "Year: " + counter;
