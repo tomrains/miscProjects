@@ -59,7 +59,9 @@ function reset() {
   for (i=0; i<64; i++) {
     var square = document.getElementById(i);
     square.innerHTML = "";
+    square.className = "";
   }
+  counter = 0;
   //still need to do the proper resets ...
 }
 
