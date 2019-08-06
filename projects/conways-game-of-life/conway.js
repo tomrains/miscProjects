@@ -55,6 +55,14 @@ function fastTrue() {
   document.getElementById("stop").disabled = false;
 }
 
+function reset() {
+  for (i=0; i<64; i++) {
+    var square = document.getElementById(i);
+    square.innerHTML = "";
+  }
+  //still need to do the proper resets ...
+}
+
 // function stopRunningFunction() {
 //   if (this.life === true) {
 //     this.life = false;
