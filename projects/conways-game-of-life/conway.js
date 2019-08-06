@@ -6,6 +6,7 @@ let sprout = '<img src="sprout.png">';
 let pine = '<img src="pine.png">';
 let oak = '<img src="oak.png">';
 let deadtree = '<img src="dead-tree.png">';
+let counter = 0;
 
 //gives life to squares when you click on them
 function lifeAndDeath(el) {
@@ -152,6 +153,7 @@ function goSlow() {
     elements[j].className = ""; 
     elements[j].innerHTML = "";
     }
+    this.counter = this.counter + 1;
   } setTimeout(this.goSlow, 800);
 }
 
