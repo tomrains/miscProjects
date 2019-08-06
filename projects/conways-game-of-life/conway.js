@@ -153,7 +153,7 @@ function goSlow() {
     elements[j].className = ""; 
     elements[j].innerHTML = "";
     }
-    this.counter = this.counter + 1;
+    counter = counter + 1;
   } setTimeout(this.goSlow, 800);
 }
 
