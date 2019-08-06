@@ -154,10 +154,11 @@ function goSlow() {
     elements[j].className = ""; 
     elements[j].innerHTML = "";
     }
-    counter = counter + 1;
-    year = document.getElementById("year");
-    year.innerHTML = "Year: " + counter;
-  } setTimeout(this.goSlow, 800);
+  }
+  counter = counter + 1;
+  year = document.getElementById("year");
+  year.innerHTML = "Year: " + counter;
+  setTimeout(this.goSlow, 800);
 }
 
 function goNormal() {
