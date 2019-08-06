@@ -7,6 +7,7 @@ let pine = '<img src="pine.png">';
 let oak = '<img src="oak.png">';
 let deadtree = '<img src="dead-tree.png">';
 let counter = 0;
+let year;
 
 //gives life to squares when you click on them
 function lifeAndDeath(el) {
@@ -153,7 +154,9 @@ function goSlow() {
     elements[j].className = ""; 
     elements[j].innerHTML = "";
     }
-    counter = counter + 1;
+    this.counter = this.counter + 1;
+    year = document.getElementById("year");
+    year.innerHTML = "Year: " + this.counter;
   } setTimeout(this.goSlow, 800);
 }
 
