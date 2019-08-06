@@ -154,7 +154,7 @@ function goSlow() {
     elements[j].className = ""; 
     elements[j].innerHTML = "";
     }
-    this.counter = this.counter + 1;
+    counter = counter + 1;
     year = document.getElementById("year");
     year.innerHTML = "Year: " + this.counter;
   } setTimeout(this.goSlow, 800);
