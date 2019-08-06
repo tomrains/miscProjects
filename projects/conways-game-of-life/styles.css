@@ -11,6 +11,10 @@ table {
   table-layout: fixed;
 }
 
+td {
+  overflow: hidden;
+}
+
 #buttons {
   text-align: center;
 }
