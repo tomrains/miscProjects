@@ -3,6 +3,10 @@ img {
   max-height: 90%;
 }
 
+body {
+  margin: 10%;
+}
+
 .alive {
 /*   just a holder used to see if something is alive and calculate its next move */
 }
