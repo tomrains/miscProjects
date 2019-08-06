@@ -144,9 +144,9 @@ function goSlow() {
       elements[j].className = "alive4";
       elements[j].innerHTML = deadtree;
     }
-    else if (theClasses[j] == "alive4") {
-      elements[j].className = "alive4";
-      elements[j].innerHTML = deadtree;
+    else if (theClasses[j] == "alive4" && theNewClasses[j] == "alive") {
+      elements[j].className = "";
+      elements[j].innerHTML = "";
     }
     else { //if the plant needs to die
     elements[j].className = ""; 
@@ -239,8 +239,9 @@ function goNormal() {
       elements[j].className = "alive4";
       elements[j].innerHTML = deadtree;
     }
-    else if (theClasses[j] == "alive4") {
-      //nothing happens
+    else if (theClasses[j] == "alive4" && theNewClasses[j] == "alive") {
+      elements[j].className = "";
+      elements[j].innerHTML = "";
     }
     else { //if the plant needs to die
     elements[j].className = ""; 
