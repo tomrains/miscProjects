@@ -253,7 +253,11 @@ function goNormal() {
     elements[j].className = ""; 
     elements[j].innerHTML = "";
     }
-  } setTimeout(this.goNormal, 250);
+  } 
+  counter = counter + 1;
+  year = document.getElementById("year");
+  year.innerHTML = "Year: " + counter;
+  setTimeout(this.goNormal, 250);
 }
 
 function goFast(speed) {
@@ -348,7 +352,11 @@ function goFast(speed) {
     elements[j].className = ""; 
     elements[j].innerHTML = "";
     }
-  } setTimeout(this.goFast, 50);
+  } 
+  counter = counter + 1;
+  year = document.getElementById("year");
+  year.innerHTML = "Year: " + counter;
+  setTimeout(this.goFast, 50);
 }
 
 // //numbers in this function will obviously need to change (i think just add numbers to the existing ones so the ids work)
