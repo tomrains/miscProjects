@@ -156,7 +156,7 @@ function goSlow() {
     }
     counter = counter + 1;
     year = document.getElementById("year");
-    year.innerHTML = "Year: " + this.counter;
+    year.innerHTML = "Year: " + counter;
   } setTimeout(this.goSlow, 800);
 }
 
