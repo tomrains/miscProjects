@@ -1,5 +1,10 @@
 Refactoring the vanishing chess game
 
+bugs i am noticing:
+- when the white pawn becomes a queen, the king doesnt go in check. (i think to fix this you might need to run check again on the king - not sure how that is working - lemme look.)
+- also, when the pawn that became a queen checked the king, the game wouldnt let black make any legal moves, even though there were legal moves to make
+- i believe when the queen tried to move to the diagonal right down one, it thought it was moving like a rook, which it wasnt (this is because move is set to true for some reason, when it clearly shouldnt be)
+
 Now I deffo need to break up the castling function from the king movement function ....
 ...because the castling functin is such a mess
 
