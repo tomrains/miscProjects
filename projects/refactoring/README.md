@@ -1,5 +1,13 @@
 Refactoring the vanishing chess game
 
+- i think i do probably need to essential restructure it. show what legal moves are available, and just search in an array for tht. that's a way to naturally refactor while cutting out unnecessary crap.
+
+- you could build the board, set up the pieces, then create the arrays that show what each piece can move to based on where it currently is.
+
+and it's easy to figure out what the piece is by seeing what the innerhtml is.
+
+
+
 bugs i am noticing:
 - when the white pawn becomes a queen, the king doesnt go in check. (i think to fix this you might need to run check again on the king - not sure how that is working - lemme look.)
 - also, when the pawn that became a queen checked the king, the game wouldnt let black make any legal moves, even though there were legal moves to make
