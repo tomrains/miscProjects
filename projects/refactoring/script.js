@@ -9,7 +9,7 @@ for (let a = 0; a < allSquares.length; a++) {
     },
     function() {
       allowMove(allSquares[a]);
-    })
+    }
   )
 }
 
