@@ -6,11 +6,11 @@ for (let a = 0; a < allSquares.length; a++) {
   allSquares[a].addEventListener("click", 
     function() {
       selectPiece(allSquares[a]);
-    }
+    },
     function() {
       allowMove(allSquares[a]);
-    }
-  );
+    })
+  )
 }
 
 let move = true;
