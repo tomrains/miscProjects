@@ -60,3 +60,11 @@ const blackHole = '<img src="images/black-hole.png">';
 
 const blackPieces = [blackPawn, blackRook, blackKnight, blackBishop, blackQueen, blackKing];
 const whitePieces = [whitePawn, whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing];
+
+function selectPiece(square) {
+  return;
+}
+
+function allowMove(square) {
+  return;
+}
