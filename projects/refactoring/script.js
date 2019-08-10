@@ -62,9 +62,9 @@ const blackPieces = [blackPawn, blackRook, blackKnight, blackBishop, blackQueen,
 const whitePieces = [whitePawn, whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing];
 
 function selectPiece(square) {
-  console.log("selectPiece";
+  console.log("selectPiece");
 }
 
 function allowMove(square) {
-  console.log("allowMove";
+  console.log("allowMove");
 }
