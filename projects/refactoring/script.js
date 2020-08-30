@@ -86,14 +86,14 @@ function selectPiece(selectedPiece) {
     }
   }
   //return on capturing piece moves, so you can perform allowMove function
-  if (whitePieces.indexOf(this.selectedPiece.innerHTML) != -1 && blackPieces.indexOf(lastSelectedPiece.innerHTML) != -1) {
+  if (whitePieces.indexOf(selectedPiece.innerHTML) != -1 && blackPieces.indexOf(lastSelectedPiece.innerHTML) != -1) {
     if (selectedPiece.innerHTML == whitePawn) {
       whitePawnAttacking = true;
     }
     captureMove = true;
     return;
   }
-  if (blackPieces.indexOf(this.selectedPiece.innerHTML) != -1 && whitePieces.indexOf(lastSelectedPiece.innerHTML) != -1) {
+  if (blackPieces.indexOf(selectedPiece.innerHTML) != -1 && whitePieces.indexOf(lastSelectedPiece.innerHTML) != -1) {
     if (selected.innerHTML == blackPawn) {
       blackPawnAttacking = true;
     }
