@@ -74,26 +74,26 @@ function selectPiece(selectedPiece) {
   let lastSelectedPiece = document.querySelector("td.selected");
   //disallow any pieces from capturing a king, but lets you toggle to move a king
   if (lastSelectedPiece) {
-    if (blackPieces.indexOf(this.lastSelectedPiece.innerHTML) != -1 && this.selectedPiece.innerHTML == whiteKing) {
+    if (blackPieces.indexOf(lastSelectedPiece.innerHTML) != -1 && selectedPiece.innerHTML == whiteKing) {
       kingCapture = true; //remember to set this to false later
       move = false;
       return;
     }
-    if (whitePieces.indexOf(this.lastSelectedPiece.innerHTML) != -1 && this.selectedPiece.innerHTML == blackKing) {
+    if (whitePieces.indexOf(lastSelectedPiece.innerHTML) != -1 && selectedPiece.innerHTML == blackKing) {
       kingCapture = true; //remember to set this to false later
       move = false;
       return;
     }
   }
   //return on capturing piece moves, so you can perform allowMove function
-  if (whitePieces.indexOf(selectedPiece.innerHTML) != -1 && blackPieces.indexOf(lastSelectedPiece.innerHTML) != -1) {
+  if (whitePieces.indexOf(this.selectedPiece.innerHTML) != -1 && blackPieces.indexOf(lastSelectedPiece.innerHTML) != -1) {
     if (selectedPiece.innerHTML == whitePawn) {
       whitePawnAttacking = true;
     }
     captureMove = true;
     return;
   }
-  if (blackPieces.indexOf(selectedPiece.innerHTML) != -1 && whitePieces.indexOf(lastSelectedPiece.innerHTML) != -1) {
+  if (blackPieces.indexOf(this.selectedPiece.innerHTML) != -1 && whitePieces.indexOf(lastSelectedPiece.innerHTML) != -1) {
     if (selected.innerHTML == blackPawn) {
       blackPawnAttacking = true;
     }
