@@ -74,12 +74,12 @@ function selectPiece(selectedPiece) {
   let lastSelectedPiece = document.querySelector("td.selected");
   //disallow any pieces from capturing a king, but lets you toggle to move a king
   if (lastSelectedPiece) {
-    if (blackPieces.indexOf(lastSelectedPiece.innerHTML) != -1 && selectedPiece.innerHTML == whiteKing) {
+    if (blackPieces.indexOf(this.lastSelectedPiece.innerHTML) != -1 && this.selectedPiece.innerHTML == whiteKing) {
       kingCapture = true; //remember to set this to false later
       move = false;
       return;
     }
-    if (whitePieces.indexOf(lastSelectedPiece.innerHTML) != -1 && selectedPiece.innerHTML == blackKing) {
+    if (whitePieces.indexOf(this.lastSelectedPiece.innerHTML) != -1 && this.selectedPiece.innerHTML == blackKing) {
       kingCapture = true; //remember to set this to false later
       move = false;
       return;
