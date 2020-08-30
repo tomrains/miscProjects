@@ -63,9 +63,9 @@ const blackHole = '<img src="images/black-hole.png">';
 const blackPieces = [blackPawn, blackRook, blackKnight, blackBishop, blackQueen, blackKing];
 const whitePieces = [whitePawn, whiteRook, whiteKnight, whiteBishop, whiteQueen, whiteKing];
 
-function selectPiece(selectedPiece) {
+function selectPiece(el) {
   //disallow moves from empty squares
-  if (td.innerHTML == "") {
+  if (el.innerHTML == "") {
     return;
   }
   // find most previously selected piece (if there is one)
