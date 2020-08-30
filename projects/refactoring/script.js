@@ -69,6 +69,7 @@ function selectPiece(selectedPiece) {
     return;
   }
   console.log(selectedPiece); // remove later
+  console.log(selectedPiece.innerHTML); // remove later
   // find most previously selected piece (if there is one)
   let lastSelectedPiece = document.querySelector("td.selected");
   //disallow any pieces from capturing a king, but lets you toggle to move a king
