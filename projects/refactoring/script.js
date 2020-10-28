@@ -66,6 +66,8 @@ const whitePieces = [whitePawn, whiteRook, whiteKnight, whiteBishop, whiteQueen,
 function selectPiece(selectedPiece) {
   //disallow moves from empty squares
   if (selectedPiece.innerHTML == "") {
+    console.log(`selectedPiece is ${selectedPiece}`);
+    console.log(`selectedPiece.innerHTML is ${selectedPiece.innerHTML}`);
     return;
   }
   // find most previously selected piece (if there is one)
